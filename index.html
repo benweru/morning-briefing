@@ -3,549 +3,828 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ben's Morning Briefing · Oct 7, 2026</title>
+<meta name="color-scheme" content="light">
+<title>Ben’s Morning Briefing — 7 October 2026</title>
+<meta name="description" content="Remote roles open to Kenya, matched to Ben Maina’s CV, and the day’s tech news.">
 <style>
-:root{--bg:#f6f7fb;--card:#fff;--ink:#14161f;--muted:#646b7d;--line:#e4e7ef;--accent:#2f5bea;--accent-ink:#fff;
---top:#0f7b4f;--top-bg:#e3f6ec;--ever:#8a5a00;--ever-bg:#fdf1d8;--str:#5b3fd1;--str-bg:#ece8fd;--radius:14px}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
-a{color:var(--accent)}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-header{background:linear-gradient(135deg,#1b2a6b 0%,#2f5bea 60%,#4f8bff 100%);color:#fff;padding:44px 0 36px}
-header .subtitle{margin:0 0 14px;font-size:clamp(16px,2.2vw,19px);opacity:.9;font-weight:500}
-header h1{margin:0 0 4px;font-size:clamp(26px,4vw,38px);letter-spacing:-.02em}
-header .stamp{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:999px;font-size:13px}
-header .stamp::before{content:"";width:8px;height:8px;border-radius:50%;background:#5ef0a8}
-header p.lede{margin:14px 0 0;max-width:760px;opacity:.92}
-.summary{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.summary span{background:rgba(255,255,255,.12);border-radius:10px;padding:8px 12px;font-size:13px}
-.summary b{font-size:17px;margin-right:4px}
-.toolbar{position:sticky;top:52px;z-index:5;background:rgba(246,247,251,.92);backdrop-filter:saturate(1.4) blur(8px);-webkit-backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
-.toolbar .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:#fff;color:var(--ink);padding:7px 14px;border-radius:999px;font:inherit;font-size:14px;cursor:pointer;transition:.15s}
-.chip:hover{border-color:#b9c2da}
-.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
-.chip .n{opacity:.6;margin-left:4px;font-size:12px}
-.search{flex:1 1 260px;max-width:380px;position:relative}
-.search input{width:100%;padding:9px 12px 9px 36px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
-.search input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
-.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted)}
-.secnav{position:sticky;top:0;z-index:6;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(20,22,31,.02)}
-.secnav .wrap{display:flex;gap:4px;height:52px;align-items:stretch}
-.secnav a{display:flex;align-items:center;gap:8px;padding:0 14px;text-decoration:none;color:var(--muted);font-weight:600;border-bottom:3px solid transparent;margin-bottom:-1px}
-.secnav a:hover{color:var(--ink)}
-.secnav a.active{color:var(--ink);border-bottom-color:var(--accent)}
-.secnav a .n{font-size:12px;font-weight:600;background:#eef1f8;color:var(--muted);border-radius:999px;padding:1px 8px}
-.secnav a.active .n{background:#e6ecff;color:var(--accent)}
-.sec{scroll-margin-top:52px}
-.sec-head{padding-top:28px;padding-bottom:14px}
-.sec-head h2{margin:0;font-size:24px;letter-spacing:-.015em}
-.sec-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
-.news{border-top:1px solid var(--line);margin-top:40px;background:linear-gradient(#fff,var(--bg) 260px)}
-.ngroup{margin:0 0 30px}
-.ngroup h3{display:flex;align-items:center;gap:10px;font-size:16px;margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em}
-.ngroup h3 .dot{width:10px;height:10px;border-radius:3px;background:var(--accent)}
-.ng-startups h3 .dot{background:var(--top)}
-.ng-hiring h3 .dot{background:#d97706}
-.ng-kenya h3 .dot{background:#b42318}
-.gcount{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:0;text-transform:none;background:#eef1f8;border-radius:999px;padding:1px 8px}
-.stories{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
-.story{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(20,22,31,.04)}
-.story h4{margin:0 0 6px;font-size:16px;line-height:1.35}
-.story h4 a{color:var(--ink);text-decoration:none}
-.story h4 a:hover{color:var(--accent);text-decoration:underline}
-.summ{margin:0 0 10px;font-size:14px;color:#2b3040}
-.why{margin:0 0 12px;font-size:14px}
-.lbl-why{background:#e6ecff;color:var(--accent)}
-.story-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
-.readlink{font-weight:600;text-decoration:none;white-space:nowrap}
-.readlink:hover{text-decoration:underline}
-main{padding:16px 0 10px}
-.status{color:var(--muted);font-size:13px;margin:0 0 14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(20,22,31,.04);transition:box-shadow .15s,transform .15s}
-.card:hover{box-shadow:0 8px 24px rgba(20,22,31,.08);transform:translateY(-1px)}
-.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.badge{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;letter-spacing:.01em}
-.badge-top{color:var(--top);background:var(--top-bg)}
-.badge-evergreen{color:var(--ever);background:var(--ever-bg)}
-.badge-stretch{color:var(--str);background:var(--str-bg)}
-.rank{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
-.card h3{margin:0;font-size:18px;line-height:1.3;letter-spacing:-.01em}
-.company{margin:4px 0 14px;color:var(--muted);font-weight:600}
-.facts{margin:0 0 14px;display:grid;gap:8px}
-.facts div{display:grid;grid-template-columns:92px 1fr;gap:10px}
-.facts dt{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
-.facts dd{margin:0;font-size:14px}
-.muted{color:var(--muted)}
-.notes{border-top:1px dashed var(--line);padding-top:12px;margin-bottom:10px}
-.notes p{margin:0 0 8px;font-size:14px}
-.lbl{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:6px;margin-right:8px;vertical-align:1px}
-.lbl-fit{background:var(--top-bg);color:var(--top)}
-.lbl-gap{background:#fde8e8;color:#b42318}
-.src{font-size:12px;color:var(--muted);margin:2px 0 16px}
-.btn{margin-top:auto;display:flex;justify-content:center;align-items:center;gap:6px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:12px 16px;border-radius:10px;transition:background .15s}
-.btn:hover{background:#1f46c7}
-.btn:focus-visible{outline:3px solid #9db4ff;outline-offset:2px}
-.empty{display:none;text-align:center;color:var(--muted);padding:40px 0}
-details.dropped{margin:34px 0 0;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
-details.dropped summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
-details.dropped summary::-webkit-details-marker{display:none}
-details.dropped summary .chev{transition:transform .2s;color:var(--muted)}
-details.dropped[open] summary .chev{transform:rotate(180deg)}
-details.dropped summary small{font-weight:400;color:var(--muted);margin-left:8px}
-.dlist{list-style:none;margin:0;padding:0 20px 14px}
-.dlist li{padding:12px 0;border-top:1px solid var(--line)}
-.d-main a{font-weight:600;text-decoration:none}
-.d-main a:hover{text-decoration:underline}
-.d-co{color:var(--muted)}
-.d-meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;margin-top:4px}
-.d-loc{color:var(--muted)}
-.d-reason{color:#b42318}
-footer.wrap{margin-top:40px;padding-top:26px;padding-bottom:40px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-footer h2{font-size:14px;color:var(--ink);margin:0 0 8px}
-footer p{margin:6px 0}
-@media (max-width:640px){
-  header{padding:30px 0 26px}
-  .grid,.stories{grid-template-columns:1fr}
-  .secnav a{padding:0 10px;font-size:14px}
-  .toolbar .wrap{flex-direction:column;align-items:stretch}
-  .search{flex:0 0 auto;max-width:none}
-  .facts div{grid-template-columns:84px 1fr}
+/* ---------- Tokens ---------- */
+:root {
+  /* Type: two families, six sizes */
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-sm: 0.875rem;  /* 14px meta */
+  --fs-base: 1rem;    /* 16px body */
+  --fs-md: 1.125rem;  /* 18px item titles */
+  --fs-lg: 1.375rem;  /* 22px group headings */
+  --fs-xl: 1.875rem;  /* 30px section headings */
+  --fs-xxl: clamp(2.25rem, 1.6rem + 2.6vw, 2.75rem); /* 36-44px masthead */
+  --lh-tight: 1.2;
+  --lh-body: 1.55;
+
+  /* Space: 4px base */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+
+  /* Color: warm neutrals + one accent */
+  --paper: #fbfaf7;
+  --surface: #ffffff;
+  --ink: #1b1a17;
+  --ink-muted: #57544d;
+  --rule: #e2ded5;          /* decorative hairlines */
+  --rule-strong: #85817a;   /* control borders, >= 3:1 on paper */
+  --accent: #1f4e8c;        /* links + primary actions */
+  --accent-strong: #163a69; /* hover / pressed */
+  --accent-wash: #eef2f8;   /* hover fill on light controls */
+
+  --radius: 2px;
+  --measure: 68ch;
+  --page: 1120px;
+  --nav-h: 48px;
 }
-@media print{.toolbar{display:none} .card{break-inside:avoid}}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 var(--fs-base)/var(--lh-body) var(--font-sans);
+  font-kerning: normal;
+}
+h1, h2, h3, h4 { font-family: var(--font-serif); line-height: var(--lh-tight); margin: 0; font-weight: 700; }
+p, ol, ul, dl, dd { margin: 0; }
+ol[role="list"], ul[role="list"] { list-style: none; padding: 0; }
+a { color: var(--accent); text-underline-offset: 0.15em; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.quiet { color: var(--ink-muted); }
+.wrap { max-width: var(--page); margin-inline: auto; padding-inline: var(--s-5); }
+
+.skip-link {
+  position: absolute; left: var(--s-4); top: calc(-1 * var(--s-8));
+  background: var(--ink); color: var(--paper); padding: var(--s-2) var(--s-4); z-index: 20;
+}
+.skip-link:focus { top: var(--s-2); color: var(--paper); }
+
+/* ---------- Masthead ---------- */
+.masthead { padding-block: var(--s-7) var(--s-5); border-bottom: 2px solid var(--ink); }
+.masthead .dateline { font-size: var(--fs-sm); font-weight: 600; color: var(--ink-muted); margin-bottom: var(--s-2); }
+.masthead h1 { font-size: var(--fs-xxl); letter-spacing: -0.01em; }
+.masthead .dek { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.35; margin-top: var(--s-2); }
+.masthead .facts { margin-top: var(--s-4); font-size: var(--fs-sm); color: var(--ink-muted); }
+
+/* ---------- Section nav ---------- */
+.section-nav {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--paper); border-bottom: 1px solid var(--rule);
+}
+.section-nav ul { display: flex; gap: var(--s-5); height: var(--nav-h); }
+.section-nav a {
+  display: flex; align-items: center; height: 100%;
+  color: var(--ink-muted); font-weight: 600; text-decoration: none;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+}
+.section-nav a:hover { color: var(--ink); }
+.section-nav a[aria-current="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.section-nav .n { font-weight: 400; margin-left: var(--s-2); color: var(--ink-muted); }
+
+/* ---------- Sections ---------- */
+.section { padding-block: var(--s-7) var(--s-6); scroll-margin-top: var(--nav-h); }
+.section + .section { border-top: 1px solid var(--rule); }
+.section-head { max-width: var(--measure); margin-bottom: var(--s-5); }
+.section-head h2 { font-size: var(--fs-xl); letter-spacing: -0.005em; }
+.section-head p { margin-top: var(--s-2); color: var(--ink-muted); }
+
+/* ---------- Controls ---------- */
+.controls {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+  gap: var(--s-4); padding-block: var(--s-4); border-block: 1px solid var(--rule);
+}
+.filter-group { border: 0; margin: 0; padding: 0; min-width: 0; }
+.filter-group legend, .search label { display: block; font-size: var(--fs-sm); font-weight: 600; color: var(--ink-muted); margin-bottom: var(--s-2); padding: 0; }
+.segmented { display: flex; flex-wrap: wrap; }
+.segmented button {
+  font: 600 var(--fs-sm)/1 var(--font-sans);
+  min-height: 40px; padding: 0 var(--s-4);
+  color: var(--ink); background: var(--surface);
+  border: 1px solid var(--rule-strong); border-radius: 0; margin-left: -1px; cursor: pointer;
+}
+.segmented button:first-child { margin-left: 0; border-radius: var(--radius) 0 0 var(--radius); }
+.segmented button:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.segmented button:hover { background: var(--accent-wash); }
+.segmented button:active { background: var(--rule); }
+.segmented button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); position: relative; }
+.segmented button:focus-visible { position: relative; z-index: 1; }
+.segmented .n { font-weight: 400; margin-left: var(--s-1); }
+.search { flex: 0 1 320px; }
+.search input {
+  width: 100%; min-height: 40px; padding: 0 var(--s-3);
+  font: 400 var(--fs-base)/1 var(--font-sans); color: var(--ink);
+  background: var(--surface); border: 1px solid var(--rule-strong); border-radius: var(--radius);
+}
+.search input::placeholder { color: var(--ink-muted); opacity: 1; }
+.search input:focus-visible { outline-offset: 0; border-color: var(--accent); }
+.result-status { font-size: var(--fs-sm); color: var(--ink-muted); padding-top: var(--s-4); }
+
+/* ---------- Job tiers & rows ---------- */
+.tier { margin-top: var(--s-6); }
+.tier-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-1) var(--s-4); padding-bottom: var(--s-3); border-bottom: 1px solid var(--ink); }
+.tier-head h3 { font-size: var(--fs-lg); }
+.tier-head .count { font-family: var(--font-sans); font-size: var(--fs-base); font-weight: 400; color: var(--ink-muted); margin-left: var(--s-1); }
+.tier-head p { font-size: var(--fs-sm); color: var(--ink-muted); }
+.job {
+  display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) 176px;
+  gap: var(--s-6); padding-block: var(--s-5); border-bottom: 1px solid var(--rule);
+}
+.job-title { font-size: var(--fs-md); }
+.job-company { font-weight: 600; color: var(--ink-muted); margin-top: var(--s-1); margin-bottom: var(--s-3); }
+.job-note + .job-note { margin-top: var(--s-2); }
+.job-facts { display: grid; gap: var(--s-2); font-size: var(--fs-sm); align-content: start; }
+.job-facts div { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: var(--s-3); }
+.job-facts dt { font-weight: 600; color: var(--ink-muted); }
+.job-action { display: flex; flex-direction: column; gap: var(--s-3); align-items: stretch; }
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 40px; padding: 0 var(--s-4);
+  font-weight: 600; font-size: var(--fs-sm); text-decoration: none;
+  color: var(--surface); background: var(--accent); border: 1px solid var(--accent); border-radius: var(--radius);
+}
+.button:hover { color: var(--surface); background: var(--accent-strong); border-color: var(--accent-strong); text-decoration: none; }
+.button:active { background: var(--ink); border-color: var(--ink); }
+.job-source { font-size: var(--fs-sm); color: var(--ink-muted); }
+
+.empty { padding-block: var(--s-5) 0; }
+.empty p + p { margin-top: var(--s-2); }
+.link-button {
+  font: inherit; color: var(--accent); background: none; border: 0; padding: 0;
+  text-decoration: underline; text-underline-offset: 0.15em; cursor: pointer;
+}
+.link-button:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
+
+/* ---------- Dropped roles ---------- */
+.dropped { margin-top: var(--s-6); border-top: 1px solid var(--ink); scroll-margin-top: var(--nav-h); }
+.dropped summary {
+  display: grid; grid-template-columns: 1ch auto minmax(0, 1fr); align-items: baseline; gap: var(--s-1) var(--s-3); padding-block: var(--s-4);
+  cursor: pointer; list-style: none;
+}
+.dropped summary::-webkit-details-marker { display: none; }
+.dropped summary::before { content: "+"; font-family: var(--font-sans); font-weight: 600; width: 1ch; color: var(--ink-muted); }
+.dropped[open] summary::before { content: "\2212"; }
+.dropped summary h3 { font-size: var(--fs-lg); display: inline; }
+.dropped summary span { font-size: var(--fs-sm); color: var(--ink-muted); }
+.dropped table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.dropped th, .dropped td { text-align: left; vertical-align: top; padding: var(--s-3) var(--s-4) var(--s-3) 0; border-top: 1px solid var(--rule); }
+.dropped thead th { font-weight: 600; color: var(--ink-muted); border-top: 0; padding-top: 0; }
+.dropped tbody th { font-weight: 600; }
+.dropped td:last-child, .dropped th:last-child { padding-right: 0; }
+
+/* ---------- News ---------- */
+.news-group { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: var(--s-6); padding-block: var(--s-5); border-top: 1px solid var(--ink); }
+.news-group h3 { font-size: var(--fs-lg); }
+.stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--s-6); }
+.story { padding-bottom: var(--s-5); max-width: var(--measure); }
+.story:nth-child(n+3) { padding-top: var(--s-5); border-top: 1px solid var(--rule); }
+.story-title { font-size: var(--fs-md); margin-bottom: var(--s-2); }
+.story-title a { color: var(--ink); text-decoration: none; }
+.story-title a:hover { color: var(--accent); text-decoration: underline; }
+.story p + p { margin-top: var(--s-2); }
+.story-meta { font-size: var(--fs-sm); color: var(--ink-muted); }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 2px solid var(--ink); padding-block: var(--s-6) var(--s-7); font-size: var(--fs-sm); color: var(--ink-muted); }
+.site-footer h2 { font-size: var(--fs-lg); color: var(--ink); margin-bottom: var(--s-3); }
+.site-footer dl { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: var(--s-2) var(--s-5); max-width: 880px; }
+.site-footer dt { font-weight: 600; color: var(--ink); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .job { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .job-main { grid-column: 1 / -1; }
+  .news-group { grid-template-columns: 1fr; gap: var(--s-4); }
+}
+@media (max-width: 640px) {
+  .wrap { padding-inline: var(--s-4); }
+  .masthead { padding-block: var(--s-6) var(--s-4); }
+  .section { padding-block: var(--s-6) var(--s-5); }
+  .controls { flex-direction: column; align-items: stretch; }
+  .search { flex-basis: auto; }
+  .segmented button { flex: 1 1 auto; padding: 0 var(--s-3); }
+  .job { grid-template-columns: 1fr; gap: var(--s-4); }
+  .stories { grid-template-columns: 1fr; }
+  .story:nth-child(n+2) { padding-top: var(--s-5); border-top: 1px solid var(--rule); }
+  .dropped thead { display: none; }
+  .dropped tr { display: block; padding-block: var(--s-3); border-top: 1px solid var(--rule); }
+  .dropped th, .dropped td { display: block; border: 0; padding: 0; }
+  .dropped td { color: var(--ink-muted); }
+  .dropped td[data-label="Reason"] { color: var(--ink); margin-top: var(--s-1); }
+  .site-footer dl { grid-template-columns: 1fr; gap: var(--s-1); }
+  .dropped summary span { grid-column: 2 / -1; }
+  .site-footer dd + dt { margin-top: var(--s-3); }
+}
+@media print {
+  .section-nav, .controls, .skip-link { display: none; }
+  .job, .story { break-inside: avoid; }
+}
 </style>
 </head>
 <body>
-<header>
+<a class="skip-link" href="#jobs">Skip to jobs</a>
+
+<header class="masthead">
   <div class="wrap">
-    <h1>Ben's Morning Briefing</h1>
-    <p class="subtitle">Remote roles open to Kenya + today in tech</p>
-    <span class="stamp">Checked Oct 7, 2026, 9:30 PM EAT</span>
-    <p class="lede">Remote software, backend and AI roles matched to Ben Maina's CV (Python APIs, LLM integrations, React/TS, PostgreSQL), plus the AI, startup, hiring and Kenya fintech news worth knowing today.</p>
-    <div class="summary">
-      <span><b>10</b>shortlisted</span>
-      <span><b>3</b>top fit</span>
-      <span><b>2</b>evergreen</span>
-      <span><b>5</b>stretch</span>
-      <span><b>23</b>reviewed &amp; dropped</span>
-      <span><b>12</b>tech stories</span>
-    </div>
+    <p class="dateline">Wednesday, 7 October 2026</p>
+    <h1>Ben’s Morning Briefing</h1>
+    <p class="dek">Remote roles open to Kenya, and today in tech.</p>
+    <p class="facts">10 shortlisted roles, 23 reviewed and dropped, 12 stories. Jobs checked Oct 7, 2026, 9:30 PM EAT.</p>
   </div>
 </header>
 
-<nav class="secnav" aria-label="Sections">
+<nav class="section-nav" aria-label="Sections">
   <div class="wrap">
-    <a href="#jobs" class="active" data-sec="jobs">Jobs<span class="n">10</span></a>
-    <a href="#news" data-sec="news">Today in tech<span class="n">12</span></a>
+    <ul role="list">
+      <li><a href="#jobs" data-section="jobs" aria-current="true">Jobs<span class="n">10</span></a></li>
+      <li><a href="#news" data-section="news">Today in tech<span class="n">12</span></a></li>
+    </ul>
   </div>
 </nav>
 
-<section id="jobs" class="sec">
-<div class="wrap sec-head">
-  <h2>Remote roles open to Kenya</h2>
-  <p>Each posting was checked on the employer's careers page or the board that hosts it, on Oct 7, 2026, 9:30 PM EAT. Location rules and salaries are quoted as the source showed them.</p>
-</div>
-<div class="toolbar" role="region" aria-label="Filters">
-  <div class="wrap">
-    <div class="chips" role="group" aria-label="Filter by tier">
-      <button class="chip" data-filter="all" aria-pressed="true">All<span class="n">10</span></button>
-      <button class="chip" data-filter="top" aria-pressed="false">Top fit<span class="n">3</span></button>
-      <button class="chip" data-filter="evergreen" aria-pressed="false">Evergreen<span class="n">2</span></button>
-      <button class="chip" data-filter="stretch" aria-pressed="false">Stretch<span class="n">5</span></button>
+<main>
+  <section id="jobs" class="section" aria-labelledby="jobs-heading" tabindex="-1">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="jobs-heading">Remote roles open to Kenya</h2>
+        <p>Matched to Ben Maina’s CV: Python APIs, LLM integrations, React/TypeScript, PostgreSQL. Each posting was checked on the employer’s careers page or the board that hosts it on Oct 7, 2026, 9:30 PM EAT. Location rules and salaries are quoted as the source showed them.</p>
+      </header>
+
+      <div class="controls">
+        <fieldset class="filter-group">
+          <legend>Show</legend>
+          <div class="segmented">
+            <button type="button" data-filter="all" aria-pressed="true">All<span class="n">10</span></button>
+            <button type="button" data-filter="top" aria-pressed="false">Top fit<span class="n">3</span></button>
+            <button type="button" data-filter="evergreen" aria-pressed="false">Evergreen<span class="n">2</span></button>
+            <button type="button" data-filter="stretch" aria-pressed="false">Stretch<span class="n">5</span></button>
+          </div>
+        </fieldset>
+        <div class="search">
+          <label for="job-search">Search roles</label>
+          <input id="job-search" type="search" placeholder="Title, company or skill" autocomplete="off" aria-describedby="result-status">
+        </div>
+      </div>
+      <p class="result-status" id="result-status" role="status" aria-live="polite">All 10 roles</p>
+
+      
+      <section class="tier" data-group="top" aria-labelledby="tier-top">
+        <header class="tier-head">
+          <h3 id="tier-top">Top fit <span class="count">3</span></h3>
+          <p>Junior-friendly, open to Kenya, and close to Ben’s current work.</p>
+        </header>
+        <ol class="jobs" role="list">
+        <li class="job" data-tier="top" data-search="graduate software engineer, open source and linux, canonical ubuntu canonical home based - worldwide (teams aligned to emea/apac/amer time zones) 2025 and 2026 graduates; &quot;outstanding results in your academic career&quot; built for 2025/2026 cs graduates, and python is one of canonical&#x27;s main languages. very competitive process with a long written application and assessments. they put weight on academic results.">
+          <div class="job-main">
+            <h4 class="job-title">Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu</h4>
+            <p class="job-company">Canonical</p>
+            <p class="job-note"><strong>Fit.</strong> Built for 2025/2026 CS graduates, and Python is one of Canonical&#x27;s main languages.</p>
+            <p class="job-note"><strong>Gaps.</strong> Very competitive process with a long written application and assessments. They put weight on academic results.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>Home based - Worldwide (teams aligned to EMEA/APAC/AMER time zones)</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-05</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>2025 and 2026 graduates; &quot;outstanding results in your academic career&quot;</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://job-boards.greenhouse.io/canonical/jobs/8249005" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Greenhouse API (found while verifying Canonical roles from Himalayas/Jobicy). Verified: Greenhouse API, live 2026-10-07.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="top" data-search="associate forward deployed engineer micro1 53 listed countries including kenya (ke); &quot;this role is not worldwide&quot; entry level; basic python, sql, apis, git entry-level data loading and integration work in python, sql and apis. matches his chumz data-ops and kwara integrations work. part-time contract (20+ hrs/week), not salaried. checked on opentrain&#x27;s copy of the listing because micro1&#x27;s own page wouldn&#x27;t load.">
+          <div class="job-main">
+            <h4 class="job-title">Associate Forward Deployed Engineer</h4>
+            <p class="job-company">micro1</p>
+            <p class="job-note"><strong>Fit.</strong> Entry-level data loading and integration work in Python, SQL and APIs. Matches his Chumz data-ops and Kwara integrations work.</p>
+            <p class="job-note"><strong>Gaps.</strong> Part-time contract (20+ hrs/week), not salaried. Checked on OpenTrain&#x27;s copy of the listing because micro1&#x27;s own page wouldn&#x27;t load.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>53 listed countries including Kenya (KE); &quot;this role is not worldwide&quot;</dd></div>
+            <div><dt>Posted</dt><dd>2026-09-16</dd></div>
+            <div><dt>Salary</dt><dd>$40-$60/hour</dd></div>
+            <div><dt>Experience</dt><dd>Entry level; basic Python, SQL, APIs, Git</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://www.opentrain.ai/jobs/associate-forward-deployed-engineer--cmu4m3lrf001s0bgmqcoe18er/" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Himalayas API (verified on OpenTrain listing for micro1). Verified: OpenTrain page, validThrough 2026-11-06.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="top" data-search="junior ai automation engineer (ceo office) spendbase &quot;kyiv, lviv, abroad, remote&quot; (kenya not named) 0-2 years; claude code + mcp, langchain/n8n-type agents, apis/webhooks, basic python/js, english b2+ closest match to his current work: ai agents (claude code, mcp, langchain/n8n-type), webhooks and api integrations at a fintech startup, 0–2 years. google workspace automation isn&#x27;t on his cv. kenya isn&#x27;t named, so confirm that &quot;abroad&quot; includes it.">
+          <div class="job-main">
+            <h4 class="job-title">Junior AI Automation Engineer (CEO Office)</h4>
+            <p class="job-company">Spendbase</p>
+            <p class="job-note"><strong>Fit.</strong> Closest match to his current work: AI agents (Claude Code, MCP, LangChain/n8n-type), webhooks and API integrations at a fintech startup, 0–2 years.</p>
+            <p class="job-note"><strong>Gaps.</strong> Google Workspace automation isn&#x27;t on his CV. Kenya isn&#x27;t named, so confirm that &quot;abroad&quot; includes it.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;Kyiv, Lviv, abroad, remote&quot; (Kenya not named)</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-06</dd></div>
+            <div><dt>Salary</dt><dd>&quot;Competitive salary&quot; (no figure)</dd></div>
+            <div><dt>Experience</dt><dd>0-2 years; Claude Code + MCP, LangChain/n8n-type agents, APIs/webhooks, basic Python/JS, English B2+</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://jobs.dou.ua/companies/spendbase/vacancies/375752/" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Web search (DOU.ua). Verified: DOU page live 2026-10-07.</p>
+          </div>
+        </li>
+        </ol>
+      </section>
+      <section class="tier" data-group="evergreen" aria-labelledby="tier-evergreen">
+        <header class="tier-head">
+          <h3 id="tier-evergreen">Evergreen listings <span class="count">2</span></h3>
+          <p>Always-open listings that get reposted. The date shown is the latest relisting, not when the role was created.</p>
+        </header>
+        <ol class="jobs" role="list">
+        <li class="job" data-tier="evergreen" data-search="python engineer canonical home based - worldwide; &quot;remote python engineering roles in every time zone&quot; all levels of seniority; strong academics; linux experience a general python listing that hires at every level of seniority, in every time zone. linux (debian/ubuntu) experience isn&#x27;t on his cv. always-open listing that gets reposted, not a new job.">
+          <div class="job-main">
+            <h4 class="job-title">Python Engineer</h4>
+            <p class="job-company">Canonical</p>
+            <p class="job-note"><strong>Fit.</strong> A general Python listing that hires at every level of seniority, in every time zone.</p>
+            <p class="job-note"><strong>Gaps.</strong> Linux (Debian/Ubuntu) experience isn&#x27;t on his CV. Always-open listing that gets reposted, not a new job.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>Home based - Worldwide; &quot;remote Python engineering roles in every time zone&quot;</dd></div>
+            <div><dt>Posted</dt><dd>Himalayas listed 2026-09-19 (Greenhouse req first published 2023-10-11, updated 2026-08-05)</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>All levels of seniority; strong academics; Linux experience</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://job-boards.greenhouse.io/canonical/jobs/5143074" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Himalayas API. Verified: Greenhouse API, live 2026-10-07.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="evergreen" data-search="fullstack software engineer amplemarket remote, emea/latam (himalayas lists kenya) not stated; wttj lists junior/mid/senior; &quot;we don&#x27;t require you to have experience in our stack&quot; fast-moving startup backed by y combinator. he has react and postgresql, and the posting says experience in their stack isn&#x27;t required. backend is ruby on rails, elasticsearch and redis. always-open listing (since 2022).">
+          <div class="job-main">
+            <h4 class="job-title">Fullstack Software Engineer</h4>
+            <p class="job-company">Amplemarket</p>
+            <p class="job-note"><strong>Fit.</strong> Fast-moving startup backed by Y Combinator. He has React and PostgreSQL, and the posting says experience in their stack isn&#x27;t required.</p>
+            <p class="job-note"><strong>Gaps.</strong> Backend is Ruby on Rails, Elasticsearch and Redis. Always-open listing (since 2022).</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>Remote, EMEA/LATAM (Himalayas lists Kenya)</dd></div>
+            <div><dt>Posted</dt><dd>Himalayas listed 2026-09-18 (Greenhouse req published 2022, still open)</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>Not stated; WTTJ lists Junior/Mid/Senior; &quot;We don&#x27;t require you to have experience in our stack&quot;</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://job-boards.eu.greenhouse.io/amplemarket/jobs/4066973101" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Himalayas API. Verified: Greenhouse page live 2026-10-07.</p>
+          </div>
+        </li>
+        </ol>
+      </section>
+      <section class="tier" data-group="stretch" aria-labelledby="tier-stretch">
+        <header class="tier-head">
+          <h3 id="tier-stretch">Stretch <span class="count">5</span></h3>
+          <p>Open to Kenya, but they ask for skills or experience that aren’t on Ben’s CV yet.</p>
+        </header>
+        <ol class="jobs" role="list">
+        <li class="job" data-tier="stretch" data-search="ai agent engineer sticker mule anywhere in the world (applicant countries list includes ke) not stated; &quot;experience building agents that run on their own&quot; matches his ai agent work, typescript and postgres. go, graphql and gcp aren&#x27;t on his cv. the pay suggests they want someone experienced. closes about oct 16.">
+          <div class="job-main">
+            <h4 class="job-title">AI agent engineer</h4>
+            <p class="job-company">Sticker Mule</p>
+            <p class="job-note"><strong>Fit.</strong> Matches his AI agent work, TypeScript and Postgres.</p>
+            <p class="job-note"><strong>Gaps.</strong> Go, GraphQL and GCP aren&#x27;t on his CV. The pay suggests they want someone experienced. Closes about Oct 16.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>Anywhere in the World (applicant countries list includes KE)</dd></div>
+            <div><dt>Posted</dt><dd>2026-09-16 (valid through 2026-10-16)</dd></div>
+            <div><dt>Salary</dt><dd>$150,000-$250,000 USD + $20,000 signing bonus</dd></div>
+            <div><dt>Experience</dt><dd>Not stated; &quot;Experience building agents that run on their own&quot;</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://weworkremotely.com/remote-jobs/sticker-mule-ai-agent-engineer" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via We Work Remotely RSS (also on Remotive/RemoteOK). Verified: WWR page live 2026-10-07.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-search="backend engineer - wallets (100% remote worldwide) tether 100% remote worldwide not stated in years; recruitee tags it &quot;experienced&quot;; &quot;very proficient in node.js&quot; fintech backend with microservices and apis, close to his kwara work. wants someone &quot;very proficient in node.js&quot;, and his backend work is in python. tagged &quot;experienced&quot;.">
+          <div class="job-main">
+            <h4 class="job-title">Backend Engineer - Wallets (100% Remote Worldwide)</h4>
+            <p class="job-company">Tether</p>
+            <p class="job-note"><strong>Fit.</strong> Fintech backend with microservices and APIs, close to his Kwara work.</p>
+            <p class="job-note"><strong>Gaps.</strong> Wants someone &quot;very proficient in Node.js&quot;, and his backend work is in Python. Tagged &quot;experienced&quot;.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>100% Remote Worldwide</dd></div>
+            <div><dt>Posted</dt><dd>2026-09-10 (republished; Himalayas 2026-09-13 and 2026-10-07)</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>Not stated in years; Recruitee tags it &quot;experienced&quot;; &quot;Very proficient in Node.js&quot;</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://careers.tether.io/o/backend-engineer-wallets-100-remote-hn" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Himalayas API. Verified: Tether Recruitee API, live 2026-10-07.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-search="software developer ai coding steuart nutrition anywhere in the world; must overlap 4+ hrs/day with us eastern 3+ years professional builds integrations and automations with ai coding tools in js/ts or python, which fits how he works. asks for 3+ years (he has about 1). the 4-hour us eastern overlap means evenings in nairobi.">
+          <div class="job-main">
+            <h4 class="job-title">Software Developer AI Coding</h4>
+            <p class="job-company">Steuart Nutrition</p>
+            <p class="job-note"><strong>Fit.</strong> Builds integrations and automations with AI coding tools in JS/TS or Python, which fits how he works.</p>
+            <p class="job-note"><strong>Gaps.</strong> Asks for 3+ years (he has about 1). The 4-hour US Eastern overlap means evenings in Nairobi.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>Anywhere in the World; must overlap 4+ hrs/day with US Eastern</dd></div>
+            <div><dt>Posted</dt><dd>2026-09-23</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>3+ years professional</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://weworkremotely.com/remote-jobs/steuart-nutrition-software-developer-ai-coding" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via We Work Remotely RSS. Verified: WWR page live 2026-10-07.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-search="software engineer - python and k8s canonical home based - worldwide &quot;experienced python programmer&quot;; linux sysadmin, a public cloud, docker/k8s python matches. kubernetes, linux administration and public cloud aren&#x27;t on his cv. always-open listing.">
+          <div class="job-main">
+            <h4 class="job-title">Software Engineer - Python and K8s</h4>
+            <p class="job-company">Canonical</p>
+            <p class="job-note"><strong>Fit.</strong> Python matches.</p>
+            <p class="job-note"><strong>Gaps.</strong> Kubernetes, Linux administration and public cloud aren&#x27;t on his CV. Always-open listing.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>Home based - Worldwide</dd></div>
+            <div><dt>Posted</dt><dd>Himalayas listed 2026-09-19 (Greenhouse req from 2022, updated 2026-08-05)</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>&quot;Experienced Python programmer&quot;; Linux sysadmin, a public cloud, Docker/K8s</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://job-boards.greenhouse.io/canonical/jobs/3752633" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Himalayas API. Verified: Greenhouse API, live 2026-10-07.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-search="python software engineer - ubuntu hardware certification team canonical home based - emea (team centred in emea time zones) knowledge of python; linux; interest in test automation light python requirements, and an emea time zone that suits nairobi. work is hardware testing and test automation on linux. always-open listing.">
+          <div class="job-main">
+            <h4 class="job-title">Python Software Engineer - Ubuntu Hardware Certification Team</h4>
+            <p class="job-company">Canonical</p>
+            <p class="job-note"><strong>Fit.</strong> Light Python requirements, and an EMEA time zone that suits Nairobi.</p>
+            <p class="job-note"><strong>Gaps.</strong> Work is hardware testing and test automation on Linux. Always-open listing.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>Home based - EMEA (team centred in EMEA time zones)</dd></div>
+            <div><dt>Posted</dt><dd>Himalayas listed 2026-09-19 (Greenhouse req from 2022, updated 2026-08-05)</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>Knowledge of Python; Linux; interest in test automation</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://job-boards.greenhouse.io/canonical/jobs/3658005" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Himalayas API. Verified: Greenhouse API, live 2026-10-07.</p>
+          </div>
+        </li>
+        </ol>
+      </section>
+
+      <div class="empty" id="empty" hidden>
+        <p id="empty-text">No roles match.</p>
+        <p><button type="button" class="link-button" id="clear-filters">Clear search and filters</button></p>
+      </div>
+
+      <details class="dropped">
+        <summary><h3>Dropped roles</h3> <span>23 reviewed closely, with the reason each was rejected</span></summary>
+        <table>
+          <thead>
+            <tr><th scope="col">Role</th><th scope="col">Company</th><th scope="col">Location as stated</th><th scope="col">Reason</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="https://careers.spotter.ai/jobs/637391-remote-backend-django-engineer-ai-algorithmic-systems" target="_blank" rel="noopener noreferrer">Remote Backend Django Engineer - AI &amp; Algorithmic Systems<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Spotter Labs</td>
+              <td data-label="Location as stated">Argentina, Colombia, India, Mexico, Pakistan only</td>
+              <td data-label="Reason">Kenya not eligible (great stack fit otherwise)</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://jobs.lever.co/viseven/50b6c06b-2cee-4ce6-944d-dbd574422c6d" target="_blank" rel="noopener noreferrer">Full Stack (AI) Developer (Talent Pool)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Viseven</td>
+              <td data-label="Location as stated">Nairobi, Kenya remote (+Egypt, SA, Nigeria)</td>
+              <td data-label="Reason">Posting removed from Lever (404), likely closed</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://powerprozesse.recruitee.com/o/fullstack-developer-100-remote-4" target="_blank" rel="noopener noreferrer">Fullstack-Developer (100% Remote)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Powerprozesse</td>
+              <td data-label="Location as stated">Romania, Tunisia, Morocco, Egypt, Bulgaria, Hungary, Serbia, CZ, Baltics, HR, SK, SI</td>
+              <td data-label="Reason">Kenya not in eligible country list</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://sobes.tech/en/vacancies/465a4485-5fd4-4c5b-a7f5-b1e0bc228aab-applied-ai-llm-engineer" target="_blank" rel="noopener noreferrer">Applied AI / LLM Engineer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Mad Devs</td>
+              <td data-label="Location as stated">Any location except Russia/Belarus</td>
+              <td data-label="Reason">Requires Russian C1 + 2+ yrs Python backend</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://kdci1.recruitee.com/o/n8n-developer" target="_blank" rel="noopener noreferrer">n8n Developer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">KDCI</td>
+              <td data-label="Location as stated">Philippines (NCR)</td>
+              <td data-label="Reason">Philippines-based</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/clanx/jobs/ai-engineer-remote" target="_blank" rel="noopener noreferrer">AI Engineer - Remote (for Periskope)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">ClanX</td>
+              <td data-label="Location as stated">Unclear (India-focused recruiter)</td>
+              <td data-label="Reason">2-4 yrs; Kenya eligibility unconfirmed</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/talent-journey/jobs/junior-backend-developer-future-position" target="_blank" rel="noopener noreferrer">Junior Backend Developer - Future Position<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Talent Journey</td>
+              <td data-label="Location as stated">Europe; Middle East; North America</td>
+              <td data-label="Reason">Kenya region not listed; text says hiring planned Q4 2024 (stale)</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/dualentry/jobs/backend-software-engineer-mid-level-7746862113" target="_blank" rel="noopener noreferrer">Backend Software Engineer (Mid-Level)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">DualEntry</td>
+              <td data-label="Location as stated">EU/LATAM with US ET overlap</td>
+              <td data-label="Reason">EU/LATAM only; 5+ yrs</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/makersite/jobs/python-backend-engineer-m-f-x" target="_blank" rel="noopener noreferrer">Python Backend Engineer (m/f/x)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Makersite</td>
+              <td data-label="Location as stated">Must be based in Berlin/Munich/Stuttgart/London/Porto</td>
+              <td data-label="Reason">EU-only; 3-5 yrs</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/namecheap-inc/jobs/full-stack-engineer" target="_blank" rel="noopener noreferrer">Full Stack Engineer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Namecheap</td>
+              <td data-label="Location as stated">EET/Central Europe time zone +/-2h</td>
+              <td data-label="Reason">Europe-centric; senior-tagged; Go/K8s</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/wesoftyou/jobs/python-developer-ai-focus" target="_blank" rel="noopener noreferrer">Python Developer (AI focus)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">WeSoftYou</td>
+              <td data-label="Location as stated">Not stated</td>
+              <td data-label="Reason">3+ yrs commercial Python, LangChain/RAG; eligibility unclear</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/novakid-school/jobs/backend-python-developer-ai-native" target="_blank" rel="noopener noreferrer">Backend Python Developer AI-native<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Novakid School</td>
+              <td data-label="Location as stated">Remote, core hours GMT+3</td>
+              <td data-label="Reason">Senior, 5+ yrs (timezone would suit)</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/the-agency-fund/jobs/ai-engineer" target="_blank" rel="noopener noreferrer">AI Engineer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">The Agency Fund</td>
+              <td data-label="Location as stated">Global</td>
+              <td data-label="Reason">5+ yrs</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/g2i/jobs/python-engineer-ai-coding-agent-evaluator" target="_blank" rel="noopener noreferrer">Python Engineer, AI Coding Agent Evaluator<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">G2i</td>
+              <td data-label="Location as stated">Worldwide</td>
+              <td data-label="Reason">Staff/Principal-level</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/accelerant/jobs/ai-platform-engineer-global" target="_blank" rel="noopener noreferrer">AI Platform Engineer (Global)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Accelerant</td>
+              <td data-label="Location as stated">Remote Flexible</td>
+              <td data-label="Reason">6-8+ yrs</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/trafilea-com/jobs/product-engineer-core-apis-backend" target="_blank" rel="noopener noreferrer">Product Engineer - Core APIs Backend / Full Stack CX<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Trafilea</td>
+              <td data-label="Location as stated">Worldwide</td>
+              <td data-label="Reason">4+ yrs; Go/Node</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/nodeworthy/jobs/full-stack-developer" target="_blank" rel="noopener noreferrer">Full Stack Developer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Nodeworthy</td>
+              <td data-label="Location as stated">Remote</td>
+              <td data-label="Reason">3+ yrs; DeFi/Web3</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/distantjob/jobs/full-stack-engineer" target="_blank" rel="noopener noreferrer">Full Stack Engineer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">DistantJob</td>
+              <td data-label="Location as stated">Remote</td>
+              <td data-label="Reason">10+ yrs</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/correlation-one/jobs/engineer-ii" target="_blank" rel="noopener noreferrer">Engineer II<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Correlation One</td>
+              <td data-label="Location as stated">Latin America only</td>
+              <td data-label="Reason">LATAM only</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://job-boards.greenhouse.io/canonical/jobs/6707669" target="_blank" rel="noopener noreferrer">Junior Ubuntu Software Engineer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Canonical</td>
+              <td data-label="Location as stated">Home based - Worldwide</td>
+              <td data-label="Reason">Live, but last listed 2026-08-19 (&gt;30 days); worth a look anyway</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://remotive.com/remote-jobs/software-development/software-engineer-ai-code-trainer-python-web-full-stack-2091149" target="_blank" rel="noopener noreferrer">Software Engineer / AI Code Trainer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">CodeForAI</td>
+              <td data-label="Location as stated">USA, UK, India, Australia, etc.</td>
+              <td data-label="Reason">Kenya not listed</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://weworkremotely.com/remote-jobs/launchdarkly-backend-engineer-multiple-positions" target="_blank" rel="noopener noreferrer">Backend Engineer (Multiple Positions)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">LaunchDarkly</td>
+              <td data-label="Location as stated">WWR says Anywhere; HQ &quot;Remote - US&quot;</td>
+              <td data-label="Reason">US-based remote</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://weworkremotely.com/remote-jobs/hr-plus-web-developer-fresh-graduate-welcome-wfh-policy-on-job-training" target="_blank" rel="noopener noreferrer">Web Developer (Fresh graduate welcome)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">HR Plus</td>
+              <td data-label="Location as stated">Anywhere</td>
+              <td data-label="Reason">PHP/WordPress stack</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </div>
-    <label class="search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="search" placeholder="Search title, company, skill…" aria-label="Search roles" autocomplete="off">
-    </label>
-  </div>
-</div>
-
-<main class="wrap">
-  <p class="status" id="status" aria-live="polite">Showing all 10 roles</p>
-  <section class="grid" id="grid">
-
-<article class="card" data-tier="top" data-search="graduate software engineer, open source and linux, canonical ubuntu canonical home based - worldwide (teams aligned to emea/apac/amer time zones) built for 2025/2026 cs graduates, and python is one of canonical&#x27;s main languages. very competitive process with a long written application and assessments. they put weight on academic results. top fit">
-  <div class="card-top">
-    <span class="badge badge-top">Top fit</span>
-    <span class="rank">#1</span>
-  </div>
-  <h3>Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu</h3>
-  <p class="company">Canonical</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>Home based - Worldwide (teams aligned to EMEA/APAC/AMER time zones)</dd></div>
-    <div><dt>Posted</dt><dd>2026-10-05</dd></div>
-    <div><dt>Salary</dt><dd><span class="muted">Not shown</span></dd></div>
-    <div><dt>Experience</dt><dd>2025 and 2026 graduates; &quot;outstanding results in your academic career&quot;</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>Built for 2025/2026 CS graduates, and Python is one of Canonical&#x27;s main languages.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Very competitive process with a long written application and assessments. They put weight on academic results.</p>
-  </div>
-  <p class="src">Found via Greenhouse API (found while verifying Canonical roles from Himalayas/Jobicy) · Checked: Greenhouse API, live 2026-10-07</p>
-  <a class="btn" href="https://job-boards.greenhouse.io/canonical/jobs/8249005" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
-<article class="card" data-tier="top" data-search="associate forward deployed engineer micro1 53 listed countries including kenya (ke); &quot;this role is not worldwide&quot; entry-level data loading and integration work in python, sql and apis. matches his chumz data-ops and kwara integrations work. part-time contract (20+ hrs/week), not salaried. checked on opentrain&#x27;s copy of the listing because micro1&#x27;s own page wouldn&#x27;t load. top fit">
-  <div class="card-top">
-    <span class="badge badge-top">Top fit</span>
-    <span class="rank">#2</span>
-  </div>
-  <h3>Associate Forward Deployed Engineer</h3>
-  <p class="company">micro1</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>53 listed countries including Kenya (KE); &quot;this role is not worldwide&quot;</dd></div>
-    <div><dt>Posted</dt><dd>2026-09-16</dd></div>
-    <div><dt>Salary</dt><dd>$40-$60/hour</dd></div>
-    <div><dt>Experience</dt><dd>Entry level; basic Python, SQL, APIs, Git</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>Entry-level data loading and integration work in Python, SQL and APIs. Matches his Chumz data-ops and Kwara integrations work.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Part-time contract (20+ hrs/week), not salaried. Checked on OpenTrain&#x27;s copy of the listing because micro1&#x27;s own page wouldn&#x27;t load.</p>
-  </div>
-  <p class="src">Found via Himalayas API (verified on OpenTrain listing for micro1) · Checked: OpenTrain page, validThrough 2026-11-06</p>
-  <a class="btn" href="https://www.opentrain.ai/jobs/associate-forward-deployed-engineer--cmu4m3lrf001s0bgmqcoe18er/" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
-<article class="card" data-tier="top" data-search="junior ai automation engineer (ceo office) spendbase &quot;kyiv, lviv, abroad, remote&quot; (kenya not named) closest match to his current work: ai agents (claude code, mcp, langchain/n8n-type), webhooks and api integrations at a fintech startup, 0–2 years. google workspace automation isn&#x27;t on his cv. kenya isn&#x27;t named, so confirm that &quot;abroad&quot; includes it. top fit">
-  <div class="card-top">
-    <span class="badge badge-top">Top fit</span>
-    <span class="rank">#3</span>
-  </div>
-  <h3>Junior AI Automation Engineer (CEO Office)</h3>
-  <p class="company">Spendbase</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>&quot;Kyiv, Lviv, abroad, remote&quot; (Kenya not named)</dd></div>
-    <div><dt>Posted</dt><dd>2026-10-06</dd></div>
-    <div><dt>Salary</dt><dd>&quot;Competitive salary&quot; (no figure)</dd></div>
-    <div><dt>Experience</dt><dd>0-2 years; Claude Code + MCP, LangChain/n8n-type agents, APIs/webhooks, basic Python/JS, English B2+</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>Closest match to his current work: AI agents (Claude Code, MCP, LangChain/n8n-type), webhooks and API integrations at a fintech startup, 0–2 years.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Google Workspace automation isn&#x27;t on his CV. Kenya isn&#x27;t named, so confirm that &quot;abroad&quot; includes it.</p>
-  </div>
-  <p class="src">Found via Web search (DOU.ua) · Checked: DOU page live 2026-10-07</p>
-  <a class="btn" href="https://jobs.dou.ua/companies/spendbase/vacancies/375752/" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
-<article class="card" data-tier="evergreen" data-search="python engineer canonical home based - worldwide; &quot;remote python engineering roles in every time zone&quot; a general python listing that hires at every level of seniority, in every time zone. linux (debian/ubuntu) experience isn&#x27;t on his cv. always-open listing that gets reposted, not a new job. evergreen">
-  <div class="card-top">
-    <span class="badge badge-evergreen">Evergreen</span>
-    <span class="rank">#4</span>
-  </div>
-  <h3>Python Engineer</h3>
-  <p class="company">Canonical</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>Home based - Worldwide; &quot;remote Python engineering roles in every time zone&quot;</dd></div>
-    <div><dt>Posted</dt><dd>Himalayas listed 2026-09-19 (Greenhouse req first published 2023-10-11, updated 2026-08-05)</dd></div>
-    <div><dt>Salary</dt><dd><span class="muted">Not shown</span></dd></div>
-    <div><dt>Experience</dt><dd>All levels of seniority; strong academics; Linux experience</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>A general Python listing that hires at every level of seniority, in every time zone.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Linux (Debian/Ubuntu) experience isn&#x27;t on his CV. Always-open listing that gets reposted, not a new job.</p>
-  </div>
-  <p class="src">Found via Himalayas API · Checked: Greenhouse API, live 2026-10-07</p>
-  <a class="btn" href="https://job-boards.greenhouse.io/canonical/jobs/5143074" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
-<article class="card" data-tier="evergreen" data-search="fullstack software engineer amplemarket remote, emea/latam (himalayas lists kenya) fast-moving startup backed by y combinator. he has react and postgresql, and the posting says experience in their stack isn&#x27;t required. backend is ruby on rails, elasticsearch and redis. always-open listing (since 2022). evergreen">
-  <div class="card-top">
-    <span class="badge badge-evergreen">Evergreen</span>
-    <span class="rank">#5</span>
-  </div>
-  <h3>Fullstack Software Engineer</h3>
-  <p class="company">Amplemarket</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>Remote, EMEA/LATAM (Himalayas lists Kenya)</dd></div>
-    <div><dt>Posted</dt><dd>Himalayas listed 2026-09-18 (Greenhouse req published 2022, still open)</dd></div>
-    <div><dt>Salary</dt><dd><span class="muted">Not shown</span></dd></div>
-    <div><dt>Experience</dt><dd>Not stated; WTTJ lists Junior/Mid/Senior; &quot;We don&#x27;t require you to have experience in our stack&quot;</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>Fast-moving startup backed by Y Combinator. He has React and PostgreSQL, and the posting says experience in their stack isn&#x27;t required.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Backend is Ruby on Rails, Elasticsearch and Redis. Always-open listing (since 2022).</p>
-  </div>
-  <p class="src">Found via Himalayas API · Checked: Greenhouse page live 2026-10-07</p>
-  <a class="btn" href="https://job-boards.eu.greenhouse.io/amplemarket/jobs/4066973101" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
-<article class="card" data-tier="stretch" data-search="ai agent engineer sticker mule anywhere in the world (applicant countries list includes ke) matches his ai agent work, typescript and postgres. go, graphql and gcp aren&#x27;t on his cv. the pay suggests they want someone experienced. closes about oct 16. stretch">
-  <div class="card-top">
-    <span class="badge badge-stretch">Stretch</span>
-    <span class="rank">#6</span>
-  </div>
-  <h3>AI agent engineer</h3>
-  <p class="company">Sticker Mule</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>Anywhere in the World (applicant countries list includes KE)</dd></div>
-    <div><dt>Posted</dt><dd>2026-09-16 (valid through 2026-10-16)</dd></div>
-    <div><dt>Salary</dt><dd>$150,000-$250,000 USD + $20,000 signing bonus</dd></div>
-    <div><dt>Experience</dt><dd>Not stated; &quot;Experience building agents that run on their own&quot;</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>Matches his AI agent work, TypeScript and Postgres.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Go, GraphQL and GCP aren&#x27;t on his CV. The pay suggests they want someone experienced. Closes about Oct 16.</p>
-  </div>
-  <p class="src">Found via We Work Remotely RSS (also on Remotive/RemoteOK) · Checked: WWR page live 2026-10-07</p>
-  <a class="btn" href="https://weworkremotely.com/remote-jobs/sticker-mule-ai-agent-engineer" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
-<article class="card" data-tier="stretch" data-search="backend engineer - wallets (100% remote worldwide) tether 100% remote worldwide fintech backend with microservices and apis, close to his kwara work. wants someone &quot;very proficient in node.js&quot;, and his backend work is in python. tagged &quot;experienced&quot;. stretch">
-  <div class="card-top">
-    <span class="badge badge-stretch">Stretch</span>
-    <span class="rank">#7</span>
-  </div>
-  <h3>Backend Engineer - Wallets (100% Remote Worldwide)</h3>
-  <p class="company">Tether</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>100% Remote Worldwide</dd></div>
-    <div><dt>Posted</dt><dd>2026-09-10 (republished; Himalayas 2026-09-13 and 2026-10-07)</dd></div>
-    <div><dt>Salary</dt><dd><span class="muted">Not shown</span></dd></div>
-    <div><dt>Experience</dt><dd>Not stated in years; Recruitee tags it &quot;experienced&quot;; &quot;Very proficient in Node.js&quot;</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>Fintech backend with microservices and APIs, close to his Kwara work.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Wants someone &quot;very proficient in Node.js&quot;, and his backend work is in Python. Tagged &quot;experienced&quot;.</p>
-  </div>
-  <p class="src">Found via Himalayas API · Checked: Tether Recruitee API, live 2026-10-07</p>
-  <a class="btn" href="https://careers.tether.io/o/backend-engineer-wallets-100-remote-hn" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
-<article class="card" data-tier="stretch" data-search="software developer ai coding steuart nutrition anywhere in the world; must overlap 4+ hrs/day with us eastern builds integrations and automations with ai coding tools in js/ts or python, which fits how he works. asks for 3+ years (he has about 1). the 4-hour us eastern overlap means evenings in nairobi. stretch">
-  <div class="card-top">
-    <span class="badge badge-stretch">Stretch</span>
-    <span class="rank">#8</span>
-  </div>
-  <h3>Software Developer AI Coding</h3>
-  <p class="company">Steuart Nutrition</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>Anywhere in the World; must overlap 4+ hrs/day with US Eastern</dd></div>
-    <div><dt>Posted</dt><dd>2026-09-23</dd></div>
-    <div><dt>Salary</dt><dd><span class="muted">Not shown</span></dd></div>
-    <div><dt>Experience</dt><dd>3+ years professional</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>Builds integrations and automations with AI coding tools in JS/TS or Python, which fits how he works.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Asks for 3+ years (he has about 1). The 4-hour US Eastern overlap means evenings in Nairobi.</p>
-  </div>
-  <p class="src">Found via We Work Remotely RSS · Checked: WWR page live 2026-10-07</p>
-  <a class="btn" href="https://weworkremotely.com/remote-jobs/steuart-nutrition-software-developer-ai-coding" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
-<article class="card" data-tier="stretch" data-search="software engineer - python and k8s canonical home based - worldwide python matches. kubernetes, linux administration and public cloud aren&#x27;t on his cv. always-open listing. stretch">
-  <div class="card-top">
-    <span class="badge badge-stretch">Stretch</span>
-    <span class="rank">#9</span>
-  </div>
-  <h3>Software Engineer - Python and K8s</h3>
-  <p class="company">Canonical</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>Home based - Worldwide</dd></div>
-    <div><dt>Posted</dt><dd>Himalayas listed 2026-09-19 (Greenhouse req from 2022, updated 2026-08-05)</dd></div>
-    <div><dt>Salary</dt><dd><span class="muted">Not shown</span></dd></div>
-    <div><dt>Experience</dt><dd>&quot;Experienced Python programmer&quot;; Linux sysadmin, a public cloud, Docker/K8s</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>Python matches.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Kubernetes, Linux administration and public cloud aren&#x27;t on his CV. Always-open listing.</p>
-  </div>
-  <p class="src">Found via Himalayas API · Checked: Greenhouse API, live 2026-10-07</p>
-  <a class="btn" href="https://job-boards.greenhouse.io/canonical/jobs/3752633" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
-<article class="card" data-tier="stretch" data-search="python software engineer - ubuntu hardware certification team canonical home based - emea (team centred in emea time zones) light python requirements, and an emea time zone that suits nairobi. work is hardware testing and test automation on linux. always-open listing. stretch">
-  <div class="card-top">
-    <span class="badge badge-stretch">Stretch</span>
-    <span class="rank">#10</span>
-  </div>
-  <h3>Python Software Engineer - Ubuntu Hardware Certification Team</h3>
-  <p class="company">Canonical</p>
-  <dl class="facts">
-    <div><dt>Location</dt><dd>Home based - EMEA (team centred in EMEA time zones)</dd></div>
-    <div><dt>Posted</dt><dd>Himalayas listed 2026-09-19 (Greenhouse req from 2022, updated 2026-08-05)</dd></div>
-    <div><dt>Salary</dt><dd><span class="muted">Not shown</span></dd></div>
-    <div><dt>Experience</dt><dd>Knowledge of Python; Linux; interest in test automation</dd></div>
-  </dl>
-  <div class="notes">
-    <p><span class="lbl lbl-fit">Fit</span>Light Python requirements, and an EMEA time zone that suits Nairobi.</p>
-    <p><span class="lbl lbl-gap">Gaps</span>Work is hardware testing and test automation on Linux. Always-open listing.</p>
-  </div>
-  <p class="src">Found via Himalayas API · Checked: Greenhouse API, live 2026-10-07</p>
-  <a class="btn" href="https://job-boards.greenhouse.io/canonical/jobs/3658005" target="_blank" rel="noopener noreferrer">View posting <span aria-hidden="true">↗</span></a>
-</article>
   </section>
-  <p class="empty" id="empty">No roles match that filter. Try clearing the search.</p>
 
-  <details class="dropped">
-    <summary><span>Dropped roles<small>23 reviewed closely, with the reason each was rejected</small></span><span class="chev" aria-hidden="true">▾</span></summary>
-    <ul class="dlist">
-<li><div class="d-main"><a href="https://careers.spotter.ai/jobs/637391-remote-backend-django-engineer-ai-algorithmic-systems" target="_blank" rel="noopener noreferrer">Remote Backend Django Engineer - AI &amp; Algorithmic Systems</a> <span class="d-co">· Spotter Labs</span></div>
-<div class="d-meta"><span class="d-loc">Argentina, Colombia, India, Mexico, Pakistan only</span><span class="d-reason">Kenya not eligible (great stack fit otherwise)</span></div></li><li><div class="d-main"><a href="https://jobs.lever.co/viseven/50b6c06b-2cee-4ce6-944d-dbd574422c6d" target="_blank" rel="noopener noreferrer">Full Stack (AI) Developer (Talent Pool)</a> <span class="d-co">· Viseven</span></div>
-<div class="d-meta"><span class="d-loc">Nairobi, Kenya remote (+Egypt, SA, Nigeria)</span><span class="d-reason">Posting removed from Lever (404), likely closed</span></div></li><li><div class="d-main"><a href="https://powerprozesse.recruitee.com/o/fullstack-developer-100-remote-4" target="_blank" rel="noopener noreferrer">Fullstack-Developer (100% Remote)</a> <span class="d-co">· Powerprozesse</span></div>
-<div class="d-meta"><span class="d-loc">Romania, Tunisia, Morocco, Egypt, Bulgaria, Hungary, Serbia, CZ, Baltics, HR, SK, SI</span><span class="d-reason">Kenya not in eligible country list</span></div></li><li><div class="d-main"><a href="https://sobes.tech/en/vacancies/465a4485-5fd4-4c5b-a7f5-b1e0bc228aab-applied-ai-llm-engineer" target="_blank" rel="noopener noreferrer">Applied AI / LLM Engineer</a> <span class="d-co">· Mad Devs</span></div>
-<div class="d-meta"><span class="d-loc">Any location except Russia/Belarus</span><span class="d-reason">Requires Russian C1 + 2+ yrs Python backend</span></div></li><li><div class="d-main"><a href="https://kdci1.recruitee.com/o/n8n-developer" target="_blank" rel="noopener noreferrer">n8n Developer</a> <span class="d-co">· KDCI</span></div>
-<div class="d-meta"><span class="d-loc">Philippines (NCR)</span><span class="d-reason">Philippines-based</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/clanx/jobs/ai-engineer-remote" target="_blank" rel="noopener noreferrer">AI Engineer - Remote (for Periskope)</a> <span class="d-co">· ClanX</span></div>
-<div class="d-meta"><span class="d-loc">Unclear (India-focused recruiter)</span><span class="d-reason">2-4 yrs; Kenya eligibility unconfirmed</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/talent-journey/jobs/junior-backend-developer-future-position" target="_blank" rel="noopener noreferrer">Junior Backend Developer - Future Position</a> <span class="d-co">· Talent Journey</span></div>
-<div class="d-meta"><span class="d-loc">Europe; Middle East; North America</span><span class="d-reason">Kenya region not listed; text says hiring planned Q4 2024 (stale)</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/dualentry/jobs/backend-software-engineer-mid-level-7746862113" target="_blank" rel="noopener noreferrer">Backend Software Engineer (Mid-Level)</a> <span class="d-co">· DualEntry</span></div>
-<div class="d-meta"><span class="d-loc">EU/LATAM with US ET overlap</span><span class="d-reason">EU/LATAM only; 5+ yrs</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/makersite/jobs/python-backend-engineer-m-f-x" target="_blank" rel="noopener noreferrer">Python Backend Engineer (m/f/x)</a> <span class="d-co">· Makersite</span></div>
-<div class="d-meta"><span class="d-loc">Must be based in Berlin/Munich/Stuttgart/London/Porto</span><span class="d-reason">EU-only; 3-5 yrs</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/namecheap-inc/jobs/full-stack-engineer" target="_blank" rel="noopener noreferrer">Full Stack Engineer</a> <span class="d-co">· Namecheap</span></div>
-<div class="d-meta"><span class="d-loc">EET/Central Europe time zone +/-2h</span><span class="d-reason">Europe-centric; senior-tagged; Go/K8s</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/wesoftyou/jobs/python-developer-ai-focus" target="_blank" rel="noopener noreferrer">Python Developer (AI focus)</a> <span class="d-co">· WeSoftYou</span></div>
-<div class="d-meta"><span class="d-loc">Not stated</span><span class="d-reason">3+ yrs commercial Python, LangChain/RAG; eligibility unclear</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/novakid-school/jobs/backend-python-developer-ai-native" target="_blank" rel="noopener noreferrer">Backend Python Developer AI-native</a> <span class="d-co">· Novakid School</span></div>
-<div class="d-meta"><span class="d-loc">Remote, core hours GMT+3</span><span class="d-reason">Senior, 5+ yrs (timezone would suit)</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/the-agency-fund/jobs/ai-engineer" target="_blank" rel="noopener noreferrer">AI Engineer</a> <span class="d-co">· The Agency Fund</span></div>
-<div class="d-meta"><span class="d-loc">Global</span><span class="d-reason">5+ yrs</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/g2i/jobs/python-engineer-ai-coding-agent-evaluator" target="_blank" rel="noopener noreferrer">Python Engineer, AI Coding Agent Evaluator</a> <span class="d-co">· G2i</span></div>
-<div class="d-meta"><span class="d-loc">Worldwide</span><span class="d-reason">Staff/Principal-level</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/accelerant/jobs/ai-platform-engineer-global" target="_blank" rel="noopener noreferrer">AI Platform Engineer (Global)</a> <span class="d-co">· Accelerant</span></div>
-<div class="d-meta"><span class="d-loc">Remote Flexible</span><span class="d-reason">6-8+ yrs</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/trafilea-com/jobs/product-engineer-core-apis-backend" target="_blank" rel="noopener noreferrer">Product Engineer - Core APIs Backend / Full Stack CX</a> <span class="d-co">· Trafilea</span></div>
-<div class="d-meta"><span class="d-loc">Worldwide</span><span class="d-reason">4+ yrs; Go/Node</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/nodeworthy/jobs/full-stack-developer" target="_blank" rel="noopener noreferrer">Full Stack Developer</a> <span class="d-co">· Nodeworthy</span></div>
-<div class="d-meta"><span class="d-loc">Remote</span><span class="d-reason">3+ yrs; DeFi/Web3</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/distantjob/jobs/full-stack-engineer" target="_blank" rel="noopener noreferrer">Full Stack Engineer</a> <span class="d-co">· DistantJob</span></div>
-<div class="d-meta"><span class="d-loc">Remote</span><span class="d-reason">10+ yrs</span></div></li><li><div class="d-main"><a href="https://himalayas.app/companies/correlation-one/jobs/engineer-ii" target="_blank" rel="noopener noreferrer">Engineer II</a> <span class="d-co">· Correlation One</span></div>
-<div class="d-meta"><span class="d-loc">Latin America only</span><span class="d-reason">LATAM only</span></div></li><li><div class="d-main"><a href="https://job-boards.greenhouse.io/canonical/jobs/6707669" target="_blank" rel="noopener noreferrer">Junior Ubuntu Software Engineer</a> <span class="d-co">· Canonical</span></div>
-<div class="d-meta"><span class="d-loc">Home based - Worldwide</span><span class="d-reason">Live, but last listed 2026-08-19 (&gt;30 days); worth a look anyway</span></div></li><li><div class="d-main"><a href="https://remotive.com/remote-jobs/software-development/software-engineer-ai-code-trainer-python-web-full-stack-2091149" target="_blank" rel="noopener noreferrer">Software Engineer / AI Code Trainer</a> <span class="d-co">· CodeForAI</span></div>
-<div class="d-meta"><span class="d-loc">USA, UK, India, Australia, etc.</span><span class="d-reason">Kenya not listed</span></div></li><li><div class="d-main"><a href="https://weworkremotely.com/remote-jobs/launchdarkly-backend-engineer-multiple-positions" target="_blank" rel="noopener noreferrer">Backend Engineer (Multiple Positions)</a> <span class="d-co">· LaunchDarkly</span></div>
-<div class="d-meta"><span class="d-loc">WWR says Anywhere; HQ &quot;Remote - US&quot;</span><span class="d-reason">US-based remote</span></div></li><li><div class="d-main"><a href="https://weworkremotely.com/remote-jobs/hr-plus-web-developer-fresh-graduate-welcome-wfh-policy-on-job-training" target="_blank" rel="noopener noreferrer">Web Developer (Fresh graduate welcome)</a> <span class="d-co">· HR Plus</span></div>
-<div class="d-meta"><span class="d-loc">Anywhere</span><span class="d-reason">PHP/WordPress stack</span></div></li>
-    </ul>
-  </details>
-</main>
-</section>
-
-<section id="news" class="sec news" aria-labelledby="news-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="news-h">Today in tech</h2>
-      <p>12 stories from Oct 2–7, 2026, grouped by topic, each with why it matters for Ben.</p>
+  <section id="news" class="section" aria-labelledby="news-heading" tabindex="-1">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="news-heading">Today in tech</h2>
+        <p>12 stories from 2–7 October 2026, each with a note on why it matters for Ben.</p>
+      </header>
+      
+      <section class="news-group" aria-labelledby="news-ai">
+        <h3 id="news-ai">AI and LLMs</h3>
+        <ol class="stories" role="list">
+            <li class="story">
+              <h4 class="story-title"><a href="https://mistral.ai/news/mistral-large-4/" target="_blank" rel="noopener noreferrer">Mistral launches Mistral Large 4<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>1T-param multimodal open-weight model (49B active); preview API live, weights by end of October.</p>
+              <p><strong>Why it matters:</strong> Frontier open model he could self-host for agent work.</p>
+              <p class="story-meta">Mistral blog, 6 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/" target="_blank" rel="noopener noreferrer">Google releases EmbeddingGemma 2<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Open 740M-param Apache 2.0 multimodal embedding model that runs on-device.</p>
+              <p><strong>Why it matters:</strong> Usable now in RAG/retrieval.</p>
+              <p class="story-meta">Google blog, 6 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://reflection.ai/blog/introducing-beam" target="_blank" rel="noopener noreferrer">Reflection AI introduces Beam<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>501B-param (23B active) model for coding/agentic workloads; Apache 2.0 weights promised this month.</p>
+              <p><strong>Why it matters:</strong> Another open option built for agents.</p>
+              <p class="story-meta">Reflection blog, 5 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://about.gitlab.com/press/releases/2026-10-06-gitlab-announces-the-foundation-for-the-governed-software-factory/" target="_blank" rel="noopener noreferrer">GitLab launches a &#x27;governed software factory&#x27; for AI agents<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Goal-driven agent flows in Duo CLI and AI usage controls; Orbit GA next month.</p>
+              <p><strong>Why it matters:</strong> Governing coding agents in production is becoming an in-demand skill.</p>
+              <p class="story-meta">GitLab press release, 6 Oct 2026</p>
+            </li>
+        </ol>
+      </section>
+      <section class="news-group" aria-labelledby="news-startups">
+        <h3 id="news-startups">Startups and funding</h3>
+        <ol class="stories" role="list">
+            <li class="story">
+              <h4 class="story-title"><a href="https://techcabal.com/2026/10/06/cloud9-raises-500000-from-alliance/" target="_blank" rel="noopener noreferrer">Nairobi fintech Cloud9 raises $500K from Alliance<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Pre-seed now $1M (Techstars NYC in); multi-currency business accounts settling cross-border in stablecoins, paying out to mobile money.</p>
+              <p><strong>Why it matters:</strong> Close to his Kwara fintech work.</p>
+              <p class="story-meta">TechCabal, 6 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://techcrunch.com/2026/10/06/ex-ramp-engineers-raise-20m-for-platform-melius-after-scrapping-their-first-product/" target="_blank" rel="noopener noreferrer">Ex-Ramp engineers raise $25M for Melius<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>$20M Series A led by CRV + $5M seed for an agents lab for AI ad creative.</p>
+              <p><strong>Why it matters:</strong> Well-funded agentic AI startup likely hiring.</p>
+              <p class="story-meta">TechCrunch, 6 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://disruptafrica.com/2026/10/07/sas-vambo-ai-releases-language-model-trained-for-12-african-languages/" target="_blank" rel="noopener noreferrer">Vambo AI releases MORENA<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Open 1.5B model trained on 12 African languages, including Kiswahili.</p>
+              <p><strong>Why it matters:</strong> Cheap base model to fine-tune for Kenyan products.</p>
+              <p class="story-meta">Disrupt Africa, 7 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://thecondia.com/satlyt-raise-8m-for-data-centres/" target="_blank" rel="noopener noreferrer">Satlyt raises $8M seed<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Nairobi + Sunnyvale company running AI on satellites (TLCOM, Antler, Enza); growing its engineering team.</p>
+              <p><strong>Why it matters:</strong> Nairobi deep-tech company hiring engineers.</p>
+              <p class="story-meta">The Condia, 2 Oct 2026</p>
+            </li>
+        </ol>
+      </section>
+      <section class="news-group" aria-labelledby="news-hiring">
+        <h3 id="news-hiring">Hiring market</h3>
+        <ol class="stories" role="list">
+            <li class="story">
+              <h4 class="story-title"><a href="https://www.thestar.com.my/tech/tech-news/2026/10/06/as-the-coding-boom-fades-computer-science-grads-focus-on-ai-skills-in-choppy-job-market" target="_blank" rel="noopener noreferrer">AP: junior coding jobs shrink as CS grads pivot to AI skills<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Smaller firms are hiring for AI skills as the coding boom fades.</p>
+              <p><strong>Why it matters:</strong> Supports pitching himself as an AI integrator.</p>
+              <p class="story-meta">The Star (AP), 6 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://www.bostonglobe.com/2026/10/06/business/hubspot-layoffs/" target="_blank" rel="noopener noreferrer">HubSpot cutting about 660 jobs (7%)<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Layoffs come amid the company&#x27;s shift to AI.</p>
+              <p><strong>Why it matters:</strong> More competition for remote roles.</p>
+              <p class="story-meta">Boston Globe, 6 Oct 2026</p>
+            </li>
+        </ol>
+      </section>
+      <section class="news-group" aria-labelledby="news-kenya">
+        <h3 id="news-kenya">Kenya fintech</h3>
+        <ol class="stories" role="list">
+            <li class="story">
+              <h4 class="story-title"><a href="https://www.safaricom.co.ke/media-center-landing/press-releases/safaricom-gulfcap-investment-bank-open-shariah-compliant-investment-to-m-pesa-customers" target="_blank" rel="noopener noreferrer">Safaricom and GulfCap launch Ziidi Shari&#x27;ah Money Market Fund in M-PESA<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Shari&#x27;ah-compliant money market fund inside M-PESA, from KES 100.</p>
+              <p><strong>Why it matters:</strong> M-PESA is growing into savings/investment, meaning more fintech engineering work.</p>
+              <p class="story-meta">Safaricom, 6 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://techweez.com/2026/10/02/ai-pay-m-pesa-my-oneapp/" target="_blank" rel="noopener noreferrer">M-PESA AI Pay reads receipts to fill in payments<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Reads receipts (even handwritten) to fill in the Till/PayBill number and amount.</p>
+              <p><strong>Why it matters:</strong> A real AI-in-payments example for interviews.</p>
+              <p class="story-meta">Techweez, 2 Oct 2026</p>
+            </li>
+        </ol>
+      </section>
     </div>
-    
-    <section class="ngroup ng-ai" aria-labelledby="ng-ai">
-      <h3 id="ng-ai"><span class="dot"></span>AI and LLMs<span class="gcount">4</span></h3>
-      <div class="stories">
-      <article class="story">
-        <h4><a href="https://mistral.ai/news/mistral-large-4/" target="_blank" rel="noopener noreferrer">Mistral launches Mistral Large 4</a></h4>
-        <p class="summ">1T-param multimodal open-weight model (49B active); preview API live, weights by end of October.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>Frontier open model he could self-host for agent work.</p>
-        <div class="story-foot"><span>Mistral blog · 6 Oct 2026</span><a class="readlink" href="https://mistral.ai/news/mistral-large-4/" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      <article class="story">
-        <h4><a href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/" target="_blank" rel="noopener noreferrer">Google releases EmbeddingGemma 2</a></h4>
-        <p class="summ">Open 740M-param Apache 2.0 multimodal embedding model that runs on-device.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>Usable now in RAG/retrieval.</p>
-        <div class="story-foot"><span>Google blog · 6 Oct 2026</span><a class="readlink" href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      <article class="story">
-        <h4><a href="https://reflection.ai/blog/introducing-beam" target="_blank" rel="noopener noreferrer">Reflection AI introduces Beam</a></h4>
-        <p class="summ">501B-param (23B active) model for coding/agentic workloads; Apache 2.0 weights promised this month.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>Another open option built for agents.</p>
-        <div class="story-foot"><span>Reflection blog · 5 Oct 2026</span><a class="readlink" href="https://reflection.ai/blog/introducing-beam" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      <article class="story">
-        <h4><a href="https://about.gitlab.com/press/releases/2026-10-06-gitlab-announces-the-foundation-for-the-governed-software-factory/" target="_blank" rel="noopener noreferrer">GitLab launches a &#x27;governed software factory&#x27; for AI agents</a></h4>
-        <p class="summ">Goal-driven agent flows in Duo CLI and AI usage controls; Orbit GA next month.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>Governing coding agents in production is becoming an in-demand skill.</p>
-        <div class="story-foot"><span>GitLab press release · 6 Oct 2026</span><a class="readlink" href="https://about.gitlab.com/press/releases/2026-10-06-gitlab-announces-the-foundation-for-the-governed-software-factory/" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      </div>
-    </section>
-    <section class="ngroup ng-startups" aria-labelledby="ng-startups">
-      <h3 id="ng-startups"><span class="dot"></span>Startups and funding<span class="gcount">4</span></h3>
-      <div class="stories">
-      <article class="story">
-        <h4><a href="https://techcabal.com/2026/10/06/cloud9-raises-500000-from-alliance/" target="_blank" rel="noopener noreferrer">Nairobi fintech Cloud9 raises $500K from Alliance</a></h4>
-        <p class="summ">Pre-seed now $1M (Techstars NYC in); multi-currency business accounts settling cross-border in stablecoins, paying out to mobile money.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>Close to his Kwara fintech work.</p>
-        <div class="story-foot"><span>TechCabal · 6 Oct 2026</span><a class="readlink" href="https://techcabal.com/2026/10/06/cloud9-raises-500000-from-alliance/" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      <article class="story">
-        <h4><a href="https://techcrunch.com/2026/10/06/ex-ramp-engineers-raise-20m-for-platform-melius-after-scrapping-their-first-product/" target="_blank" rel="noopener noreferrer">Ex-Ramp engineers raise $25M for Melius</a></h4>
-        <p class="summ">$20M Series A led by CRV + $5M seed for an agents lab for AI ad creative.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>Well-funded agentic AI startup likely hiring.</p>
-        <div class="story-foot"><span>TechCrunch · 6 Oct 2026</span><a class="readlink" href="https://techcrunch.com/2026/10/06/ex-ramp-engineers-raise-20m-for-platform-melius-after-scrapping-their-first-product/" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      <article class="story">
-        <h4><a href="https://disruptafrica.com/2026/10/07/sas-vambo-ai-releases-language-model-trained-for-12-african-languages/" target="_blank" rel="noopener noreferrer">Vambo AI releases MORENA</a></h4>
-        <p class="summ">Open 1.5B model trained on 12 African languages, including Kiswahili.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>Cheap base model to fine-tune for Kenyan products.</p>
-        <div class="story-foot"><span>Disrupt Africa · 7 Oct 2026</span><a class="readlink" href="https://disruptafrica.com/2026/10/07/sas-vambo-ai-releases-language-model-trained-for-12-african-languages/" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      <article class="story">
-        <h4><a href="https://thecondia.com/satlyt-raise-8m-for-data-centres/" target="_blank" rel="noopener noreferrer">Satlyt raises $8M seed</a></h4>
-        <p class="summ">Nairobi + Sunnyvale company running AI on satellites (TLCOM, Antler, Enza); growing its engineering team.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>Nairobi deep-tech company hiring engineers.</p>
-        <div class="story-foot"><span>The Condia · 2 Oct 2026</span><a class="readlink" href="https://thecondia.com/satlyt-raise-8m-for-data-centres/" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      </div>
-    </section>
-    <section class="ngroup ng-hiring" aria-labelledby="ng-hiring">
-      <h3 id="ng-hiring"><span class="dot"></span>Hiring market<span class="gcount">2</span></h3>
-      <div class="stories">
-      <article class="story">
-        <h4><a href="https://www.thestar.com.my/tech/tech-news/2026/10/06/as-the-coding-boom-fades-computer-science-grads-focus-on-ai-skills-in-choppy-job-market" target="_blank" rel="noopener noreferrer">AP: junior coding jobs shrink as CS grads pivot to AI skills</a></h4>
-        <p class="summ">Smaller firms are hiring for AI skills as the coding boom fades.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>Supports pitching himself as an AI integrator.</p>
-        <div class="story-foot"><span>The Star (AP) · 6 Oct 2026</span><a class="readlink" href="https://www.thestar.com.my/tech/tech-news/2026/10/06/as-the-coding-boom-fades-computer-science-grads-focus-on-ai-skills-in-choppy-job-market" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      <article class="story">
-        <h4><a href="https://www.bostonglobe.com/2026/10/06/business/hubspot-layoffs/" target="_blank" rel="noopener noreferrer">HubSpot cutting about 660 jobs (7%)</a></h4>
-        <p class="summ">Layoffs come amid the company&#x27;s shift to AI.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>More competition for remote roles.</p>
-        <div class="story-foot"><span>Boston Globe · 6 Oct 2026</span><a class="readlink" href="https://www.bostonglobe.com/2026/10/06/business/hubspot-layoffs/" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      </div>
-    </section>
-    <section class="ngroup ng-kenya" aria-labelledby="ng-kenya">
-      <h3 id="ng-kenya"><span class="dot"></span>Kenya fintech<span class="gcount">2</span></h3>
-      <div class="stories">
-      <article class="story">
-        <h4><a href="https://www.safaricom.co.ke/media-center-landing/press-releases/safaricom-gulfcap-investment-bank-open-shariah-compliant-investment-to-m-pesa-customers" target="_blank" rel="noopener noreferrer">Safaricom and GulfCap launch Ziidi Shari&#x27;ah Money Market Fund in M-PESA</a></h4>
-        <p class="summ">Shari&#x27;ah-compliant money market fund inside M-PESA, from KES 100.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>M-PESA is growing into savings/investment, meaning more fintech engineering work.</p>
-        <div class="story-foot"><span>Safaricom · 6 Oct 2026</span><a class="readlink" href="https://www.safaricom.co.ke/media-center-landing/press-releases/safaricom-gulfcap-investment-bank-open-shariah-compliant-investment-to-m-pesa-customers" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      <article class="story">
-        <h4><a href="https://techweez.com/2026/10/02/ai-pay-m-pesa-my-oneapp/" target="_blank" rel="noopener noreferrer">M-PESA AI Pay reads receipts to fill in payments</a></h4>
-        <p class="summ">Reads receipts (even handwritten) to fill in the Till/PayBill number and amount.</p>
-        <p class="why"><span class="lbl lbl-why">Why it matters</span>A real AI-in-payments example for interviews.</p>
-        <div class="story-foot"><span>Techweez · 2 Oct 2026</span><a class="readlink" href="https://techweez.com/2026/10/02/ai-pay-m-pesa-my-oneapp/" target="_blank" rel="noopener noreferrer">Read story <span aria-hidden="true">↗</span></a></div>
-      </article>
-      </div>
-    </section>
-  </div>
-</section>
+  </section>
+</main>
 
-<footer class="wrap">
-  <h2>Sources checked</h2>
-  <p>Remotive API (returned only 17 jobs) · RemoteOK API · Himalayas API, including searches filtered to Kenya · Jobicy API · We Work Remotely RSS · Working Nomads · employer job pages on Greenhouse, Lever and Recruitee · web search (DOU.ua, OpenTrain, Jobgether).</p>
-  <p>Of about 1,060 postings pulled: about 150 were more than 30 days old, about 250 were senior/lead/manager titles, about 400 weren't target roles, and most of the rest were limited to the US, EU or LATAM, or to time zones that exclude UTC+3.</p>
-  <p>Today in tech: Mistral, Google, Reflection AI, GitLab, TechCabal, TechCrunch, Disrupt Africa, The Condia, The Star (AP), Boston Globe, Safaricom, Techweez.</p>
-  <p>"Evergreen" means an always-open listing that gets reposted. The date shown is when it was last listed, not when the job was created. Some stretch roles are evergreen listings too.</p>
+<footer class="site-footer">
+  <div class="wrap">
+    <h2>Sources and method</h2>
+    <dl>
+      <dt>Job sources</dt>
+      <dd>Remotive API (returned only 17 jobs), RemoteOK API, Himalayas API (including searches filtered to Kenya), Jobicy API, We Work Remotely RSS, Working Nomads, employer job pages on Greenhouse, Lever and Recruitee, and web search (DOU.ua, OpenTrain, Jobgether).</dd>
+      <dt>Filtering</dt>
+      <dd>Of about 1,060 postings pulled, about 150 were more than 30 days old, about 250 had senior, lead or manager titles, about 400 weren’t target roles, and most of the rest were limited to the US, EU or LATAM, or to time zones that exclude UTC+3.</dd>
+      <dt>News sources</dt>
+      <dd>Mistral, Google, Reflection AI, GitLab, TechCabal, TechCrunch, Disrupt Africa, The Condia, The Star (AP), Boston Globe, Safaricom, Techweez.</dd>
+    </dl>
+  </div>
 </footer>
 
 <script>
-(function(){
-  var cards=[].slice.call(document.querySelectorAll('.card'));
-  var chips=[].slice.call(document.querySelectorAll('.chip'));
-  var q=document.getElementById('q'), status=document.getElementById('status'), empty=document.getElementById('empty');
-  var filter='all';
-  var names={all:'',top:'Top fit',evergreen:'Evergreen',stretch:'Stretch'};
-  function apply(){
-    var term=q.value.trim().toLowerCase(), shown=0;
-    cards.forEach(function(c){
-      var ok=(filter==='all'||c.dataset.tier===filter)&&(!term||c.dataset.search.indexOf(term)!==-1);
-      c.hidden=!ok; if(ok) shown++;
+(function () {
+  var jobs = [].slice.call(document.querySelectorAll('.job'));
+  var groups = [].slice.call(document.querySelectorAll('.tier'));
+  var buttons = [].slice.call(document.querySelectorAll('.segmented button'));
+  var input = document.getElementById('job-search');
+  var status = document.getElementById('result-status');
+  var empty = document.getElementById('empty');
+  var emptyText = document.getElementById('empty-text');
+  var labels = { all: '', top: 'Top fit', evergreen: 'Evergreen', stretch: 'Stretch' };
+  var filter = 'all';
+
+  function apply() {
+    var term = input.value.trim().toLowerCase();
+    var shown = 0;
+    jobs.forEach(function (job) {
+      var match = (filter === 'all' || job.dataset.tier === filter) &&
+                  (!term || job.dataset.search.indexOf(term) !== -1);
+      job.hidden = !match;
+      if (match) shown++;
     });
-    empty.style.display=shown?'none':'block';
-    status.textContent='Showing '+shown+' of '+cards.length+' roles'+(filter!=='all'?' · '+names[filter]:'')+(term?' · matching "'+q.value.trim()+'"':'');
+    groups.forEach(function (g) {
+      g.hidden = !g.querySelector('.job:not([hidden])');
+    });
+    var scope = filter === 'all' ? '' : ' in ' + labels[filter];
+    var query = term ? ' matching \u201c' + input.value.trim() + '\u201d' : '';
+    status.textContent = shown === jobs.length ? 'All ' + jobs.length + ' roles'
+      : shown + ' of ' + jobs.length + ' roles' + scope + query;
+    empty.hidden = shown !== 0;
+    if (shown === 0) emptyText.textContent = term
+      ? 'Nothing matches that search' + scope + '. Try a broader term, such as a language or company name.'
+      : 'No roles in this group.';
   }
-  chips.forEach(function(ch){
-    ch.addEventListener('click',function(){
-      filter=ch.dataset.filter;
-      chips.forEach(function(x){x.setAttribute('aria-pressed',x===ch?'true':'false');});
-      apply();
-    });
+
+  function setFilter(value) {
+    filter = value;
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === value)); });
+    apply();
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setFilter(b.dataset.filter); });
   });
-  q.addEventListener('input',apply);
-  var navLinks=[].slice.call(document.querySelectorAll('.secnav a'));
-  function setActive(id){navLinks.forEach(function(a){a.classList.toggle('active',a.dataset.sec===id);});}
-  function spy(){
-    var news=document.getElementById('news');
-    var atBottom=(window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight-4;
-    setActive((news.getBoundingClientRect().top<=window.innerHeight*0.4||atBottom)?'news':'jobs');
+  input.addEventListener('input', apply);
+  input.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape' && input.value) { input.value = ''; apply(); }
+  });
+  document.getElementById('clear-filters').addEventListener('click', function () {
+    input.value = '';
+    setFilter('all');
+    input.focus();
+  });
+
+  // Section nav: mark the section currently in view.
+  var navLinks = [].slice.call(document.querySelectorAll('.section-nav a'));
+  var news = document.getElementById('news');
+  function markCurrent() {
+    var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    var current = (news.getBoundingClientRect().top <= window.innerHeight * 0.4 || atEnd) ? 'news' : 'jobs';
+    navLinks.forEach(function (a) {
+      if (a.dataset.section === current) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
   }
-  window.addEventListener('scroll',spy,{passive:true});
-  window.addEventListener('hashchange',spy);
-  spy();
+  window.addEventListener('scroll', markCurrent, { passive: true });
+  window.addEventListener('hashchange', markCurrent);
+  markCurrent();
+  apply();
 })();
 </script>
 </body>
