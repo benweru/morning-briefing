@@ -32,9 +32,35 @@
   --ink-muted: #57544d;
   --rule: #e2ded5;          /* decorative hairlines */
   --rule-strong: #85817a;   /* control borders, >= 3:1 on paper */
+  --rule-jobs: #e3d9c8;     /* hairlines on the warm jobs band */
+  --rule-news: #d3dbe2;     /* hairlines on the cool news band */
+  --rule-appendix: #d6d3cb; /* hairlines on the appendix band */
   --accent: #1f4e8c;        /* links + primary actions */
   --accent-strong: #163a69; /* hover / pressed */
   --accent-wash: #eef2f8;   /* hover fill on light controls */
+
+  /* Wayfinding colour. Every hue below has one job; all text uses pass AA (>= 4.5:1)
+     on every band they appear on. Values are muted (low chroma, ~L35) so they read as
+     ink, not decoration. */
+  /* Section bands: full-bleed background tints that tell you which part you're in. */
+  --band-jobs: #f7f1e6;      /* Jobs section: light warm tint */
+  --band-news: #edf2f6;      /* Today in tech: light cool tint */
+  --band-appendix: #ecebe6;  /* Dropped roles appendix: quiet neutral */
+  /* Section identity: opening rule, eyebrow label, active nav indicator. */
+  --sec-jobs: #7a4520;       /* warm umber, pairs with --band-jobs */
+  --sec-news: #1f5470;       /* cool deep blue-teal, pairs with --band-news */
+  /* Job tiers: heading rule, row marker, filter swatch. */
+  --tier-top: #2e6a3e;       /* muted green = strongest match */
+  --tier-evergreen: #4a5870; /* slate = always-open, neutral */
+  --tier-stretch: #82560e;   /* ochre = reach, proceed with care */
+  /* Fit / gaps lead-ins on each role. */
+  --fit: var(--tier-top);    /* green = matches his CV (same meaning as Top fit) */
+  --gap: #9a3d22;            /* rust = missing skill or requirement */
+  /* News groups: one hue per topic, same lightness and low chroma so they harmonise. */
+  --news-ai: #3f4c88;        /* indigo: AI and LLMs */
+  --news-startups: #1d6561;  /* teal: startups and funding */
+  --news-hiring: #6c4570;    /* plum: hiring market */
+  --news-kenya: #8a4a2c;     /* terracotta: Kenya fintech */
 
   --radius: 2px;
   --measure: 68ch;
@@ -83,6 +109,8 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
   position: sticky; top: 0; z-index: 10;
   background: var(--paper); border-bottom: 1px solid var(--rule);
 }
+.section-nav[data-current="jobs"] { background: var(--band-jobs); }
+.section-nav[data-current="news"] { background: var(--band-news); }
 .section-nav ul { display: flex; gap: var(--s-5); height: var(--nav-h); }
 .section-nav a {
   display: flex; align-items: center; height: 100%;
@@ -90,17 +118,24 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
   border-bottom: 2px solid transparent; margin-bottom: -1px;
 }
 .section-nav a:hover { color: var(--ink); }
-.section-nav a[aria-current="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.section-nav a { --sec: var(--accent); }
+.section-nav a[data-section="jobs"] { --sec: var(--sec-jobs); }
+.section-nav a[data-section="news"] { --sec: var(--sec-news); }
+.section-nav a[aria-current="true"] { color: var(--sec); border-bottom: 3px solid var(--sec); margin-bottom: -1px; }
 .section-nav .n { font-weight: 400; margin-left: var(--s-2); color: var(--ink-muted); }
 
 /* ---------- Sections ---------- */
-.section { padding-block: var(--s-7) var(--s-6); scroll-margin-top: var(--nav-h); }
-.section + .section { border-top: 1px solid var(--rule); }
+.section { padding-block: var(--s-7) var(--s-6); scroll-margin-top: var(--nav-h); border-top: 4px solid var(--sec); }
+.section-jobs { --sec: var(--sec-jobs); background: var(--band-jobs); padding-bottom: 0; }
+.section-news { --sec: var(--sec-news); background: var(--band-news); }
+.section-head .eyebrow { font-size: var(--fs-sm); font-weight: 600; color: var(--sec); margin-bottom: var(--s-2); }
 .section-head { max-width: var(--measure); margin-bottom: var(--s-5); }
+.section-head h2 { color: var(--ink); }
 .section-head h2 { font-size: var(--fs-xl); letter-spacing: -0.005em; }
 .section-head p { margin-top: var(--s-2); color: var(--ink-muted); }
 
 /* ---------- Controls ---------- */
+.section-jobs .controls { border-color: var(--rule-jobs); }
 .controls {
   display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
   gap: var(--s-4); padding-block: var(--s-4); border-block: 1px solid var(--rule);
@@ -121,6 +156,12 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 .segmented button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); position: relative; }
 .segmented button:focus-visible { position: relative; z-index: 1; }
 .segmented .n { font-weight: 400; margin-left: var(--s-1); }
+.swatch { display: inline-block; width: 10px; height: 10px; margin-right: var(--s-2); background: var(--tier); flex: none; }
+.segmented button { display: inline-flex; align-items: center; }
+.segmented button[aria-pressed="true"] .swatch { box-shadow: 0 0 0 1px var(--paper); }
+[data-filter="top"], .tier-top, .job[data-tier="top"] { --tier: var(--tier-top); }
+[data-filter="evergreen"], .tier-evergreen, .job[data-tier="evergreen"] { --tier: var(--tier-evergreen); }
+[data-filter="stretch"], .tier-stretch, .job[data-tier="stretch"] { --tier: var(--tier-stretch); }
 .search { flex: 0 1 320px; }
 .search input {
   width: 100%; min-height: 40px; padding: 0 var(--s-3);
@@ -133,17 +174,25 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 
 /* ---------- Job tiers & rows ---------- */
 .tier { margin-top: var(--s-6); }
-.tier-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-1) var(--s-4); padding-bottom: var(--s-3); border-bottom: 1px solid var(--ink); }
-.tier-head h3 { font-size: var(--fs-lg); }
+.tier-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-1) var(--s-4); padding: var(--s-2) 0 var(--s-3) var(--s-3); border-left: 6px solid var(--tier); border-bottom: 2px solid var(--tier); }
+.tier-head h3 { font-size: var(--fs-lg); color: var(--tier); }
 .tier-head .count { font-family: var(--font-sans); font-size: var(--fs-base); font-weight: 400; color: var(--ink-muted); margin-left: var(--s-1); }
 .tier-head p { font-size: var(--fs-sm); color: var(--ink-muted); }
+.section-jobs .job { border-bottom-color: var(--rule-jobs); }
 .job {
   display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) 176px;
   gap: var(--s-6); padding-block: var(--s-5); border-bottom: 1px solid var(--rule);
 }
 .job-title { font-size: var(--fs-md); }
+.tier-tag { display: flex; align-items: center; font-size: var(--fs-sm); font-weight: 600; color: var(--tier); margin-bottom: var(--s-2); }
 .job-company { font-weight: 600; color: var(--ink-muted); margin-top: var(--s-1); margin-bottom: var(--s-3); }
 .job-note + .job-note { margin-top: var(--s-2); }
+.job-note strong { font-weight: 700; }
+.note-fit strong { color: var(--fit); }
+.note-gap strong { color: var(--gap); }
+.note-fit, .note-gap { padding-left: var(--s-3); border-left: 2px solid var(--note); }
+.note-fit { --note: var(--fit); }
+.note-gap { --note: var(--gap); }
 .job-facts { display: grid; gap: var(--s-2); font-size: var(--fs-sm); align-content: start; }
 .job-facts div { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: var(--s-3); }
 .job-facts dt { font-weight: 600; color: var(--ink-muted); }
@@ -167,7 +216,8 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 .link-button:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 
 /* ---------- Dropped roles ---------- */
-.dropped { margin-top: var(--s-6); border-top: 1px solid var(--ink); scroll-margin-top: var(--nav-h); }
+.appendix { background: var(--band-appendix); border-top: 1px solid var(--rule-strong); margin-top: var(--s-7); padding-block: var(--s-2) var(--s-5); }
+.dropped { scroll-margin-top: var(--nav-h); }
 .dropped summary {
   display: grid; grid-template-columns: 1ch auto minmax(0, 1fr); align-items: baseline; gap: var(--s-1) var(--s-3); padding-block: var(--s-4);
   cursor: pointer; list-style: none;
@@ -178,17 +228,21 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 .dropped summary h3 { font-size: var(--fs-lg); display: inline; }
 .dropped summary span { font-size: var(--fs-sm); color: var(--ink-muted); }
 .dropped table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
-.dropped th, .dropped td { text-align: left; vertical-align: top; padding: var(--s-3) var(--s-4) var(--s-3) 0; border-top: 1px solid var(--rule); }
+.dropped th, .dropped td { text-align: left; vertical-align: top; padding: var(--s-3) var(--s-4) var(--s-3) 0; border-top: 1px solid var(--rule-appendix); }
 .dropped thead th { font-weight: 600; color: var(--ink-muted); border-top: 0; padding-top: 0; }
 .dropped tbody th { font-weight: 600; }
 .dropped td:last-child, .dropped th:last-child { padding-right: 0; }
 
 /* ---------- News ---------- */
-.news-group { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: var(--s-6); padding-block: var(--s-5); border-top: 1px solid var(--ink); }
-.news-group h3 { font-size: var(--fs-lg); }
+.news-group { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: var(--s-6); padding-block: var(--s-5); border-top: 3px solid var(--group); }
+.news-group h3 { font-size: var(--fs-lg); color: var(--group); }
+.ng-ai { --group: var(--news-ai); }
+.ng-startups { --group: var(--news-startups); }
+.ng-hiring { --group: var(--news-hiring); }
+.ng-kenya { --group: var(--news-kenya); }
 .stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--s-6); }
 .story { padding-bottom: var(--s-5); max-width: var(--measure); }
-.story:nth-child(n+3) { padding-top: var(--s-5); border-top: 1px solid var(--rule); }
+.story:nth-child(n+3) { padding-top: var(--s-5); border-top: 1px solid var(--rule-news); }
 .story-title { font-size: var(--fs-md); margin-bottom: var(--s-2); }
 .story-title a { color: var(--ink); text-decoration: none; }
 .story-title a:hover { color: var(--accent); text-decoration: underline; }
@@ -196,7 +250,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 .story-meta { font-size: var(--fs-sm); color: var(--ink-muted); }
 
 /* ---------- Footer ---------- */
-.site-footer { border-top: 2px solid var(--ink); padding-block: var(--s-6) var(--s-7); font-size: var(--fs-sm); color: var(--ink-muted); }
+.site-footer { border-top: 2px solid var(--ink); background: var(--paper); padding-block: var(--s-6) var(--s-7); font-size: var(--fs-sm); color: var(--ink-muted); }
 .site-footer h2 { font-size: var(--fs-lg); color: var(--ink); margin-bottom: var(--s-3); }
 .site-footer dl { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: var(--s-2) var(--s-5); max-width: 880px; }
 .site-footer dt { font-weight: 600; color: var(--ink); }
@@ -216,9 +270,9 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
   .segmented button { flex: 1 1 auto; padding: 0 var(--s-3); }
   .job { grid-template-columns: 1fr; gap: var(--s-4); }
   .stories { grid-template-columns: 1fr; }
-  .story:nth-child(n+2) { padding-top: var(--s-5); border-top: 1px solid var(--rule); }
+  .story:nth-child(n+2) { padding-top: var(--s-5); border-top: 1px solid var(--rule-news); }
   .dropped thead { display: none; }
-  .dropped tr { display: block; padding-block: var(--s-3); border-top: 1px solid var(--rule); }
+  .dropped tr { display: block; padding-block: var(--s-3); border-top: 1px solid var(--rule-appendix); }
   .dropped th, .dropped td { display: block; border: 0; padding: 0; }
   .dropped td { color: var(--ink-muted); }
   .dropped td[data-label="Reason"] { color: var(--ink); margin-top: var(--s-1); }
@@ -244,7 +298,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
   </div>
 </header>
 
-<nav class="section-nav" aria-label="Sections">
+<nav class="section-nav" aria-label="Sections" data-current="jobs">
   <div class="wrap">
     <ul role="list">
       <li><a href="#jobs" data-section="jobs" aria-current="true">Jobs<span class="n">10</span></a></li>
@@ -254,9 +308,10 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 </nav>
 
 <main>
-  <section id="jobs" class="section" aria-labelledby="jobs-heading" tabindex="-1">
+  <section id="jobs" class="section section-jobs" aria-labelledby="jobs-heading" tabindex="-1">
     <div class="wrap">
       <header class="section-head">
+        <p class="eyebrow">Part one: Jobs</p>
         <h2 id="jobs-heading">Remote roles open to Kenya</h2>
         <p>Matched to Ben Maina’s CV: Python APIs, LLM integrations, React/TypeScript, PostgreSQL. Each posting was checked on the employer’s careers page or the board that hosts it on Oct 7, 2026, 9:30 PM EAT. Location rules and salaries are quoted as the source showed them.</p>
       </header>
@@ -266,9 +321,9 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
           <legend>Show</legend>
           <div class="segmented">
             <button type="button" data-filter="all" aria-pressed="true">All<span class="n">10</span></button>
-            <button type="button" data-filter="top" aria-pressed="false">Top fit<span class="n">3</span></button>
-            <button type="button" data-filter="evergreen" aria-pressed="false">Evergreen<span class="n">2</span></button>
-            <button type="button" data-filter="stretch" aria-pressed="false">Stretch<span class="n">5</span></button>
+            <button type="button" data-filter="top" aria-pressed="false"><span class="swatch" aria-hidden="true"></span>Top fit<span class="n">3</span></button>
+            <button type="button" data-filter="evergreen" aria-pressed="false"><span class="swatch" aria-hidden="true"></span>Evergreen<span class="n">2</span></button>
+            <button type="button" data-filter="stretch" aria-pressed="false"><span class="swatch" aria-hidden="true"></span>Stretch<span class="n">5</span></button>
           </div>
         </fieldset>
         <div class="search">
@@ -279,7 +334,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
       <p class="result-status" id="result-status" role="status" aria-live="polite">All 10 roles</p>
 
       
-      <section class="tier" data-group="top" aria-labelledby="tier-top">
+      <section class="tier tier-top" data-group="top" aria-labelledby="tier-top">
         <header class="tier-head">
           <h3 id="tier-top">Top fit <span class="count">3</span></h3>
           <p>Junior-friendly, open to Kenya, and close to Ben’s current work.</p>
@@ -287,10 +342,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         <ol class="jobs" role="list">
         <li class="job" data-tier="top" data-search="graduate software engineer, open source and linux, canonical ubuntu canonical home based - worldwide (teams aligned to emea/apac/amer time zones) 2025 and 2026 graduates; &quot;outstanding results in your academic career&quot; built for 2025/2026 cs graduates, and python is one of canonical&#x27;s main languages. very competitive process with a long written application and assessments. they put weight on academic results.">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Top fit</p>
             <h4 class="job-title">Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu</h4>
             <p class="job-company">Canonical</p>
-            <p class="job-note"><strong>Fit.</strong> Built for 2025/2026 CS graduates, and Python is one of Canonical&#x27;s main languages.</p>
-            <p class="job-note"><strong>Gaps.</strong> Very competitive process with a long written application and assessments. They put weight on academic results.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Built for 2025/2026 CS graduates, and Python is one of Canonical&#x27;s main languages.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Very competitive process with a long written application and assessments. They put weight on academic results.</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>Home based - Worldwide (teams aligned to EMEA/APAC/AMER time zones)</dd></div>
@@ -305,10 +361,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         </li>
         <li class="job" data-tier="top" data-search="associate forward deployed engineer micro1 53 listed countries including kenya (ke); &quot;this role is not worldwide&quot; entry level; basic python, sql, apis, git entry-level data loading and integration work in python, sql and apis. matches his chumz data-ops and kwara integrations work. part-time contract (20+ hrs/week), not salaried. checked on opentrain&#x27;s copy of the listing because micro1&#x27;s own page wouldn&#x27;t load.">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Top fit</p>
             <h4 class="job-title">Associate Forward Deployed Engineer</h4>
             <p class="job-company">micro1</p>
-            <p class="job-note"><strong>Fit.</strong> Entry-level data loading and integration work in Python, SQL and APIs. Matches his Chumz data-ops and Kwara integrations work.</p>
-            <p class="job-note"><strong>Gaps.</strong> Part-time contract (20+ hrs/week), not salaried. Checked on OpenTrain&#x27;s copy of the listing because micro1&#x27;s own page wouldn&#x27;t load.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Entry-level data loading and integration work in Python, SQL and APIs. Matches his Chumz data-ops and Kwara integrations work.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Part-time contract (20+ hrs/week), not salaried. Checked on OpenTrain&#x27;s copy of the listing because micro1&#x27;s own page wouldn&#x27;t load.</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>53 listed countries including Kenya (KE); &quot;this role is not worldwide&quot;</dd></div>
@@ -323,10 +380,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         </li>
         <li class="job" data-tier="top" data-search="junior ai automation engineer (ceo office) spendbase &quot;kyiv, lviv, abroad, remote&quot; (kenya not named) 0-2 years; claude code + mcp, langchain/n8n-type agents, apis/webhooks, basic python/js, english b2+ closest match to his current work: ai agents (claude code, mcp, langchain/n8n-type), webhooks and api integrations at a fintech startup, 0–2 years. google workspace automation isn&#x27;t on his cv. kenya isn&#x27;t named, so confirm that &quot;abroad&quot; includes it.">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Top fit</p>
             <h4 class="job-title">Junior AI Automation Engineer (CEO Office)</h4>
             <p class="job-company">Spendbase</p>
-            <p class="job-note"><strong>Fit.</strong> Closest match to his current work: AI agents (Claude Code, MCP, LangChain/n8n-type), webhooks and API integrations at a fintech startup, 0–2 years.</p>
-            <p class="job-note"><strong>Gaps.</strong> Google Workspace automation isn&#x27;t on his CV. Kenya isn&#x27;t named, so confirm that &quot;abroad&quot; includes it.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Closest match to his current work: AI agents (Claude Code, MCP, LangChain/n8n-type), webhooks and API integrations at a fintech startup, 0–2 years.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Google Workspace automation isn&#x27;t on his CV. Kenya isn&#x27;t named, so confirm that &quot;abroad&quot; includes it.</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>&quot;Kyiv, Lviv, abroad, remote&quot; (Kenya not named)</dd></div>
@@ -341,7 +399,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         </li>
         </ol>
       </section>
-      <section class="tier" data-group="evergreen" aria-labelledby="tier-evergreen">
+      <section class="tier tier-evergreen" data-group="evergreen" aria-labelledby="tier-evergreen">
         <header class="tier-head">
           <h3 id="tier-evergreen">Evergreen listings <span class="count">2</span></h3>
           <p>Always-open listings that get reposted. The date shown is the latest relisting, not when the role was created.</p>
@@ -349,10 +407,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         <ol class="jobs" role="list">
         <li class="job" data-tier="evergreen" data-search="python engineer canonical home based - worldwide; &quot;remote python engineering roles in every time zone&quot; all levels of seniority; strong academics; linux experience a general python listing that hires at every level of seniority, in every time zone. linux (debian/ubuntu) experience isn&#x27;t on his cv. always-open listing that gets reposted, not a new job.">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Evergreen</p>
             <h4 class="job-title">Python Engineer</h4>
             <p class="job-company">Canonical</p>
-            <p class="job-note"><strong>Fit.</strong> A general Python listing that hires at every level of seniority, in every time zone.</p>
-            <p class="job-note"><strong>Gaps.</strong> Linux (Debian/Ubuntu) experience isn&#x27;t on his CV. Always-open listing that gets reposted, not a new job.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> A general Python listing that hires at every level of seniority, in every time zone.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Linux (Debian/Ubuntu) experience isn&#x27;t on his CV. Always-open listing that gets reposted, not a new job.</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>Home based - Worldwide; &quot;remote Python engineering roles in every time zone&quot;</dd></div>
@@ -367,10 +426,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         </li>
         <li class="job" data-tier="evergreen" data-search="fullstack software engineer amplemarket remote, emea/latam (himalayas lists kenya) not stated; wttj lists junior/mid/senior; &quot;we don&#x27;t require you to have experience in our stack&quot; fast-moving startup backed by y combinator. he has react and postgresql, and the posting says experience in their stack isn&#x27;t required. backend is ruby on rails, elasticsearch and redis. always-open listing (since 2022).">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Evergreen</p>
             <h4 class="job-title">Fullstack Software Engineer</h4>
             <p class="job-company">Amplemarket</p>
-            <p class="job-note"><strong>Fit.</strong> Fast-moving startup backed by Y Combinator. He has React and PostgreSQL, and the posting says experience in their stack isn&#x27;t required.</p>
-            <p class="job-note"><strong>Gaps.</strong> Backend is Ruby on Rails, Elasticsearch and Redis. Always-open listing (since 2022).</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Fast-moving startup backed by Y Combinator. He has React and PostgreSQL, and the posting says experience in their stack isn&#x27;t required.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Backend is Ruby on Rails, Elasticsearch and Redis. Always-open listing (since 2022).</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>Remote, EMEA/LATAM (Himalayas lists Kenya)</dd></div>
@@ -385,7 +445,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         </li>
         </ol>
       </section>
-      <section class="tier" data-group="stretch" aria-labelledby="tier-stretch">
+      <section class="tier tier-stretch" data-group="stretch" aria-labelledby="tier-stretch">
         <header class="tier-head">
           <h3 id="tier-stretch">Stretch <span class="count">5</span></h3>
           <p>Open to Kenya, but they ask for skills or experience that aren’t on Ben’s CV yet.</p>
@@ -393,10 +453,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         <ol class="jobs" role="list">
         <li class="job" data-tier="stretch" data-search="ai agent engineer sticker mule anywhere in the world (applicant countries list includes ke) not stated; &quot;experience building agents that run on their own&quot; matches his ai agent work, typescript and postgres. go, graphql and gcp aren&#x27;t on his cv. the pay suggests they want someone experienced. closes about oct 16.">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch</p>
             <h4 class="job-title">AI agent engineer</h4>
             <p class="job-company">Sticker Mule</p>
-            <p class="job-note"><strong>Fit.</strong> Matches his AI agent work, TypeScript and Postgres.</p>
-            <p class="job-note"><strong>Gaps.</strong> Go, GraphQL and GCP aren&#x27;t on his CV. The pay suggests they want someone experienced. Closes about Oct 16.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Matches his AI agent work, TypeScript and Postgres.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Go, GraphQL and GCP aren&#x27;t on his CV. The pay suggests they want someone experienced. Closes about Oct 16.</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>Anywhere in the World (applicant countries list includes KE)</dd></div>
@@ -411,10 +472,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         </li>
         <li class="job" data-tier="stretch" data-search="backend engineer - wallets (100% remote worldwide) tether 100% remote worldwide not stated in years; recruitee tags it &quot;experienced&quot;; &quot;very proficient in node.js&quot; fintech backend with microservices and apis, close to his kwara work. wants someone &quot;very proficient in node.js&quot;, and his backend work is in python. tagged &quot;experienced&quot;.">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch</p>
             <h4 class="job-title">Backend Engineer - Wallets (100% Remote Worldwide)</h4>
             <p class="job-company">Tether</p>
-            <p class="job-note"><strong>Fit.</strong> Fintech backend with microservices and APIs, close to his Kwara work.</p>
-            <p class="job-note"><strong>Gaps.</strong> Wants someone &quot;very proficient in Node.js&quot;, and his backend work is in Python. Tagged &quot;experienced&quot;.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Fintech backend with microservices and APIs, close to his Kwara work.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Wants someone &quot;very proficient in Node.js&quot;, and his backend work is in Python. Tagged &quot;experienced&quot;.</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>100% Remote Worldwide</dd></div>
@@ -429,10 +491,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         </li>
         <li class="job" data-tier="stretch" data-search="software developer ai coding steuart nutrition anywhere in the world; must overlap 4+ hrs/day with us eastern 3+ years professional builds integrations and automations with ai coding tools in js/ts or python, which fits how he works. asks for 3+ years (he has about 1). the 4-hour us eastern overlap means evenings in nairobi.">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch</p>
             <h4 class="job-title">Software Developer AI Coding</h4>
             <p class="job-company">Steuart Nutrition</p>
-            <p class="job-note"><strong>Fit.</strong> Builds integrations and automations with AI coding tools in JS/TS or Python, which fits how he works.</p>
-            <p class="job-note"><strong>Gaps.</strong> Asks for 3+ years (he has about 1). The 4-hour US Eastern overlap means evenings in Nairobi.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Builds integrations and automations with AI coding tools in JS/TS or Python, which fits how he works.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Asks for 3+ years (he has about 1). The 4-hour US Eastern overlap means evenings in Nairobi.</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>Anywhere in the World; must overlap 4+ hrs/day with US Eastern</dd></div>
@@ -447,10 +510,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         </li>
         <li class="job" data-tier="stretch" data-search="software engineer - python and k8s canonical home based - worldwide &quot;experienced python programmer&quot;; linux sysadmin, a public cloud, docker/k8s python matches. kubernetes, linux administration and public cloud aren&#x27;t on his cv. always-open listing.">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch</p>
             <h4 class="job-title">Software Engineer - Python and K8s</h4>
             <p class="job-company">Canonical</p>
-            <p class="job-note"><strong>Fit.</strong> Python matches.</p>
-            <p class="job-note"><strong>Gaps.</strong> Kubernetes, Linux administration and public cloud aren&#x27;t on his CV. Always-open listing.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Python matches.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Kubernetes, Linux administration and public cloud aren&#x27;t on his CV. Always-open listing.</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>Home based - Worldwide</dd></div>
@@ -465,10 +529,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         </li>
         <li class="job" data-tier="stretch" data-search="python software engineer - ubuntu hardware certification team canonical home based - emea (team centred in emea time zones) knowledge of python; linux; interest in test automation light python requirements, and an emea time zone that suits nairobi. work is hardware testing and test automation on linux. always-open listing.">
           <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch</p>
             <h4 class="job-title">Python Software Engineer - Ubuntu Hardware Certification Team</h4>
             <p class="job-company">Canonical</p>
-            <p class="job-note"><strong>Fit.</strong> Light Python requirements, and an EMEA time zone that suits Nairobi.</p>
-            <p class="job-note"><strong>Gaps.</strong> Work is hardware testing and test automation on Linux. Always-open listing.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Light Python requirements, and an EMEA time zone that suits Nairobi.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Work is hardware testing and test automation on Linux. Always-open listing.</p>
           </div>
           <dl class="job-facts">
             <div><dt>Location</dt><dd>Home based - EMEA (team centred in EMEA time zones)</dd></div>
@@ -489,8 +554,11 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
         <p><button type="button" class="link-button" id="clear-filters">Clear search and filters</button></p>
       </div>
 
+    </div>
+    <div class="appendix">
+      <div class="wrap">
       <details class="dropped">
-        <summary><h3>Dropped roles</h3> <span>23 reviewed closely, with the reason each was rejected</span></summary>
+        <summary><h3>Appendix: dropped roles</h3> <span>23 reviewed closely, with the reason each was rejected</span></summary>
         <table>
           <thead>
             <tr><th scope="col">Role</th><th scope="col">Company</th><th scope="col">Location as stated</th><th scope="col">Reason</th></tr>
@@ -637,17 +705,19 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
           </tbody>
         </table>
       </details>
+      </div>
     </div>
   </section>
 
-  <section id="news" class="section" aria-labelledby="news-heading" tabindex="-1">
+  <section id="news" class="section section-news" aria-labelledby="news-heading" tabindex="-1">
     <div class="wrap">
       <header class="section-head">
+        <p class="eyebrow">Part two: News</p>
         <h2 id="news-heading">Today in tech</h2>
         <p>12 stories from 2–7 October 2026, each with a note on why it matters for Ben.</p>
       </header>
       
-      <section class="news-group" aria-labelledby="news-ai">
+      <section class="news-group ng-ai" aria-labelledby="news-ai">
         <h3 id="news-ai">AI and LLMs</h3>
         <ol class="stories" role="list">
             <li class="story">
@@ -676,7 +746,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
             </li>
         </ol>
       </section>
-      <section class="news-group" aria-labelledby="news-startups">
+      <section class="news-group ng-startups" aria-labelledby="news-startups">
         <h3 id="news-startups">Startups and funding</h3>
         <ol class="stories" role="list">
             <li class="story">
@@ -705,7 +775,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
             </li>
         </ol>
       </section>
-      <section class="news-group" aria-labelledby="news-hiring">
+      <section class="news-group ng-hiring" aria-labelledby="news-hiring">
         <h3 id="news-hiring">Hiring market</h3>
         <ol class="stories" role="list">
             <li class="story">
@@ -722,7 +792,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
             </li>
         </ol>
       </section>
-      <section class="news-group" aria-labelledby="news-kenya">
+      <section class="news-group ng-kenya" aria-labelledby="news-kenya">
         <h3 id="news-kenya">Kenya fintech</h3>
         <ol class="stories" role="list">
             <li class="story">
@@ -816,6 +886,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
   function markCurrent() {
     var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
     var current = (news.getBoundingClientRect().top <= window.innerHeight * 0.4 || atEnd) ? 'news' : 'jobs';
+    document.querySelector('.section-nav').setAttribute('data-current', current);
     navLinks.forEach(function (a) {
       if (a.dataset.section === current) a.setAttribute('aria-current', 'true');
       else a.removeAttribute('aria-current');
