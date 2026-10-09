@@ -25,6 +25,7 @@ field empty (dropped roles only). If you can't confirm a posting is live, it doe
 | Build scripts (working copy) | `/workspace/build/` (`briefing_lib.py`, `verify_run.py`, `publish_run.py`, this file) |
 | Build scripts (versioned copy, synced on every publish) | `/workspace/briefing-site/build/` |
 | Python with Playwright + jsonschema | `/workspace/.pwvenv/bin/python` (uses system Chrome `/usr/bin/google-chrome`) |
+| Kenya jobs from the local search (written by Local Search Bot, read-only for this run) | `/workspace/shared/local-jobs/latest.json` (see section 3a) |
 
 If the box was reset:
 
@@ -171,6 +172,38 @@ For each story:
 Never use a story you only saw in a search snippet; open it first.
 List the publishers in `sources.news`.
 
+## 3a. Kenya jobs (no searching needed here)
+
+The page has a **Kenya jobs** section ("Part two", between the remote jobs and the news). This run
+does not search for it. Local Search Bot checks MyJobMag and LinkedIn for Nairobi roles each weekday
+at about 6:58 AM EAT and writes `/workspace/shared/local-jobs/latest.json` (directory mode 777, so
+any agent can write it):
+
+```jsonc
+{
+  "date": "2026-10-09",                          // YYYY-MM-DD; must equal today in EAT
+  "generated_at": "2026-10-09T06:58:00+03:00",
+  "sources_checked": ["myjobmag", "linkedin"],
+  "errors": [{"source": "linkedin", "message": "..."}],   // strings are accepted too
+  "jobs": [{"title": "...", "company": "...", "location": "...", "source": "myjobmag",
+            "url": "https://...", "posted": "...", "fit_note": "..."}]   // any field may be missing
+}
+```
+
+Rules (enforced in `briefing_lib.read_local_jobs` / `attach_local_jobs`):
+- `publish_run.py` reads the file only when the run is dated today, and uses its jobs only when its
+  `date` is today in EAT. If the file is missing, unreadable, stale or marked `"example": true`, the
+  section shows one line: "The local search didn't run today, so there are no Kenya jobs in this
+  briefing." Old jobs are never shown.
+- The result is snapshotted into the run file as `local_jobs` (`status: "ok"` with the jobs, or
+  `status: "not_run"` with a `reason`), so archive pages stay permanent. Runs without
+  `local_jobs` (the 2026-10-07 and 2026-10-08 runs as published) show no Kenya section.
+- Each job links to its own `url` (non-http URLs are dropped and shown as "no link given"); company,
+  location, source (MyJobMag / LinkedIn), posted and fit note appear only when present. Each entry
+  in `errors` becomes a small note naming the failed source. Nothing is added or rewritten.
+- **Never edit `latest.json` and never add Kenya jobs to the run file by hand.** If the section says
+  the search didn't run, that's the correct output; mention it to Ben instead.
+
 ## 4. Write the run file
 
 Save the file as `/workspace/briefing-site/data/runs/YYYY-MM-DD.json`, using today's date in EAT.
@@ -231,6 +264,10 @@ cd /workspace/briefing-site && git pull --ff-only
 /workspace/.pwvenv/bin/python /workspace/build/publish_run.py 2026-10-08
 ```
 
+The command is unchanged: the Kenya jobs file is picked up automatically. Optional flags:
+`--local-jobs PATH` (another file, for tests) and `--allow-example` (render a file marked
+`"example": true`; only allowed together with `--no-push`).
+
 Or do a dry run first, which builds and verifies but doesn't commit:
 
 ```bash
@@ -241,6 +278,7 @@ Or do a dry run first, which builds and verifies but doesn't commit:
 
 1. **Validates** the run against the rules in `briefing_lib.validate_run` and
    `data/run.schema.json`. It fills in ids and derived counts and writes them back into the file.
+   For a run dated today it also snapshots the Kenya jobs file into `local_jobs` (section 3a).
 2. **Diffs** against the newest earlier run by job id. Shortlisted roles that weren't on the previous
    shortlist get a **New** label. Roles on the previous shortlist that are missing now appear in
    "No longer listed since <date>", with this run's drop reason if there is one. The first ever run
@@ -259,7 +297,10 @@ Or do a dry run first, which builds and verifies but doesn't commit:
    - New labels and the no-longer-listed list match the diff;
    - filters, search, the empty state and Clear work;
    - "Past briefings" links work from the nav and footer, and archive rows and links resolve;
-   - colour tokens are exactly v3 and all text pairs pass WCAG AA (lowest is 5.68:1);
+   - the Kenya jobs section matches `local_jobs` (job count, links, error notes), or shows only the
+     "didn't run today" line; runs without `local_jobs` have no Kenya section;
+   - colour tokens are exactly v3 plus the three Kenya tokens (`--band-local #f0f2e8`,
+     `--sec-local #4d5a22`, `--rule-local #d9ddc8`) and all text pairs pass WCAG AA (lowest is 5.68:1);
    - only the v3 type sizes (14/16/18/22/30/44px) are used;
    - no console errors, no external requests, no overflow at 390px.
 
@@ -273,6 +314,10 @@ Or do a dry run first, which builds and verifies but doesn't commit:
 7. **Waits** until the live index, the archive page and the archive index match the local files
    byte for byte, then reports the latest Pages build commit. This usually takes under a minute;
    it times out at 15 minutes.
+8. **Prints the morning message** (also on `--no-push`) and saves it to
+   `/tmp/morning-briefing-summary-YYYY-MM-DD.txt`: the remote shortlist count with new/no longer
+   listed, the story count, a "Kenya jobs:" line (how many Nairobi roles and from which sources,
+   any source that failed, or "the local search didn't run today"), and the live link.
 
 ## 6. After publishing
 
@@ -281,9 +326,10 @@ Open the live URLs in the box browser and glance at:
 - the no-longer-listed note;
 - the archive row.
 
-Then report to Ben:
+Then report to Ben, starting from the printed morning message:
 - the shortlist, with what's new;
 - what dropped off, and why;
+- the Kenya jobs count (or that the local search didn't run today), exactly as the message says;
 - the live link.
 
 ## Troubleshooting
@@ -295,4 +341,5 @@ Then report to Ben:
 | Verification failure about colour tokens or type sizes | Someone changed the CSS in `briefing_lib.py`. Revert, or update `V3_COLOURS`/`TEXT_PAIRS` in `verify_run.py` deliberately, with new contrast checks. |
 | Every role shows **New** | The URLs differ from yesterday's (different host or path form). Use the same canonical posting URL. |
 | Pages wait times out | Check `gh api repos/benweru/morning-briefing/pages/builds/latest` (with `GH_TOKEN` exported) and the repo's Actions/Pages settings, then re-run the script; it skips the commit if nothing changed. |
+| Kenya section says the local search didn't run | Check the `[publish] Kenya jobs:` line for the reason (missing, stale date, unreadable, example). Don't edit the file; tell Ben, and Local Search Bot if it's missing or stale. If the file appears later the same morning, re-running `publish_run.py` for today refreshes the snapshot. |
 | Run for a past date | Works. `index.html` keeps showing the newest run; only that day's archive page and the archive index change. |

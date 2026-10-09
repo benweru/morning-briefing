@@ -4,6 +4,8 @@ Serves the repo at http://127.0.0.1:<port>/morning-briefing/ (the same sub-path 
 Pages uses), then checks index.html, archive/<date>/ and archive/:
   - HTTP 200, no console or page errors, no requests leaving the local server
   - counts match the run JSON (jobs, tiers, dropped, stories, groups, New labels, gone list)
+  - Kenya jobs section matches run["local_jobs"]: every job with a url is linked, or the single
+    'didn't run today' line is shown; no section on runs without a snapshot
   - every job / dropped / story URL from the JSON is linked; external links open in a new tab
   - 'Past briefings' links in nav and footer resolve; archive rows match data/runs, newest first
   - filters, search and the empty state still work
@@ -25,6 +27,8 @@ V3_COLOURS = {
     'band-news': '#edf2f6', 'band-appendix': '#ecebe6', 'sec-jobs': '#7a4520', 'sec-news': '#1f5470',
     'tier-top': '#2e6a3e', 'tier-evergreen': '#4a5870', 'tier-stretch': '#82560e', 'gap': '#9a3d22',
     'news-ai': '#3f4c88', 'news-startups': '#1d6561', 'news-hiring': '#6c4570', 'news-kenya': '#8a4a2c',
+    # Kenya jobs section (added 2026-10-08)
+    'band-local': '#f0f2e8', 'sec-local': '#4d5a22', 'rule-local': '#d9ddc8',
 }
 TEXT_PAIRS = [  # (foreground token, background token): every text colour on every background it is used on
     *[('ink', b) for b in ('paper', 'surface', 'band-jobs', 'band-news', 'band-appendix')],
@@ -34,11 +38,13 @@ TEXT_PAIRS = [  # (foreground token, background token): every text colour on eve
     ('tier-top', 'band-jobs'), ('tier-evergreen', 'band-jobs'), ('tier-stretch', 'band-jobs'), ('gap', 'band-jobs'),
     ('news-ai', 'band-news'), ('news-startups', 'band-news'), ('news-hiring', 'band-news'), ('news-kenya', 'band-news'),
     ('surface', 'accent'), ('surface', 'accent-strong'), ('paper', 'ink'),
+    ('ink', 'band-local'), ('ink-muted', 'band-local'), ('accent', 'band-local'), ('sec-local', 'band-local'),
 ]
 GRAPHIC_PAIRS = [  # 3:1 for borders, swatches, rules
     ('rule-strong', 'surface'), ('rule-strong', 'band-jobs'), ('accent', 'band-jobs'),
     ('tier-top', 'band-jobs'), ('tier-evergreen', 'band-jobs'), ('tier-stretch', 'band-jobs'),
     ('sec-jobs', 'paper'), ('sec-news', 'paper'),
+    ('sec-local', 'paper'), ('gap', 'band-local'), ('sec-local', 'band-local'), ('rule-strong', 'band-local'),
 ]
 TYPE_SIZES = {'14px', '16px', '18px', '22px', '30px', '44px'}
 CHROME = '/usr/bin/google-chrome'
@@ -138,7 +144,27 @@ def verify(repo, date, shots=None):
                   hrefs: [...document.querySelectorAll('a[href^="http"]')].map(a => [a.getAttribute('href'), a.target, a.rel]),
                   archiveLinks: [...document.querySelectorAll('a.archive-link')].map(a => a.href),
                   dataLink: [...document.querySelectorAll('.site-footer a')].map(a => a.href).filter(h => h.endsWith('.json')),
+                  kenya: !!document.getElementById('kenya'),
+                  kenyaNav: !!document.querySelector('.section-nav a[href="#kenya"]'),
+                  localJobs: document.querySelectorAll('#kenya .local-job').length,
+                  localLinks: [...document.querySelectorAll('#kenya .local-job a[href^="http"]')].map(a => a.getAttribute('href')),
+                  localEmpty: [...document.querySelectorAll('#kenya .local-empty')].map(p => p.textContent),
+                  localErrors: document.querySelectorAll('#kenya .local-error').length,
                 })''')
+                lj = r.get('local_jobs')
+                if lj is None:
+                    check(not got['kenya'] and not got['kenyaNav'], f'{label}: Kenya section shown but the run has no local_jobs snapshot')
+                elif lj.get('status') == 'ok':
+                    check(lj.get('date') == r['run_date'], f'{label}: local_jobs dated {lj.get("date")}, run is {r["run_date"]}')
+                    check(got['kenya'] and got['kenyaNav'], f'{label}: Kenya section or nav link missing')
+                    check(got['localJobs'] == len(lj['jobs']), f'{label}: {got["localJobs"]} Kenya jobs, JSON has {len(lj["jobs"])}')
+                    want_local = [j['url'] for j in lj['jobs'] if j.get('url')]
+                    check(got['localLinks'] == want_local, f'{label}: Kenya job links {got["localLinks"]} != {want_local}')
+                    check(got['localErrors'] == len(lj.get('errors', [])), f'{label}: Kenya error notes {got["localErrors"]}')
+                    check(not got['localEmpty'], f'{label}: not-run line shown although local_jobs is ok')
+                else:
+                    check(got['kenya'] and got['localJobs'] == 0 and got['localEmpty'] == [bl.LOCAL_NOT_RUN],
+                          f'{label}: Kenya not-run state wrong: jobs={got["localJobs"]} line={got["localEmpty"]}')
                 tiers = ','.join(f'{t}:{n}' for t in bl.TIER_IDS if (n := sum(1 for j in r['jobs'] if j['tier'] == t)))
                 exp_groups = ','.join(g for g in bl.NEWS_GROUPS if g in {x['id'] for x in r['news']['groups']})
                 check(got['jobs'] == len(r['jobs']), f'{label}: {got["jobs"]} jobs, JSON has {len(r["jobs"])}')
@@ -176,7 +202,8 @@ def verify(repo, date, shots=None):
                 pg.wait_for_load_state()
                 check(pg.url == base + 'archive/' and 'Past briefings' in pg.title(), f'{label}: nav Past briefings went to {pg.url}')
                 return {'jobs': got['jobs'], 'dropped': got['dropped'], 'stories': got['stories'], 'new': len(d['new_ids']),
-                        'gone': len(d['gone']), 'diff_line': got['diff'], 'links': len(got['hrefs'])}
+                        'gone': len(d['gone']), 'diff_line': got['diff'], 'links': len(got['hrefs']),
+                        'kenya': None if lj is None else (got['localJobs'] if lj.get('status') == 'ok' else 'not run')}
 
             report['index'] = check_run_page(base, latest, 'index')
             report[f'archive/{date}/'] = check_run_page(base + f'archive/{date}/', run, f'archive/{date}')

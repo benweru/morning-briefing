@@ -10,11 +10,15 @@ Usage (from anywhere):
     --shots DIR     save 1280px and 390px screenshots of the three pages into DIR
     --message MSG   commit message (default: "Briefing run YYYY-MM-DD: N roles, M stories")
     --repo PATH     local clone (default /workspace/briefing-site)
+    --local-jobs PATH   Kenya jobs file from the local search (default /workspace/shared/local-jobs/latest.json)
+    --allow-example     render a local-jobs file marked "example": true (local tests only; never with a push)
 
 What it does, in order (stops at the first failure, nothing is pushed unless all checks pass):
   1. Takes the run JSON (written by the morning search step to data/runs/YYYY-MM-DD.json; a
      file elsewhere is copied there). Fills derived fields (job ids from normalised posting
      URLs, story ids, counts) and validates it against the schema rules in briefing_lib.
+     If the run is dated today (EAT), it also snapshots the Kenya jobs file into run["local_jobs"]:
+     the jobs only when the file's "date" is today, otherwise a not-run record (page shows one line).
   2. Renders index.html (latest run), archive/YYYY-MM-DD/index.html and archive/index.html.
      Older archive pages are left untouched, so they stay permanent.
   3. Verifies with headless Chrome (verify_run.py): HTTP 200 under /morning-briefing/, counts,
@@ -26,6 +30,8 @@ What it does, in order (stops at the first failure, nothing is pushed unless all
      The token is never printed; all git/gh output is masked.
   6. Waits until https://benweru.github.io/morning-briefing/ serves the new index, archive
      page and archive index byte-for-byte, and the latest Pages build is this commit.
+  7. Prints the plain-text morning message (remote roles, Kenya jobs count, link) and saves it to
+     /tmp/morning-briefing-summary-YYYY-MM-DD.txt (also on --no-push).
 """
 import argparse, json, os, re, shutil, subprocess, sys, time, urllib.request
 
@@ -86,11 +92,14 @@ def schema_errors(repo, run):
     return [f'schema: {"/".join(map(str, e.absolute_path))}: {e.message}' for e in v.iter_errors(run)]
 
 
-def build(repo, date, rebuild_all):
+def build(repo, date, rebuild_all, local_jobs=bl.LOCAL_JOBS_PATH, allow_example=False):
     dates = bl.list_run_dates(repo)
     runs = {}
     for d in dates:
-        r = bl.normalise_run(bl.load_run(bl.run_path(repo, d)))
+        r = bl.load_run(bl.run_path(repo, d))
+        if d == date:
+            say(bl.attach_local_jobs(r, local_jobs, bl.today_eat(), allow_example))
+        r = bl.normalise_run(r)
         errs, warns = bl.validate_run(r, d)
         errs += schema_errors(repo, r)
         if errs:
@@ -191,6 +200,18 @@ def wait_live(repo, date, sha, env, token, timeout=900):
     say(f'Pages build: {out}' + (' (this commit)' if sha in out else ' (note: latest build reports a different commit)'))
 
 
+def print_summary(repo, date):
+    dates = bl.list_run_dates(repo)
+    r = bl.normalise_run(bl.load_run(bl.run_path(repo, date)))
+    p = bl.previous_date(dates, date)
+    prev = bl.normalise_run(bl.load_run(bl.run_path(repo, p))) if p else None
+    text = bl.chat_summary(r, prev, f'{LIVE}archive/{date}/' if date != dates[-1] else LIVE)
+    path = f'/tmp/morning-briefing-summary-{date}.txt'
+    write(path, text + '\n')
+    say(f'morning message (saved to {path}):')
+    print(text, flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('run', help='YYYY-MM-DD, or a path to YYYY-MM-DD.json')
@@ -200,10 +221,14 @@ def main():
     ap.add_argument('--force', action='store_true', help='replace an existing data/runs file with a different one')
     ap.add_argument('--shots')
     ap.add_argument('--message')
+    ap.add_argument('--local-jobs', default=bl.LOCAL_JOBS_PATH)
+    ap.add_argument('--allow-example', action='store_true')
     a = ap.parse_args()
+    if a.allow_example and not a.no_push:
+        sys.exit('--allow-example is for local tests only; use it with --no-push')
 
     date = resolve_run(a.run, a.repo, a.force)
-    r = build(a.repo, date, a.rebuild_all)
+    r = build(a.repo, date, a.rebuild_all, a.local_jobs, a.allow_example)
 
     import verify_run
     say('verifying in headless Chrome...')
@@ -216,11 +241,13 @@ def main():
     sync_build_scripts(a.repo)
     if a.no_push:
         say('--no-push: stopping before commit')
+        print_summary(a.repo, date)
         return
     msg = a.message or f'Briefing run {date}: {len(r["jobs"])} roles, {r["counts"]["stories"]} stories'
     sha, env, token = commit_and_push(a.repo, msg)
     wait_live(a.repo, date, sha, env, token)
     say(f'done: {LIVE}  {LIVE}archive/  {LIVE}archive/{date}/')
+    print_summary(a.repo, date)
 
 
 if __name__ == '__main__':

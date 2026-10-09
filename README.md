@@ -1,6 +1,6 @@
 # Ben's Morning Briefing
 
-Remote roles open to Kenya, matched to Ben Maina's CV, plus the day's tech news. One run per morning.
+Remote roles open to Kenya, matched to Ben Maina's CV, Nairobi roles from the local search (MyJobMag and LinkedIn), plus the day's tech news. One run per morning.
 
 - Latest: https://benweru.github.io/morning-briefing/
 - Past briefings: https://benweru.github.io/morning-briefing/archive/

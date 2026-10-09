@@ -383,6 +383,82 @@
           }
         }
       }
+    },
+    "local_jobs": {
+      "type": "object",
+      "description": "derived: Kenya jobs snapshot taken by build/publish_run.py from /workspace/shared/local-jobs/latest.json when the run is dated today (EAT). status ok = the file was dated today; not_run = missing, unreadable, stale or example data. Absent on runs from before the section existed.",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "ok",
+            "not_run"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "generated_at": {
+          "type": "string"
+        },
+        "sources_checked": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "example": {
+          "type": "boolean"
+        },
+        "jobs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "company": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "posted": {
+                "type": "string"
+              },
+              "fit_note": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

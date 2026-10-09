@@ -2,7 +2,8 @@
 
 Design system: v3 (editorial layout, section bands, tier and news-group colours). The CSS
 below is the v3 stylesheet copied verbatim, plus a short "Run history" block that only
-uses existing tokens. Do not add colours here without adding them to the token layer
+uses existing tokens, and a "Kenya jobs" block with its own band tokens (--band-local,
+--sec-local, --rule-local), which verify_run.py also checks. Do not add colours here without adding them to the token layer
 and to the contrast checks in verify_run.py.
 
 Pure functions only: no network, no git. publish_run.py drives this module.
@@ -251,6 +252,109 @@ def validate_run(run, filename_date=None):
         W.append(f'{n} stories (runbook target is 8-12)')
     return E, W
 
+# ---------------------------------------------------------------- Kenya jobs (local search)
+# Contract: a teammate agent writes LOCAL_JOBS_PATH each weekday at about 6:58 AM EAT:
+#   {"date": "YYYY-MM-DD", "generated_at": "ISO+03:00", "sources_checked": ["myjobmag", "linkedin"],
+#    "errors": [...], "jobs": [{"title", "company", "location", "source", "url", "posted", "fit_note"}]}
+# Any job field may be missing. The file is used only when its "date" is today in EAT; it is
+# snapshotted into the run JSON as run["local_jobs"] so archive pages stay permanent.
+LOCAL_JOBS_PATH = '/workspace/shared/local-jobs/latest.json'
+LOCAL_SOURCES = {'myjobmag': 'MyJobMag', 'linkedin': 'LinkedIn'}
+LOCAL_JOB_FIELDS = ('title', 'company', 'location', 'source', 'url', 'posted', 'fit_note')
+LOCAL_NOT_RUN = 'The local search didn\u2019t run today, so there are no Kenya jobs in this briefing.'
+
+
+def today_eat():
+    return dt.datetime.now(EAT).date().isoformat()
+
+
+def source_label(src):
+    s = str(src or '').strip()
+    return LOCAL_SOURCES.get(re.sub(r'[\s_.-]', '', s.lower()), s)
+
+
+def _text(v):
+    if v is None or isinstance(v, (dict, list, bool)):
+        return ''
+    return re.sub(r'\s+', ' ', str(v)).strip()
+
+
+def _local_error(err):
+    """Normalise one entry of "errors" to {"source": label or "", "message": text}."""
+    if isinstance(err, dict):
+        src = _text(err.get('source'))
+        msg = _text(err.get('message') or err.get('error') or err.get('detail') or err.get('reason'))
+    else:
+        msg, src = _text(err), ''
+        for key in LOCAL_SOURCES:
+            if key in msg.lower().replace(' ', ''):
+                src = key
+                break
+    return {'source': source_label(src) if src else '', 'message': msg[:240]}
+
+
+def read_local_jobs(path, today, allow_example=False):
+    """Snapshot of the local search for `today` (YYYY-MM-DD in EAT), or a not-run record.
+    Never returns jobs from a file dated any other day, and never adds anything that isn't in it."""
+    def not_run(reason):
+        return {'status': 'not_run', 'reason': reason}
+    if not os.path.exists(path):
+        return not_run('missing: no file at the shared path')
+    try:
+        with open(path, encoding='utf-8') as f:
+            data = json.load(f)
+    except (OSError, ValueError) as ex:
+        return not_run(f'unreadable: {type(ex).__name__}')
+    if not isinstance(data, dict):
+        return not_run('unreadable: top level is not an object')
+    if data.get('date') != today:
+        return not_run(f'stale: file is dated {data.get("date")!r}, today is {today}')
+    example = bool(data.get('example'))
+    if example and not allow_example:
+        return not_run('example data: file is marked "example": true')
+    jobs, seen = [], set()
+    for j in data.get('jobs') or []:
+        if not isinstance(j, dict):
+            continue
+        c = {k: _text(j.get(k)) for k in LOCAL_JOB_FIELDS}
+        c = {k: v for k, v in c.items() if v}
+        if 'url' in c and not c['url'].lower().startswith(('https://', 'http://')):
+            c.pop('url')
+        if 'source' in c:
+            c['source'] = source_label(c['source'])
+        if not (c.get('title') or c.get('url')):
+            continue
+        key = normalise_url(c['url']) if 'url' in c else (c.get('title', '') + '|' + c.get('company', '')).lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        jobs.append(c)
+    errors = [x for x in (_local_error(err) for err in (data.get('errors') or [])) if x['source'] or x['message']]
+    snap = {'status': 'ok', 'date': today, 'generated_at': _text(data.get('generated_at')),
+            'sources_checked': [source_label(s) for s in (data.get('sources_checked') or []) if _text(s)],
+            'errors': errors, 'jobs': jobs}
+    if example:
+        snap['example'] = True
+    return snap
+
+
+def attach_local_jobs(run, path=LOCAL_JOBS_PATH, today=None, allow_example=False):
+    """Put the Kenya jobs snapshot into run["local_jobs"]. Only a run dated today (EAT) reads the
+    shared file; an older run keeps whatever snapshot it already has (or none). Returns a note."""
+    today = today or today_eat()
+    if run.get('run_date') != today:
+        return 'kept existing Kenya jobs snapshot' if 'local_jobs' in run else 'no Kenya jobs snapshot (run is not dated today)'
+    run['local_jobs'] = read_local_jobs(path, today, allow_example)
+    lj = run['local_jobs']
+    if lj['status'] == 'ok':
+        return f'Kenya jobs: {len(lj["jobs"])} from {path}' + (f'; errors: {lj["errors"]}' if lj['errors'] else '')
+    return f'Kenya jobs: not shown ({lj["reason"]})'
+
+
+def local_count(run):
+    lj = run.get('local_jobs')
+    return len(lj['jobs']) if lj and lj.get('status') == 'ok' else None
+
 # ---------------------------------------------------------------- diff
 
 
@@ -326,6 +430,10 @@ CSS = r'''
   --news-startups: #1d6561;  /* teal: startups and funding */
   --news-hiring: #6c4570;    /* plum: hiring market */
   --news-kenya: #8a4a2c;     /* terracotta: Kenya fintech */
+  /* Kenya jobs section (local search: MyJobMag + LinkedIn, Nairobi roles). */
+  --band-local: #f0f2e8;     /* light olive tint, distinct from the warm jobs and cool news bands */
+  --sec-local: #4d5a22;      /* olive: opening rule, eyebrow, active nav indicator */
+  --rule-local: #d9ddc8;     /* hairlines on the Kenya band */
 
   --radius: 2px;
   --measure: 68ch;
@@ -376,6 +484,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 }
 .section-nav[data-current="jobs"] { background: var(--band-jobs); }
 .section-nav[data-current="news"] { background: var(--band-news); }
+.section-nav[data-current="local"] { background: var(--band-local); }
 .section-nav ul { display: flex; gap: var(--s-5); height: var(--nav-h); }
 .section-nav a {
   display: flex; align-items: center; height: 100%;
@@ -386,6 +495,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 .section-nav a { --sec: var(--accent); }
 .section-nav a[data-section="jobs"] { --sec: var(--sec-jobs); }
 .section-nav a[data-section="news"] { --sec: var(--sec-news); }
+.section-nav a[data-section="local"] { --sec: var(--sec-local); }
 .section-nav a[aria-current="true"] { color: var(--sec); border-bottom: 3px solid var(--sec); margin-bottom: -1px; }
 .section-nav .n { font-weight: 400; margin-left: var(--s-2); color: var(--ink-muted); }
 
@@ -584,6 +694,33 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
   .runs td.num { font-size: var(--fs-sm); white-space: nowrap; }
   .runs td.num::before { content: attr(data-label) " "; color: var(--ink-muted); }
 }
+/* ---------- Kenya jobs (local search) ---------- */
+.section-local { --sec: var(--sec-local); background: var(--band-local); }
+.local-note { max-width: var(--measure); margin-bottom: var(--s-4); padding-left: var(--s-3); font-size: var(--fs-sm); color: var(--ink-muted); border-left: 2px solid var(--note, var(--rule-strong)); }
+.local-error { --note: var(--gap); }
+.local-example { --note: var(--sec-local); }
+.local-empty { max-width: var(--measure); padding-block: var(--s-2) var(--s-1); }
+.local-jobs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--s-6); border-top: 1px solid var(--rule-local); }
+.local-job { padding-block: var(--s-4); border-bottom: 1px solid var(--rule-local); max-width: var(--measure); }
+.local-title { font-size: var(--fs-md); }
+.local-title a { color: var(--ink); text-decoration: none; }
+.local-title a:hover { color: var(--accent); text-decoration: underline; }
+.local-company { font-weight: 600; color: var(--ink-muted); margin-top: var(--s-1); }
+.local-meta { font-size: var(--fs-sm); color: var(--ink-muted); margin-top: var(--s-1); }
+.local-fit { margin-top: var(--s-2); }
+.local-title .quiet { font: 400 var(--fs-sm)/var(--lh-body) var(--font-sans); }
+.section-nav .nav-short { display: none; }
+@media (max-width: 640px) {
+  .local-jobs { grid-template-columns: 1fr; }
+  /* Four nav items: short labels on phones so "Past briefings" stays visible. */
+  .section-nav ul { gap: var(--s-4); }
+  .section-nav li { flex: none; }
+  .section-nav .nav-short { display: inline; }
+  .section-nav .nav-full {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+}
 '''
 
 JS = r'''
@@ -641,10 +778,14 @@ JS = r'''
 
   // Section nav: mark the section currently in view.
   var navLinks = [].slice.call(document.querySelectorAll('.section-nav a'));
-  var news = document.getElementById('news');
+  var sections = [].slice.call(document.querySelectorAll('main > .section[data-section]'));
   function markCurrent() {
     var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
-    var current = (news.getBoundingClientRect().top <= window.innerHeight * 0.4 || atEnd) ? 'news' : 'jobs';
+    var current = 'jobs';
+    sections.forEach(function (s) {
+      if (s.getBoundingClientRect().top <= window.innerHeight * 0.4) current = s.dataset.section;
+    });
+    if (atEnd && sections.length) current = sections[sections.length - 1].dataset.section;
     document.querySelector('.section-nav').setAttribute('data-current', current);
     navLinks.forEach(function (a) {
       if (a.dataset.section === current) a.setAttribute('aria-current', 'true');
@@ -723,6 +864,81 @@ def _gone_html(d):
       </section>'''
 
 
+def _local_time(iso):
+    try:
+        t = dt.datetime.fromisoformat(iso)
+    except (TypeError, ValueError):
+        return ''
+    if t.utcoffset() is not None:
+        t = t.astimezone(EAT)
+    return t.strftime('%I:%M %p').lstrip('0') + ' EAT'
+
+
+def _local_item(j):
+    title = e(j.get('title') or 'Untitled posting')
+    if j.get('url'):
+        link = f'<a href="{e(j["url"])}" target="_blank" rel="noopener noreferrer">{title}{NEWTAB}</a>'
+    else:
+        link = f'{title} <span class="quiet">(no link given)</span>'
+    meta = [e(x) for x in (j.get('location'), j.get('source')) if x]
+    if j.get('posted'):
+        meta.append(f'Posted {e(j["posted"])}')
+    out = [f'\n          <li class="local-job">', f'\n            <h3 class="local-title">{link}</h3>']
+    if j.get('company'):
+        out.append(f'\n            <p class="local-company">{e(j["company"])}</p>')
+    if meta:
+        out.append(f'\n            <p class="local-meta">{" · ".join(meta)}</p>')
+    if j.get('fit_note'):
+        out.append(f'\n            <p class="local-fit"><strong>Fit:</strong> {e(j["fit_note"])}</p>')
+    out.append('\n          </li>')
+    return ''.join(out)
+
+
+def _local_html(lj, part):
+    """The Kenya jobs section, rendered only from the run's local_jobs snapshot."""
+    head = f'''
+      <header class="section-head">
+        <p class="eyebrow">Part {part}: Kenya jobs</p>
+        <h2 id="kenya-heading">Roles in Nairobi</h2>'''
+    if lj.get('status') != 'ok':
+        body = f'''
+      </header>
+      <p class="local-empty">{LOCAL_NOT_RUN}</p>'''
+    else:
+        jobs = lj['jobs']
+        srcs = e(join_and(lj['sources_checked']))
+        at = _local_time(lj.get('generated_at'))
+        when = f' at {at}' if at else ''
+        if jobs:
+            frm = f' from {srcs}' if srcs else ''
+            intro = f'{plural(len(jobs), "role")}{frm}, found by the local search{when}. Each links to its own posting.'
+        else:
+            intro = f'The local search ran{when}' + (f' on {srcs}' if srcs else '') + ' and found no Nairobi roles today.'
+        notes = ''
+        if lj.get('example'):
+            notes += '\n      <p class="local-note local-example">Example data for a local test, not a real search.</p>'
+        for err in lj.get('errors', []):
+            if err['source']:
+                msg = f' ({e(err["message"])})' if err['message'] else ''
+                notes += f'\n      <p class="local-note local-error">{e(err["source"])} reported a problem this morning{msg}, so some of its roles may be missing.</p>'
+            else:
+                notes += f'\n      <p class="local-note local-error">A source reported a problem this morning: {e(err["message"])}</p>'
+        lst = ''
+        if jobs:
+            lst = f'''
+      <ol class="local-jobs" role="list">{''.join(_local_item(j) for j in jobs)}
+      </ol>'''
+        body = f'''
+        <p>{intro}</p>
+      </header>{notes}{lst}'''
+    return f'''
+  <section id="kenya" class="section section-local" data-section="local" aria-labelledby="kenya-heading" tabindex="-1">
+    <div class="wrap">{head}{body}
+    </div>
+  </section>
+'''
+
+
 def _diff_line(d):
     if not d['prev_date']:
         return 'First briefing, no earlier run to compare.'
@@ -746,6 +962,17 @@ def render_run_page(run, prev, root, archived):
     latest_href = root or './'
     data_href = f'{root}data/runs/{run["run_date"]}.json'
     counts = {t: sum(1 for j in jobs if j['tier'] == t) for t in TIER_IDS}
+    lj = run.get('local_jobs')            # Kenya jobs snapshot; None on runs from before the section existed
+    n_local = local_count(run)
+    news_part = 'three' if lj else 'two'
+    local_section = _local_html(lj, 'two') if lj else ''
+    local_nav = ''
+    if lj:
+        n_html = f'<span class="n">{n_local}</span>' if n_local is not None else ''
+        local_nav = f'''
+      <li><a href="#kenya" data-section="local"><span class="nav-full">Kenya jobs</span><span class="nav-short" aria-hidden="true">Kenya</span>{n_html}</a></li>'''
+    local_fact = f' {plural(n_local, "Kenya role")},' if n_local is not None else ''
+    dek = 'Remote roles open to Kenya, Nairobi roles, and today in tech.' if lj else 'Remote roles open to Kenya, and today in tech.'
 
     tiers_html = []
     for tid, tname, tdesc in TIERS:
@@ -804,23 +1031,23 @@ def render_run_page(run, prev, root, archived):
   <div class="wrap">
     <p class="dateline">{long_date(date)}</p>
     <h1>Ben\u2019s Morning Briefing</h1>
-    <p class="dek">Remote roles open to Kenya, and today in tech.</p>
-    <p class="facts">{len(jobs)} shortlisted roles, {len(dropped)} reviewed and dropped, {n_news} stories. Jobs checked {checked}.</p>{archived_note}
+    <p class="dek">{dek}</p>
+    <p class="facts">{len(jobs)} shortlisted roles, {len(dropped)} reviewed and dropped,{local_fact} {n_news} stories. Jobs checked {checked}.</p>{archived_note}
   </div>
 </header>
 
 <nav class="section-nav" aria-label="Sections" data-current="jobs">
   <div class="wrap">
     <ul role="list">
-      <li><a href="#jobs" data-section="jobs" aria-current="true">Jobs<span class="n">{len(jobs)}</span></a></li>
-      <li><a href="#news" data-section="news">Today in tech<span class="n">{n_news}</span></a></li>
+      <li><a href="#jobs" data-section="jobs" aria-current="true">Jobs<span class="n">{len(jobs)}</span></a></li>{local_nav}
+      <li><a href="#news" data-section="news"><span class="nav-full">Today in tech</span><span class="nav-short" aria-hidden="true">Tech</span><span class="n">{n_news}</span></a></li>
       <li class="nav-aside"><a href="{archive_href}" class="archive-link">Past briefings</a></li>
     </ul>
   </div>
 </nav>
 
 <main>
-  <section id="jobs" class="section section-jobs" aria-labelledby="jobs-heading" tabindex="-1">
+  <section id="jobs" class="section section-jobs" data-section="jobs" aria-labelledby="jobs-heading" tabindex="-1">
     <div class="wrap">
       <header class="section-head">
         <p class="eyebrow">Part one: Jobs</p>
@@ -866,11 +1093,11 @@ def render_run_page(run, prev, root, archived):
       </div>
     </div>
   </section>
-
-  <section id="news" class="section section-news" aria-labelledby="news-heading" tabindex="-1">
+{local_section}
+  <section id="news" class="section section-news" data-section="news" aria-labelledby="news-heading" tabindex="-1">
     <div class="wrap">
       <header class="section-head">
-        <p class="eyebrow">Part two: News</p>
+        <p class="eyebrow">Part {news_part}: News</p>
         <h2 id="news-heading">Today in tech</h2>
         <p>{n_news} stories from {window_label(story_dates)}, each with a note on why it matters for Ben.</p>
       </header>
@@ -899,6 +1126,29 @@ def render_run_page(run, prev, root, archived):
 </body>
 </html>
 '''
+
+
+def chat_summary(run, prev, live_url):
+    """Plain-text morning message for chat: the remote shortlist, the Kenya jobs count and the link."""
+    d = diff_runs(run, prev)
+    date = to_date(run['run_date'])
+    diff = f'{len(d["new_ids"])} new, {len(d["gone"])} no longer listed' if d['prev_date'] else 'first briefing'
+    lines = [f'Morning briefing, {long_date(date)}: {plural(len(run["jobs"]), "remote role")} open to Kenya '
+             f'({diff}) and {plural(run["counts"]["stories"], "tech story", "tech stories")}.']
+    lj = run.get('local_jobs')
+    if lj and lj.get('status') == 'ok':
+        srcs = join_and(lj['sources_checked']) or 'the local search'
+        line = f'Kenya jobs: {plural(len(lj["jobs"]), "Nairobi role")} from {srcs}.'
+        failed = [x['source'] or 'one source' for x in lj.get('errors', [])]
+        if failed:
+            line += f' {join_and(failed)} reported a problem, so some roles may be missing.'
+        if lj.get('example'):
+            line += ' (Example data, local test only.)'
+        lines.append(line)
+    elif lj:
+        lines.append('Kenya jobs: the local search didn\u2019t run today.')
+    lines.append(live_url)
+    return '\n'.join(lines)
 
 
 def archive_rows(repo):
