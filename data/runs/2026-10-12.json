@@ -1,0 +1,555 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-12",
+  "checked_at": "2026-10-12T07:38:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive API",
+      "RemoteOK API",
+      "Himalayas API (including searches filtered to Kenya)",
+      "Jobicy API",
+      "We Work Remotely RSS",
+      "Working Nomads",
+      "employer job boards on Greenhouse, Ashby, Lever, Recruitee and Workable",
+      "web search (DOU.ua, OpenTrain, FDE roles)"
+    ],
+    "news": [
+      "TechCrunch",
+      "SiliconANGLE",
+      "The Condia",
+      "CNBC",
+      "TechMoran",
+      "Business Daily"
+    ]
+  },
+  "counts": {
+    "pulled": 4500,
+    "pulled_is_approximate": true,
+    "filtered_out": {
+      "older_than_30_days": 1450,
+      "senior_title": 2010,
+      "not_target_role": 760,
+      "location_or_timezone": 240
+    },
+    "filtered_out_is_approximate": true,
+    "shortlisted": 10,
+    "dropped": 12,
+    "reviewed_closely": 22,
+    "dropped_by_reason": {
+      "location": 4,
+      "experience": 4,
+      "stale": 1,
+      "closed": 1,
+      "stack": 1,
+      "other": 1
+    },
+    "stories": 9
+  },
+  "method": {
+    "filtering_summary": "Of about 4,500 postings pulled (aggregators plus about 50 employer boards), about 1,450 were more than 30 days old, about 2,010 had senior, lead or manager titles, about 760 weren’t target roles, and about 240 were limited to regions that exclude Kenya. The roughly 60 left were read closely; most failed on years of experience or a location rule in the employer's own posting."
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "top",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/8249005",
+      "title": "Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu",
+      "company": "Canonical",
+      "location_as_stated": "Home based - Worldwide (teams aligned to EMEA/APAC/AMER time zones)",
+      "posted": "2026-10-05",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "2025 and 2026 graduates; \"outstanding results in your academic career\"",
+      "found_via": "Greenhouse API (found while verifying Canonical roles from Himalayas/Jobicy)",
+      "verified": "Greenhouse API and page, live 2026-10-12",
+      "fit": "Built for 2025/2026 CS graduates, and Python is one of Canonical's main languages.",
+      "gaps": "Very competitive process with a long written application and assessments. They put weight on academic results.",
+      "note": "Greenhouse first_published and updated_at both 2026-10-05; Home based - Worldwide.",
+      "id": "j-3092215902f8"
+    },
+    {
+      "rank": 2,
+      "tier": "top",
+      "url": "https://www.opentrain.ai/jobs/associate-forward-deployed-engineer--cmu4m3lrf001s0bgmqcoe18er/",
+      "title": "Associate Forward Deployed Engineer",
+      "company": "micro1",
+      "location_as_stated": "53 listed countries including Kenya (KE); \"this role is not worldwide\"",
+      "posted": "2026-09-16",
+      "salary_as_shown": "$40-$60/hour",
+      "experience_asked": "Entry level; basic Python, SQL, APIs, Git",
+      "found_via": "Himalayas API (verified on OpenTrain listing for micro1)",
+      "verified": "OpenTrain page live 2026-10-12 (validThrough 2026-11-10; Kenya in the country list)",
+      "fit": "Entry-level data loading and integration work in Python, SQL and APIs. Matches his Chumz data-ops and Kwara integrations work.",
+      "gaps": "Part-time contract (20+ hrs/week), not salaried. Checked on OpenTrain's copy of the listing because micro1's own page wouldn't load.",
+      "note": "JSON-LD datePosted 2026-09-16, validThrough 2026-11-10, CONTRACTOR/PART_TIME, $40-$60/hour; Kenya in applicantLocationRequirements.",
+      "id": "j-6a4b29c4cbcc"
+    },
+    {
+      "rank": 3,
+      "tier": "top",
+      "url": "https://jobs.dou.ua/companies/spendbase/vacancies/375752/",
+      "title": "Junior AI Automation Engineer (CEO Office)",
+      "company": "Spendbase",
+      "location_as_stated": "\"Kyiv, Lviv, abroad, remote\" (Kenya not named)",
+      "posted": "2026-10-06",
+      "salary_as_shown": "\"Competitive salary\" (no figure)",
+      "experience_asked": "0-2 years; Claude Code + MCP, LangChain/n8n-type agents, APIs/webhooks, basic Python/JS, English B2+",
+      "found_via": "Web search (DOU.ua)",
+      "verified": "Spendbase careers page (PeopleForce) and DOU page, live 2026-10-12",
+      "fit": "Closest match to his current work: AI agents (Claude Code, MCP, LangChain/n8n-type), webhooks and API integrations at a fintech startup, 0–2 years.",
+      "gaps": "Google Workspace automation isn't on his CV. Kenya isn't named, so confirm that \"abroad\" includes it.",
+      "note": "PeopleForce: spendbase.peopleforce.io/careers/v/243268-junior-ai-automation-engineer-ceo-office, marked remote. DOU dated 6 Oct 2026. Ben already applied on 2026-10-08.",
+      "id": "j-1968cd5732e2"
+    },
+    {
+      "rank": 4,
+      "tier": "evergreen",
+      "url": "https://apply.workable.com/pavago/j/77400D94D2",
+      "title": "AI Automation Specialist (Zapier, APIs, ChatGPT & Workflow Automation)",
+      "company": "Pavago (hiring for a client)",
+      "location_as_stated": "Remote; Workable lists Kenya and South Africa; \"Working Hours: U.S. Business Hours\"",
+      "posted": "Himalayas listed 2026-10-08 (Workable posting published 2026-07-02, still live)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated in years; \"Proven experience\" in workflow automation and AI workflow implementation",
+      "found_via": "Himalayas API (search filtered to Kenya)",
+      "verified": "Pavago Workable API, live 2026-10-12 (state published; locations KE and ZA)",
+      "fit": "Kenya is named outright. The job is building AI workflows with APIs, webhooks and OpenAI/Anthropic tools, much like his Kwara automation work, with Python and JavaScript as a plus.",
+      "gaps": "US business hours mean evenings in Nairobi. Expects Zapier, Make, n8n or Power Automate, and the client isn't named. The posting dates from July and keeps being relisted.",
+      "note": "Pavago is a staffing agency; the employer is an unnamed client. Workable published 2026-07-02. Ben applied on 2026-10-08.",
+      "id": "j-9fc60074bffd"
+    },
+    {
+      "rank": 5,
+      "tier": "evergreen",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/5143074",
+      "title": "Python Engineer",
+      "company": "Canonical",
+      "location_as_stated": "Home based - Worldwide; \"remote Python engineering roles in every time zone\"",
+      "posted": "Himalayas listed 2026-09-19 (Greenhouse req first published 2023-10-11, updated 2026-08-05)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "All levels of seniority; strong academics; Linux experience",
+      "found_via": "Himalayas API",
+      "verified": "Greenhouse API and page, live 2026-10-12",
+      "fit": "A general Python listing that hires at every level of seniority, in every time zone.",
+      "gaps": "Linux (Debian/Ubuntu) experience isn't on his CV. Always-open listing that gets reposted, not a new job.",
+      "id": "j-abc3d7e3668c"
+    },
+    {
+      "rank": 6,
+      "tier": "evergreen",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/3014391",
+      "title": "Software Engineer - Data Infrastructure",
+      "company": "Canonical",
+      "location_as_stated": "Home based - EMEA; \"This role can be filled in European, Middle East and African time zones\"",
+      "posted": "Greenhouse req first published 2021-05-12, updated 2026-10-02 (always-open listing)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "\"openings ranging anywhere from junior to senior level\"; proven hands-on Python and distributed-systems experience; CS/STEM bachelor's",
+      "found_via": "Greenhouse API (Canonical board recheck)",
+      "verified": "Greenhouse API and page, live 2026-10-12",
+      "fit": "Python automation for data platforms such as PostgreSQL, MySQL and Redis, with openings from junior level up. African time zones are named.",
+      "gaps": "Wants proven distributed-systems experience, and Linux admin or public cloud would help; travel up to 4 times a year. Always-open listing, not a new job.",
+      "note": "Greenhouse updated_at 2026-10-02; first_published 2021-05-12.",
+      "id": "j-af5edac7bfae"
+    },
+    {
+      "rank": 7,
+      "tier": "evergreen",
+      "url": "https://job-boards.eu.greenhouse.io/amplemarket/jobs/4066973101",
+      "title": "Fullstack Software Engineer",
+      "company": "Amplemarket",
+      "location_as_stated": "Remote, EMEA/LATAM (Himalayas lists Kenya)",
+      "posted": "Himalayas listed 2026-09-18 (Greenhouse req published 2022, still open; updated 2026-05-28)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated; \"We don't require you to have experience in our stack\"",
+      "found_via": "Himalayas API",
+      "verified": "Greenhouse API and page, live 2026-10-12",
+      "fit": "Fast-moving startup backed by Y Combinator. He has React and PostgreSQL, and the posting says experience in their stack isn't required.",
+      "gaps": "Backend is Ruby on Rails, Elasticsearch and Redis. Always-open listing (since 2022).",
+      "note": "Greenhouse page shows Remote, EMEA/LATAM; its time-zone question includes GMT+3 East Africa (Kenya).",
+      "id": "j-20366aec7caa"
+    },
+    {
+      "rank": 8,
+      "tier": "stretch",
+      "url": "https://weworkremotely.com/remote-jobs/sticker-mule-ai-agent-engineer",
+      "title": "AI agent engineer",
+      "company": "Sticker Mule",
+      "location_as_stated": "Anywhere in the World",
+      "posted": "2026-09-16 (valid through 2026-10-16)",
+      "salary_as_shown": "$150,000-$250,000 USD + $20,000 signing bonus",
+      "experience_asked": "Not stated; \"Experience building agents that run on their own\"",
+      "found_via": "We Work Remotely RSS (also on Remotive/RemoteOK)",
+      "verified": "WWR page live 2026-10-12 (validThrough 2026-10-16; Anywhere in the World)",
+      "fit": "Matches his AI agent work, TypeScript and Postgres.",
+      "gaps": "Go, GraphQL and GCP aren't on his CV. The pay suggests they want someone experienced. Listing runs only until Oct 16.",
+      "id": "j-fc1624dbfb10"
+    },
+    {
+      "rank": 9,
+      "tier": "stretch",
+      "url": "https://jobs.ashbyhq.com/elevenlabs/0b3a97d4-193c-4b47-9888-7ef5803ed945",
+      "title": "Full-stack Engineer - Creative Agents",
+      "company": "ElevenLabs",
+      "location_as_stated": "Remote; \"Global team: We prioritize your talent, not your location\"",
+      "posted": "2026-10-07",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated in years; \"a track record of independently building complete production applications\"",
+      "found_via": "Ashby job board API (ElevenLabs)",
+      "verified": "Ashby API and job page, live 2026-10-12",
+      "fit": "Agent-powered features end to end, with APIs, async workflows and model orchestration; MCP integrations and production agents are named as a plus, which matches his Kwara LLM work.",
+      "gaps": "Kenya isn't named; confirm before applying. Very high bar (shipped production apps, cloud infrastructure, evaluations), so this is a reach at about 1 year of experience.",
+      "note": "Ashby publishedAt 2026-10-07; location 'Remote' with no country list.",
+      "id": "j-d460a81f7dc4"
+    },
+    {
+      "rank": 10,
+      "tier": "stretch",
+      "url": "https://careers.tether.io/o/backend-engineer-wallets-100-remote-hn",
+      "title": "Backend Engineer - Wallets (100% Remote Worldwide)",
+      "company": "Tether",
+      "location_as_stated": "100% Remote Worldwide",
+      "posted": "2026-09-10 (republished; Himalayas still listing)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated in years; Recruitee tags it \"experienced\"; \"Very proficient in Node.js\"",
+      "found_via": "Himalayas API",
+      "verified": "Tether Recruitee API and careers page, live 2026-10-12",
+      "fit": "Fintech backend with microservices and APIs, close to his Kwara work.",
+      "gaps": "Wants someone \"very proficient in Node.js\", and his backend work is in Python. Tagged \"experienced\".",
+      "id": "j-76e09d32cb04"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/5150422",
+      "title": "Web Frontend Engineer - JS, CSS, React, Flutter",
+      "company": "Canonical",
+      "location_as_stated": "Home based - Worldwide",
+      "reason": "Still live; taken off the shortlist for closer fits (frontend-only; always-open since 2023)",
+      "reason_code": "other",
+      "posted": "Greenhouse req first published 2023-10-11, updated 2026-08-05",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "",
+      "found_via": "Himalayas API",
+      "verified": "Greenhouse API, live 2026-10-12",
+      "note": "",
+      "id": "j-17d99814dbef"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/steuart-nutrition-software-developer-ai-coding",
+      "title": "Software Developer AI Coding",
+      "company": "Steuart Nutrition",
+      "location_as_stated": "Anywhere in the World; must overlap 4+ hrs/day with US Eastern",
+      "reason": "Still live; taken off the shortlist for closer fits (3+ yrs asked; US Eastern overlap)",
+      "reason_code": "experience",
+      "posted": "2026-09-23",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "3+ years professional",
+      "found_via": "We Work Remotely RSS",
+      "verified": "WWR page live 2026-10-12 (validThrough 2026-10-23)",
+      "note": "",
+      "id": "j-d710ef1f9306"
+    },
+    {
+      "url": "https://jobs.ashbyhq.com/posthog/20ab9628-20ff-4ae3-bd6a-46ae7e9dc6b8",
+      "title": "Product Engineer",
+      "company": "PostHog",
+      "location_as_stated": "Remote; PostHog careers page: \"Timezone(s) GMT +2 to GMT -8\"",
+      "reason": "Time-zone range GMT+2 to GMT-8 excludes Nairobi (UTC+3)",
+      "reason_code": "location",
+      "posted": "2026-09-24",
+      "salary_as_shown": "",
+      "experience_asked": "Not stated in years; must have built things agents use (APIs, MCP servers, evals)",
+      "found_via": "Ashby job board API",
+      "verified": "Ashby API and posthog.com/careers, live 2026-10-12",
+      "note": "Strong stack fit (Python, React, MCP) but the time-zone rule rules it out.",
+      "id": "j-da8de3ea034c"
+    },
+    {
+      "url": "https://job-boards.greenhouse.io/typeform/jobs/7942504",
+      "title": "Full Stack Developer",
+      "company": "Typeform",
+      "location_as_stated": "Germany, Ireland, Netherlands, Portugal, Spain, United Kingdom (Remote)",
+      "reason": "Hires only in UK, IE, DE, PT, ES, NL (WWR says Anywhere)",
+      "reason_code": "location",
+      "posted": "WWR 2026-10-10 (Greenhouse req first published 2026-05-19)",
+      "salary_as_shown": "",
+      "experience_asked": "Mid level",
+      "found_via": "We Work Remotely RSS",
+      "verified": "Greenhouse API, live 2026-10-12",
+      "note": "",
+      "id": "j-d8143415827c"
+    },
+    {
+      "url": "https://jobs.ashbyhq.com/eliza/3190c7b1-a01f-42e0-9a16-2c6dfc40eb8d",
+      "title": "Associate Forward Deployed Engineer",
+      "company": "Eliza",
+      "location_as_stated": "Remote, US (per third-party copies)",
+      "reason": "Not on Eliza's Ashby board today; listed as Remote, US",
+      "reason_code": "closed",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "0-2 years",
+      "found_via": "Web search (Remotive listing)",
+      "verified": "Eliza Ashby API checked 2026-10-12; role absent",
+      "note": "Remotive called it Worldwide, but Eliza's open roles are all Remote, US.",
+      "id": "j-f7397cc85f18"
+    },
+    {
+      "url": "https://jobs.ashbyhq.com/brainbaselabs/ad4e24e1-7f85-419d-b15a-d589540ea8fa",
+      "title": "Forward Deployed Engineer, EMEA",
+      "company": "Brainbase Labs",
+      "location_as_stated": "\"you can be based anywhere in Europe, the Middle East or Africa\"",
+      "reason": "Published 2026-09-10 (more than 30 days ago)",
+      "reason_code": "stale",
+      "posted": "2026-09-10",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Web search",
+      "verified": "Ashby API, live 2026-10-12",
+      "note": "Kenya-eligible FDE role; worth a look if it is reposted.",
+      "id": "j-ee60b5c84318"
+    },
+    {
+      "url": "https://jobs.ashbyhq.com/supabase/48950725-e0d9-4025-92d9-f75e1b60ce45",
+      "title": "Postgres Deployment Engineer",
+      "company": "Supabase",
+      "location_as_stated": "Remote, Global; \"We hire globally\"",
+      "reason": "3+ yrs PostgreSQL ecosystem plus Ansible and Nix",
+      "reason_code": "stack",
+      "posted": "2026-10-06",
+      "salary_as_shown": "",
+      "experience_asked": "3+ years with PostgreSQL and its ecosystem",
+      "found_via": "Ashby job board API",
+      "verified": "Ashby API, live 2026-10-12",
+      "note": "",
+      "id": "j-f873cf0c574f"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/vercel-software-engineer-data-platform",
+      "title": "Software Engineer - Data Platform",
+      "company": "Vercel",
+      "location_as_stated": "Anywhere in the World (WWR); Greenhouse: Remote - United States",
+      "reason": "8+ yrs incl. 5 at Principal level; Greenhouse says US only",
+      "reason_code": "experience",
+      "posted": "2026-10-11",
+      "salary_as_shown": "",
+      "experience_asked": "8+ years",
+      "found_via": "We Work Remotely RSS",
+      "verified": "WWR page and Vercel Greenhouse API, live 2026-10-12",
+      "note": "",
+      "id": "j-c8ed843abeae"
+    },
+    {
+      "url": "https://devgrid.recruitee.com/o/python-developer-ml",
+      "title": "Python Developer (with Machine Learning knowledge)",
+      "company": "DevGrid",
+      "location_as_stated": "Remote job, Brazil",
+      "reason": "Brazil only; Recruitee req published 2025-01-17",
+      "reason_code": "location",
+      "posted": "Recruitee published 2025-01-17, updated 2026-07-27",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Himalayas API (search filtered to Kenya)",
+      "verified": "DevGrid Recruitee API, live 2026-10-12",
+      "note": "Himalayas showed it as Worldwide.",
+      "id": "j-2f1f25417016"
+    },
+    {
+      "url": "https://himalayas.app/companies/search-atlas/jobs/seo-automation-engineer-5450454531",
+      "title": "SEO Automation Engineer",
+      "company": "Search Atlas",
+      "location_as_stated": "Himalayas: country list including Kenya",
+      "reason": "5+ yrs with CMS platforms",
+      "reason_code": "experience",
+      "posted": "2026-09-27",
+      "salary_as_shown": "",
+      "experience_asked": "5+ years",
+      "found_via": "Himalayas API (search filtered to Kenya)",
+      "verified": "Himalayas API only (employer page not checked)",
+      "note": "",
+      "id": "j-1a32514181f1"
+    },
+    {
+      "url": "https://himalayas.app/companies/wesoftyou/jobs/python-developer-ai-focus",
+      "title": "Python Developer (AI focus)",
+      "company": "WeSoftYou",
+      "location_as_stated": "Himalayas: Worldwide",
+      "reason": "3+ yrs strong commercial Python; employer page not confirmed",
+      "reason_code": "experience",
+      "posted": "2026-10-02",
+      "salary_as_shown": "",
+      "experience_asked": "3+ years",
+      "found_via": "Himalayas API (search filtered to Kenya)",
+      "verified": "Himalayas API only",
+      "note": "",
+      "id": "j-241d226bba3b"
+    },
+    {
+      "url": "https://himalayas.app/companies/makersite/jobs/python-backend-engineer-m-f-x",
+      "title": "Python Backend Engineer (m/f/x)",
+      "company": "Makersite",
+      "location_as_stated": "\"Location: EU (Remote)\"",
+      "reason": "EU-only; 3-5 yrs",
+      "reason_code": "location",
+      "posted": "2026-10-01",
+      "salary_as_shown": "",
+      "experience_asked": "3-5 years",
+      "found_via": "Himalayas API (search filtered to Kenya)",
+      "verified": "Himalayas API (posting text)",
+      "note": "",
+      "id": "j-dacc480b951e"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Cloudflare acquires Deno",
+            "summary": "Cloudflare is buying the company behind the Deno runtime (co-founded by Node.js creator Ryan Dahl) to improve its Workers programming model; terms weren't disclosed, and Deno had raised $26 million.",
+            "why": "Workers and Deno are common hosts for webhooks and small APIs like the ones he builds; expect the two to merge.",
+            "source": "TechCrunch",
+            "date": "2026-10-10",
+            "url": "https://techcrunch.com/2026/10/10/cloudflare-acquires-deno-to-improve-its-workers-programming-model/",
+            "id": "s-89979b026004"
+          },
+          {
+            "title": "Nadella calls for an 'emergency brake' on AI models",
+            "summary": "Microsoft's CEO said AI systems should separate the model from the harness, externalise safeguards, log every meaningful model action as tamper-proof evidence, and let an authorised person pause or stop a model mid-task.",
+            "why": "Harness design, guardrails and audit logs are becoming expected parts of agent work, which is useful framing for agent-engineering interviews.",
+            "source": "TechCrunch",
+            "date": "2026-10-10",
+            "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+            "id": "s-2c9728d3318b"
+          },
+          {
+            "title": "Nvidia in early talks over Reflection AI",
+            "summary": "Per the FT, Nvidia may buy, acquihire or invest more in Reflection AI, which unveiled its 501-billion-parameter open-weight model Beam five days earlier; Nvidia has put $800 million into it so far.",
+            "why": "Another big bet on open-weight coding-agent models he could run or build on.",
+            "source": "SiliconANGLE",
+            "date": "2026-10-11",
+            "url": "https://siliconangle.com/2026/10/11/nvidia-reportedly-in-early-talks-to-buy-acqui-hire-or-invest-more-in-reflection-ai/",
+            "id": "s-d07f1c8f7aa2"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "OPay files for a US IPO",
+            "summary": "The Nigerian-led fintech filed a US prospectus and is considering a secondary NGX listing; H1 2026 revenue was $467.1 million (up 136%), with net income of $90.9 million.",
+            "why": "A large African fintech going public, driven by lending, which is the same space as Kwara's loan products.",
+            "source": "The Condia",
+            "date": "2026-10-10",
+            "url": "https://thecondia.com/opay-files-for-us-ipo/",
+            "id": "s-014d9f6d3b1c"
+          },
+          {
+            "title": "Amazon in talks to buy Decart for up to $7 billion",
+            "summary": "Per the WSJ, Amazon is discussing buying Decart, whose DOS software ports AI models across chips; Decart raised $300 million at a $4 billion valuation in May.",
+            "why": "Shows how much buyers will pay for AI infrastructure tooling startups.",
+            "source": "SiliconANGLE",
+            "date": "2026-10-11",
+            "url": "https://siliconangle.com/2026/10/11/report-amazon-in-talks-with-ai-startup-decart-over-possible-7b-acquisition/",
+            "id": "s-342b1e6985a2"
+          },
+          {
+            "title": "Apple strikes a reverse acqui-hire with Huxe",
+            "summary": "An EU filing shows Apple agreed to make offers to certain Huxe AI employees and take a non-exclusive licence to its IP; Huxe, from ex-NotebookLM developers, shut down in May.",
+            "why": "Big tech keeps hiring AI teams without buying the company, a pattern to watch at small AI startups.",
+            "source": "TechCrunch",
+            "date": "2026-10-10",
+            "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+            "id": "s-ac1984a6a99c"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "US developer postings are up, but mostly for senior and AI roles",
+            "summary": "Indeed data shows US software-development postings up almost 15% since February 2025; 71% of the May 2025-May 2026 increase was senior roles and 37% AI-titled jobs, while Stanford reports employment for developers aged 22-25 down nearly 20% from 2024.",
+            "why": "Entry-level demand is still weak, so AI-integration skills and client-facing roles are the better way in.",
+            "source": "CNBC",
+            "date": "2026-10-11",
+            "url": "https://www.cnbc.com/2026/10/11/ai-software-developer-jobs.html",
+            "id": "s-c00a5c3496a7"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Jubilee and FSD Africa's BimaLab pick 7 insurtechs for Kenyan pilots",
+            "summary": "Seven insurtechs, including Dukatech, Inclusivity Solutions, Agrails and Ibisa, join an eight-week co-creation programme with Jubilee, with pilots for small businesses, informal workers and farmers starting in November 2026.",
+            "why": "Embedded insurance via APIs and existing transactions is integration work close to his fintech background.",
+            "source": "TechMoran",
+            "date": "2026-10-10",
+            "url": "https://techmoran.com/2026/10/10/jubilee-fsd-africas-bimalab-accelerator-select-7-insurtechs-to-expand-insurance-access-in-kenya/",
+            "id": "s-ae48fb8adc59"
+          },
+          {
+            "title": "Kenyans can buy Dangote shares as NSE-listed GDRs from Sh535",
+            "summary": "The GDR offer closes 5pm EAT on Tuesday October 13; the minimum is 10 GDRs at Sh53.50 each, and trading on the NSE starts December 8, 2026.",
+            "why": "A new cross-border investment product on Kenya's exchange, relevant to local fintech and investing apps.",
+            "source": "Business Daily",
+            "date": "2026-10-11",
+            "url": "https://www.businessdailyafrica.com/bd/markets/capital-markets/how-investors-will-buy-and-trade-dangote-shares-through-nse-5628312",
+            "id": "s-60b8997eb0a7"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-12",
+    "generated_at": "2026-10-12T07:05:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [
+      {
+        "source": "MyJobMag",
+        "message": "Box browser is signed out of MyJobMag (header shows Login/Signup); personalized jobs view unavailable"
+      }
+    ],
+    "jobs": [
+      {
+        "title": "AI / Full-Stack Developer",
+        "company": "AbhiByte Solutions LLP",
+        "location": "Oserian Engineering, Nakuru, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/ai-full-stack-developer-at-abhibyte-solutions-llp-4475672107",
+        "posted": "2026-10-11",
+        "fit_note": "AI plus full-stack build work matching his LLM integration and React/Python stack (Kenya, outside Nairobi)"
+      },
+      {
+        "title": "Website Developer Intern",
+        "company": "Entry-level Jobs in Kenya - campusbiz.co.ke",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/website-developer-intern-at-entry-level-jobs-in-kenya-campusbiz-co-ke-4477251186",
+        "posted": "2026-10-11",
+        "fit_note": "Entry-level web dev role in Nairobi suited to a recent CS grad"
+      },
+      {
+        "title": "Account Executive - SAP Academy for Customer Success - Kenya (Hybrid)",
+        "company": "SAP",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/account-executive-sap-academy-for-customer-success-kenya-hybrid-at-sap-4449316120",
+        "posted": "2026-10-09",
+        "fit_note": "Early-career tech sales academy, a path Ben is open to"
+      }
+    ]
+  }
+}
