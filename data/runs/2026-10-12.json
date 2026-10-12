@@ -511,26 +511,30 @@
   "local_jobs": {
     "status": "ok",
     "date": "2026-10-12",
-    "generated_at": "2026-10-12T07:05:00+03:00",
+    "generated_at": "2026-10-12T09:12:48+03:00",
     "sources_checked": [
       "MyJobMag",
       "LinkedIn"
     ],
-    "errors": [
-      {
-        "source": "MyJobMag",
-        "message": "Box browser is signed out of MyJobMag (header shows Login/Signup); personalized jobs view unavailable"
-      }
-    ],
+    "errors": [],
     "jobs": [
       {
-        "title": "AI / Full-Stack Developer",
-        "company": "AbhiByte Solutions LLP",
-        "location": "Oserian Engineering, Nakuru, Kenya",
+        "title": "Junior Full Stack Developer",
+        "company": "Bollard Consulting Limited",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/junior-full-stack-developer-bollard-consulting-limited",
+        "posted": "09 October",
+        "fit_note": "Junior full-stack role in Nairobi; Python a plus, matches his API/full-stack work"
+      },
+      {
+        "title": "Technical Sales Engineer",
+        "company": "SHMETER AFRICA LIMITED",
+        "location": "Nairobi, Nairobi County, Kenya",
         "source": "LinkedIn",
-        "url": "https://www.linkedin.com/jobs/view/ai-full-stack-developer-at-abhibyte-solutions-llp-4475672107",
-        "posted": "2026-10-11",
-        "fit_note": "AI plus full-stack build work matching his LLM integration and React/Python stack (Kenya, outside Nairobi)"
+        "url": "https://www.linkedin.com/jobs/view/technical-sales-engineer-at-shmeter-africa-limited-4475690201",
+        "posted": "2026-10-12",
+        "fit_note": "Tech sales/solutions path Ben is open to"
       },
       {
         "title": "Website Developer Intern",
@@ -539,7 +543,7 @@
         "source": "LinkedIn",
         "url": "https://www.linkedin.com/jobs/view/website-developer-intern-at-entry-level-jobs-in-kenya-campusbiz-co-ke-4477251186",
         "posted": "2026-10-11",
-        "fit_note": "Entry-level web dev role in Nairobi suited to a recent CS grad"
+        "fit_note": "Early-career software role in Nairobi suited to a recent CS grad"
       },
       {
         "title": "Account Executive - SAP Academy for Customer Success - Kenya (Hybrid)",
@@ -548,7 +552,7 @@
         "source": "LinkedIn",
         "url": "https://www.linkedin.com/jobs/view/account-executive-sap-academy-for-customer-success-kenya-hybrid-at-sap-4449316120",
         "posted": "2026-10-09",
-        "fit_note": "Early-career tech sales academy, a path Ben is open to"
+        "fit_note": "Tech sales/solutions path Ben is open to"
       }
     ]
   }
