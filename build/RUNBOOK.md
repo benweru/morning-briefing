@@ -65,6 +65,17 @@ sentences each.
 
 ## 2. Job search (about 60–90 min)
 
+### 2.0 Start with the live search (mandatory, added 2026-10-13)
+
+Run `/workspace/job-search-plus/.venv/bin/python /workspace/job-search-plus/live/remote_live.py YYYY-MM-DD`.
+It fetches every source live (no cache), keeps postings from the last 7 days, drops expired, senior,
+off-target and non-Kenya roles and anything in `state/applied_log.csv`, and writes
+`job-search-plus/out/remote-live-YYYY-MM-DD.json` with per-source ok/pulled/fresh/kept counts.
+Copy those counts into the run as `search_health` (shown at the top of the page; failed sources and
+"no fresh remote roles" are printed there). **Shortlist only from today's results.** Do not carry
+yesterday's roles forward just because they are still live; anything older than 7 days or already
+applied goes to `dropped`.
+
 ### 2.1 Sources (check all; record each one you used in `sources.jobs`)
 
 | Source | How |
@@ -83,7 +94,7 @@ filter removed (`counts.filtered_out`). Mark the counts approximate if they are.
 
 ### 2.2 Bulk filters (apply in this order)
 
-1. **Posted in the last 30 days.** Use the source's date, or the ATS `updated_at`/`first_published`.
+1. **Posted in the last 7 days** (was 30; long windows caused the same roles to repeat daily). Use the source's date, or the ATS `updated_at`/`first_published`.
    An always-open listing that keeps being reposted can stay only in the **evergreen** tier, and its
    `posted` field must say what the date really is, e.g.
    `Himalayas listed 2026-09-19 (Greenhouse req first published 2023-10-11, updated 2026-08-05)`.
@@ -129,8 +140,7 @@ filter removed (`counts.filtered_out`). Mark the counts approximate if they are.
   no `utm_*`/`ref`/`source`/`gh_src`/`lever-*` parameters, remaining parameters sorted). Use the same
   URL form every day so a role isn't wrongly marked **New**. Prefer the ATS URL
   (e.g. `https://job-boards.greenhouse.io/<co>/jobs/<id>`).
-- **Yesterday's shortlist:** re-verify every role on it. If a role is still live and still fits,
-  keep it with the same URL. If it closed or no longer fits, add it to `dropped` with the reason
+- **Yesterday's shortlist:** keep a role only if it reappears in today's live search and is not in applied_log.csv. If it closed or no longer fits, add it to `dropped` with the reason
   (e.g. `closed`). The page will then list it under "No longer listed since <date>" with that reason.
 - **Shortlist 6–10 roles** and rank them 1..N by fit. Assign tiers:
   - `top`: junior-friendly, clearly open to Kenya, close to his current work.

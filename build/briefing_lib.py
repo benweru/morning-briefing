@@ -948,6 +948,23 @@ def _diff_line(d):
     return f'Compared with the {pd} briefing: {n_new} new, {gone}.'
 
 
+def _health_html(h):
+    """Live-search health line shown at the top: fresh count, failed sources, zero-result warning."""
+    if not h:
+        return ''
+    srcs = h.get('sources', [])
+    ok = [x for x in srcs if x.get('ok')]
+    failed = [x for x in srcs if not x.get('ok')]
+    fresh = h.get('fresh_shortlisted', 0)
+    parts = [f"Live remote search: {len(ok)} of {len(srcs)} sources answered, {h.get('pulled', 0)} postings pulled, "
+             f"{h.get('kept_after_filters', 0)} fit after filters (posted in the last {h.get('window_days', 7)} days)."]
+    if failed:
+        parts.append('<strong>Failed sources:</strong> ' + e(join_and([f"{x['name']} ({x.get('error') or 'error'})" for x in failed])) + '.')
+    if not fresh:
+        parts.append('<strong>No fresh remote roles today</strong>; nothing old was carried over to fill the list.')
+    return '\n    <p class="facts">' + ' '.join(parts) + '</p>'
+
+
 def render_run_page(run, prev, root, archived):
     """One briefing page. root is the relative path to the site root ('' for index.html,
     '../../' for archive/YYYY-MM-DD/index.html)."""
@@ -1023,6 +1040,7 @@ def render_run_page(run, prev, root, archived):
         archived_note = f'''
     <p class="facts">Permanent copy of the {full_date(date)} briefing. <a href="{latest_href}">Latest briefing</a> \u00b7 <a href="{archive_href}">Past briefings</a></p>'''
 
+    health_note = _health_html(run.get('search_health'))
     return _head(f'Ben\u2019s Morning Briefing \u2014 {full_date(date)}',
                  'Remote roles open to Kenya, matched to Ben Maina\u2019s CV, and the day\u2019s tech news.') + f'''
 <a class="skip-link" href="#jobs">Skip to jobs</a>
@@ -1032,7 +1050,7 @@ def render_run_page(run, prev, root, archived):
     <p class="dateline">{long_date(date)}</p>
     <h1>Ben\u2019s Morning Briefing</h1>
     <p class="dek">{dek}</p>
-    <p class="facts">{len(jobs)} shortlisted roles, {len(dropped)} reviewed and dropped,{local_fact} {n_news} stories. Jobs checked {checked}.</p>{archived_note}
+    <p class="facts">{len(jobs)} shortlisted roles, {len(dropped)} reviewed and dropped,{local_fact} {n_news} stories. Jobs checked {checked}.</p>{health_note}{archived_note}
   </div>
 </header>
 
