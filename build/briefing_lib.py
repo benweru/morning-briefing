@@ -346,9 +346,132 @@ def attach_local_jobs(run, path=LOCAL_JOBS_PATH, today=None, allow_example=False
         return 'kept existing Kenya jobs snapshot' if 'local_jobs' in run else 'no Kenya jobs snapshot (run is not dated today)'
     run['local_jobs'] = read_local_jobs(path, today, allow_example)
     lj = run['local_jobs']
+    lj['mjm_personalised'] = mjm_personalised_check(today)
     if lj['status'] == 'ok':
         return f'Kenya jobs: {len(lj["jobs"])} from {path}' + (f'; errors: {lj["errors"]}' if lj['errors'] else '')
     return f'Kenya jobs: not shown ({lj["reason"]})'
+
+
+MJM_FETCHER = '/workspace/shared/local-jobs/bin/mjm_personalized.py'
+MJM_STATE = '/workspace/shared/local-jobs/state/myjobmag_personalized_{}.json'
+
+
+def mjm_personalised_check(today):
+    """Self-check that Ben's personalised MyJobMag feed was read today. Uses today's state file
+    from the fetcher; if missing or failed, re-runs the fetcher (cookie fetch -> browser-tab fallback,
+    with one retry). Returns {"ok", "count", "method", "error"}."""
+    import subprocess
+    def load():
+        try:
+            with open(MJM_STATE.format(today), encoding='utf-8') as f:
+                return json.load(f)
+        except (OSError, ValueError):
+            return None
+    d = load()
+    if not d or d.get('status') != 'ok':
+        try:
+            subprocess.run(['python3', MJM_FETCHER], timeout=240, capture_output=True)
+        except Exception as ex:
+            return {'ok': False, 'count': 0, 'method': None, 'error': f'fetcher did not run: {type(ex).__name__}'}
+        d = load() or {}
+    ok = d.get('status') == 'ok' and d.get('count', 0) > 0
+    return {'ok': ok, 'count': d.get('count', 0), 'method': d.get('method'),
+            'error': None if ok else (d.get('error') or 'no result')[:240]}
+
+
+def _mjm_alert_html(run):
+    lj = run.get('local_jobs') or {}
+    m = lj.get('mjm_personalised')
+    if not m:
+        return ''
+    if m.get('ok'):
+        return (f'\n    <p class="facts">MyJobMag personalised feed: read OK ({m.get("count", 0)} jobs in your feed today, '
+                'filtered for fit below).</p>')
+    return ('\n    <p class="facts"><strong>\u26a0 Your personalised MyJobMag feed could not be read today '
+            '(tried the signed-in browser session, then a browser-tab fallback, then a retry). '
+            'Kenya jobs below may be incomplete.</strong> ' + e(m.get('error') or '') + '</p>')
+
+
+REVIEWED_PATH = '/workspace/job-search-plus/state/reviewed_jobs.txt'
+APPLIED_LOG_PATH = '/workspace/job-search-plus/state/applied_log.csv'
+
+
+def _url_key(u):
+    try:
+        return normalise_url(u)
+    except Exception:
+        return (u or '').strip()
+
+
+def already_surfaced(repo, today):
+    """Normalised URLs Ben has seen: reviewed_jobs.txt, applied_log.csv, and every job/dropped/
+    Kenya job URL in any published run dated before `today`."""
+    import csv, glob
+    seen = set()
+    if os.path.exists(REVIEWED_PATH):
+        skip = False   # lines recorded by today's own publish don't hide today's roles on a rebuild
+        for raw in open(REVIEWED_PATH, encoding='utf-8'):
+            if raw.startswith('# surfaced in briefing '):
+                skip = raw.strip().endswith(today)
+                continue
+            line = raw.split('#', 1)[0].strip()
+            if line.startswith('http') and not skip:
+                seen.add(_url_key(line))
+    if os.path.exists(APPLIED_LOG_PATH):
+        for row in csv.DictReader(open(APPLIED_LOG_PATH, encoding='utf-8')):
+            if (row.get('url') or '').startswith('http'):
+                seen.add(_url_key(row['url']))
+    for f in glob.glob(os.path.join(repo, 'data', 'runs', '*.json')):
+        if os.path.basename(f)[:10] >= today:
+            continue
+        try:
+            r = json.load(open(f, encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
+        lj = r.get('local_jobs') or {}
+        for j in (r.get('jobs') or []) + (r.get('dropped') or []) + (lj.get('jobs') or []):
+            if isinstance(j, dict) and j.get('url'):
+                seen.add(_url_key(j['url']))
+    return seen
+
+
+def exclude_surfaced(run, seen):
+    """Drop already-surfaced URLs from today's remote jobs, dropped list and Kenya jobs; renumber
+    ranks. Returns {"remote": n, "dropped": n, "kenya": n} removed."""
+    out = {}
+    def keep(lst):
+        return [j for j in lst if not (isinstance(j, dict) and j.get('url') and _url_key(j['url']) in seen)]
+    for key in ('jobs', 'dropped'):
+        before = run.get(key) or []
+        run[key] = keep(before)
+        out['remote' if key == 'jobs' else key] = len(before) - len(run[key])
+    run['jobs'].sort(key=lambda j: j.get('rank') if isinstance(j.get('rank'), int) else 10**6)
+    for i, j in enumerate(run['jobs'], 1):
+        j['rank'] = i
+    lj = run.get('local_jobs')
+    if lj and lj.get('status') == 'ok':
+        before = lj.get('jobs') or []
+        lj['jobs'] = keep(before)
+        out['kenya'] = len(before) - len(lj['jobs'])
+    return out
+
+
+def surfaced_urls(run):
+    lj = run.get('local_jobs') or {}
+    return [j['url'] for j in (run.get('jobs') or []) + (run.get('dropped') or []) + (lj.get('jobs') or [])
+            if isinstance(j, dict) and j.get('url')]
+
+
+def record_surfaced(run):
+    """Append this run's surfaced URLs to reviewed_jobs.txt (skipping ones already listed)."""
+    have = set()
+    if os.path.exists(REVIEWED_PATH):
+        have = {_url_key(l.split('#', 1)[0].strip()) for l in open(REVIEWED_PATH, encoding='utf-8') if l.strip().startswith('http')}
+    new = [u for u in surfaced_urls(run) if _url_key(u) not in have and not have.add(_url_key(u))]
+    if new:
+        with open(REVIEWED_PATH, 'a', encoding='utf-8') as f:
+            f.write(f'# surfaced in briefing {run.get("run_date")}\n' + ''.join(u + '\n' for u in new))
+    return len(new)
 
 
 def local_count(run):
@@ -1040,7 +1163,7 @@ def render_run_page(run, prev, root, archived):
         archived_note = f'''
     <p class="facts">Permanent copy of the {full_date(date)} briefing. <a href="{latest_href}">Latest briefing</a> \u00b7 <a href="{archive_href}">Past briefings</a></p>'''
 
-    health_note = _health_html(run.get('search_health'))
+    health_note = _mjm_alert_html(run) + _health_html(run.get('search_health'))
     return _head(f'Ben\u2019s Morning Briefing \u2014 {full_date(date)}',
                  'Remote roles open to Kenya, matched to Ben Maina\u2019s CV, and the day\u2019s tech news.') + f'''
 <a class="skip-link" href="#jobs">Skip to jobs</a>

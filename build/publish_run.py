@@ -99,6 +99,9 @@ def build(repo, date, rebuild_all, local_jobs=bl.LOCAL_JOBS_PATH, allow_example=
         r = bl.load_run(bl.run_path(repo, d))
         if d == date:
             say(bl.attach_local_jobs(r, local_jobs, bl.today_eat(), allow_example))
+            if d == bl.today_eat():
+                ex = bl.exclude_surfaced(r, bl.already_surfaced(repo, d))
+                say(f'excluded already-surfaced/reviewed roles: {ex}')
         r = bl.normalise_run(r)
         errs, warns = bl.validate_run(r, d)
         errs += schema_errors(repo, r)
@@ -247,6 +250,7 @@ def main():
     sha, env, token = commit_and_push(a.repo, msg)
     wait_live(a.repo, date, sha, env, token)
     say(f'done: {LIVE}  {LIVE}archive/  {LIVE}archive/{date}/')
+    say(f'recorded {bl.record_surfaced(r)} surfaced URLs in {bl.REVIEWED_PATH}')
     print_summary(a.repo, date)
 
 

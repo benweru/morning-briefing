@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
   "run_date": "2026-10-14",
-  "checked_at": "2026-10-14T07:45:00+03:00",
+  "checked_at": "2026-10-14T15:20:00+03:00",
   "sources": {
     "jobs": [
-      "Remotive (ok; 64 pulled, 12 from last 7 days, 0 kept)",
-      "RemoteOK (ok; 99 pulled, 14 from last 7 days, 0 kept)",
-      "Himalayas (ok; 157 pulled, 77 from last 7 days, 5 kept)",
+      "Remotive (ok; 60 pulled, 12 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 16 from last 7 days, 0 kept)",
+      "Himalayas (ok; 157 pulled, 78 from last 7 days, 8 kept)",
       "Jobicy (ok; 150 pulled, 150 from last 7 days, 0 kept)",
-      "WeWorkRemotely (ok; 89 pulled, 17 from last 7 days, 7 kept)",
-      "WorkingNomads (ok; 53 pulled, 21 from last 7 days, 0 kept)",
-      "Greenhouse (ok; 871 pulled, 42 from last 7 days, 0 kept)",
-      "Ashby (ok; 354 pulled, 43 from last 7 days, 1 kept)",
+      "WeWorkRemotely (ok; 88 pulled, 19 from last 7 days, 7 kept)",
+      "WorkingNomads (ok; 52 pulled, 21 from last 7 days, 0 kept)",
+      "Greenhouse (ok; 869 pulled, 42 from last 7 days, 0 kept)",
+      "Ashby (ok; 354 pulled, 44 from last 7 days, 1 kept)",
       "Lever (ok; 312 pulled, 6 from last 7 days, 0 kept)",
       "LinkedIn (FAILED: HTTPError: HTTP Error 429: Too Many Requests; 0 pulled)",
-      "ReliefWeb (ok; 45 pulled, 23 from last 7 days, 1 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled)",
       "Employer ATS checks: Dover (NextAlpha), Recruitee API (DevGrid, Gorin Systems), Greenhouse API (Vercel, Dremio, Typeform), Ashby API (LangChain), Personio (Parqet)",
       "Built In (NextAlpha cross-check)"
     ],
@@ -38,29 +38,31 @@
     },
     "filtered_out_is_approximate": false,
     "shortlisted": 2,
-    "dropped": 18,
-    "reviewed_closely": 20,
+    "dropped": 7,
+    "reviewed_closely": 9,
     "dropped_by_reason": {
-      "location": 5,
-      "experience": 3,
-      "stack": 2,
-      "other": 8
+      "location": 2,
+      "experience": 1,
+      "stack": 1,
+      "requirement": 2,
+      "other": 1
     },
     "stories": 10
   },
   "method": {
-    "filtering_summary": "Live search on 11 sources pulled 2194 postings; LinkedIn failed (HTTP 429 Too Many Requests), so no LinkedIn roles are in today's list. 1789 were older than 7 days (the counter labelled 30 days uses a 7-day window), 171 were senior or excluded titles, 164 weren't target roles, 55 excluded Kenya, 1 already applied and 0 duplicates. The 14 that passed were each checked on the employer's own page or ATS; 12 were dropped (mostly a country restriction on the employer page, too many years, or a stack he doesn't have), leaving 2. Nothing from yesterday was carried over to fill the list."
+    "filtering_summary": "Refreshed at 3:20 PM EAT. Live search re-run on 11 sources pulled 2141 postings; LinkedIn failed again (HTTP 429 rate limit) and ReliefWeb returned an empty feed, so neither contributed. 1753 were older than 7 days, 171 senior or excluded titles, 146 not target roles, 54 excluded Kenya, 1 already applied. 16 passed; roles already shown in earlier briefings or reviewed by Ben were excluded, and the 3 new ones since this morning were dropped (open-source requirement, micro1 re-certification, South Africa only), leaving the same 2 fresh roles. Nothing old was carried over."
   },
   "search_health": {
     "window_days": 7,
-    "pulled": 2194,
-    "kept_after_filters": 14,
+    "pulled": 2141,
+    "kept_after_filters": 16,
     "fresh_shortlisted": 2,
+    "generated_by": "job-search-plus/live/remote_live.py",
     "sources": [
       {
         "name": "Remotive",
         "ok": true,
-        "pulled": 64,
+        "pulled": 60,
         "fresh": 12,
         "kept": 0,
         "error": null
@@ -69,7 +71,7 @@
         "name": "RemoteOK",
         "ok": true,
         "pulled": 99,
-        "fresh": 14,
+        "fresh": 16,
         "kept": 0,
         "error": null
       },
@@ -77,8 +79,8 @@
         "name": "Himalayas",
         "ok": true,
         "pulled": 157,
-        "fresh": 77,
-        "kept": 5,
+        "fresh": 78,
+        "kept": 8,
         "error": null
       },
       {
@@ -92,15 +94,15 @@
       {
         "name": "WeWorkRemotely",
         "ok": true,
-        "pulled": 89,
-        "fresh": 17,
+        "pulled": 88,
+        "fresh": 19,
         "kept": 7,
         "error": null
       },
       {
         "name": "WorkingNomads",
         "ok": true,
-        "pulled": 53,
+        "pulled": 52,
         "fresh": 21,
         "kept": 0,
         "error": null
@@ -108,7 +110,7 @@
       {
         "name": "Greenhouse",
         "ok": true,
-        "pulled": 871,
+        "pulled": 869,
         "fresh": 42,
         "kept": 0,
         "error": null
@@ -117,7 +119,7 @@
         "name": "Ashby",
         "ok": true,
         "pulled": 354,
-        "fresh": 43,
+        "fresh": 44,
         "kept": 1,
         "error": null
       },
@@ -139,14 +141,13 @@
       },
       {
         "name": "ReliefWeb",
-        "ok": true,
-        "pulled": 45,
-        "fresh": 23,
-        "kept": 1,
-        "error": null
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
       }
-    ],
-    "generated_by": "job-search-plus/live/remote_live.py"
+    ]
   },
   "jobs": [
     {
@@ -198,84 +199,6 @@
       "id": "j-bd40665142f6"
     },
     {
-      "url": "https://weworkremotely.com/remote-jobs/vercel-software-engineer-backend",
-      "title": "Software Engineer, Backend",
-      "company": "Vercel",
-      "location_as_stated": "Greenhouse: \"Remote - United States\"",
-      "reason": "Employer ATS lists Remote - United States; req open since Jan 2025",
-      "reason_code": "location",
-      "posted": "WWR 2026-10-11; Greenhouse first published 2025-01-28",
-      "salary_as_shown": "$196,000-$294,000 (San Francisco base)",
-      "experience_asked": "TypeScript/Node, security/identity protocols",
-      "found_via": "We Work Remotely RSS",
-      "verified": "Greenhouse API + WWR page 2026-10-14",
-      "id": "j-962ae0dad693"
-    },
-    {
-      "url": "https://weworkremotely.com/remote-jobs/vercel-software-engineer-data-platform",
-      "title": "Software Engineer - Data Platform",
-      "company": "Vercel",
-      "location_as_stated": "Greenhouse: \"Remote - United States\"",
-      "reason": "8+ years, 5 at Principal level",
-      "reason_code": "experience",
-      "posted": "2026-10-11",
-      "salary_as_shown": "$232,000 - $348,000 (San Francisco base)",
-      "experience_asked": "8+ years",
-      "found_via": "We Work Remotely RSS",
-      "verified": "WWR page + Greenhouse API 2026-10-14",
-      "id": "j-c8ed843abeae"
-    },
-    {
-      "url": "https://weworkremotely.com/remote-jobs/typeform-full-stack-developer",
-      "title": "Full Stack Developer",
-      "company": "Typeform",
-      "location_as_stated": "Greenhouse: \"Germany (Remote) ; Ireland (Remote); Netherlands (Remote) ; Portugal (Remote) ; Spain (Remote) ; United Kingdom (Remote)\"",
-      "reason": "Country list without Kenya",
-      "reason_code": "location",
-      "posted": "2026-10-10",
-      "found_via": "We Work Remotely RSS",
-      "verified": "Greenhouse API 2026-10-14",
-      "id": "j-453afed600ee"
-    },
-    {
-      "url": "https://jobs.ashbyhq.com/langchain/0ee73994-b8a3-4a75-9675-da536abd3e10",
-      "title": "Deployed Engineer, Professional Services (APAC)",
-      "company": "LangChain",
-      "location_as_stated": "Remote - Singapore",
-      "reason": "APAC (Singapore) role",
-      "reason_code": "location",
-      "posted": "2026-10-10",
-      "found_via": "Ashby job board API",
-      "verified": "Ashby API 2026-10-14",
-      "id": "j-147d780b8d1a"
-    },
-    {
-      "url": "https://himalayas.app/companies/parqet-fintech-gmbh/jobs/mobile-engineer-react-native",
-      "title": "Mobile Engineer (React Native)",
-      "company": "Parqet Fintech GmbH",
-      "location_as_stated": "\"Remote, Arbeitserlaubnis in der EU ist nötig\" (EU work permit required)",
-      "reason": "EU work permit required; German-language",
-      "reason_code": "location",
-      "posted": "2026-10-08",
-      "salary_as_shown": "60.000 bis 85.000 EUR",
-      "found_via": "Himalayas API",
-      "verified": "Himalayas API + Parqet Personio board 2026-10-14",
-      "id": "j-d0adb398cf90"
-    },
-    {
-      "url": "https://weworkremotely.com/remote-jobs/jumio-machine-learning-engineer",
-      "title": "Machine Learning Engineer",
-      "company": "Jumio",
-      "location_as_stated": "WWR: Anywhere in the World (HQ Austria)",
-      "reason": "At least 3 years in biometrics/face analysis; leads CV team",
-      "reason_code": "experience",
-      "posted": "2026-10-08",
-      "experience_asked": "Multiple years ML, 3+ in biometrics",
-      "found_via": "We Work Remotely RSS",
-      "verified": "WWR page 2026-10-14",
-      "id": "j-df3280a1c637"
-    },
-    {
       "url": "https://weworkremotely.com/remote-jobs/toptal-apigee-engineer-for-global-consumer-food-company",
       "title": "Apigee Engineer for Global Consumer Food Company",
       "company": "Toptal",
@@ -287,18 +210,6 @@
       "found_via": "We Work Remotely RSS",
       "verified": "WWR page 2026-10-14",
       "id": "j-6125338c9be9"
-    },
-    {
-      "url": "https://weworkremotely.com/remote-jobs/toptal-full-stack-e-commerce-developer-with-sage-x3-experience",
-      "title": "Full-Stack E-commerce Developer with Sage X3 Experience",
-      "company": "Toptal",
-      "location_as_stated": "Anywhere in the World",
-      "reason": "Strong hands-on Sage X3 ERP integration required",
-      "reason_code": "stack",
-      "posted": "2026-10-12",
-      "found_via": "We Work Remotely RSS",
-      "verified": "WWR page 2026-10-14",
-      "id": "j-6f98dce31db7"
     },
     {
       "url": "https://gs.recruitee.com/o/full-stack-laravel-developer",
@@ -326,82 +237,46 @@
       "id": "j-d1ce0460249f"
     },
     {
-      "url": "https://himalayas.app/companies/cyberarrow/jobs/front-end-developer-react-js-remote",
-      "title": "Front-end Developer React.js [Remote]",
-      "company": "CyberArrow",
-      "location_as_stated": "Himalayas: Worldwide (application form asks work location Bucharest/Kathmandu/Lisbon)",
-      "reason": "Already applied Oct 13",
-      "reason_code": "other",
-      "posted": "2026-10-07",
+      "url": "https://himalayas.app/companies/micro1/jobs/software-engineer-open-source-contributor",
+      "title": "Software Engineer (Open Source Contributor)",
+      "company": "micro1",
+      "location_as_stated": "Himalayas: Worldwide (\"Anywhere in the world, remote\")",
+      "reason": "Requires a public record of open-source contributions, which Ben doesn't have",
+      "reason_code": "requirement",
+      "posted": "Himalayas 2026-10-14",
+      "salary_as_shown": "$50–100/hour (contract)",
+      "experience_asked": "Not stated",
       "found_via": "Himalayas API",
-      "verified": "Himalayas API 2026-10-14; applied_log.csv",
-      "id": "j-452035f93c5d"
+      "verified": "Himalayas API listing 2026-10-14 3:20 PM EAT",
+      "id": "j-b3791a9ca95c"
     },
     {
-      "url": "https://www.linkedin.com/jobs/view/ai-full-stack-developer-at-abhibyte-solutions-llp-4475672107",
-      "title": "AI / Full-Stack Developer",
-      "company": "AbhiByte Solutions LLP",
-      "location_as_stated": "LinkedIn: listed for Kenya",
-      "reason": "Already applied Oct 13; LinkedIn source failed today",
-      "reason_code": "other",
-      "found_via": "LinkedIn guest search (2026-10-13)",
-      "verified": "Not re-opened 2026-10-14 (applied_log.csv)",
-      "id": "j-03d792d201d9"
-    },
-    {
-      "url": "https://www.linkedin.com/jobs/view/forward-deployed-engineer-%E2%80%93-sub-saharan-africa-%E2%80%93-fully-remote-at-network-recruitment-4475777807",
-      "title": "Forward Deployed Engineer – Sub-Saharan Africa – Fully Remote",
-      "company": "Network Recruitment",
-      "location_as_stated": "\"Sub-Saharan Africa – Fully Remote\"",
-      "reason": "Already applied Oct 13 (CV emailed to recruiter)",
-      "reason_code": "other",
-      "found_via": "LinkedIn guest search (2026-10-13)",
-      "verified": "Not re-opened 2026-10-14 (applied_log.csv)",
-      "id": "j-d4e291f2c626"
-    },
-    {
-      "url": "https://himalayas.app/companies/talentcross/jobs/1225-410mos-full-stack-engineer-react-node-js-postgresql-web-scraping-a",
-      "title": "Full Stack Engineer (React, Node.js, PostgreSQL, Web Scraping, AI Tools)",
-      "company": "TalentCross",
+      "url": "https://himalayas.app/companies/micro1/jobs/software-developer-23980",
+      "title": "Software Developer",
+      "company": "micro1",
       "location_as_stated": "Himalayas: Worldwide",
-      "reason": "Not in today's live search results",
-      "reason_code": "other",
-      "found_via": "Himalayas API (2026-10-13)",
-      "verified": "Absent from remote-live-2026-10-14.json",
-      "id": "j-eff04022701a"
+      "reason": "micro1 contract pool that requires passing micro1's AI interview; Ben's certification attempt was declined on Oct 13, so this needs a retake first",
+      "reason_code": "requirement",
+      "posted": "Himalayas 2026-10-14",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API listing 2026-10-14 3:20 PM EAT",
+      "id": "j-d3629d8e2ec9"
     },
     {
-      "url": "https://www.linkedin.com/jobs/view/product-engineer-ai-native-at-jobgether-4476587294",
-      "title": "Product Engineer (AI-Native)",
-      "company": "Jobgether",
-      "location_as_stated": "LinkedIn: Remote, Kenya",
-      "reason": "LinkedIn-only lead; LinkedIn failed today (HTTP 429), so not re-found",
-      "reason_code": "other",
-      "found_via": "LinkedIn guest search (2026-10-13)",
-      "verified": "Absent from remote-live-2026-10-14.json",
-      "id": "j-9561b27addd1"
-    },
-    {
-      "url": "https://www.linkedin.com/jobs/view/software-developer-trainee-at-ul-cyberpark-4476297712",
-      "title": "Software Developer Trainee",
-      "company": "UL CyberPark",
-      "location_as_stated": "LinkedIn: Remote, Kenya",
-      "reason": "LinkedIn-only lead; LinkedIn failed today (HTTP 429), so not re-found",
-      "reason_code": "other",
-      "found_via": "LinkedIn guest search (2026-10-13)",
-      "verified": "Absent from remote-live-2026-10-14.json",
-      "id": "j-4b31ad4e7346"
-    },
-    {
-      "url": "https://jobicy.com/jobs/150364-software-engineer-python-container-images",
-      "title": "Software Engineer - Python - Container Images",
-      "company": "Canonical",
-      "location_as_stated": "\"Remote from USA, APAC, Canada, EMEA, LATAM\"",
-      "reason": "Not in today's live search results",
-      "reason_code": "other",
-      "found_via": "Jobicy API (2026-10-13)",
-      "verified": "Absent from remote-live-2026-10-14.json",
-      "id": "j-7276d9d52759"
+      "url": "https://himalayas.app/companies/relx/jobs/software-engineer-2-intermediate",
+      "title": "Software Engineer - 2 (Intermediate)",
+      "company": "RELX",
+      "location_as_stated": "Himalayas: South Africa",
+      "reason": "Listed for South Africa only; Kenya not eligible",
+      "reason_code": "location",
+      "posted": "Himalayas 2026-10-14",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Intermediate level",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API listing 2026-10-14 3:20 PM EAT",
+      "id": "j-e203f377e6c8"
     }
   ],
   "news": {
@@ -525,19 +400,15 @@
   "local_jobs": {
     "status": "ok",
     "date": "2026-10-14",
-    "generated_at": "2026-10-14T07:16:41+03:00",
+    "generated_at": "2026-10-14T15:20:00+03:00",
     "sources_checked": [
       "MyJobMag",
       "LinkedIn"
     ],
     "errors": [
       {
-        "source": "MyJobMag",
-        "message": "signed_out"
-      },
-      {
         "source": "LinkedIn",
-        "message": "ai_keyword_partial_block"
+        "message": "LinkedIn guest search hit HTTP 429 (rate limit) on AI/software keyword queries this morning and again on a 3:20 PM retry; the Nairobi LinkedIn roles that loaded were all sales/manager roles and were filtered out for fit."
       }
     ],
     "jobs": [
@@ -567,52 +438,13 @@
         "url": "https://www.myjobmag.co.ke/job/information-technology-it-officer-refugee-led-organization-network-of-kenya-relon-kenya",
         "posted": "2026-10-13",
         "fit_note": "Early-career IT officer role in Nairobi (~3 yrs); overlaps his support/ops and systems background"
-      },
-      {
-        "title": "Enterprise Account Manager",
-        "company": "CloudPlexo",
-        "location": "Nairobi County, Kenya",
-        "source": "LinkedIn",
-        "url": "https://www.linkedin.com/jobs/view/enterprise-account-manager-at-cloudplexo-4476087505",
-        "posted": "2026-10-13",
-        "fit_note": "Cloud tech sales/account role in Nairobi; matches his interest in solutions/tech sales"
-      },
-      {
-        "title": "Enterprise Sales Specialist",
-        "company": "FieldiQ Sports Data",
-        "location": "Nairobi County, Kenya",
-        "source": "LinkedIn",
-        "url": "https://www.linkedin.com/jobs/view/enterprise-sales-specialist-at-fieldiq-sports-data-4476467352",
-        "posted": "2026-10-13",
-        "fit_note": "Tech sales for a sports-data product; fits solutions/forward-deployed style outreach"
-      },
-      {
-        "title": "Market Specialist - Nairobi, Kenya",
-        "company": "Kuwa Pay",
-        "location": "Nairobi County, Kenya",
-        "source": "LinkedIn",
-        "url": "https://www.linkedin.com/jobs/view/market-specialist-nairobi-kenya-at-kuwa-pay-4476415784",
-        "posted": "2026-10-13",
-        "fit_note": "Fintech go-to-market role in Nairobi; aligns with his fintech background and tech-sales interest"
-      },
-      {
-        "title": "Specialist III, Sales Support Operations - Kenya",
-        "company": "TransUnion",
-        "location": "Nairobi, Nairobi County, Kenya",
-        "source": "LinkedIn",
-        "url": "https://www.linkedin.com/jobs/view/specialist-iii-sales-support-operations-kenya-at-transunion-4477975767",
-        "posted": "2026-10-13",
-        "fit_note": "Credit-bureau sales/ops support in Nairobi; ties to his Kwara credit-bureau automation work"
-      },
-      {
-        "title": "Pre-Sales Manager – HRMS / HR Tech",
-        "company": "HONO",
-        "location": "Nairobi County, Kenya",
-        "source": "LinkedIn",
-        "url": "https://www.linkedin.com/jobs/view/pre-sales-manager-%E2%80%93-hrms-hr-tech-at-hono-4478765593",
-        "posted": "2026-10-13",
-        "fit_note": "HR-tech pre-sales in Nairobi; solutions consulting adjacent to his automation and stakeholder work"
       }
-    ]
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9226",
+      "error": null
+    }
   }
 }

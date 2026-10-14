@@ -214,6 +214,24 @@ Rules (enforced in `briefing_lib.read_local_jobs` / `attach_local_jobs`):
 - **Never edit `latest.json` and never add Kenya jobs to the run file by hand.** If the section says
   the search didn't run, that's the correct output; mention it to Ben instead.
 
+### MyJobMag personalised feed self-check (added 2026-10-14)
+`/personalized` redirects to the homepage for any request without Ben's session cookie, which is
+why plain curl/requests scans reported "signed out". The fetcher
+`/workspace/shared/local-jobs/bin/mjm_personalized.py` reads only myjobmag.co.ke cookies from the
+running box Chrome over local CDP (in memory), falls back to opening the page in a background tab of
+that Chrome, retries once, and writes `state/myjobmag_personalized_YYYY-MM-DD.json`.
+`attach_local_jobs` re-runs it if today's file is missing/failed and the page shows a bold warning
+at the top if the feed still can't be read. If you see that warning, tell Ben first.
+
+### Never resurface a role (added 2026-10-14)
+When the run is dated today, `publish_run.py` drops every remote job, dropped-list entry and Kenya
+job whose URL (normalised) is in `/workspace/job-search-plus/state/reviewed_jobs.txt`,
+`applied_log.csv`, or any earlier run in `data/runs/` (`briefing_lib.already_surfaced` /
+`exclude_surfaced`), then renumbers ranks. After a successful push it appends every URL it showed
+to `reviewed_jobs.txt` under `# surfaced in briefing YYYY-MM-DD` (lines tagged with today's date
+are ignored on a same-day rebuild). When shortlisting, skip these URLs up front so the page isn't
+left short; don't add them back by hand.
+
 ## 4. Write the run file
 
 Save the file as `/workspace/briefing-site/data/runs/YYYY-MM-DD.json`, using today's date in EAT.
