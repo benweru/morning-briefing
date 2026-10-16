@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-16",
+  "checked_at": "2026-10-16T07:43:34+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 56 pulled, 4 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 21 from last 7 days, 0 kept)",
+      "Himalayas (ok; 160 pulled, 79 from last 7 days, 8 kept)",
+      "Jobicy (ok; 150 pulled, 150 from last 7 days, 1 kept)",
+      "WeWorkRemotely (ok; 89 pulled, 19 from last 7 days, 7 kept)",
+      "WorkingNomads (ok; 51 pulled, 6 from last 7 days, 0 kept)",
+      "Greenhouse (ok; 857 pulled, 48 from last 7 days, 2 kept)",
+      "Ashby (ok; 343 pulled, 39 from last 7 days, 1 kept)",
+      "Lever (ok; 310 pulled, 5 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 60 pulled, 60 from last 7 days, 8 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
+      "Web search (junior/entry-level remote worldwide AI automation, Python and full-stack roles)",
+      "Employer pages: We Work Remotely posting pages (Askable, Upgrade), Himalayas API (NextAlpha, Gorin Systems, Tether), LinkedIn guest job pages (PATH, Diametral), Greenhouse API (Wikimedia, Moniepoint), Ashby API (Supabase), Deel ATS (Immigrant Invest)"
+    ],
+    "news": [
+      "Meta AI Research",
+      "MBZUAI IFM",
+      "Modal",
+      "Mint",
+      "Fortune",
+      "TechCabal",
+      "CNBC",
+      "African Development Bank",
+      "iAfrica.com"
+    ]
+  },
+  "counts": {
+    "pulled": 2175,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1744,
+      "senior_title": 180,
+      "not_target_role": 160,
+      "location_or_timezone": 49
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 3,
+    "dropped": 11,
+    "reviewed_closely": 14,
+    "dropped_by_reason": {
+      "location": 5,
+      "experience": 4,
+      "stack": 1,
+      "other": 1
+    },
+    "stories": 10
+  },
+  "method": {
+    "filtering_summary": "Live search at 7:38 AM EAT on 11 sources (ReliefWeb failed to answer) pulled 2,175 postings: 1,744 were older than 7 days, 180 senior or excluded titles, 160 not target roles, 49 excluded Kenya and 15 duplicates. Of the 27 that passed, 15 had already been shown in earlier briefings or reviewed. Of the 12 new ones, 3 made the shortlist after a check on the posting itself and 9 were dropped (US, Pakistan or French hybrid roles, senior or 3-5-year asks, a Laravel part-time job and a tender). A web search for junior remote roles turned up only roles already shown or closed. Nothing old was carried over."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2175,
+    "kept_after_filters": 27,
+    "fresh_shortlisted": 3,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 56,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 21,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 160,
+        "fresh": 79,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 150,
+        "fresh": 150,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 89,
+        "fresh": 19,
+        "kept": 7,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 51,
+        "fresh": 6,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 857,
+        "fresh": 48,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 343,
+        "fresh": 39,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 310,
+        "fresh": 5,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 60,
+        "fresh": 60,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "top",
+      "url": "https://himalayas.app/companies/nextalpha-nu-dawn/jobs/frontend-engineer-react-nextjs-git-responsive-design",
+      "title": "Frontend Engineer (React/NextJS, Git, Responsive Design)",
+      "company": "NextAlpha (Nu Dawn)",
+      "location_as_stated": "Himalayas: \"Worldwide\", no country restriction; time zones listed include UTC+3",
+      "posted": "2026-10-15 (Himalayas listing, expires 2026-12-14)",
+      "salary_as_shown": "INR 1,200,000 per year (Himalayas listing)",
+      "experience_asked": "Mid-level (Himalayas tag); no years stated. Proficient in React/NextJS, Git, responsive design",
+      "found_via": "Himalayas API (live search)",
+      "verified": "Himalayas API, live 2026-10-16 (apply link is the Himalayas page; no separate employer page found)",
+      "fit": "React front-end work for a no-code AI-workflow platform with developer APIs, and Python FastAPI is listed as a plus, which matches his React work at Chumz and his Kwara Python APIs.",
+      "gaps": "The role says it will lead frontend architecture and asks for Next.js, which he hasn't listed; the pay is modest, and the posting names no company website, so check who is behind it before applying.",
+      "id": "j-14c4511b24a9"
+    },
+    {
+      "rank": 2,
+      "tier": "stretch",
+      "url": "https://weworkremotely.com/remote-jobs/askable-software-engineer-ai-coding-tasks-contract",
+      "title": "Software Engineer, AI Coding Tasks (Contract)",
+      "company": "Askable",
+      "location_as_stated": "\"Remote, any location\"; WWR region \"Anywhere in the World\"",
+      "posted": "2026-10-16 (apply before Nov 15, 2026)",
+      "salary_as_shown": "US$1,000 per task that passes review",
+      "experience_asked": "2+ years of professional software engineering; code merged into a public open-source repo (or a private codebase you own)",
+      "found_via": "We Work Remotely (live search)",
+      "verified": "We Work Remotely posting page, live 2026-10-16",
+      "fit": "Paid per task for turning a real code change in Python or TypeScript into an evaluation task for AI coding models; it rewards heavy AI-coding-tool use and test writing, both close to his daily work.",
+      "gaps": "Asks for 2+ years and merged open-source code, which he may not have; it's contract side work of about 10 hours a week, not a salaried job, and client or employer code doesn't count.",
+      "id": "j-10c2169544e7"
+    },
+    {
+      "rank": 3,
+      "tier": "stretch",
+      "url": "https://www.linkedin.com/jobs/view/cloud-solutions-developer-integrations-platforms-at-path-4467056918",
+      "title": "Cloud Solutions Developer - Integrations & Platforms",
+      "company": "PATH",
+      "location_as_stated": "LinkedIn: \"Kenya\" (found with LinkedIn's remote filter; the posting text doesn't say remote or on-site)",
+      "posted": "2026-10-15",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "3-5 years in cloud solutions development or application integration; hands-on Microsoft Azure; LinkedIn tags Mid-Senior",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-16",
+      "fit": "Kenya-based integrations work (REST APIs, scheduled jobs, queues, Python functions, CI/CD) for a global health nonprofit, close to his Kwara webhook and API integration work.",
+      "gaps": "Asks for 3-5 years and hands-on Azure and SQL Server, which he doesn't have yet; remote vs office isn't stated, and it already has over 200 applicants.",
+      "id": "j-0a391fd00728"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://weworkremotely.com/remote-jobs/upgrade-ai-experience-engineer-conversational-ai",
+      "title": "AI Experience Engineer (Conversational AI)",
+      "company": "Upgrade",
+      "location_as_stated": "WWR region \"Anywhere in the World\"; HQ \"Canada (Remote)\"; pay in CAD",
+      "reason": "Asks for 3-5 years, and the CAD salary and Canadian HQ suggest Canada hiring; Kenya isn't named",
+      "reason_code": "experience",
+      "posted": "2026-10-15",
+      "salary_as_shown": "$140K-$180K CAN",
+      "experience_asked": "3-5 years frontend or conversational AI",
+      "found_via": "We Work Remotely (live search)",
+      "verified": "We Work Remotely posting page, live 2026-10-16",
+      "id": "j-9d89b8592672"
+    },
+    {
+      "url": "https://jobicy.com/jobs/155385-ai-platform-engineer",
+      "title": "AI Platform Engineer",
+      "company": "Supabase",
+      "location_as_stated": "Ashby: \"Remote, Global\"",
+      "reason": "Sole engineer owning the whole agent platform (senior scope), and the Ashby posting dates from 2026-07-31, not this week",
+      "reason_code": "experience",
+      "posted": "Ashby first published 2026-07-31 (Jobicy relisted 2026-10-15)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Senior scope, sole engineer",
+      "found_via": "Jobicy (live search)",
+      "verified": "Ashby API, live 2026-10-16",
+      "id": "j-2a8748c6bf11"
+    },
+    {
+      "url": "https://job-boards.greenhouse.io/wikimedia/jobs/8268853",
+      "title": "Software Engineering Internship Program (2027)",
+      "company": "Wikimedia Foundation",
+      "location_as_stated": "\"Location: Remote (US)*\"; hires only in listed US states",
+      "reason": "US-only internship",
+      "reason_code": "location",
+      "posted": "2026-10-15",
+      "salary_as_shown": "US$34.32-$42.13 per hour (US)",
+      "experience_asked": "Graduates, non-graduates or career changers",
+      "found_via": "Greenhouse API (live search)",
+      "verified": "Greenhouse API, live 2026-10-16",
+      "id": "j-3609fbf0d757"
+    },
+    {
+      "url": "https://job-boards.eu.greenhouse.io/moniepoint/jobs/5007070101",
+      "title": "Site Reliability Engineer",
+      "company": "Moniepoint",
+      "location_as_stated": "\"Remote, Pakistan\"",
+      "reason": "Pakistan-based role, and SRE is outside his target roles",
+      "reason_code": "location",
+      "posted": "2026-10-15",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Greenhouse API (live search)",
+      "verified": "Greenhouse API, live 2026-10-16",
+      "id": "j-1a2a34e87d41"
+    },
+    {
+      "url": "https://himalayas.app/companies/gorin-systems/jobs/full-stack-laravel-react-developer-5277609797",
+      "title": "Full Stack Laravel / React Developer",
+      "company": "Gorin Systems",
+      "location_as_stated": "Himalayas: \"Worldwide\"; meetings 9 am-12 pm EST",
+      "reason": "Needs 3+ years of Laravel/PHP, part-time only",
+      "reason_code": "stack",
+      "posted": "2026-10-15",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "3+ years Laravel, PHP, React",
+      "found_via": "Himalayas API (live search)",
+      "verified": "Himalayas API, live 2026-10-16",
+      "id": "j-6af854849f33"
+    },
+    {
+      "url": "https://himalayas.app/companies/tether-operations-limited/jobs/mobile-engineer-react-native-100-remote-worldwide",
+      "title": "Mobile Engineer - React Native (100% Remote) - Worldwide",
+      "company": "Tether Operations Limited",
+      "location_as_stated": "Himalayas: \"Worldwide\"",
+      "reason": "Himalayas tags it Senior; React Native mobile at a stablecoin company",
+      "reason_code": "experience",
+      "posted": "2026-10-15",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Senior (Himalayas tag)",
+      "found_via": "Himalayas API (live search)",
+      "verified": "Himalayas API, live 2026-10-16",
+      "id": "j-4cb8131ed2f6"
+    },
+    {
+      "url": "https://himalayas.app/companies/tether-operations-limited/jobs/mobile-engineer-react-native-100-remote",
+      "title": "Mobile Engineer - React Native (100% Remote)",
+      "company": "Tether Operations Limited",
+      "location_as_stated": "Himalayas: \"Worldwide\"",
+      "reason": "Duplicate Tether listing; tagged Senior",
+      "reason_code": "experience",
+      "posted": "2026-10-15",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Senior (Himalayas tag)",
+      "found_via": "Himalayas API (live search)",
+      "verified": "Himalayas API, live 2026-10-16",
+      "id": "j-3d9f7512c322"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/mlops-engineer-at-diametral-4478806012",
+      "title": "MLOps Engineer",
+      "company": "Diametral",
+      "location_as_stated": "LinkedIn: \"Oserian Engineering, Nakuru, Kenya\"; posting: French, \"Hybride\", 8 cities",
+      "reason": "French-language hybrid consultancy role needing 3+ years",
+      "reason_code": "location",
+      "posted": "2026-10-15",
+      "salary_as_shown": "",
+      "experience_asked": "3+ years",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-16",
+      "id": "j-d40dab6d9df1"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/data-engineer-at-diametral-4478498412",
+      "title": "Data Engineer",
+      "company": "Diametral",
+      "location_as_stated": "LinkedIn: \"Oserian Engineering, Nakuru, Kenya\"; posting: French, \"Hybride\", 8 cities",
+      "reason": "French-language hybrid consultancy role needing 3+ years",
+      "reason_code": "location",
+      "posted": "2026-10-15",
+      "salary_as_shown": "",
+      "experience_asked": "3+ years",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-16",
+      "id": "j-d09f055b1cd0"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/request-for-proposal-evaluation-of-the-wazzii-chatbot-digital-health-and-ai-evaluation-kenya-girl-effect-kenya-issue-date-14th-october-2026-at-reliefweb-4480103644",
+      "title": "Request for Proposal: evaluation of the WAZZII chatbot (Girl Effect Kenya)",
+      "company": "ReliefWeb",
+      "location_as_stated": "LinkedIn: \"Kenya\"",
+      "reason": "A consultancy tender for an evaluation, not a job",
+      "reason_code": "other",
+      "posted": "2026-10-15",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-16",
+      "id": "j-0a1c3124d298"
+    },
+    {
+      "url": "https://jobs.deel.com/ImmigrantInvest/job-details/7e246d23-ac54-4399-b0e7-dd1bfb48d070/overview",
+      "title": "Junior AI Automation Engineer",
+      "company": "Immigrant Invest",
+      "location_as_stated": "Deel: Romania, North Macedonia, Poland, Ukraine, Georgia, Moldova, Serbia, Europe",
+      "reason": "Europe-only list, needs advanced Russian, and first posted 2026-08-04 (aggregators relisted it this week)",
+      "reason_code": "location",
+      "posted": "Deel datePosted 2026-08-04",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "1+ year production automations",
+      "found_via": "Web search",
+      "verified": "Deel ATS listing data, 2026-10-16",
+      "id": "j-199cd084b06f"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Meta releases open weights for Muse Spark Open",
+            "summary": "An 816B-parameter (42B active) multimodal model with a 1M-token context, built for coding and agentic work; weights are on Hugging Face and it is served by Baseten, Fireworks AI, Groq, Modal, OpenRouter and others.",
+            "why": "A strong open-weight coding and agent model he can call through cheap API hosts for his own agent projects.",
+            "source": "Meta AI Research",
+            "date": "2026-10-15",
+            "url": "https://research.meta.ai/blog/muse-spark-open",
+            "id": "s-34bf133078de"
+          },
+          {
+            "title": "MBZUAI releases Jais 3, open Arabic agent models",
+            "summary": "Six Apache 2.0 models from 0.9B to 375B parameters with a 512K-token context, trained to plan tasks, call tools and MCP servers and edit files while chatting in Arabic.",
+            "why": "Small open models (3.7B and 7B) that are tuned for tool calling are a useful template for running agents locally.",
+            "source": "Institute of Foundation Models, MBZUAI",
+            "date": "2026-10-15",
+            "url": "https://ifm.ai/blog/jais3/",
+            "id": "s-63f65660685f"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Modal raises $750M Series D after passing $1B run rate",
+            "summary": "Modal says usage tripled in five months and it grew more than 15x year over year; the round was led by Accel at a $15.75 billion valuation, per its announcement and coverage.",
+            "why": "Serverless AI infrastructure is booming, and Modal's sandboxes are what many coding agents run on.",
+            "source": "Modal",
+            "date": "2026-10-14",
+            "url": "https://modal.com/blog/1-billion-annualized-run-rate-series-d",
+            "id": "s-71a5965a5f1d"
+          },
+          {
+            "title": "Jio Platforms sets price band for India's biggest IPO",
+            "summary": "Reliance's digital arm priced its IPO at ₹1,065-1,119 a share, raising about ₹30,213 crore at the top end; it opens October 21 and closes October 23, all fresh issue.",
+            "why": "A record tech IPO in an emerging market, a signal for how investors value telecom-plus-digital platforms like Safaricom.",
+            "source": "Mint",
+            "date": "2026-10-14",
+            "url": "https://www.livemint.com/market/stock-market-news/jio-platforms-ipo-price-band-fixed-at-rs-1-065-rs-1-119-per-share-minimum-bid-lot-set-at-12-shares-11791992365457.html",
+            "id": "s-16a369e7d5ff"
+          },
+          {
+            "title": "Fragment raises $12M so AI agents can handle money safely",
+            "summary": "The New York startup's double-entry ledger API lets agents automate billing and accounting while blocking invalid transactions; FirstMark and BoxGroup co-led the Series A.",
+            "why": "Agents plus fintech ledgers is exactly the overlap of his Kwara work, and a niche that is hiring.",
+            "source": "Fortune",
+            "date": "2026-10-14",
+            "url": "https://fortune.com/2026/10/14/fragment-raises-12-million-to-help-keep-ai-agents-from-going-rogue-with-company-money/",
+            "id": "s-16955c94d042"
+          },
+          {
+            "title": "African startups raised $2.49B in nine months as Q3 rebounded",
+            "summary": "315 disclosed deals so far in 2026, up 7.8% year on year; Q3 alone brought $1.025 billion, and Kenya ranks fourth with $297 million.",
+            "why": "More late-stage African money means more local engineering hiring, including at Kenyan startups like ARC Ride and SunCulture.",
+            "source": "TechCabal",
+            "date": "2026-10-15",
+            "url": "https://techcabal.com/2026/10/15/african-startups-raise-2-49b-in-9-months/",
+            "id": "s-5eefabe0f633"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Big Tech races to hire forward deployed engineers",
+            "summary": "US FDE postings passed 7,300 in the first nine months of 2026, up from under 200 in 2023 (Lightcast); AWS committed $1 billion and Anthropic plans to train 10,000 FDEs by end-2027.",
+            "why": "Forward deployed engineering is one of his target roles, and demand for it is rising fast.",
+            "source": "CNBC",
+            "date": "2026-10-15",
+            "url": "https://www.cnbc.com/2026/10/15/aws-anthropic-racing-to-deploy-army-of-specialized-ai-engineers.html",
+            "id": "s-dcbd7e6583a5"
+          },
+          {
+            "title": "AfDB and UNDP move AI 10 Billion plan toward delivery",
+            "summary": "The initiative aims to channel $1 billion a year for a decade into African AI and says it can contribute to 25 million new jobs by 2035, starting in 5 countries and reaching 20 by end-2027.",
+            "why": "Development money aimed at AI projects in Africa could create applied AI roles in Nairobi.",
+            "source": "African Development Bank",
+            "date": "2026-10-14",
+            "url": "https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-undp-advance-ai-10-97520",
+            "id": "s-4e43f88a167e"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Kenya's draft payments bill could slow fintech fundraising",
+            "summary": "The National Payment System Bill, 2026 would require CBK written approval for anyone acquiring 10% or more of a licensed payment firm, with no deadline for CBK to decide.",
+            "why": "Slower deal closings could squeeze hiring budgets at Kenyan fintechs he might apply to.",
+            "source": "TechCabal",
+            "date": "2026-10-15",
+            "url": "https://techcabal.com/2026/10/15/kenyas-fintech-reforms-delay-investment/",
+            "id": "s-be547b63885c"
+          },
+          {
+            "title": "Safaricom says AI stops 94% of attempted fraud",
+            "summary": "CEO Peter Ndegwa told Safaricom's cybersecurity summit in Nairobi that AI prevents 94% of attempted fraud in real time, as ICT CS William Kabogo warned of deepfake risks.",
+            "why": "Fraud-detection AI on mobile money is a live engineering area in Kenyan fintech.",
+            "source": "iAfrica.com",
+            "date": "2026-10-15",
+            "url": "https://iafrica.com/safaricom-says-ai-blocks-94-of-fraud-as-government-warns-of-deepfake-threats-to-children/",
+            "id": "s-68efff08acc4"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-16",
+    "generated_at": "2026-10-16T07:04:54+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "SSA KE - IT Support Specialist",
+        "company": "DHL Express",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/ssa-ke-it-support-specialist-dhl",
+        "posted": "2026-10-15",
+        "fit_note": "IT and application support with digital customer platforms (2-3 years); matches his tech support and systems background. Also listed on LinkedIn: https://www.linkedin.com/jobs/view/4479845690"
+      },
+      {
+        "title": "User Manager/Access Management Specialist",
+        "company": "Teleperformance Kenya (TP)",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/user-manager-access-management-specialist-teleperformance",
+        "posted": "2026-10-15",
+        "fit_note": "Access and permissions management plus incident handling on client applications (no years stated); fits his support and systems side"
+      },
+      {
+        "title": "Digital Health Systems Strengthening Officers",
+        "company": "Living Goods",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/digital-health-systems-strengthening-officers-living-goods",
+        "posted": "2026-10-15",
+        "fit_note": "Contract role giving technical support and training on digital health tools (no years stated); uses his tech support and product experience"
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9226",
+      "error": null
+    }
+  }
+}
