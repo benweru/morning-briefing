@@ -403,11 +403,41 @@ def _url_key(u):
         return (u or '').strip()
 
 
+_CO_SUFFIX = re.compile(r'\b(ltd|limited|inc|llc|llp|plc|gmbh|co|company|corp|corporation|group|kenya|the)\b')
+
+
+def _norm_company(c):
+    c = re.sub(r'\([^)]*\)', ' ', (c or '').lower())
+    c = _CO_SUFFIX.sub(' ', c)
+    return re.sub(r'[^a-z0-9]', '', c)
+
+
+def _norm_title(t):
+    t = (t or '').lower().replace('jr.', 'junior ').replace('sr.', 'senior ')
+    t = re.sub(r'\([^)]*\)|\[[^\]]*\]', ' ', t)
+    t = re.split(r'\s[-\u2013\u2014|:]\s|,', t)[0]
+    t = re.sub(r'\b(remote|hybrid|onsite|on-site|full[- ]?time|contract)\b', ' ', t)
+    return re.sub(r'[^a-z0-9]', '', t)
+
+
+def _ct_key(company, title):
+    c, t = _norm_company(company), _norm_title(title)
+    return (c, t) if c and len(t) >= 4 else None
+
+
+def _ct_match(key, seen_ct):
+    """Same normalised company and the same core title (or one core title starting with the other)."""
+    if not key:
+        return False
+    c, t = key
+    return any(c == sc and (t == st or t.startswith(st) or st.startswith(t)) for sc, st in seen_ct)
+
+
 def already_surfaced(repo, today):
     """Normalised URLs Ben has seen: reviewed_jobs.txt, applied_log.csv, and every job/dropped/
     Kenya job URL in any published run dated before `today`."""
     import csv, glob
-    seen = set()
+    seen = SeenSet()
     if os.path.exists(REVIEWED_PATH):
         skip = False   # lines recorded by today's own publish don't hide today's roles on a rebuild
         for raw in open(REVIEWED_PATH, encoding='utf-8'):
@@ -415,12 +445,25 @@ def already_surfaced(repo, today):
                 skip = raw.strip().endswith(today)
                 continue
             line = raw.split('#', 1)[0].strip()
-            if line.startswith('http') and not skip:
+            if skip or not line:
+                continue
+            if line.startswith('http'):
                 seen.add(_url_key(line))
+            elif '|' in line:   # optional "Company | Title" lines
+                c, t = line.split('|', 1)
+                seen.add_ct(_ct_key(c, t))
     if os.path.exists(APPLIED_LOG_PATH):
-        for row in csv.DictReader(open(APPLIED_LOG_PATH, encoding='utf-8')):
-            if (row.get('url') or '').startswith('http'):
-                seen.add(_url_key(row['url']))
+        for row in csv.reader(open(APPLIED_LOG_PATH, encoding='utf-8')):
+            if not row or row[0] == 'date':
+                continue
+            for cell in row:
+                if cell.startswith('http'):
+                    seen.add(_url_key(cell))
+            # two row layouts exist: date,title,company,url,status  and  company,title,status,time,note
+            if re.match(r'\d{4}-\d{2}-\d{2}$', row[0]) and len(row) > 2:
+                seen.add_ct(_ct_key(row[2], row[1]))
+            elif len(row) > 1:
+                seen.add_ct(_ct_key(row[0], row[1]))
     for f in glob.glob(os.path.join(repo, 'data', 'runs', '*.json')):
         if os.path.basename(f)[:10] >= today:
             continue
@@ -430,9 +473,22 @@ def already_surfaced(repo, today):
             continue
         lj = r.get('local_jobs') or {}
         for j in (r.get('jobs') or []) + (r.get('dropped') or []) + (lj.get('jobs') or []):
-            if isinstance(j, dict) and j.get('url'):
-                seen.add(_url_key(j['url']))
+            if isinstance(j, dict):
+                if j.get('url'):
+                    seen.add(_url_key(j['url']))
+                seen.add_ct(_ct_key(j.get('company'), j.get('title')))
     return seen
+
+
+class SeenSet(set):
+    """URL keys (the set itself) plus normalised (company, title) pairs in .ct."""
+    def __init__(self, *a):
+        super().__init__(*a)
+        self.ct = set()
+
+    def add_ct(self, key):
+        if key:
+            self.ct.add(key)
 
 
 def exclude_surfaced(run, seen):
@@ -440,7 +496,13 @@ def exclude_surfaced(run, seen):
     ranks. Returns {"remote": n, "dropped": n, "kenya": n} removed."""
     out = {}
     def keep(lst):
-        return [j for j in lst if not (isinstance(j, dict) and j.get('url') and _url_key(j['url']) in seen)]
+        def hit(j):
+            if not isinstance(j, dict):
+                return False
+            if j.get('url') and _url_key(j['url']) in seen:
+                return True
+            return _ct_match(_ct_key(j.get('company'), j.get('title')), getattr(seen, 'ct', ()))
+        return [j for j in lst if not hit(j)]
     for key in ('jobs', 'dropped'):
         before = run.get(key) or []
         run[key] = keep(before)

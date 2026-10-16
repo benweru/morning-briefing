@@ -40,25 +40,24 @@
       "location_or_timezone": 49
     },
     "filtered_out_is_approximate": false,
-    "shortlisted": 3,
-    "dropped": 11,
-    "reviewed_closely": 14,
+    "shortlisted": 2,
+    "dropped": 8,
+    "reviewed_closely": 10,
     "dropped_by_reason": {
-      "location": 5,
+      "location": 3,
       "experience": 4,
-      "stack": 1,
       "other": 1
     },
     "stories": 10
   },
   "method": {
-    "filtering_summary": "Live search at 7:38 AM EAT on 11 sources (ReliefWeb failed to answer) pulled 2,175 postings: 1,744 were older than 7 days, 180 senior or excluded titles, 160 not target roles, 49 excluded Kenya and 15 duplicates. Of the 27 that passed, 15 had already been shown in earlier briefings or reviewed. Of the 12 new ones, 3 made the shortlist after a check on the posting itself and 9 were dropped (US, Pakistan or French hybrid roles, senior or 3-5-year asks, a Laravel part-time job and a tender). A web search for junior remote roles turned up only roles already shown or closed. Nothing old was carried over."
+    "filtering_summary": "Live search at 7:38 AM EAT on 11 sources (ReliefWeb failed to answer) pulled 2,175 postings: 1,744 were older than 7 days, 180 senior or excluded titles, 160 not target roles, 49 excluded Kenya and 15 duplicates. Of the 27 that passed, 15 had already been shown in earlier briefings or reviewed. Of the 12 new ones, 3 made the shortlist after a check on the posting itself and 9 were dropped (US, Pakistan or French hybrid roles, senior or 3-5-year asks, a Laravel part-time job and a tender). A web search for junior remote roles turned up only roles already shown or closed. Nothing old was carried over. Republished 7:50 AM EAT: NextAlpha's Frontend Engineer role was removed (Ben applied on Oct 14; it came back under a new URL), as were 3 dropped-list roles already shown on Oct 15."
   },
   "search_health": {
     "window_days": 7,
     "pulled": 2175,
     "kept_after_filters": 27,
-    "fresh_shortlisted": 3,
+    "fresh_shortlisted": 2,
     "generated_by": "job-search-plus/live/remote_live.py",
     "sources": [
       {
@@ -154,22 +153,6 @@
   "jobs": [
     {
       "rank": 1,
-      "tier": "top",
-      "url": "https://himalayas.app/companies/nextalpha-nu-dawn/jobs/frontend-engineer-react-nextjs-git-responsive-design",
-      "title": "Frontend Engineer (React/NextJS, Git, Responsive Design)",
-      "company": "NextAlpha (Nu Dawn)",
-      "location_as_stated": "Himalayas: \"Worldwide\", no country restriction; time zones listed include UTC+3",
-      "posted": "2026-10-15 (Himalayas listing, expires 2026-12-14)",
-      "salary_as_shown": "INR 1,200,000 per year (Himalayas listing)",
-      "experience_asked": "Mid-level (Himalayas tag); no years stated. Proficient in React/NextJS, Git, responsive design",
-      "found_via": "Himalayas API (live search)",
-      "verified": "Himalayas API, live 2026-10-16 (apply link is the Himalayas page; no separate employer page found)",
-      "fit": "React front-end work for a no-code AI-workflow platform with developer APIs, and Python FastAPI is listed as a plus, which matches his React work at Chumz and his Kwara Python APIs.",
-      "gaps": "The role says it will lead frontend architecture and asks for Next.js, which he hasn't listed; the pay is modest, and the posting names no company website, so check who is behind it before applying.",
-      "id": "j-14c4511b24a9"
-    },
-    {
-      "rank": 2,
       "tier": "stretch",
       "url": "https://weworkremotely.com/remote-jobs/askable-software-engineer-ai-coding-tasks-contract",
       "title": "Software Engineer, AI Coding Tasks (Contract)",
@@ -185,7 +168,7 @@
       "id": "j-10c2169544e7"
     },
     {
-      "rank": 3,
+      "rank": 2,
       "tier": "stretch",
       "url": "https://www.linkedin.com/jobs/view/cloud-solutions-developer-integrations-platforms-at-path-4467056918",
       "title": "Cloud Solutions Developer - Integrations & Platforms",
@@ -259,20 +242,6 @@
       "id": "j-1a2a34e87d41"
     },
     {
-      "url": "https://himalayas.app/companies/gorin-systems/jobs/full-stack-laravel-react-developer-5277609797",
-      "title": "Full Stack Laravel / React Developer",
-      "company": "Gorin Systems",
-      "location_as_stated": "Himalayas: \"Worldwide\"; meetings 9 am-12 pm EST",
-      "reason": "Needs 3+ years of Laravel/PHP, part-time only",
-      "reason_code": "stack",
-      "posted": "2026-10-15",
-      "salary_as_shown": "Not shown",
-      "experience_asked": "3+ years Laravel, PHP, React",
-      "found_via": "Himalayas API (live search)",
-      "verified": "Himalayas API, live 2026-10-16",
-      "id": "j-6af854849f33"
-    },
-    {
       "url": "https://himalayas.app/companies/tether-operations-limited/jobs/mobile-engineer-react-native-100-remote-worldwide",
       "title": "Mobile Engineer - React Native (100% Remote) - Worldwide",
       "company": "Tether Operations Limited",
@@ -299,34 +268,6 @@
       "found_via": "Himalayas API (live search)",
       "verified": "Himalayas API, live 2026-10-16",
       "id": "j-3d9f7512c322"
-    },
-    {
-      "url": "https://www.linkedin.com/jobs/view/mlops-engineer-at-diametral-4478806012",
-      "title": "MLOps Engineer",
-      "company": "Diametral",
-      "location_as_stated": "LinkedIn: \"Oserian Engineering, Nakuru, Kenya\"; posting: French, \"Hybride\", 8 cities",
-      "reason": "French-language hybrid consultancy role needing 3+ years",
-      "reason_code": "location",
-      "posted": "2026-10-15",
-      "salary_as_shown": "",
-      "experience_asked": "3+ years",
-      "found_via": "LinkedIn (live search)",
-      "verified": "LinkedIn guest job page, live 2026-10-16",
-      "id": "j-d40dab6d9df1"
-    },
-    {
-      "url": "https://www.linkedin.com/jobs/view/data-engineer-at-diametral-4478498412",
-      "title": "Data Engineer",
-      "company": "Diametral",
-      "location_as_stated": "LinkedIn: \"Oserian Engineering, Nakuru, Kenya\"; posting: French, \"Hybride\", 8 cities",
-      "reason": "French-language hybrid consultancy role needing 3+ years",
-      "reason_code": "location",
-      "posted": "2026-10-15",
-      "salary_as_shown": "",
-      "experience_asked": "3+ years",
-      "found_via": "LinkedIn (live search)",
-      "verified": "LinkedIn guest job page, live 2026-10-16",
-      "id": "j-d09f055b1cd0"
     },
     {
       "url": "https://www.linkedin.com/jobs/view/request-for-proposal-evaluation-of-the-wazzii-chatbot-digital-health-and-ai-evaluation-kenya-girl-effect-kenya-issue-date-14th-october-2026-at-reliefweb-4480103644",
