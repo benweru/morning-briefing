@@ -1,0 +1,605 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-19",
+  "checked_at": "2026-10-19T08:05:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 48 pulled, 4 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 28 from last 7 days, 2 kept)",
+      "Himalayas (ok; 160 pulled, 90 from last 7 days, 12 kept)",
+      "Jobicy (ok; 150 pulled, 150 from last 7 days, 5 kept)",
+      "WeWorkRemotely (ok; 99 pulled, 25 from last 7 days, 5 kept)",
+      "WorkingNomads (ok; 46 pulled, 6 from last 7 days, 0 kept)",
+      "Greenhouse (ok; 903 pulled, 67 from last 7 days, 2 kept)",
+      "Ashby (ok; 347 pulled, 23 from last 7 days, 1 kept)",
+      "Lever (ok; 310 pulled, 5 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 60 pulled, 60 from last 7 days, 14 kept)",
+      "ReliefWeb (ok; 46 pulled, 27 from last 7 days, 1 kept)",
+      "Web search (junior/entry-level remote worldwide AI automation and Python roles)",
+      "Employer pages: Ashby API (Sticker Mule), Greenhouse API (Canonical), We Work Remotely posting pages (Alloy, Airbnb), Jobicy posting pages (Sticker Mule, Supabase, EDB, Udacity), RemoteOK (Kodland), Himalayas API (Xperteez, KOMBO), LinkedIn guest job pages (ADG, Allied Global, Seedtag, Alliance of Bioversity and CIAT)"
+    ],
+    "news": [
+      "SiliconANGLE",
+      "TechCrunch",
+      "CNBC",
+      "Love Dublin",
+      "The Star (Kenya)"
+    ]
+  },
+  "counts": {
+    "pulled": 2268,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1783,
+      "senior_title": 165,
+      "not_target_role": 214,
+      "location_or_timezone": 46
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 2,
+    "dropped": 17,
+    "reviewed_closely": 19,
+    "dropped_by_reason": {
+      "location": 3,
+      "experience": 10,
+      "stack": 1,
+      "requirement": 1,
+      "other": 2
+    },
+    "stories": 9
+  },
+  "method": {
+    "filtering_summary": "Live search at 7:34 AM EAT on 11 sources (all answered) pulled 2,268 postings: 1,783 were older than 7 days, 165 senior or excluded titles, 214 not target roles, 46 excluded Kenya and 18 duplicates. Of the 42 that passed, 18 had already been shown in earlier briefings or reviewed. Of the 24 new ones, 2 made the shortlist after a check on the posting itself, and both are long-running listings that were relisted this week. The rest were dropped: 5+ or 7+ year asks (Alloy, Supabase, EDB, Udacity, three ADG roles, Allied Global), US-only or EU-country-only remote rules (Airbnb, Seedtag), a German-language lead role, an unconfirmable AI-training contract, a kids' coding-tutor job, a mid-senior consultancy, and non-software or non-job listings (mechatronics internships, a robotics role, a tender). ADG's Software Engineer and Test Engineer roles are in today's Kenya section instead. A web search for junior remote roles found only listings older than 7 days. Nothing old was carried over."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2268,
+    "kept_after_filters": 42,
+    "fresh_shortlisted": 2,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 48,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 28,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 160,
+        "fresh": 90,
+        "kept": 12,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 150,
+        "fresh": 150,
+        "kept": 5,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 25,
+        "kept": 5,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 46,
+        "fresh": 6,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 903,
+        "fresh": 67,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 347,
+        "fresh": 23,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 310,
+        "fresh": 5,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 60,
+        "fresh": 60,
+        "kept": 14,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": true,
+        "pulled": 46,
+        "fresh": 27,
+        "kept": 1,
+        "error": null
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "evergreen",
+      "url": "https://jobs.ashbyhq.com/stickermule/6db27241-e2d4-4f35-a2c4-b58d84621843",
+      "title": "Software engineer",
+      "company": "Sticker Mule",
+      "location_as_stated": "Ashby: \"Remote\"; Jobicy: \"Remote from Anywhere\"; posting: \"Fully remote from 40+ countries\"",
+      "posted": "Jobicy relisted 2026-10-17 (Ashby posting first published 2025-07-28)",
+      "salary_as_shown": "US$150,000–250,000 a year plus a US$20,000 signing bonus",
+      "experience_asked": "No years stated; \"an exceptional full-stack software engineer\" who uses AI aggressively and writes well in English",
+      "found_via": "Jobicy (live search)",
+      "verified": "Ashby API and Jobicy posting page, live 2026-10-19",
+      "fit": "Full-stack product work on TypeScript, React, Postgres and GraphQL with heavy AI-tool use, which matches his React and Postgres work and his daily use of AI coding assistants.",
+      "gaps": "Kenya isn't named among the 40+ countries; confirm before applying. The bar is \"exceptional\" and the stack includes Go and Expo, which he hasn't used. He applied to Sticker Mule's AI agent engineer role on Oct 12, so this would be a second application there.",
+      "id": "j-5717984075da"
+    },
+    {
+      "rank": 2,
+      "tier": "evergreen",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/6707824",
+      "title": "Ubuntu Software Engineer",
+      "company": "Canonical",
+      "location_as_stated": "Greenhouse: \"Home based - Worldwide\"",
+      "posted": "Himalayas listed 2026-10-18 (Greenhouse req first published 2025-11-07, updated 2026-08-05)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "2 to 4 years of professional software engineering; CS or STEM degree; exceptional academic record",
+      "found_via": "Himalayas (live search)",
+      "verified": "Greenhouse API, live 2026-10-19",
+      "fit": "Worldwide home-based role writing Python (plus Go and Rust) for Ubuntu, with a CS degree requirement he meets.",
+      "gaps": "Asks for 2-4 years against his roughly 1, and Canonical turned down his Graduate Software Engineer application on Oct 14. Teams meet in person two to four times a year, so there is some travel.",
+      "id": "j-c0f123e1b505"
+    }
+  ],
+  "dropped": [
+    {
+      "posted": "2026-10-18",
+      "salary_as_shown": "$141,000–$250,000",
+      "experience_asked": "5+ years",
+      "found_via": "We Work Remotely (live search)",
+      "verified": "We Work Remotely posting page, live 2026-10-19",
+      "note": "",
+      "url": "https://weworkremotely.com/remote-jobs/alloy-founding-forward-deployed-engineer",
+      "title": "Founding Forward Deployed Engineer",
+      "company": "Alloy",
+      "location_as_stated": "WWR region \"Anywhere in the World\"; posting: local staff onsite three days a week (NYC HQ)",
+      "reason": "Asks for 5+ years and it's a founding, strategic-accounts role",
+      "reason_code": "experience",
+      "id": "j-0b2774802d11"
+    },
+    {
+      "posted": "2026-10-18",
+      "salary_as_shown": "$136,000–$160,000 USD",
+      "experience_asked": "3+ years",
+      "found_via": "We Work Remotely (live search)",
+      "verified": "We Work Remotely posting page, live 2026-10-19",
+      "note": "",
+      "url": "https://weworkremotely.com/remote-jobs/airbnb-operations-engineer-biztech",
+      "title": "Operations Engineer, BizTech",
+      "company": "Airbnb",
+      "location_as_stated": "\"This position is US - Remote Eligible\"",
+      "reason": "US-only remote; 3+ years",
+      "reason_code": "location",
+      "id": "j-68fcaaced358"
+    },
+    {
+      "posted": "2026-10-17",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "5+ years",
+      "found_via": "Jobicy (live search)",
+      "verified": "Jobicy posting page, live 2026-10-19",
+      "note": "",
+      "url": "https://jobicy.com/jobs/153452-edge-functions-engineer",
+      "title": "Edge Functions Engineer",
+      "company": "Supabase",
+      "location_as_stated": "Jobicy: \"Remote from Anywhere\"",
+      "reason": "Asks for at least 5 years of backend or systems work",
+      "reason_code": "experience",
+      "id": "j-979225f657b3"
+    },
+    {
+      "posted": "2026-10-17",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "4+ years; 2+ years Go",
+      "found_via": "Jobicy (live search)",
+      "verified": "Jobicy posting page, live 2026-10-19",
+      "note": "",
+      "url": "https://jobicy.com/jobs/153449-software-engineer-auth",
+      "title": "Software Engineer - Auth",
+      "company": "Supabase",
+      "location_as_stated": "Jobicy: \"Remote from Anywhere\"",
+      "reason": "Asks for 4+ years plus 2+ years of production Go",
+      "reason_code": "experience",
+      "id": "j-2f848914d1fa"
+    },
+    {
+      "posted": "2026-10-18",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "4-7 years",
+      "found_via": "Jobicy (live search)",
+      "verified": "Jobicy posting page, live 2026-10-19",
+      "note": "",
+      "url": "https://jobicy.com/jobs/155746-machine-learning-engineer-governance-ml-platform",
+      "title": "Machine Learning Engineer (Governance ML Platform)",
+      "company": "EDB",
+      "location_as_stated": "Jobicy: \"Remote from EMEA\"",
+      "reason": "Asks for 4-7 years of ML engineering",
+      "reason_code": "experience",
+      "id": "j-10d3f4665703"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "5+ years",
+      "found_via": "Jobicy (live search)",
+      "verified": "Jobicy posting page, live 2026-10-19",
+      "note": "",
+      "url": "https://jobicy.com/jobs/150767-ai-technical-mentor-independent-contractor-us-canada-europe-mena-india-apac-timezones",
+      "title": "AI Technical Mentor (Independent Contractor)",
+      "company": "Udacity",
+      "location_as_stated": "Jobicy: \"USA, APAC, Canada, EMEA, Europe\"",
+      "reason": "Mentoring contract asking for 5+ years",
+      "reason_code": "experience",
+      "id": "j-678f18bdaa77"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "RemoteOK (live search)",
+      "verified": "RemoteOK posting page, live 2026-10-19",
+      "note": "",
+      "url": "https://remoteok.com/remote-jobs/remote-apac-python-kodland-1137534",
+      "title": "APAC Python",
+      "company": "Kodland",
+      "location_as_stated": "RemoteOK: \"Worldwide\"; title says APAC",
+      "reason": "Teaching Python to children, aimed at APAC; not an engineering role",
+      "reason_code": "other",
+      "id": "j-083dc772f984"
+    },
+    {
+      "posted": "2026-10-19",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, 2026-10-19 (page itself returns 403)",
+      "note": "",
+      "url": "https://himalayas.app/companies/kombo-medical-solutions-ug/jobs/full-stack-developer-m-w-d",
+      "title": "Full Stack Developer (m/w/d)",
+      "company": "KOMBO medical solutions UG",
+      "location_as_stated": "Himalayas: \"Worldwide\"",
+      "reason": "Posting is in German and the role is technical lead for the whole portal and dev team",
+      "reason_code": "requirement",
+      "id": "j-de24e713e9a4"
+    },
+    {
+      "posted": "2026-10-17",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API only, 2026-10-19 (page returns 403)",
+      "note": "",
+      "url": "https://himalayas.app/companies/xperteez-technology/jobs/software-developer-remote-contract-873194389",
+      "title": "Software Developer, Remote - Contract",
+      "company": "Xperteez Technology",
+      "location_as_stated": "Himalayas: \"Worldwide\"; posting: \"Remote\"",
+      "reason": "AI-training contract work; couldn't open the posting or an employer page to confirm it",
+      "reason_code": "other",
+      "id": "j-6d86bb2860c3"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "",
+      "experience_asked": "10+ years",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-19",
+      "note": "",
+      "url": "https://www.linkedin.com/jobs/view/forward-deployed-engineer-at-adg-4479382341",
+      "title": "Forward-Deployed Engineer",
+      "company": "ADG",
+      "location_as_stated": "LinkedIn: \"Remote — Nairobi, Nairobi County, Kenya\"",
+      "reason": "Asks for 10+ years of hands-on engineering",
+      "reason_code": "experience",
+      "id": "j-d7ba3426b391"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "",
+      "experience_asked": "7+ years",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-19",
+      "note": "",
+      "url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-at-adg-4479378402",
+      "title": "AI/ML Engineer",
+      "company": "ADG",
+      "location_as_stated": "LinkedIn: \"Remote — Nairobi, Nairobi County, Kenya\"",
+      "reason": "Asks for at least 7 years",
+      "reason_code": "experience",
+      "id": "j-8f1cff6e9e07"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "",
+      "experience_asked": "7+ years",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-19",
+      "note": "",
+      "url": "https://www.linkedin.com/jobs/view/data-engineer-at-adg-4479382295",
+      "title": "Data Engineer",
+      "company": "ADG",
+      "location_as_stated": "LinkedIn: \"Remote — Nairobi, Nairobi County, Kenya\"",
+      "reason": "Asks for at least 7 years",
+      "reason_code": "experience",
+      "id": "j-416ab776a9ad"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "",
+      "experience_asked": "7+ years",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-19",
+      "note": "",
+      "url": "https://www.linkedin.com/jobs/view/full-stack-web-developer-at-allied-global-technology-services-4480388906",
+      "title": "Full Stack Web Developer",
+      "company": "Allied Global Technology Services",
+      "location_as_stated": "LinkedIn: \"Remote — Nairobi County, Kenya\"",
+      "reason": "Asks for 7+ years, 5 of them WordPress",
+      "reason_code": "experience",
+      "id": "j-3b6e22cafa39"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "",
+      "experience_asked": "3+ years",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-19",
+      "note": "",
+      "url": "https://www.linkedin.com/jobs/view/agentic-platform-engineer-at-seedtag-4480396905",
+      "title": "Agentic Platform Engineer",
+      "company": "Seedtag",
+      "location_as_stated": "Posting: remote contracts \"available in Spain, Italy, UK, Belgium, Netherlands, France, and Germany\"",
+      "reason": "Remote only from seven European countries; 3+ years",
+      "reason_code": "location",
+      "id": "j-f573db6dd83c"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "",
+      "experience_asked": "2-4 years",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-19",
+      "note": "",
+      "url": "https://www.linkedin.com/jobs/view/mlops-engineer-at-seedtag-4480399694",
+      "title": "MLOps Engineer",
+      "company": "Seedtag",
+      "location_as_stated": "Posting: remote contracts \"available in Spain, Italy, UK, Belgium, Netherlands, France, and Germany\"",
+      "reason": "Remote only from seven European countries; 2-4 years",
+      "reason_code": "location",
+      "id": "j-53cc8e40d5da"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "",
+      "experience_asked": "3+ years",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-19",
+      "note": "",
+      "url": "https://www.linkedin.com/jobs/view/machine-learning-and-operations-consultant-at-alliance-of-bioversity-international-and-ciat-4480390472",
+      "title": "Machine Learning and Operations Consultant",
+      "company": "Alliance of Bioversity International and CIAT",
+      "location_as_stated": "Posting: \"based in either Kenya or Tanzania\"",
+      "reason": "Mid-senior consultancy asking for 3+ years of ML",
+      "reason_code": "experience",
+      "id": "j-346f07998715"
+    },
+    {
+      "posted": "2026-10-16",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-19",
+      "note": "",
+      "url": "https://www.linkedin.com/jobs/view/machine-learning-and-operations-consultancy-computer-vision-at-alliance-of-bioversity-international-and-ciat-4480393404",
+      "title": "Machine Learning And Operations Consultancy (Computer Vision)",
+      "company": "Alliance of Bioversity International and CIAT",
+      "location_as_stated": "Posting: \"based in either Kenya or Tanzania\"",
+      "reason": "Mid-senior computer-vision consultancy, outside his stack",
+      "reason_code": "stack",
+      "id": "j-e8a331ea3dfe"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "DeepSeek ships a faster V4.1-Flash and opens its search API",
+            "summary": "DeepSeek-V4.1-Flash-1017 resolved 77% of DeepSWE v1.1 tasks in DeepSeek's own tests (up from 74.2%), keeps the same API prices, and ships MIT-licensed weights; new Search and Fetch APIs cost 75 cents per 1,000 successful requests.",
+            "why": "A cheap, open coding model plus a ready-made web search API for agents he builds.",
+            "source": "SiliconANGLE",
+            "date": "2026-10-18",
+            "url": "https://siliconangle.com/2026/10/18/deepseek-releases-updated-v4-1-flash-model-it-says-completes-tasks-faster/",
+            "id": "s-872b129ca230"
+          },
+          {
+            "title": "Replit makes OpenAI the default model for Replit Agent",
+            "summary": "CEO Amjad Masad said ChatGPT is now Replit Agent's default over Anthropic on cost and performance, though Claude models stay selectable; enterprise contracts are now about 15% of Replit's revenue.",
+            "why": "Shows how fast AI coding platforms switch model providers, which matters when he picks models for client work.",
+            "source": "TechCrunch",
+            "date": "2026-10-17",
+            "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+            "id": "s-6435f671229b"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Anthropic commits 5% of its shares to a public benefit fund",
+            "summary": "Subject to shareholder approval, the fund starts with 5% of shares, may grow 2 points for every 50% rise in value, and could fund work on AI job disruption; Anthropic told investors Q3 revenue was $16.8 billion ahead of a planned IPO.",
+            "why": "The biggest AI IPO story of the week, and it ties AI gains to the job market he's entering.",
+            "source": "CNBC",
+            "date": "2026-10-18",
+            "url": "https://www.cnbc.com/2026/10/18/anthropic-ai-public-benefit-fund.html",
+            "id": "s-a46177d4f179"
+          },
+          {
+            "title": "Evos raises $9 million for AI agents that run industrial back offices",
+            "summary": "Evos, which builds AI agents that automate work for industrial businesses such as freight brokerages, raised a $9 million pre-seed co-led by Uncork Capital and Field Ventures.",
+            "why": "An early-stage agent-automation startup of the kind that hires engineers who build workflow automations.",
+            "source": "TechCrunch",
+            "date": "2026-10-18",
+            "url": "https://techcrunch.com/2026/10/18/techcrunch-mobility-rivians-next-act/",
+            "id": "s-8ae21e924851"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Anthropic's junior technical hiring falls from 27% to 9% of hires",
+            "summary": "Anthropic's own report says junior employees in technical teams fell from 21% to 14% since early 2025, and hiring managers now weigh autonomy, judgment and creative AI-tool use more than domain expertise.",
+            "why": "Junior roles at AI-heavy firms now reward showing judgment and real AI-tool use, which is worth leading with in his applications.",
+            "source": "TechCrunch",
+            "date": "2026-10-17",
+            "url": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/",
+            "id": "s-0dabc6c10b97"
+          },
+          {
+            "title": "OpenAI adds 200 Dublin jobs, including forward deployed engineers",
+            "summary": "OpenAI will add 200 more jobs at its Dublin EU headquarters, three months after announcing 250, with some going to a new Applied AI Lab for forward deployed, solutions and privacy engineers.",
+            "why": "Forward deployed and solutions engineering keep growing as a hiring track that fits his profile.",
+            "source": "Love Dublin",
+            "date": "2026-10-17",
+            "url": "https://www.lovedublin.org/openai-200-more-dublin-jobs-applied-ai-lab/",
+            "id": "s-b8bb33cdf384"
+          },
+          {
+            "title": "Disney will hire most of bankrupt Character.AI's staff",
+            "summary": "A court filing shows Disney agreed to make offers to at least 60 Character.AI employees, an estimated $60 million in yearly pay, after the chatbot startup filed for bankruptcy.",
+            "why": "Big companies are absorbing whole AI teams, a sign that applied-AI experience stays in demand even when startups fail.",
+            "source": "TechCrunch",
+            "date": "2026-10-18",
+            "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/",
+            "id": "s-218f77bb959f"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Two Kenyan AI startups win Meta pitchathon funding",
+            "summary": "Neural Labs Africa and Me-Nasoma each won $5,000 (about Sh650,000) in equity-free funding at the first AI Academy Kenya Pitchathon run by Meta and This Is Digital, which drew more than 426 applications.",
+            "why": "Nairobi's AI startup scene is busy, and finalists such as JuaFlow and Sawazisha AI build the kind of automation he does.",
+            "source": "The Star (Kenya)",
+            "date": "2026-10-18",
+            "url": "https://www.the-star.co.ke/sasa/technology/2026-10-18-kenyan-ai-startups-win-sh13-million-to-develop-healthcare-education-solutions",
+            "id": "s-038e81affdfa"
+          },
+          {
+            "title": "Amref opens a Nairobi health innovation hub aiming for 10,000 youth jobs",
+            "summary": "The Amref Health Innovation Hub launched in Nairobi on Oct 18 with a goal of 10,000 jobs for African youth and frontline health workers over five years; Safaricom Foundation chair Joseph Ogutu pointed to M-PESA's growth as the model.",
+            "why": "A new Nairobi hub for health-tech builders, a possible place to find local projects or roles.",
+            "source": "The Star (Kenya)",
+            "date": "2026-10-18",
+            "url": "https://www.the-star.co.ke/health/2026-10-18-safaricom-foundation-chairman-joe-ogutu-urges-african-health-innovators-to-focus-on-real-world-problems",
+            "id": "s-f21cf3406da6"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-19",
+    "generated_at": "2026-10-19T07:12:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Full Stack Software Engineer",
+        "company": "Accelera Digital Group (ADG)",
+        "location": "Nairobi (Hybrid)",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/full-stack-software-engineer-accelera-digital-group",
+        "posted": "2026-10-17",
+        "fit_note": "Full-stack client delivery role for a fast learner, owning features end to end, no years stated; matches his full-stack and API work. Also on LinkedIn: https://www.linkedin.com/jobs/view/software-engineer-at-adg-4479385185"
+      },
+      {
+        "title": "SDET / Test Engineer",
+        "company": "Accelera Digital Group (ADG)",
+        "location": "Nairobi (Hybrid)",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/sdet-test-engineer-accelera-digital-group",
+        "posted": "2026-10-17",
+        "fit_note": "Test automation and CI/CD quality gates with backend/full-stack coding, no years stated; a stretch that uses his CI/CD and Python skills. Also on LinkedIn: https://www.linkedin.com/jobs/view/test-engineer-at-adg-4479382324"
+      },
+      {
+        "title": "ICT Intern",
+        "company": "Micro Enterprises Support Programme Trust (MESPT)",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/ict-intern-micro-enterprises-support-programme-trust-mespt-1",
+        "posted": "2026-10-16",
+        "fit_note": "Paid ICT internship (CS degree, about 1 year, Salesforce/Apex a plus) supporting business applications and databases; deadline is today, Oct 19. Also on LinkedIn: https://www.linkedin.com/jobs/view/ict-internship-at-entry-level-jobs-in-kenya-campusbiz-co-ke-4479945945"
+      },
+      {
+        "title": "Pilot & Customer Success Manager Intern",
+        "company": "Pawanax AI Health Solutions",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/pilot-customer-success-manager-intern-at-pawanax-ai-health-solutions-4477362302",
+        "posted": "2026-10-16",
+        "fit_note": "Customer success at an AI health SaaS startup needing English and Kiswahili; a solutions/customer-facing option rather than engineering"
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9226",
+      "error": null
+    }
+  }
+}
