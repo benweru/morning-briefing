@@ -1,0 +1,466 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-21",
+  "checked_at": "2026-10-21T08:30:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 40 pulled, 8 from last 7 days, 1 kept)",
+      "RemoteOK (ok; 99 pulled, 25 from last 7 days, 1 kept)",
+      "Himalayas (ok; 160 pulled, 88 from last 7 days, 10 kept)",
+      "Jobicy (ok; 150 pulled, 150 from last 7 days, 4 kept)",
+      "WeWorkRemotely (ok; 112 pulled, 34 from last 7 days, 7 kept)",
+      "WorkingNomads (ok; 44 pulled, 8 from last 7 days, 0 kept)",
+      "Greenhouse (ok; 909 pulled, 82 from last 7 days, 2 kept)",
+      "Ashby (ok; 337 pulled, 21 from last 7 days, 1 kept)",
+      "Lever (ok; 306 pulled, 5 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 60 pulled, 60 from last 7 days, 12 kept)",
+      "ReliefWeb (ok; 43 pulled, 25 from last 7 days, 1 kept)",
+      "Web search (junior/entry-level remote AI, software and full-stack roles open to Africa or worldwide)",
+      "Employer pages: Greenhouse API (Canonical), Ashby API (ElevenLabs), BambooHR (Turnkeyafrica), Remotive posting page (Askable), We Work Remotely posting pages (Vertex Marketing Group, Reddit), LinkedIn guest job pages (ADG, Kognizan, Allied Global), Himalayas API (Novakid)"
+    ],
+    "news": [
+      "TechCrunch",
+      "Tesla North",
+      "SiliconANGLE",
+      "Fireworks AI",
+      "Salesforce",
+      "Crunchbase News",
+      "TechMoran",
+      "Mastercard",
+      "This Week in Fintech"
+    ]
+  },
+  "counts": {
+    "pulled": 2260,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1754,
+      "senior_title": 176,
+      "not_target_role": 203,
+      "location_or_timezone": 65
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 1,
+    "dropped": 6,
+    "reviewed_closely": 7,
+    "dropped_by_reason": {
+      "location": 2,
+      "experience": 3,
+      "other": 1
+    },
+    "stories": 9
+  },
+  "method": {
+    "filtering_summary": "Live search at 7:30 AM EAT on 11 sources (all answered) pulled 2,260 postings. 1,754 were older than 7 days, 176 senior or excluded titles, 203 not target roles, 65 excluded Kenya, 2 already applied and 21 duplicates. Of the 39 that passed, most had already been shown in earlier briefings, including Canonical's Junior Ubuntu and Secure Container Images roles, Askable's AI coding tasks, ElevenLabs' Creative Agents roles and ADG's software engineer, so they are not repeated. After a check on the employer pages, one new role made the shortlist: Canonical's always-open Distributed Systems Testing role, re-listed on Jobicy this week. The rest were dropped for 5+ or 7+ years, Europe/LatAm-only hiring, an analytics focus, or because the role is already in the Kenya section. A web search for junior remote roles open to Africa found nothing new inside the window (Turnkeyafrica's entry-level AI role is in Lagos). Nothing old was carried over."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2260,
+    "kept_after_filters": 39,
+    "fresh_shortlisted": 1,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 40,
+        "fresh": 8,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 25,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 160,
+        "fresh": 88,
+        "kept": 10,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 150,
+        "fresh": 150,
+        "kept": 4,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 112,
+        "fresh": 34,
+        "kept": 7,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 44,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 909,
+        "fresh": 82,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 337,
+        "fresh": 21,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 306,
+        "fresh": 5,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 60,
+        "fresh": 60,
+        "kept": 12,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": true,
+        "pulled": 43,
+        "fresh": 25,
+        "kept": 1,
+        "error": null
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "evergreen",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/2969042",
+      "title": "Distributed Systems Testing Software Engineer, Python / Go",
+      "company": "Canonical",
+      "location_as_stated": "\"Home Based - Americas; Home based - EMEA\"",
+      "posted": "Jobicy listed 2026-10-20 (Greenhouse req first published 2021-03-18, updated 2026-09-07)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated in years; \"Experience with Python or Go development\", test processes and CI tools",
+      "found_via": "Jobicy (live search)",
+      "verified": "Greenhouse API, live 2026-10-21",
+      "fit": "Python plus testing work lines up with the Jest and RSpec suites he wrote at Kwara, and EMEA covers Kenya.",
+      "gaps": "An always-open listing focused on testing OpenStack, Kubernetes and similar systems he hasn't used, with 2-4 weeks of travel a year.",
+      "id": "j-c6f8e4c47052"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://himalayas.app/companies/novakid-school/jobs/python-backend-developer-fullstack-capable",
+      "title": "Python Backend Developer, Fullstack-capable",
+      "company": "Novakid School",
+      "location_as_stated": "Himalayas: \"Worldwide\"",
+      "reason": "5+ years of production Python backend required",
+      "reason_code": "experience",
+      "posted": "2026-10-20",
+      "found_via": "Himalayas API (live search)",
+      "verified": "Himalayas API, live 2026-10-21",
+      "id": "j-34c01248d4fc"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/vertex-marketing-group-distribution-engineer",
+      "title": "Distribution Engineer",
+      "company": "Vertex Marketing Group",
+      "location_as_stated": "\"Based in Europe or Latin America\"",
+      "reason": "Europe or Latin America only; social-media posting automation across 100+ accounts",
+      "reason_code": "location",
+      "posted": "2026-10-20",
+      "salary_as_shown": "$4,000 to $6,000 per month",
+      "found_via": "We Work Remotely (live search)",
+      "verified": "We Work Remotely posting page, live 2026-10-21",
+      "id": "j-5ba66d6ed21d"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/reddit-analytics-engineer",
+      "title": "Analytics Engineer",
+      "company": "Reddit",
+      "location_as_stated": "WWR: \"Anywhere in the World\"; posting gives a US base salary range",
+      "reason": "Analytics/ETL role asking 3+ years of large-scale ETL",
+      "reason_code": "experience",
+      "posted": "2026-10-20",
+      "found_via": "We Work Remotely (live search)",
+      "verified": "We Work Remotely posting page, live 2026-10-21",
+      "id": "j-c080105b88a0"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/devops-engineer-%E2%80%93-aws-terraform-ecs-fargate-at-allied-global-technology-services-4481707173",
+      "title": "DevOps Engineer – AWS, Terraform & ECS/Fargate",
+      "company": "Allied Global Technology Services",
+      "location_as_stated": "\"Nairobi County, Kenya\"; \"100% Remote\"",
+      "reason": "Senior; 7+ years in DevOps/SRE",
+      "reason_code": "experience",
+      "posted": "2026-10-20",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-21",
+      "id": "j-dff5d3812b33"
+    },
+    {
+      "url": "https://turnkeyafrica.bamboohr.com/careers/148",
+      "title": "AI Engineer (Entry Level)",
+      "company": "Turnkeyafrica (Caava Group)",
+      "location_as_stated": "\"Lagos, Nigeria\" (BambooHR, hybrid)",
+      "reason": "Based in Lagos, Nigeria; not remote",
+      "reason_code": "location",
+      "posted": "2026-10-19",
+      "found_via": "Web search",
+      "verified": "BambooHR API, live 2026-10-21",
+      "id": "j-085ae1b823a8"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/web-software-engineer-at-kognizan-technologie-limited-4481757754",
+      "title": "Web Software Engineer",
+      "company": "Kognizan Technologie Limited",
+      "location_as_stated": "\"Parklands/Highridge ward, Nairobi County, Kenya\"",
+      "reason": "Nairobi role already listed in today's Kenya jobs section",
+      "reason_code": "other",
+      "posted": "2026-10-20",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-21",
+      "id": "j-5d029190f657"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "SpaceX's AI arm, home of Grok and Cursor, beats expectations",
+            "summary": "SpaceX reported $14.6 billion in Q3 revenue; its \"Super Intelligence\" unit (Cursor, Grok bot and its neocloud with 1.7 GW of compute) brought in $7.5 billion and $431 million in profit, and AI is now 52% of income.",
+            "why": "xAI/Grok is now a profitable business line, so Grok and Cursor tooling skills are worth showing on his CV.",
+            "source": "TechCrunch",
+            "date": "2026-10-20",
+            "url": "https://techcrunch.com/2026/10/20/spacexs-ai-business-is-beating-expectations/",
+            "id": "s-4e839948c5b0"
+          },
+          {
+            "title": "Grok Bot can now answer X DMs and be the Android assistant",
+            "summary": "A \"What's new in Grok Bot\" video lists 12 changes, including reading and replying to X Chat DMs, acting when tagged @bot on X, Android default-assistant support and 30 minutes of voice-call memory.",
+            "why": "Agent features he uses daily are shipping weekly, which is good material for agent-focused applications.",
+            "source": "Tesla North",
+            "date": "2026-10-20",
+            "url": "https://teslanorth.com/2026/10/20/grok-bot-x-dms-android-assistant/",
+            "id": "s-b23d4c94c85a"
+          },
+          {
+            "title": "Inception's Mercury 3 diffusion model claims 4-8x the speed of GPT-6 Luna",
+            "summary": "Mercury 3 ran at 1,068 tokens per second, beat GPT-6 Luna and Claude Haiku 5.5 on 8 of 12 tests in Inception's own benchmarks, has a 1M-token context and lists at $0.20/$0.70 per million tokens.",
+            "why": "A fast, OpenAI-compatible model he could try for low-latency agent or chat features.",
+            "source": "SiliconANGLE",
+            "date": "2026-10-20",
+            "url": "https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/",
+            "id": "s-151d01fcadc5"
+          },
+          {
+            "title": "Meta's open-weight Muse Spark Open goes live on Fireworks",
+            "summary": "An 816B-parameter mixture-of-experts model with 42B active parameters and a 1M-token context, ranked first of 75 models on Vals AI's legal agent leaderboard at 25.4%.",
+            "why": "A strong open-weights option for finance-style agent work, close to his fintech background.",
+            "source": "Fireworks AI",
+            "date": "2026-10-20",
+            "url": "https://fireworks.ai/blog/meta-muse-spark-open",
+            "id": "s-668a5c7a25dd"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Salesforce agrees to buy Braze for about $5.66 billion",
+            "summary": "Braze Class A holders get $47.50 a share in cash; the deal is expected to close in Salesforce's fiscal 2028, subject to shareholder and regulatory approval.",
+            "why": "Big-company buying of AI-driven customer-engagement tools keeps demand up for integration and automation engineers.",
+            "source": "Salesforce",
+            "date": "2026-10-20",
+            "url": "https://www.salesforce.com/news/press-releases/2026/10/20/salesforce-signs-definitive-agreement-to-acquire-braze/",
+            "id": "s-94081d781a3c"
+          },
+          {
+            "title": "Global fintech funding fell 21% in Q3 as deal count hit a low",
+            "summary": "Fintech startups raised $10.6 billion in Q3 2026, down 21.4% year over year, across just 687 rounds, the fewest since at least Q1 2018.",
+            "why": "Fewer, larger fintech rounds mean fewer junior fintech openings; investors favour companies with real AI products.",
+            "source": "Crunchbase News",
+            "date": "2026-10-20",
+            "url": "https://news.crunchbase.com/venture/q3-2026-fintech-startup-funding-deal-count-fell-ai/",
+            "id": "s-519a364e2695"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Nedbank completes its takeover of 66% of NCBA",
+            "summary": "The deal is worth about 13.9 billion rand (about $800 million); NCBA stays listed in Nairobi with the same brand and leadership, and its shares are suspended from about Oct 21 to Nov 2.",
+            "why": "A major Kenyan bank now has South African backing, which could mean new digital-banking projects and tech hiring.",
+            "source": "TechMoran",
+            "date": "2026-10-19",
+            "url": "https://techmoran.com/2026/10/19/nedbank-completes-acquisition-of-66-of-kenyas-ncba-in-850-million-plus-deal/",
+            "id": "s-cc03da88a600"
+          },
+          {
+            "title": "Mastercard and Moovn sign a five-year East Africa payments deal",
+            "summary": "MoovnPay will add prepaid Mastercard cards, tokenization, Mastercard Payment Gateway Services and cross-border transfers across Kenya and Tanzania.",
+            "why": "Another Nairobi payments platform scaling up wallets and merchant acceptance, the kind of integration work he did at Kwara.",
+            "source": "Mastercard",
+            "date": "2026-10-19",
+            "url": "https://www.mastercard.com/news/eemea/en/newsroom/press-releases/en/2026/october/mastercard-and-moovn-join-forces-to-scale-digital-payments-across-east-africa/",
+            "id": "s-ad852370630e"
+          },
+          {
+            "title": "Kenya's draft payments bill would give the CBK sweeping powers",
+            "summary": "The draft National Payment System Bill, 2026 creates about 10 licence categories with minimum capital from roughly $39,000 to nearly $2 million for e-money issuers, and lets the CBK install statutory managers for up to 12 months.",
+            "why": "Will shape which Kenyan fintechs can launch and hire, and is useful context for fintech interviews.",
+            "source": "This Week in Fintech",
+            "date": "2026-10-19",
+            "url": "https://www.thisweekinfintech.com/p/there-s-a-new-sheriff-in-town-twif-africa",
+            "id": "s-c872954a65bd"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-21",
+    "generated_at": "2026-10-21T07:06:41+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Graduate Trainee: Software Engineering - Kenya",
+        "company": "Cellulant Corporation",
+        "location": "Nairobi (hybrid)",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/graduate-trainee-software-engineering-kenya-cellulant-corporation",
+        "posted": "2026-10-20",
+        "fit_note": "Graduate software engineering trainee at a Nairobi fintech, a direct match for a recent CS grad with fintech API experience"
+      },
+      {
+        "title": "Web Software Engineer",
+        "company": "Kognizan Technologie Limited",
+        "location": "Parklands/Highridge ward, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/web-software-engineer-at-kognizan-technologie-limited-4481757754",
+        "posted": "2026-10-20",
+        "fit_note": "Entry-level full-stack web role (front end, APIs, databases), on-site in Parklands; matches his React and Python/Rails API work"
+      },
+      {
+        "title": "IT, Data & Systems Officer",
+        "company": "Phoenix Capital",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/it-data-systems-officer-phoenix-capital",
+        "posted": "2026-10-20",
+        "fit_note": "Business systems, IT support, data reporting and BI for a lender; blends his fintech, SQL/Python data ops and support background"
+      },
+      {
+        "title": "Data Science and/or Artificial Intelligence Intern - 50 Posts",
+        "company": "Public Service Commission Kenya (PSCK)",
+        "location": "Nairobi (sites across the country)",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/data-science-and-or-artificial-intelligence-intern-50-posts-public-service-commission-kenya-psck",
+        "posted": "2026-10-20",
+        "fit_note": "Government data science/AI internship (50 posts) for graduates since 2020; fits his LLM and Python work as a fallback"
+      },
+      {
+        "title": "Database and Applications Administrator II",
+        "company": "Independent Policing Oversight Authority (IPOA)",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/database-and-applications-administrator-ii-independent-policing-oversight-authority-ipoa",
+        "posted": "2026-10-20",
+        "fit_note": "Public-sector role designing software applications and databases; fits his backend and SQL experience"
+      },
+      {
+        "title": "Salesforce Administrator / Developer",
+        "company": "Solvo Global",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/salesforce-administrator-developer-at-solvo-global-4478906887",
+        "posted": "2026-10-20",
+        "fit_note": "Salesforce admin/developer owning Flow automations and integrations (asks 2–4 yrs Salesforce); a stretch that leans on his n8n automation pipeline work"
+      },
+      {
+        "title": "Switch Engineer",
+        "company": "Kenswitch",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/switch-engineer-kenswitch",
+        "posted": "2026-10-20",
+        "fit_note": "Payment switch integration engineer (ISO 8583, APIs); asks 3–5 yrs but fits his fintech API and integration background as a stretch"
+      },
+      {
+        "title": "Website Redesign and Development Consultancy",
+        "company": "Sightsavers",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/website-redesign-and-development-consultancy-sightsavers",
+        "posted": "2026-10-20",
+        "fit_note": "Website rebuild consultancy (CMS, accessibility, SEO, simple dashboard); a freelance option for his full-stack skills"
+      },
+      {
+        "title": "Tier 1 IT Helpdesk or MSP Support Agent",
+        "company": "Solvo Global",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/%C2%A0tier-1-it-helpdesk-or-msp-support-agent-at-solvo-global-4478927339",
+        "posted": "2026-10-20",
+        "fit_note": "Tier 1 IT helpdesk/MSP support (Kenya, phone-based); a fallback that fits his earlier tech support experience"
+      },
+      {
+        "title": "8184 - IT Helpdesk Tier 1 / MSP Support Agent",
+        "company": "Softgic",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/8184-it-helpdesk-tier-1-msp-support-agent-at-softgic-4480719824",
+        "posted": "2026-10-20",
+        "fit_note": "Tier 1 IT helpdesk/MSP support asking 1–2 yrs; fallback matching his earlier tech support work"
+      },
+      {
+        "title": "Global IT Assistant (Remote/Full-time)",
+        "company": "Generation",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/global-it-assistant-remote-full-time-at-generation-4481775910",
+        "posted": "2026-10-20",
+        "fit_note": "Remote global IT assistant at a workforce nonprofit, listed in Nairobi; IT support fallback"
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-tab:9226",
+      "error": null
+    }
+  }
+}
