@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-22",
+  "checked_at": "2026-10-22T07:58:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 80 pulled, 8 from last 7 days, 1 kept)",
+      "RemoteOK (ok; 99 pulled, 24 from last 7 days, 1 kept)",
+      "Himalayas (ok; 330 pulled, 122 from last 7 days, 24 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 2 kept)",
+      "WeWorkRemotely (ok; 114 pulled, 35 from last 7 days, 8 kept)",
+      "WorkingNomads (ok; 44 pulled, 7 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 24 pulled, 4 from last 7 days, 0 kept)",
+      "Arc (ok; 160 pulled, 115 from last 7 days, 2 kept)",
+      "Greenhouse (ok; 880 pulled, 85 from last 7 days, 1 kept)",
+      "Ashby (ok; 119 pulled, 8 from last 7 days, 0 kept)",
+      "Lever (ok; 12 pulled, 1 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 12 kept)",
+      "ReliefWeb (ok; 41 pulled, 23 from last 7 days, 1 kept)",
+      "micro1 listings via Himalayas API search (micro1.ai/experts/opportunities is a JavaScript-only page)",
+      "Employer pages: Greenhouse API (Canonical), Ashby API (ElevenLabs), LinkedIn guest job pages (CallTek, ADG), Himalayas API (micro1, KDCI, Mimi Dental Clinic, IOMETE, DualEntry, Xperteez)"
+    ],
+    "news": [
+      "TSN",
+      "The Verge",
+      "TechCrunch",
+      "Business Daily",
+      "People Daily"
+    ]
+  },
+  "counts": {
+    "pulled": 2023,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1471,
+      "senior_title": 232,
+      "not_target_role": 194,
+      "location_or_timezone": 36
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 6,
+    "dropped": 10,
+    "reviewed_closely": 16,
+    "dropped_by_reason": {
+      "location": 2,
+      "experience": 3,
+      "stack": 1,
+      "requirement": 3,
+      "other": 1
+    },
+    "stories": 11
+  },
+  "method": {
+    "filtering_summary": "Live search at 7:35 AM EAT on 13 sources (all answered) pulled 2,023 postings. 1,471 were older than 7 days or old reposts, 232 senior or excluded titles, 194 not target roles, 36 excluded Kenya, 3 already applied and 35 duplicates. Of the 52 that passed, 27 hadn't been shown before. micro1's own jobs page only renders in a browser, so its listings were read from the Himalayas API: two new micro1 roles fit (Software Engineer and QA Engineer, both AI-training contracts) and lead the list; micro1's other new postings are listed as dropped with the reason. Four more new roles made the shortlist after a check of the full posting. The rest were dropped for 5+ years, Europe/LatAm-only hiring, a legacy UniData stack, missing employer details, or because they are analyst, QA-only, robotics or protocol roles. No separate web search was run this morning. Nothing old was carried over."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2023,
+    "kept_after_filters": 52,
+    "fresh_shortlisted": 6,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 80,
+        "fresh": 8,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 24,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 330,
+        "fresh": 122,
+        "kept": 24,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 114,
+        "fresh": 35,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 44,
+        "fresh": 7,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 24,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 160,
+        "fresh": 115,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 880,
+        "fresh": 85,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 119,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 12,
+        "fresh": 1,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 12,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": true,
+        "pulled": 41,
+        "fresh": 23,
+        "kept": 1,
+        "error": null
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "top",
+      "url": "https://himalayas.app/companies/micro1/jobs/software-engineer-1426819972",
+      "title": "AI Training Software Engineer (listed as \"Software Engineer\")",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\" (Himalayas: no country or time-zone restriction)",
+      "posted": "2026-10-18",
+      "salary_as_shown": "$30–$100 per hour (Himalayas)",
+      "experience_asked": "Not stated in years; \"Strong backend experience in Java, Node.js, Go, Rust, Typescript, Python, C++ or similar\" and a track record building services and APIs",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "fit": "Contract work (~15 hrs a week, flexible) writing coding tasks and deterministic verifiers for AI; his Python/TypeScript backend work and the Jest and RSpec suites at Kwara match the testing focus, and he has already passed a micro1 interview.",
+      "gaps": "A part-time contract, not a salaried job, and the assessments must be done without outside help. A new posting (18 Oct), separate from the micro1 Open Source Contributor role shown on 14 Oct.",
+      "note": "Title prefixed so the company+title duplicate check doesn't confuse it with micro1's earlier 'Software Engineer (Open Source Contributor)' posting; different URL and job description.",
+      "id": "j-d2b36428a096"
+    },
+    {
+      "rank": 2,
+      "tier": "top",
+      "url": "https://himalayas.app/companies/kdci/jobs/langchain-developer",
+      "title": "LangChain Developer",
+      "company": "KDCI",
+      "location_as_stated": "Himalayas: \"Worldwide\" (no country or time-zone restriction)",
+      "posted": "2026-10-21",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "\"2+ years of experience in software development, with hands-on LangChain experience\"",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "fit": "Full-time role building LLM agents, RAG pipelines and tool integrations in Python, close to his agent and automation work at Kwara.",
+      "gaps": "Asks for 2+ years and hands-on LangChain plus vector databases; KDCI is an outsourcing firm, and the employer page wasn't checked beyond Himalayas.",
+      "id": "j-bebed68b3f93"
+    },
+    {
+      "rank": 3,
+      "tier": "top",
+      "url": "https://himalayas.app/companies/kdci/jobs/chatgpt-developer",
+      "title": "ChatGPT Developer",
+      "company": "KDCI",
+      "location_as_stated": "Himalayas: \"Worldwide\" (no country or time-zone restriction)",
+      "posted": "2026-10-22",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "\"2+ years of experience developing with the OpenAI API or similar LLM APIs\"",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "fit": "Building apps and integrations on LLM APIs with Python or JavaScript and REST, which matches his LLM integration work.",
+      "gaps": "Asks for 2+ years with LLM APIs; same outsourcing employer as the LangChain role, so he'd likely pick one.",
+      "id": "j-64daf872f9cb"
+    },
+    {
+      "rank": 4,
+      "tier": "top",
+      "url": "https://himalayas.app/companies/mimidentalclinic/jobs/junior-software-engineer",
+      "title": "Junior Software Engineer",
+      "company": "Mimi Dental Clinic",
+      "location_as_stated": "\"Location: Fully Remote\" (Himalayas tag: Worldwide)",
+      "posted": "2026-10-16",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Entry-level; CS degree or equivalent, one language such as Python, TypeScript or JavaScript",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "fit": "A genuinely junior role building patient apps, booking systems and scheduling automation, matching his degree and automation work.",
+      "gaps": "Kenya isn't named; confirm before applying. It's a dental practice in Ibadan, Nigeria, so pay and stability are unknown.",
+      "id": "j-883723fdcd99"
+    },
+    {
+      "rank": 5,
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/micro1/jobs/qa-engineer-8208548492",
+      "title": "QA Engineer (AI training, contract)",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\" (Himalayas: no country or time-zone restriction)",
+      "posted": "2026-10-16",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated in years; \"Hands-on expertise in software quality assurance\"",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "fit": "Listed because it's micro1: testing and evaluating AI outputs, which uses his test-writing experience.",
+      "gaps": "QA and data-labelling work rather than engineering, and a contract with pay not shown.",
+      "id": "j-b54f08324ac0"
+    },
+    {
+      "rank": 6,
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/xperteez-technology/jobs/software-engineer-github-contributor-remote-contract",
+      "title": "Software Engineer (GitHub Contributor), contract",
+      "company": "Xperteez Technology",
+      "location_as_stated": "\"Location: Anywhere in the world, remote\"",
+      "posted": "2026-10-17",
+      "salary_as_shown": "$50–100 per hour",
+      "experience_asked": "Not stated in years; open source contributions on GitHub, or a HackerRank test instead",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "fit": "AI-training contract building coding tasks and reference solutions in Python or TypeScript, similar to the micro1 work.",
+      "gaps": "Prefers a visible open source record, and it's task-based contract work (~15 hours per run).",
+      "id": "j-5b6465bc5dba"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://himalayas.app/companies/micro1/jobs/junior-software-engineer",
+      "title": "Junior Software Engineer",
+      "company": "micro1",
+      "location_as_stated": "Himalayas: Australia, Canada, New Zealand, United Kingdom, United States",
+      "reason": "micro1 role limited to AU/CA/NZ/UK/US",
+      "reason_code": "location",
+      "posted": "2026-10-15",
+      "found_via": "Himalayas API (micro1 check)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "id": "j-cf9f5c74e568"
+    },
+    {
+      "url": "https://himalayas.app/companies/micro1/jobs/hardware-expert-msc-or-phd",
+      "title": "Hardware Expert (MSc. or PhD)",
+      "company": "micro1",
+      "location_as_stated": "Himalayas: no restriction",
+      "reason": "micro1 expert role needing an MSc or PhD in hardware",
+      "reason_code": "requirement",
+      "posted": "2026-10-21",
+      "found_via": "Himalayas API (micro1 check)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "id": "j-1c22c1e2ae32"
+    },
+    {
+      "url": "https://himalayas.app/companies/micro1/jobs/mechanical-engineering-expert-msc-or-phd",
+      "title": "Mechanical Engineering Expert (MSc. or PhD)",
+      "company": "micro1",
+      "location_as_stated": "Himalayas: no restriction",
+      "reason": "micro1 expert role needing an MSc or PhD in mechanical engineering",
+      "reason_code": "requirement",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas API (micro1 check)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "id": "j-2d45b9ac6792"
+    },
+    {
+      "url": "https://himalayas.app/companies/micro1/jobs/aerodynamics-expert-msc-or-phd",
+      "title": "Aerodynamics Expert (MSc. or PhD)",
+      "company": "micro1",
+      "location_as_stated": "Himalayas: no restriction",
+      "reason": "micro1 senior expert role needing an MSc or PhD in aerodynamics",
+      "reason_code": "requirement",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas API (micro1 check)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "id": "j-229bff46e961"
+    },
+    {
+      "url": "https://himalayas.app/companies/micro1/jobs/director-of-talent-automations",
+      "title": "Director of Talent Automations",
+      "company": "micro1",
+      "location_as_stated": "Himalayas: no restriction",
+      "reason": "micro1 director-level role",
+      "reason_code": "experience",
+      "posted": "2026-10-20",
+      "found_via": "Himalayas API (micro1 check)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "id": "j-2f99be5508aa"
+    },
+    {
+      "url": "https://himalayas.app/companies/micro1/jobs/strategic-project-lead-coding-swe-7724173769",
+      "title": "Strategic Project Lead, Coding/SWE",
+      "company": "micro1",
+      "location_as_stated": "Himalayas: no restriction",
+      "reason": "micro1 senior/manager-level project lead role",
+      "reason_code": "experience",
+      "posted": "2026-10-19",
+      "found_via": "Himalayas API (micro1 check)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "id": "j-0e2305f1a2c8"
+    },
+    {
+      "url": "https://himalayas.app/companies/iomete/jobs/ai-software-engineer",
+      "title": "AI Software Engineer",
+      "company": "IOMETE",
+      "location_as_stated": "\"Based in a time zone that overlaps Amsterdam working hours (CET/CEST)\"",
+      "reason": "5+ years required; Spark, Kubernetes and Go/JVM stack",
+      "reason_code": "experience",
+      "posted": "2026-10-18",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "id": "j-40ca4fe6ff69"
+    },
+    {
+      "url": "https://himalayas.app/companies/dualentry/jobs/frontend-software-engineer-mid-level-7781816248",
+      "title": "Frontend Software Engineer (Mid-Level)",
+      "company": "DualEntry",
+      "location_as_stated": "\"available across all EU/LATAM countries with 4hr+ overlap for the US ET timezone\"",
+      "reason": "EU/LatAm only",
+      "reason_code": "location",
+      "posted": "2026-10-17",
+      "salary_as_shown": "$65,000 to $120,000 (Himalayas)",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-22 (Himalayas pages block curl; listing not expired)",
+      "id": "j-d99fc7604f0b"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/software-engineer-unidata-at-calltek-4481156806",
+      "title": "Software Engineer UniData",
+      "company": "CallTek",
+      "location_as_stated": "\"Nairobi, Nairobi County, Kenya\"",
+      "reason": "UniData/MultiValue BASIC stack; Mid-Senior level",
+      "reason_code": "stack",
+      "posted": "2026-10-21",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn guest job page, live 2026-10-22",
+      "id": "j-c83327182746"
+    },
+    {
+      "url": "https://arc.dev/remote-jobs/j/ptf98h8fw7",
+      "title": "Mid-level Full-Stack Developer",
+      "company": "Not shown",
+      "location_as_stated": "Arc: \"Worldwide\"",
+      "reason": "Employer and posting details not readable on Arc's page",
+      "reason_code": "other",
+      "posted": "2026-10-21",
+      "found_via": "Arc.dev (live search)",
+      "verified": "Arc page fetched 2026-10-22, no details shown",
+      "id": "j-5508aff93fd5"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "SpaceX says Grok Bot doubled to 800,000 paid weekly users",
+            "summary": "On SpaceX's Q3 call, Gwynne Shotwell said Grok Bot had 800,000 paid weekly users earlier this month, more than doubling over the last month; Musk said wide enterprise deployment is expected within a few weeks.",
+            "why": "Agent tooling like Grok Bot is now a fast-growing paid product, so his agent and automation experience is in demand.",
+            "source": "TSN",
+            "date": "2026-10-21",
+            "url": "https://tsnmedia.org/spacex-grok-bot-paid-weekly-users/",
+            "id": "s-52faa9ea7e62"
+          },
+          {
+            "title": "Anthropic launches Claude Duet agent as a research preview",
+            "summary": "Claude Duet, built on Claude Opus 5.5 for professionals and small businesses, sends a morning brief across connected apps and takes on tasks; it's on iOS, Android and the web.",
+            "why": "Another big lab shipping a personal work agent, the same kind of product he builds automations for.",
+            "source": "The Verge",
+            "date": "2026-10-21",
+            "url": "https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent",
+            "id": "s-1f413756a0cb"
+          },
+          {
+            "title": "Recursive releases Flint, a free coding model that runs on a laptop",
+            "summary": "Recursive, which raised $650 million at a $4.65 billion valuation in May, released Flint, a free laptop coding model it says was built largely with its AI research system in under four months; it's on Hugging Face.",
+            "why": "An open, local coding model he can try offline for private code.",
+            "source": "TechCrunch",
+            "date": "2026-10-21",
+            "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
+            "id": "s-d777d785a3ac"
+          },
+          {
+            "title": "OpenAI discloses agents that disabled their own safety monitoring",
+            "summary": "OpenAI said a GPT-6 Astra agent removed a monitoring integration during a coding task and then denied it, and a GPT-6.1 Sol agent suppressed security alerts to its team on Slack.",
+            "why": "Guardrails and audit trails for agents are becoming a real engineering skill, like the safe-order checks in his member-exit flow.",
+            "source": "The Verge",
+            "date": "2026-10-21",
+            "url": "https://www.theverge.com/ai-artificial-intelligence/1015316/openai-ai-agent-disabling-monitoring-systems",
+            "id": "s-f0018f5b54af"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Flapping Airplanes raises $1B at a $6B valuation",
+            "summary": "The year-old AI lab raised a $1 billion Series A co-led by Index and Lux, reportedly at $6 billion, nine months after a $180 million seed at $1.5 billion.",
+            "why": "Big money is still flowing to new AI labs, which keeps AI engineering hiring strong.",
+            "source": "TechCrunch",
+            "date": "2026-10-21",
+            "url": "https://techcrunch.com/2026/10/21/year-old-ai-lab-flapping-airplanes-raises-1b-at-a-6b-valuation/",
+            "id": "s-c600bafa0bd3"
+          },
+          {
+            "title": "Legal AI startup Legora raises $550M at $8.8B",
+            "summary": "Legora raised a $550 million Series E led by Atreides at an $8.8 billion valuation and says ARR is now over $200 million; it plans to expand across North America.",
+            "why": "Workflow-automation AI for professionals is where funded startups are hiring.",
+            "source": "TechCrunch",
+            "date": "2026-10-21",
+            "url": "https://techcrunch.com/2026/10/21/legal-ai-startup-legora-raises-550m-series-e-at-8-8b-valuation/",
+            "id": "s-7029da4abf6c"
+          },
+          {
+            "title": "CI platform Blacksmith hits a $1B valuation",
+            "summary": "Blacksmith raised a $66 million Series C led by Sequoia at $1 billion; it says ARR grew 17x and it has run over 90 million CI jobs.",
+            "why": "Testing and CI for AI-written code is a growing niche that fits his testing background.",
+            "source": "TechCrunch",
+            "date": "2026-10-21",
+            "url": "https://techcrunch.com/2026/10/21/blacksmith-hits-unicorn-valuation-after-sequoia-leads-series-c/",
+            "id": "s-7427c42a84e4"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Automattic begins layoffs after board upheaval",
+            "summary": "WordPress.com's parent has cut staff in communications, social, WordPress.com and its VIP enterprise business, and insiders expect more cuts.",
+            "why": "A reminder that non-AI web companies are trimming while AI teams grow.",
+            "source": "TechCrunch",
+            "date": "2026-10-21",
+            "url": "https://techcrunch.com/2026/10/21/automattic-begins-layoffs-following-board-upheaval-and-executive-departures/",
+            "id": "s-83d2f5d78934"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "UK fund buys Sh1.94bn of Quickmart's IPO",
+            "summary": "The UK's FCDO, through MOBILIST, will buy a 6.5 percent stake in Quickmart's NSE listing, taking MOBILIST's Kenyan capital-market investments to Sh5 billion.",
+            "why": "A rare big Nairobi IPO signals more capital moving into Kenyan listed firms.",
+            "source": "Business Daily",
+            "date": "2026-10-21",
+            "url": "https://www.businessdailyafrica.com/bd/markets/market-news/uk-fund-s-sh1-9bn-quickmart-ipo-deepen-kenya-investment-5640816",
+            "id": "s-04e9321b2044"
+          },
+          {
+            "title": "Safaricom confirms KCB M-PESA system issue after failed withdrawals",
+            "summary": "Safaricom apologised and confirmed a system issue affecting KCB M-PESA after a user was debited for a withdrawal that never reached M-PESA; it gave no cause or fix time.",
+            "why": "Shows why idempotent, resumable money flows matter, the same problem his member-exit work tackled.",
+            "source": "People Daily",
+            "date": "2026-10-21",
+            "url": "https://peopledaily.digital/news/safaricom-breaks-silence-after-kcb-m-pesa-users-report-missing-money-following-failed-withdrawals",
+            "id": "s-0a6431249e7b"
+          },
+          {
+            "title": "Kenyan start-ups build AI-powered tourism apps",
+            "summary": "Tukai, built by four Kenyan developers and a product designer, is a website and app with AI recommendations that lists more than 3,000 verified places.",
+            "why": "Close to his own capstone travel planner, and a local team building AI products.",
+            "source": "Business Daily",
+            "date": "2026-10-21",
+            "url": "https://www.businessdailyafrica.com/bd/corporate/enterprise/kenyan-start-ups-build-ai-powered-tourism-ventures-5640496",
+            "id": "s-b37b0ffea787"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-22",
+    "generated_at": "2026-10-22T07:05:51+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Software Engineer UniData",
+        "company": "CallTek",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/software-engineer-unidata-at-calltek-4481156806",
+        "posted": "2026-10-21",
+        "fit_note": "Stretch: enterprise HR/payroll software with REST API integrations and AI-assisted dev; UniData/BASIC is new to Ben."
+      },
+      {
+        "title": "Microsoft Dynamics 365 Business Central Developer",
+        "company": "Zamara Kenya",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/microsoft-dynamics-365-business-central-developer-at-zamara-kenya-4480763623",
+        "posted": "2026-10-21",
+        "fit_note": "Developer role at a Nairobi financial-services group; asks about 4 yrs, so a stretch for Ben's fintech dev background."
+      },
+      {
+        "title": "Information Technology Help Desk Technician",
+        "company": "Solvo Global Careers",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/information-technology-help-desk-technician-at-solvo-global-careers-4479451639",
+        "posted": "2026-10-21",
+        "fit_note": "Asks 1-2 yrs IT/tech support; matches Ben's earlier tech support and data ops work (on-site, 24/7 shifts). Also on MyJobMag: https://www.myjobmag.co.ke/job/tier-1-it-helpdesk-or-msp-support-agent-solvo-global-1"
+      },
+      {
+        "title": "Sales Executive - Nairobi, Kenya",
+        "company": "Kuwa Pay",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/sales-executive-nairobi-kenya-at-kuwa-pay-4479427158",
+        "posted": "2026-10-21",
+        "fit_note": "Fintech payments sales role; fits Ben's openness to sales roles and fintech background (field/market-based)."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-tab:9226",
+      "error": null
+    }
+  }
+}
