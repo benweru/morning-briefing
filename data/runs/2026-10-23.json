@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-23",
+  "checked_at": "2026-10-23T07:45:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 80 pulled, 8 from last 7 days, 1 kept)",
+      "RemoteOK (ok; 99 pulled, 21 from last 7 days, 1 kept)",
+      "Himalayas (ok; 329 pulled, 130 from last 7 days, 30 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 2 kept)",
+      "WeWorkRemotely (ok; 121 pulled, 38 from last 7 days, 8 kept)",
+      "WorkingNomads (ok; 43 pulled, 5 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 24 pulled, 4 from last 7 days, 0 kept)",
+      "Arc (ok; 160 pulled, 124 from last 7 days, 1 kept)",
+      "Greenhouse (ok; 893 pulled, 95 from last 7 days, 0 kept)",
+      "Ashby (ok; 115 pulled, 10 from last 7 days, 0 kept)",
+      "Lever (ok; 12 pulled, 0 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 11 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
+      "micro1 jobs portal (jobs.micro1.ai, read through its public listing feed; 309 open roles)",
+      "Employer pages: Greenhouse API (Canonical, Affirm), VirtusLab careers, LinkedIn guest job page (ADG), Himalayas API (GoFasti, KDCI, Talent Journey, Metasys)"
+    ],
+    "news": [
+      "SpaceXSI (x.ai)",
+      "CNBC",
+      "TechCrunch",
+      "TechCabal",
+      "InformationWeek",
+      "Singularity.Kiwi",
+      "Nipashe Biz",
+      "People Daily"
+    ]
+  },
+  "counts": {
+    "pulled": 1996,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1441,
+      "senior_title": 250,
+      "not_target_role": 163,
+      "location_or_timezone": 42
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 3,
+    "dropped": 14,
+    "reviewed_closely": 17,
+    "dropped_by_reason": {
+      "location": 12,
+      "stack": 1,
+      "other": 1
+    },
+    "stories": 10
+  },
+  "method": {
+    "filtering_summary": "Live search at 7:30 AM EAT on 13 sources (12 answered; ReliefWeb failed) pulled 1,996 postings. 1,441 were older than 7 days or old reposts, 250 senior or excluded titles, 163 not target roles, 42 excluded Kenya, 1 already applied and 45 duplicates. Of the 54 that passed, 29 hadn't been shown before. A close read of each posting removed nearly all of them: GoFasti hires only in Latin America, VirtusLab only in Poland, Affirm only in Spain or Poland, KDCI's form was Philippines-only, and ADG's new Forward-Deployed Engineer post asks for 10+ years. micro1's own jobs portal was checked directly: three new micro1 roles open worldwide lead the list even though they are stretches, and a fourth (AI Product Evaluator) is limited to India, Japan or the UK. Canonical's Secure Container Images role also fit but was already shown before, so it isn't repeated. Nothing old was carried over."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 1996,
+    "kept_after_filters": 54,
+    "fresh_shortlisted": 3,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 80,
+        "fresh": 8,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 21,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 329,
+        "fresh": 130,
+        "kept": 30,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 121,
+        "fresh": 38,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 43,
+        "fresh": 5,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 24,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 160,
+        "fresh": 124,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 893,
+        "fresh": 95,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 115,
+        "fresh": 10,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 12,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 11,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/1fdcfc88-24fa-4378-9e5a-2ca0ac983f8e",
+      "title": "Puzzle Solver (Coding)",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Global, fully remote\"",
+      "posted": "2026-10-16",
+      "salary_as_shown": "$60–$120/hour",
+      "experience_asked": "Not stated in years; \"A Codeforces profile is a must\", strong data structures and algorithms",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job portal and job details, live 2026-10-23",
+      "fit": "New micro1 contract (~15 hrs a week, flexible) solving self-contained coding, debugging and algorithm tasks to test AI models; his Python work and the micro1 interview he passed are a head start.",
+      "gaps": "The posting says a Codeforces profile is a must, and he hasn't mentioned one; Python and C++ are the listed skills. A contract, not a salaried job.",
+      "id": "j-45c8abc640da"
+    },
+    {
+      "rank": 2,
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/0db2a044-3c6c-47e9-b610-292eddd305d2",
+      "title": "Data Science & Analytic Methodology SME",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\" (no country named)",
+      "posted": "2026-10-22",
+      "salary_as_shown": "$60–$100/hour (micro1 portal)",
+      "experience_asked": "Not stated in years; preferred: experience integrating LLMs into complex data and analytic pipelines",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job portal and job details, live 2026-10-23",
+      "fit": "New micro1 contract writing and grading analytic-pipeline cases for LLM training; his LLM integrations and the n8n loan-simulation pipeline at Kwara are relevant.",
+      "gaps": "Pitched at data-science subject experts, which is a stretch for about a year of experience. Kenya isn't named; confirm before applying.",
+      "id": "j-33a60757eefe"
+    },
+    {
+      "rank": 3,
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/f796a3ec-8108-4e21-9497-f70b6d3ff3b1",
+      "title": "Life Sciences Research Expert (Python)",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Global, fully remote\"",
+      "posted": "2026-10-21",
+      "salary_as_shown": "$60–$120/hour",
+      "experience_asked": "Preferred: PhD, MD or master's with substantial life-sciences research experience; strong hands-on Python",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job portal and job details, live 2026-10-23",
+      "fit": "New micro1 contract (~15 hrs a week) using Python to build and review reproducible scientific analyses; only the Python part matches.",
+      "gaps": "Wants a life-sciences research background (PhD, MD or master's preferred), which he doesn't have. Listed only because every new micro1 role is shown.",
+      "id": "j-4ec5df8dd36b"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobs.micro1.ai/post/79170f82-64d2-4029-9233-c39f1081e709",
+      "title": "AI Product Evaluator",
+      "company": "micro1",
+      "location_as_stated": "\"Location: India, Japan or United Kingdom, Remote\"",
+      "reason": "New micro1 role, but limited to India, Japan or the UK",
+      "reason_code": "location",
+      "posted": "2026-10-16",
+      "found_via": "micro1 jobs portal",
+      "verified": "micro1 job details, live 2026-10-23",
+      "id": "j-91c43b44898b"
+    },
+    {
+      "url": "https://himalayas.app/companies/gofasti/jobs/1175-applied-ai-engineer",
+      "title": "1175 - Applied AI Engineer",
+      "company": "GoFasti",
+      "location_as_stated": "\"based in Latin America\"",
+      "reason": "LatAm-only talent pool",
+      "reason_code": "location",
+      "posted": "2026-10-23",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-23",
+      "id": "j-6a544117c486"
+    },
+    {
+      "url": "https://himalayas.app/companies/gofasti/jobs/1173-fullstack-software-engineer-ai-native",
+      "title": "1173 - Fullstack Software Engineer (AI-Native)",
+      "company": "GoFasti",
+      "location_as_stated": "\"based in Latin America\"",
+      "reason": "LatAm-only talent pool",
+      "reason_code": "location",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-23",
+      "id": "j-9ac2055fd873"
+    },
+    {
+      "url": "https://himalayas.app/companies/virtuslab/jobs/fullstack-engineer-python-typescript-angular",
+      "title": "Fullstack Engineer (Python, TypeScript, Angular)",
+      "company": "VirtusLab",
+      "location_as_stated": "\"Remote Poland: Kielce, Kraków, Wrocław\"",
+      "reason": "Poland-only B2B contract; Himalayas tag said Worldwide",
+      "reason_code": "location",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas (live search)",
+      "verified": "careers.virtuslab.com, live 2026-10-23",
+      "id": "j-38ea16f130a9"
+    },
+    {
+      "url": "https://himalayas.app/companies/kdci/jobs/ai-automation-engineer",
+      "title": "AI Automation Engineer",
+      "company": "KDCI",
+      "location_as_stated": "Himalayas: no restriction",
+      "reason": "KDCI's application form was Philippines-only when checked on 22 Oct; also 2+ years",
+      "reason_code": "location",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-23",
+      "id": "j-03dba0cd9729"
+    },
+    {
+      "url": "https://himalayas.app/companies/kdci/jobs/openclaw-developer",
+      "title": "OpenClaw Developer",
+      "company": "KDCI",
+      "location_as_stated": "Himalayas: no restriction",
+      "reason": "KDCI's application form was Philippines-only when checked on 22 Oct; also 2+ years",
+      "reason_code": "location",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-23",
+      "id": "j-340146e832fd"
+    },
+    {
+      "url": "https://himalayas.app/companies/kdci/jobs/back-end-developer",
+      "title": "Back-End Developer",
+      "company": "KDCI",
+      "location_as_stated": "Himalayas: no restriction",
+      "reason": "KDCI's form was Philippines-only on 22 Oct; 3+ years back-end",
+      "reason_code": "location",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-23",
+      "id": "j-ab30eb0f5b4e"
+    },
+    {
+      "url": "https://himalayas.app/companies/kdci/jobs/workflow-automation-engineer",
+      "title": "Workflow Automation Engineer",
+      "company": "KDCI",
+      "location_as_stated": "Himalayas: Canada",
+      "reason": "Canada-only; 3+ years",
+      "reason_code": "location",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-23",
+      "id": "j-70ce86218ba9"
+    },
+    {
+      "url": "https://himalayas.app/companies/kdci/jobs/ai-agent-developer",
+      "title": "AI Agent Developer",
+      "company": "KDCI",
+      "location_as_stated": "Himalayas: United States",
+      "reason": "US-only senior role",
+      "reason_code": "location",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-23",
+      "id": "j-453e58a55b81"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/affirm-analytics-engineer-ii-full-stack-revenue-analytics",
+      "title": "Analytics Engineer II, Full Stack (Revenue Analytics)",
+      "company": "Affirm",
+      "location_as_stated": "Greenhouse: Remote Spain / Remote Poland",
+      "reason": "Spain or Poland only",
+      "reason_code": "location",
+      "posted": "2026-10-22",
+      "found_via": "We Work Remotely (live search)",
+      "verified": "Greenhouse API, live 2026-10-23",
+      "id": "j-5fe49d2e8af5"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/offerup-software-development-engineer-ii-remote-colombia",
+      "title": "Software Development Engineer II (Remote @ Colombia)",
+      "company": "OfferUp",
+      "location_as_stated": "Remote @ Colombia",
+      "reason": "Colombia only",
+      "reason_code": "location",
+      "posted": "2026-10-22",
+      "found_via": "We Work Remotely (live search)",
+      "verified": "",
+      "id": "j-cf1d78d3fca7"
+    },
+    {
+      "url": "https://himalayas.app/companies/talent-journey/jobs/junior-frontend-developer-future-position",
+      "title": "Junior Frontend Developer - Future Position",
+      "company": "Talent Journey",
+      "location_as_stated": "\"Remote (Europe; Middle East; North America)\"",
+      "reason": "Africa not included; a 'potential position' planned for Q4 2024",
+      "reason_code": "location",
+      "posted": "2026-10-18",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-23",
+      "id": "j-8a2a22060e75"
+    },
+    {
+      "url": "https://himalayas.app/companies/metasys/jobs/devsecops-engineer-internship",
+      "title": "DevSecOps Engineer Internship",
+      "company": "Metasys",
+      "location_as_stated": "Remote",
+      "reason": "Unpaid 3-month internship (\"Stipend: None initially\")",
+      "reason_code": "other",
+      "posted": "2026-10-22",
+      "found_via": "Himalayas (live search)",
+      "verified": "Himalayas API, live 2026-10-23",
+      "id": "j-5d66a208171f"
+    },
+    {
+      "url": "https://jobicy.com/jobs/156380-software-engineer-c-developer-pgd",
+      "title": "Software Engineer/C Developer-PGD",
+      "company": "EDB",
+      "location_as_stated": "EMEA",
+      "reason": "C / PostgreSQL internals stack",
+      "reason_code": "stack",
+      "posted": "2026-10-22",
+      "found_via": "Jobicy (live search)",
+      "verified": "",
+      "id": "j-4febfb708525"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "xAI launches the SpaceX Super Intelligence Partner Network for Grok",
+            "summary": "More than 130 companies joined the early-access phase, and Transformation Partners are training engineers through a Forward Deployed Engineer accreditation program at more than 30 organizations.",
+            "why": "Forward-deployed Grok work is becoming its own job category, which fits the FDE roles he targets.",
+            "source": "SpaceXSI (x.ai)",
+            "date": "2026-10-22",
+            "url": "https://x.ai/news/partnernetworkannouncement",
+            "id": "s-2a74798a26bb"
+          },
+          {
+            "title": "Grok Bot v0.75.2 adds editable Pages and video creation",
+            "summary": "Bots can now build Pages such as reports, memos and dashboards that users edit together or have the Bot keep up to date, plus create videos from a description or image.",
+            "why": "Agent products are moving from chat answers to standing, auto-updated work, the kind of automation he builds.",
+            "source": "SpaceXSI (x.ai)",
+            "date": "2026-10-22",
+            "url": "https://x.ai/changelog/bot",
+            "id": "s-98c1262feb4d"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "OpenAI nears up to $30B raise at a $1.25T valuation before an IPO",
+            "summary": "Investors from the UAE and Coatue are leading the round at a $1.25 trillion pre-money valuation, positioned as a bridge ahead of a potential IPO.",
+            "why": "Record AI funding keeps money flowing to the AI tooling and integration jobs he applies for.",
+            "source": "CNBC",
+            "date": "2026-10-22",
+            "url": "https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html",
+            "id": "s-731fd9b3a28e"
+          },
+          {
+            "title": "DeepSeek reportedly raises $15B ahead of a China IPO",
+            "summary": "The Chinese AI lab raised about $15 billion (about 100 billion yuan), two days after the US ordered federal civilian agencies to remove its technology, Bloomberg reported.",
+            "why": "Open-model labs are scaling fast, which keeps open-weight models cheap for the automation work he does.",
+            "source": "TechCrunch",
+            "date": "2026-10-22",
+            "url": "https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/",
+            "id": "s-2bef5e155399"
+          },
+          {
+            "title": "Former OpenAI science lead's Warp Sciences raises $215M",
+            "summary": "Kevin Weil's lab-automation startup raised $215 million at an $865 million valuation in a round led by Lightspeed.",
+            "why": "Another well-funded AI startup that will need engineers who connect models to real-world workflows.",
+            "source": "TechCrunch",
+            "date": "2026-10-22",
+            "url": "https://techcrunch.com/2026/10/22/former-openai-science-lead-launches-warp-science-to-automate-wet-labs-with-robots/",
+            "id": "s-2203bd1a772a"
+          },
+          {
+            "title": "Flutterwave lets employees borrow against their shares",
+            "summary": "Through US lender Techdollar, staff can borrow against vested shares for 6 to 12 months, typically under half their value, at 0.80% to 1.5% a month.",
+            "why": "Useful context on how equity pays out at African fintechs if he weighs a startup offer.",
+            "source": "TechCabal",
+            "date": "2026-10-22",
+            "url": "https://techcabal.com/2026/10/22/flutterwave-shares/",
+            "id": "s-5bf0e500ecf8"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Barclays to cut 5,000 jobs and eBay 1,000",
+            "summary": "Barclays says the cuts, mostly developer and support roles, follow AI investment, and it plans £150 million for retraining by 2030; eBay is cutting about 9% of staff.",
+            "why": "Big-company developer and support roles are shrinking, so AI-automation skills matter more.",
+            "source": "InformationWeek",
+            "date": "2026-10-22",
+            "url": "https://www.informationweek.com/it-staffing-careers/2026-tech-company-layoffs",
+            "id": "s-6960061d0a97"
+          },
+          {
+            "title": "AI labs' own job boards show 3,826 open roles",
+            "summary": "A tracker of 20 AI employers counted 3,826 open roles on 21 October, including 302 at xAI and 808 at OpenAI, with 175 entry-level US titles.",
+            "why": "Hiring at AI companies is still strong, though most roles are US-based.",
+            "source": "Singularity.Kiwi",
+            "date": "2026-10-22",
+            "url": "https://singularity.kiwi/ai-sector-job-boards-open-roles-october-2026/",
+            "id": "s-daef33bbdbec"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Safaricom launches Fuliza Ya Pochi overdraft for small merchants",
+            "summary": "The overdraft targets more than one million Pochi La Biashara merchants who have used Pochi for over six months, with repayment taken from future wallet payments.",
+            "why": "M-PESA keeps adding credit products, which drives demand for fintech engineers in Nairobi.",
+            "source": "Nipashe Biz",
+            "date": "2026-10-22",
+            "url": "https://nipashebiz.co.ke/safaricom-launches-fuliza-ya-pochi-to-expand-merchant-credit-access/",
+            "id": "s-e43849571e19"
+          },
+          {
+            "title": "Safaricom explains how Fuliza limits are set",
+            "summary": "Safaricom said NCBA Bank sets Fuliza limits from repayment history, airtime use, M-PESA activity and repayment patterns, and limits can be refreshed once a month via *334#.",
+            "why": "A plain look at the credit-scoring inputs behind Kenya's biggest overdraft product, close to his Kwara loan work.",
+            "source": "People Daily",
+            "date": "2026-10-22",
+            "url": "https://peopledaily.digital/business/safaricom-explains-why-your-fuliza-limit-can-remain-at-ksh100-despite-regular-m-pesa-transactions",
+            "id": "s-1b3a2ba01673"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-23",
+    "generated_at": "2026-10-23T07:12:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Implementation Engineer",
+        "company": "Savannah Informatics",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/implementation-engineer-savannah-informatics",
+        "posted": "2026-10-22",
+        "fit_note": "Client-facing rollout of a health-tech product (configuration, data migration, testing, go-live); fits Ben's API, SQL and support background, no years stated."
+      },
+      {
+        "title": "DevOps Engineer",
+        "company": "Savannah Informatics",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/devops-engineer-savannah-informatics-5",
+        "posted": "2026-10-22",
+        "fit_note": "Stretch: asks for an 'experienced' engineer, but wants Ruby or Python and CI/CD automation, which matches Ben's Rails and Python work."
+      },
+      {
+        "title": "Technical Support Representative",
+        "company": "Majorel",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/technical-support-representative-at-majorel-4480048460",
+        "posted": "2026-10-22",
+        "fit_note": "Entry-level tech support (6+ months preferred) using AI-assisted tools; easy match for Ben's earlier tech support work."
+      },
+      {
+        "title": "Sales Agent – Real Estate & Construction Management Software",
+        "company": "Zurid ICT",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/sales-agent-real-estate-construction-management-software-zurid-ict",
+        "posted": "2026-10-22",
+        "fit_note": "Software sales role (2 yrs asked, KSh 16-30k, onsite); fits Ben's openness to tech sales with a technical edge."
+      },
+      {
+        "title": "Sales Development Representative",
+        "company": "Solvo Global Careers",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/sales-development-representative-at-solvo-global-careers-4480074606",
+        "posted": "2026-10-22",
+        "fit_note": "Stretch: asks 2+ yrs SDR/cold calling and a 4 PM-1 AM shift; a tech-sales entry point if Ben wants one."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-tab:9226",
+      "error": null
+    }
+  }
+}
