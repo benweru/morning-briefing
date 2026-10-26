@@ -1,0 +1,745 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-26",
+  "checked_at": "2026-10-26T08:05:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 80 pulled, 8 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 14 from last 7 days, 1 kept)",
+      "Himalayas (ok; 335 pulled, 150 from last 7 days, 46 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 23 kept)",
+      "WeWorkRemotely (ok; 124 pulled, 34 from last 7 days, 8 kept)",
+      "WorkingNomads (ok; 39 pulled, 5 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 28 pulled, 4 from last 7 days, 0 kept)",
+      "Arc (ok; 159 pulled, 118 from last 7 days, 2 kept)",
+      "Greenhouse (ok; 905 pulled, 80 from last 7 days, 0 kept)",
+      "Ashby (ok; 114 pulled, 10 from last 7 days, 0 kept)",
+      "Lever (ok; 12 pulled, 0 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 8 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
+      "micro1 jobs portal (jobs.micro1.ai, read through its public listing feed; 271 open roles, 23 new since Friday)",
+      "Jobgether (live HTTP search: python, react, full stack, AI, automation, backend, LLM; 416 offers, 110 from the last 7 days screened)",
+      "Employer pages: Greenhouse API (Canonical), Himalayas API job details"
+    ],
+    "news": [
+      "CNBC",
+      "TechCrunch",
+      "Startuply.vc",
+      "TNX Africa",
+      "Business Daily"
+    ]
+  },
+  "counts": {
+    "pulled": 2015,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1472,
+      "senior_title": 233,
+      "not_target_role": 141,
+      "location_or_timezone": 38
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 12,
+    "dropped": 18,
+    "reviewed_closely": 30,
+    "dropped_by_reason": {
+      "location": 6,
+      "experience": 4,
+      "stack": 1,
+      "requirement": 1,
+      "other": 6
+    },
+    "stories": 11
+  },
+  "method": {
+    "filtering_summary": "Live search at about 7:40 AM EAT on 13 sources (12 answered; ReliefWeb failed again) pulled 2,015 postings. 1,472 were older than 7 days or old reposts, 233 senior or excluded titles, 141 not target roles, 38 excluded Kenya and 43 duplicates. Of the 88 that passed, most were Jobicy bump-dated Canonical reqs or roles shown before. micro1's own portal was read directly: 23 new posts since Friday, and the three software or ML ones open worldwide lead the list as stretches; two US-only tester roles and 18 non-software specialist posts were set aside. Jobgether answered live over HTTP this time, and two close fits (dexter health and Scale Army) made the top tier. Close reads dropped LATAM- and EU-only roles, 3+ and 5+ year asks, an unpaid internship and duplicates. Nothing old was carried over."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2015,
+    "kept_after_filters": 88,
+    "fresh_shortlisted": 12,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 80,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 14,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 335,
+        "fresh": 150,
+        "kept": 46,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 23,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 124,
+        "fresh": 34,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 39,
+        "fresh": 5,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 28,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 159,
+        "fresh": 118,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 905,
+        "fresh": 80,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 114,
+        "fresh": 10,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 12,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/6f83d131-cbf2-4817-a66f-99e05104eb47",
+      "title": "Rust Architect / Backend Developer",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Global, fully remote\"",
+      "posted": "2026-10-24",
+      "salary_as_shown": "$50–$70/hour",
+      "experience_asked": "Not stated in years; \"Practical proficiency with Rust in substantial professional, research, or open-source software\"",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job details, live 2026-10-26",
+      "fit": "New micro1 AI-training contract (~15 hrs a week, flexible) solving and validating backend problems: APIs, persistence, concurrency and reliability, which overlaps his API and Postgres work.",
+      "gaps": "Rust is the core requirement and isn't on his CV; pitched at architect level. A contract paid per accepted task, not a salaried job.",
+      "id": "j-953e25c481f0"
+    },
+    {
+      "rank": 2,
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/4307f05a-fbd1-4913-91a2-432c782023fb",
+      "title": "Applied Scientists — Machine Learning (MSc. or PhD)",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Global, fully remote\"",
+      "posted": "2026-10-23",
+      "salary_as_shown": "$60–$120/hour",
+      "experience_asked": "Required: a master's degree or PhD plus strong professional or research ML experience",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job details, live 2026-10-26",
+      "fit": "New micro1 contract (~15 hrs a week) building and debugging training and inference workflows in Python with coding agents; his capstone quantising Hermes 2 Pro and heavy coding-agent use are relevant.",
+      "gaps": "A master's or PhD is listed as required and he has a BSc, so this is a long shot. Contract work.",
+      "id": "j-9de174f6057a"
+    },
+    {
+      "rank": 3,
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/16e1c68d-4f30-431f-a0f8-aa57d4b0893e",
+      "title": "Machine Learning Researcher (MSc. or PhD)",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Global, fully remote\"",
+      "posted": "2026-10-23",
+      "salary_as_shown": "$60–$120/hour",
+      "experience_asked": "Required: a master's degree or PhD plus strong professional or research ML experience",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job details, live 2026-10-26",
+      "fit": "Same new micro1 ML project as the Applied Scientist post, listed separately: coding-heavy Python model and pipeline tasks for AI training.",
+      "gaps": "Same gap: a master's or PhD is required. Contract work, paid per task.",
+      "id": "j-73ddd4648934"
+    },
+    {
+      "rank": 4,
+      "tier": "top",
+      "url": "https://jobgether.com/offer/6adad53322c2644c03e0c7e3-ai-engineer-llm---remote",
+      "title": "AI Engineer (LLM) - Remote",
+      "company": "dexter health",
+      "location_as_stated": "\"This a Full Remote job, the offer is available from: Anywhere\"",
+      "posted": "2026-10-23",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated in years; hands-on AI feature work, evaluation loops and integrating AI workflows into production",
+      "found_via": "Jobgether (jobgether.com search)",
+      "verified": "Jobgether offer page, live 2026-10-26",
+      "fit": "Hands-on LLM product engineering (structured outputs, validation, fallbacks, eval loops) for healthcare care teams, very close to his LLM integration and automation work at Kwara.",
+      "gaps": "Years aren't stated, but it asks for a high-agency engineer who ships fast; healthcare domain is new to him. Also posted as \"AI Developer (LLM Products)\"; apply once.",
+      "id": "j-a6c3c3efed5a"
+    },
+    {
+      "rank": 5,
+      "tier": "top",
+      "url": "https://jobgether.com/offer/6ad9839aa8fae18ba2dd6c21-ai-automation-engineer",
+      "title": "AI Automation Engineer",
+      "company": "Scale Army Careers (client: B2B advisory business)",
+      "location_as_stated": "\"This role is open to candidates based in LATAM, Africa, and Eastern Europe\"",
+      "posted": "2026-10-22",
+      "salary_as_shown": "$30,000–$40,000/year (Jobgether listing)",
+      "experience_asked": "Not stated in years",
+      "found_via": "Jobgether (jobgether.com search)",
+      "verified": "Jobgether offer page, live 2026-10-26",
+      "fit": "AI application development and workflow automation, open to Africa explicitly; matches his n8n pipelines, webhooks and LLM integrations.",
+      "gaps": "Must work US business hours (9 AM–5 PM EST, about 4 PM–midnight EAT). Pay is modest for the work.",
+      "id": "j-d298f04b7fd9"
+    },
+    {
+      "rank": 6,
+      "tier": "top",
+      "url": "https://himalayas.app/companies/mixrank/jobs/junior-software-engineer-remote-global-full-time",
+      "title": "Junior Software Engineer - Remote (Global), Full-Time",
+      "company": "MixRank",
+      "location_as_stated": "\"Remote (Global)\"; \"Applicants from all geographies and backgrounds are welcome\"",
+      "posted": "2026-10-25",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "\"0-3 years of professional experience in software, and 5+ years of curiosity\"",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "fit": "A true junior role, global, built on Python, PostgreSQL, Linux and Git, which is his core stack, with mentorship.",
+      "gaps": "Heavy data and systems work (crawling, distributed file systems) rather than AI products. MixRank posts this role often, so check it's still taking applicants.",
+      "id": "j-ae6362b880f1"
+    },
+    {
+      "rank": 7,
+      "tier": "top",
+      "url": "https://himalayas.app/companies/impulsecrm/jobs/backend-engineer",
+      "title": "Backend Engineer",
+      "company": "Impulsecrm",
+      "location_as_stated": "\"Location: Kenya\"",
+      "posted": "2026-10-23",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "\"Experience Level: 0-3 years\"",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "fit": "Kenya-based backend role in Python and Django with REST APIs and PostgreSQL/MySQL, squarely in his range.",
+      "gaps": "Employer details are very thin (no website or team named in the post); check the company is real before sending anything.",
+      "id": "j-5c054ce3c69c"
+    },
+    {
+      "rank": 8,
+      "tier": "top",
+      "url": "https://himalayas.app/companies/zoftify-travel-software-development/jobs/python-developer",
+      "title": "Python Developer",
+      "company": "Zoftify — Travel Software Development",
+      "location_as_stated": "\"100% remote work, allowing you to work from wherever you choose\"",
+      "posted": "2026-10-24",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "\"2+ years of commercial experience\"",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "fit": "Python/Django or Flask REST backends with PostgreSQL and React as a plus, a good match to his CV and travel-planner capstone.",
+      "gaps": "Asks for 2+ years against his roughly one; agency client work for Germany, Switzerland, the UK and the US.",
+      "id": "j-5e79df6d5cec"
+    },
+    {
+      "rank": 9,
+      "tier": "evergreen",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/5703396",
+      "title": "Python and Kubernetes Software Engineer - Data, Workflows, AI/ML & Analytics",
+      "company": "Canonical",
+      "location_as_stated": "\"Home based - Worldwide\"",
+      "posted": "Jobicy listed 2026-10-24 (Greenhouse req first published 2024-04-11, updated 2026-08-05)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated in years",
+      "found_via": "Jobicy API",
+      "verified": "Greenhouse API, live 2026-10-26",
+      "fit": "Worldwide Python role on Canonical's data, workflow and AI/ML tooling; fits his Python and AI pipeline work.",
+      "gaps": "An always-open Canonical requisition with a long, written-heavy hiring process; Kubernetes is new to him.",
+      "id": "j-63ca98deec3c"
+    },
+    {
+      "rank": 10,
+      "tier": "stretch",
+      "url": "https://jobgether.com/offer/6adda22622c2644c03ed94a6-fullstack-developer---typescript-react-node.js",
+      "title": "Fullstack Developer – TypeScript / React / Node.js",
+      "company": "Boldare",
+      "location_as_stated": "\"the offer is available from: Europe, European Union, EMEA, Poland\"",
+      "posted": "2026-10-25",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "\"2+ years of commercial experience building web applications in TypeScript\"",
+      "found_via": "Jobgether (jobgether.com search)",
+      "verified": "Jobgether offer page, live 2026-10-26",
+      "fit": "React/Next.js plus Node/Nest and PostgreSQL product work; uses his React from Chumz and his Postgres experience.",
+      "gaps": "Asks for 2+ years of TypeScript; EMEA is listed but the team is Poland-based with a B2B or employment contract, so confirm Kenya works.",
+      "id": "j-d54daba4e1ea"
+    },
+    {
+      "rank": 11,
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/stermedia/jobs/fullstack-developer-python-react",
+      "title": "Fullstack Developer (Python + React)",
+      "company": "Stermedia",
+      "location_as_stated": "Remote, no country restriction shown (Himalayas: worldwide)",
+      "posted": "2026-10-24",
+      "salary_as_shown": "22,000–28,000 PLN/month (Himalayas)",
+      "experience_asked": "\"At least 3 years of commercial experience developing applications with Python and Django\"",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "fit": "Python (Django, FastAPI, Celery) and React full-stack client work, exactly his two main stacks.",
+      "gaps": "Asks for 3+ years of Django; Polish company paying in PLN, and Kenya isn't named; confirm before applying.",
+      "id": "j-84a42b874b7e"
+    },
+    {
+      "rank": 12,
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/zoftify-travel-software-development/jobs/backend-developer-node-part-time",
+      "title": "Backend Developer (Node) Part-time",
+      "company": "Zoftify — Travel Software Development",
+      "location_as_stated": "\"100% remote work, allowing you to work from wherever you choose\"",
+      "posted": "2026-10-25",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "\"2+ years of Node.js experience\"",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "fit": "Part-time REST API work with TypeScript and PostgreSQL, which could sit alongside a main job.",
+      "gaps": "Node.js/NestJS is the core stack and he's stronger in Python; asks for 2+ years.",
+      "id": "j-a224ce58a6ce"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobs.micro1.ai/post/82ba10ad-8dbd-49ce-bc11-a83b9bb2169f",
+      "title": "AI Agent Tester - Real-World Tasks",
+      "company": "micro1",
+      "location_as_stated": "\"Location: U.S based\"",
+      "reason": "New micro1 role, but US-based testers only",
+      "reason_code": "location",
+      "posted": "2026-10-24",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job details, live 2026-10-26",
+      "id": "j-b82409b63868"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/6a124045-dbe2-4435-aadd-e1f1ebaa5e8f",
+      "title": "Generalist",
+      "company": "micro1",
+      "location_as_stated": "\"Location: United States\"",
+      "reason": "New micro1 role, but US only",
+      "reason_code": "location",
+      "posted": "2026-10-23",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job details, live 2026-10-26",
+      "id": "j-1471d4d72e13"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/ec9f7a0d-9757-4885-8ac9-6e7dd25fd7c7",
+      "title": "Procurement & Vendor Management Expert (and 17 other new micro1 specialist posts: HR, finance, legal, business ops, RevOps, logistics, defence and military roles)",
+      "company": "micro1",
+      "location_as_stated": "micro1 portal",
+      "reason": "New micro1 posts since Friday, but all are non-software subject-expert roles",
+      "reason_code": "other",
+      "posted": "2026-10-24",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job portal, live 2026-10-26",
+      "id": "j-ee65f20cf171"
+    },
+    {
+      "url": "https://himalayas.app/companies/abstra-co/jobs/mid-full-stack-engineer-python-fastapi-react",
+      "title": "Mid Full-Stack Engineer (Python/FastAPI/React)",
+      "company": "Abstra",
+      "location_as_stated": "\"Location: LATAM 100% Remote\"",
+      "reason": "LATAM only; 3–5+ years",
+      "reason_code": "location",
+      "posted": "2026-10-24",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "id": "j-3b713060e6e6"
+    },
+    {
+      "url": "https://himalayas.app/companies/covertswarm/jobs/ai-engineer-offensive-security",
+      "title": "AI Engineer (Offensive Security)",
+      "company": "CovertSwarm",
+      "location_as_stated": "\"open to candidates based in EU\"",
+      "reason": "EU only",
+      "reason_code": "location",
+      "posted": "2026-10-25",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "id": "j-7f7e779f85c0"
+    },
+    {
+      "url": "https://himalayas.app/companies/agilityfeat/jobs/ai-product-engineer-elixir-5271120618",
+      "title": "AI Product Engineer (Elixir)",
+      "company": "AgilityFeat",
+      "location_as_stated": "\"Remote from LatAm (preferred)\"",
+      "reason": "LatAm preferred; 4+ years and 2+ years of Elixir",
+      "reason_code": "experience",
+      "posted": "2026-10-24",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "id": "j-234329a2eacf"
+    },
+    {
+      "url": "https://himalayas.app/companies/arora-media-llc/jobs/ai-developer",
+      "title": "AI Developer",
+      "company": "Arora Media LLC",
+      "location_as_stated": "Remote (Himalayas: worldwide)",
+      "reason": "Asks for 3+ years building software with LLM APIs",
+      "reason_code": "experience",
+      "posted": "2026-10-26",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "id": "j-e155b2617451"
+    },
+    {
+      "url": "https://himalayas.app/companies/elvoro/jobs/full-stack-web-developer-next-js-elvoro-ltd",
+      "title": "Full-Stack Web Developer (Next.js) – Elvoro Ltd",
+      "company": "Elvoro",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "One-off fixed-price website build ($1,000–3,000) asking for several years of Next.js",
+      "reason_code": "other",
+      "posted": "2026-10-25",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "id": "j-7eeed409771e"
+    },
+    {
+      "url": "https://himalayas.app/companies/metasys/jobs/backend-engineer-internship",
+      "title": "Backend Engineer Internship",
+      "company": "Metasys",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "Unpaid at first (\"Stipend: None initially\"); expert NestJS required",
+      "reason_code": "requirement",
+      "posted": "2026-10-25",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "id": "j-7ca445841da1"
+    },
+    {
+      "url": "https://himalayas.app/companies/zoftify-travel-software-development/jobs/backend-developer-node",
+      "title": "Backend Developer (Node)",
+      "company": "Zoftify — Travel Software Development",
+      "location_as_stated": "\"100% remote work\"",
+      "reason": "Full-time version asks for 3+ years of Node.js; part-time version kept",
+      "reason_code": "experience",
+      "posted": "2026-10-25",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "id": "j-c01122f3e823"
+    },
+    {
+      "url": "https://himalayas.app/companies/impulsecrm/jobs/backend",
+      "title": "backend",
+      "company": "Impulsecrm",
+      "location_as_stated": "\"Location: Kenya\"",
+      "reason": "Duplicate of the Impulsecrm Backend Engineer post, with a vaguer 1–9 years",
+      "reason_code": "other",
+      "posted": "2026-10-23",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, live 2026-10-26",
+      "id": "j-11d8480eaade"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adac6fc22c2644c03e06312-ai-developer-llm-products---remote",
+      "title": "AI Developer (LLM Products) - Remote",
+      "company": "dexter health",
+      "location_as_stated": "\"available from: Anywhere\"",
+      "reason": "Same dexter health role as the AI Engineer (LLM) post",
+      "reason_code": "other",
+      "posted": "2026-10-23",
+      "found_via": "Jobgether (jobgether.com search)",
+      "verified": "Jobgether offer page, live 2026-10-26",
+      "id": "j-3924f75ab0cb"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ada9cdb22c2644c03df54b1-solution-fullstack-engineer-python-js---ai-first",
+      "title": "Solution&Fullstack Engineer (Python+ JS) - AI First",
+      "company": "The Codest",
+      "location_as_stated": "\"available from: Europe, European Union, EMEA, Poland\"",
+      "reason": "Seniority not shown; EU-hub contractor role, shortlist kept to closer fits",
+      "reason_code": "other",
+      "posted": "2026-10-23",
+      "found_via": "Jobgether (jobgether.com search)",
+      "verified": "Jobgether offer page, live 2026-10-26",
+      "id": "j-6da64cf79880"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ad77b06a8fae18ba2d27de7-python-developer",
+      "title": "Python Developer (Databricks / AWS)",
+      "company": "SRM Technologies",
+      "location_as_stated": "\"available from: Anywhere\"",
+      "reason": "\"Experience: 5–6 Years\"",
+      "reason_code": "experience",
+      "posted": "2026-10-20",
+      "found_via": "Jobgether (jobgether.com search)",
+      "verified": "Jobgether offer page, live 2026-10-26",
+      "id": "j-bc8fc697440c"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adb296622c2644c03e253fe-mlops-engineer---ai-systems",
+      "title": "MLOps Engineer - AI Systems",
+      "company": "Mercor",
+      "location_as_stated": "North America, Europe, Asia, EMEA, APAC (listed)",
+      "reason": "Needs 2+ years in ML systems, kernels and profiling",
+      "reason_code": "stack",
+      "posted": "2026-10-23",
+      "found_via": "Jobgether (jobgether.com search)",
+      "verified": "Jobgether offer page, live 2026-10-26",
+      "id": "j-e66ef2398f12"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adc7ad822c2644c03e8bbbf-remote-software-engineer-new-grad----60--80-hour",
+      "title": "Software Engineer, New Grad",
+      "company": "24-MAG",
+      "location_as_stated": "\"available from: United States, New York (USA)\"",
+      "reason": "US-only full-time employee role, and he has no US work authorisation",
+      "reason_code": "location",
+      "posted": "2026-10-24",
+      "found_via": "Jobgether (jobgether.com search)",
+      "verified": "Jobgether offer page, live 2026-10-26",
+      "id": "j-74307ff81191"
+    },
+    {
+      "url": "https://jobgether.com/offer/6add078822c2644c03eb227f-associate-software-engineer",
+      "title": "Associate Software Engineer",
+      "company": "Cotiviti",
+      "location_as_stated": "\"available from: United States\"",
+      "reason": "US only; Java-based",
+      "reason_code": "location",
+      "posted": "2026-10-24",
+      "found_via": "Jobgether (jobgether.com search)",
+      "verified": "Jobgether offer page, live 2026-10-26",
+      "id": "j-10aec52531e0"
+    },
+    {
+      "url": "https://himalayas.app/companies/eclipse-laboratories/jobs/data-scientist-ai-data-llm-specialist",
+      "title": "Data Scientist (AI Data & LLM Specialist)",
+      "company": "Eclipse Laboratories",
+      "location_as_stated": "Worldwide (Himalayas)",
+      "reason": "Ben chose to skip Eclipse",
+      "reason_code": "other",
+      "posted": "2026-10-19",
+      "found_via": "Himalayas API",
+      "verified": "",
+      "id": "j-eec589f8dcc3"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "name": "AI and LLMs",
+        "stories": [
+          {
+            "title": "SpaceX closes $40 billion debt deal to buy AI chips",
+            "summary": "Elon Musk said SpaceX closed $40 billion of mostly callable debt to buy GPUs, with the money arriving in the first half of 2027; Bloomberg had reported it was for Nvidia chips.",
+            "why": "The biggest compute raise of the week sits behind Grok, so expect more Grok and xAI capacity and hiring news.",
+            "source": "CNBC",
+            "date": "2026-10-26",
+            "url": "https://www.cnbc.com/2026/10/26/spacex-closes-40-billion-debt-deal-for-ai-chips-elon-musk-.html",
+            "id": "s-dd38ceea9da7"
+          },
+          {
+            "title": "Grok releases the first seven minutes of its AI-generated 'Odyssey'",
+            "summary": "Three months after Musk promised a full-length AI film, Grok published seven minutes, now billed as Episode 1 of an Odyssey series.",
+            "why": "A public test of how far AI video generation has come, and how critics are judging it.",
+            "source": "TechCrunch",
+            "date": "2026-10-25",
+            "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
+            "id": "s-bf7f18e0418c"
+          },
+          {
+            "title": "Study: forced to pick, Grok's model chooses Republicans and GPT picks Democrats",
+            "summary": "Researchers asked both models, through their APIs, who to vote for in nearly 500 US races; they disagreed in more than 90% of them, while the consumer apps refused to answer.",
+            "why": "A reminder that raw API behaviour differs from the apps, which matters when he builds products on top of these models.",
+            "source": "TechCrunch",
+            "date": "2026-10-24",
+            "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
+            "id": "s-e4ac1d3f295a"
+          },
+          {
+            "title": "Block's new Dessa voice model runs locally and sounds eerily human",
+            "summary": "Block's research lab released Dessa, a full-duplex voice model that can talk and listen at once and runs on a MacBook M4 Max, with laughs and pauses built in.",
+            "why": "Local voice models open up agent features without paying per-minute cloud speech costs.",
+            "source": "TechCrunch",
+            "date": "2026-10-24",
+            "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+            "id": "s-688136660c10"
+          }
+        ]
+      },
+      {
+        "id": "startups",
+        "name": "Startups and funding",
+        "stories": [
+          {
+            "title": "Nvidia's role as AI financier faces its first big test",
+            "summary": "As credit tightens for neocloud partners, Nvidia's strategy of funding and backstopping customers' buildouts, including $36 billion in off-balance-sheet cloud deals as of July, is under strain.",
+            "why": "Funding stress at AI cloud firms can slow hiring at the infrastructure end of the market.",
+            "source": "CNBC",
+            "date": "2026-10-24",
+            "url": "https://www.cnbc.com/2026/10/24/nvidias-role-as-ai-financier-faces-first-big-test-as-neoclouds-take-market-hit.html",
+            "id": "s-c6eadaddf342"
+          },
+          {
+            "title": "Instacart reportedly explored selling itself to DoorDash or Uber",
+            "summary": "The Information and Bloomberg report Instacart hired a bank and held talks with DoorDash, while Uber walked away; the company is worth more than $13 billion.",
+            "why": "Consolidation in delivery tech, a sector with plenty of engineering roles.",
+            "source": "TechCrunch",
+            "date": "2026-10-24",
+            "url": "https://techcrunch.com/2026/10/24/instacart-reportedly-discussed-selling-itself-with-doordash-and-uber/",
+            "id": "s-508ed5afff20"
+          }
+        ]
+      },
+      {
+        "id": "hiring",
+        "name": "Hiring market",
+        "stories": [
+          {
+            "title": "Apollo economist: AI has delivered 'zero financial payoff' to most companies",
+            "summary": "Torsten Slok found flat profit margins and revenue per worker across the S&P 500 minus its seven tech giants, with no sign yet that AI is lifting productivity.",
+            "why": "Employers are starting to ask for measurable AI results, so CV bullets with numbers stand out.",
+            "source": "TechCrunch",
+            "date": "2026-10-25",
+            "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+            "id": "s-b23877b88e69"
+          },
+          {
+            "title": "How two critical PHP bugs almost broke the internet",
+            "summary": "The PHP Foundation shipped patches on Wednesday for PHP2Shell (CVE-2026-109618 and CVE-2026-109619), which let attackers into PHP servers without a password; big hosts got an early heads-up.",
+            "why": "A live example of the security patching work backend and platform teams are hiring for.",
+            "source": "TechCrunch",
+            "date": "2026-10-24",
+            "url": "https://techcrunch.com/2026/10/24/php-ocalypse-how-two-critical-web-bugs-almost-broke-the-internet/",
+            "id": "s-7e6031d0571a"
+          }
+        ]
+      },
+      {
+        "id": "kenya",
+        "name": "Kenya fintech",
+        "stories": [
+          {
+            "title": "Nairobi fintech Flowt targets a $1 million loan book for climate SMEs",
+            "summary": "Flowt uses AI to turn bank, M-Pesa and accounting records into lender-ready credit profiles, after a $550,000 pre-seed led by Delta40.",
+            "why": "Kenyan fintech building AI credit scoring, close to his loan-simulation work at Kwara.",
+            "source": "Startuply.vc",
+            "date": "2026-10-25",
+            "url": "https://startuply.vc/article/a-1-million-loan-book-is-flowt-s-first-target-for-climate-smart-smes-c2l8us",
+            "id": "s-e0f872f58b97"
+          },
+          {
+            "title": "South Africa's Store2Door eyes Kenya with free online shops and e-scooter financing",
+            "summary": "Store2Door plans to enter Kenya and Nigeria in the second quarter of 2027, pairing free online stores with financed electric delivery scooters from Agilitee.",
+            "why": "Another commerce and payments platform heading to Nairobi, a possible future employer.",
+            "source": "TNX Africa",
+            "date": "2026-10-25",
+            "url": "https://www.tnx.africa/business/article/2001560841/south-african-firm-eyes-kenya-with-online-shops-electric-scooter-plan",
+            "id": "s-791945ce4ee6"
+          },
+          {
+            "title": "The hidden risks in Kenya's discarded office computers",
+            "summary": "Business Daily looks at data-security risks and lost value in old office computers, servers and printers, noting Kenya has no reliable figures separating them from other e-waste.",
+            "why": "Data-handling gaps like this are where Kenyan firms need engineers who think about security.",
+            "source": "Business Daily",
+            "date": "2026-10-25",
+            "url": "https://www.businessdailyafrica.com/bd/corporate/technology/the-hidden-risks-in-kenya-s-discarded-office-computers-5645322",
+            "id": "s-198391ab582b"
+          }
+        ]
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-26",
+    "generated_at": "2026-10-26T07:12:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Systems Engineer – End User Services (L1)",
+        "company": "NTT Ltd",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/systems-engineer-end-user-services-l1-ntt-ltd",
+        "posted": "2026-10-24",
+        "fit_note": "Entry-level (1–3 yrs) hybrid support/implementation role; fits Ben's tech support background, though it leans on the Microsoft stack (AD, M365, Intune, Azure). Also listed on LinkedIn."
+      },
+      {
+        "title": "Cloud Support Associate Internship - April 2027 start, Support Engineering",
+        "company": "Amazon Web Services (AWS)",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/cloud-support-associate-internship-april-2027-start-support-engineering-support-engineering-at-amazon-web-services-aws-4474798571",
+        "posted": "2026-10-24",
+        "fit_note": "6-month AWS support internship for recent grads needing Python/Ruby scripting, databases and Linux; matches Ben's CS degree and AWS/Python work, but starts April 2027."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-tab:9226",
+      "error": null
+    }
+  }
+}
