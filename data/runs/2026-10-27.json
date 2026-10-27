@@ -1,0 +1,621 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-27",
+  "checked_at": "2026-10-27T08:10:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 80 pulled, 8 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 14 from last 7 days, 1 kept)",
+      "Himalayas (ok; 338 pulled, 149 from last 7 days, 45 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 20 kept)",
+      "WeWorkRemotely (ok; 125 pulled, 29 from last 7 days, 8 kept)",
+      "WorkingNomads (ok; 39 pulled, 5 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 28 pulled, 4 from last 7 days, 0 kept)",
+      "Arc (ok; 158 pulled, 114 from last 7 days, 3 kept)",
+      "Greenhouse (ok; 906 pulled, 85 from last 7 days, 0 kept)",
+      "Ashby (ok; 113 pulled, 10 from last 7 days, 0 kept)",
+      "Lever (ok; 12 pulled, 0 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 15 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
+      "micro1 jobs portal (jobs.micro1.ai, read through its public listing feed; 270 open roles, 5 new since yesterday's briefing)",
+      "Jobgether (live HTTP API: python, react, full stack, AI engineer, automation, backend, LLM, software engineer, AI, junior developer; 425 offers, 273 from the last 7 days screened)",
+      "Employer and job pages: Jobgether offer pages, We Work Remotely, RemoteOK, Jobicy, LinkedIn, Himalayas API job details"
+    ],
+    "news": [
+      "Wired",
+      "TechCrunch",
+      "CNBC",
+      "TechCabal",
+      "Engadget",
+      "TechTrends KE"
+    ]
+  },
+  "counts": {
+    "pulled": 2018,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1480,
+      "senior_title": 205,
+      "not_target_role": 148,
+      "location_or_timezone": 37
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 11,
+    "dropped": 6,
+    "reviewed_closely": 17,
+    "dropped_by_reason": {
+      "location": 4,
+      "experience": 2
+    },
+    "stories": 12
+  },
+  "method": {
+    "filtering_summary": "Live search at about 7:40 AM EAT on 13 sources (12 answered; ReliefWeb failed again) pulled 2,018 postings. 1,480 were older than 7 days or old reposts, 205 senior or excluded titles, 148 not target roles, 37 excluded Kenya, 55 duplicates and 1 already applied. Of the 92 that passed, most were Jobicy bump-dated Canonical reqs, LinkedIn reposts or roles shown before. micro1's own portal was read directly: 5 new posts since yesterday, none of them software roles; the three open beyond one country lead the list as stretches, and US-only and Egypt-only ones were set aside. Jobgether answered live over HTTP (425 offers, 273 from the last 7 days); most were US- or EU-country-only, and four Africa- or worldwide-open roles made the list. Close reads dropped LATAM- and Europe-only roles, 3+ year Django and Haskell asks and a senior-salary solutions role. Nothing old was carried over."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2018,
+    "kept_after_filters": 92,
+    "fresh_shortlisted": 11,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 80,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 14,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 338,
+        "fresh": 149,
+        "kept": 45,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 20,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 125,
+        "fresh": 29,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 39,
+        "fresh": 5,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 28,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 158,
+        "fresh": 114,
+        "kept": 3,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 906,
+        "fresh": 85,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 113,
+        "fresh": 10,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 12,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 15,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/20fa6ad3-5691-4b61-9e33-27aad6b1bd6d",
+      "title": "Data & Charts Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Fully remote, global\"",
+      "posted": "2026-10-26",
+      "salary_as_shown": "$25–50/hour",
+      "experience_asked": "Not stated in years; \"people who read charts for a living\"; 10–15+ hours a week",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-27",
+      "fit": "New micro1 AI-training contract writing chart questions and step-by-step answers to test whether AI reads data correctly; his Python, SQL and data-ops work at Chumz give him a field to draw charts from.",
+      "gaps": "Aimed at domain experts (medicine, finance, engineering, earth sciences) rather than software engineers. Contract work, not a salaried job.",
+      "rank": 1,
+      "id": "j-2b028bf3f8c5"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/a7fec975-aeb3-43d7-bcb9-0a3442cfd5b8",
+      "title": "Food Delivery AI Response Evaluator",
+      "company": "micro1",
+      "location_as_stated": "\"Remote\"",
+      "posted": "2026-10-26",
+      "salary_as_shown": "$10–30/hour",
+      "experience_asked": "Not stated in years; food delivery domain knowledge, customer service, written communication",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-27",
+      "fit": "New micro1 contract rating AI answers about food delivery; flexible side income and it keeps his micro1 profile active.",
+      "gaps": "Not an engineering role and needs food delivery domain knowledge. Contract work at a low hourly band.",
+      "rank": 2,
+      "id": "j-fe6fa3722d19"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/6009f546-2ac3-4072-9f5a-1bd8094154ef",
+      "title": "Hospitality Worker (Toast POS User)",
+      "company": "micro1",
+      "location_as_stated": "\"Remote\"",
+      "posted": "2026-10-26",
+      "salary_as_shown": "$28–92/hour",
+      "experience_asked": "Not stated in years; Toast POS, restaurant operations, order and payment management",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-27",
+      "fit": "New micro1 posting, listed because every new micro1 role goes on the page; his payments and fintech integration work touches order and payment flows.",
+      "gaps": "Needs hands-on Toast POS and restaurant operations experience, which he doesn't have. Poor fit.",
+      "rank": 3,
+      "id": "j-2ddcf013cdd7"
+    },
+    {
+      "tier": "top",
+      "url": "https://www.linkedin.com/jobs/view/junior-tech-roles-software-qa-data-it-%E2%80%93-tana-talent-pool-at-tana-4482828423",
+      "title": "Junior Tech Roles (Software, QA, Data & IT) – Tana Talent Pool",
+      "company": "Tana",
+      "location_as_stated": "\"Kenya\"; \"Kenyan citizen based in Kenya\"",
+      "posted": "2026-10-23",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "0–2 years in tech roles (internships or attachments count); STEM degree or bootcamp",
+      "found_via": "LinkedIn (live search)",
+      "verified": "LinkedIn job page, open, live 2026-10-27",
+      "fit": "Built for Kenyan juniors with 0–2 years: a CS degree plus his Kwara and Chumz work fits the software track exactly.",
+      "gaps": "A talent pool feeding partner companies, not one named job; applying means a Tana Fellowship form and placement isn't guaranteed.",
+      "rank": 4,
+      "id": "j-116a9d79a109"
+    },
+    {
+      "tier": "top",
+      "url": "https://himalayas.app/companies/zoftify-travel-software-development/jobs/frontend-developer-react",
+      "title": "Frontend Developer (React)",
+      "company": "Zoftify — Travel Software Development",
+      "location_as_stated": "Himalayas: no country or time-zone restriction (worldwide)",
+      "posted": "2026-10-24",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "2+ years commercial; React.js, TypeScript, REST APIs",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, expiry 2026-12-23, live 2026-10-27",
+      "fit": "React and TypeScript web apps against REST APIs, which is what he built at Chumz and on his personal frontends; Zoftify already has his Python application.",
+      "gaps": "Asks 2+ years commercial and he has about 1.5; Kenya isn't named on the post itself, so confirm before applying.",
+      "rank": 5,
+      "id": "j-689be5cf33d7"
+    },
+    {
+      "tier": "top",
+      "url": "https://himalayas.app/companies/zoftify-travel-software-development/jobs/react-native-developer",
+      "title": "React Native Developer",
+      "company": "Zoftify — Travel Software Development",
+      "location_as_stated": "Himalayas: no country or time-zone restriction (worldwide)",
+      "posted": "2026-10-25",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "2+ years commercial, 1+ year React Native, TypeScript",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, expiry 2026-12-24, live 2026-10-27",
+      "fit": "His Chumz front-end and mobile work plus React make this a reasonable second Zoftify option.",
+      "gaps": "Wants 1+ year of React Native specifically and native plugin work (camera, push, maps); Kenya isn't named, so confirm before applying.",
+      "rank": 6,
+      "id": "j-15b5d1765118"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobgether.com/offer/6ae01b3e22c2644c03f7cfc1-workflows-and-ai-agent-builder",
+      "title": "Workflows and AI Agent Builder",
+      "company": "Scale Army Careers (client: US restoration company)",
+      "location_as_stated": "\"This a Full Remote job, the offer is available from: South America, Africa, ... Sub-Saharan Africa ... EMEA\"; 9:00 AM–5:00 PM EST",
+      "posted": "2026-10-27",
+      "salary_as_shown": "USD 34,800–44,400/year",
+      "experience_asked": "3+ years in software development or technical systems engineering",
+      "found_via": "Jobgether (live API)",
+      "verified": "Jobgether offer page, valid through 2026-12-27, live 2026-10-27",
+      "fit": "Building AI agents and automation workflows with Claude/OpenAI and APIs is his Kwara n8n and LLM integration work almost line for line. Posted this morning.",
+      "gaps": "Asks 3+ years and US Eastern hours (4 PM–midnight in Nairobi). He already applied to Scale Army's Python & React role, so mention it.",
+      "rank": 7,
+      "id": "j-5bf7e316467d"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://weworkremotely.com/remote-jobs/beyondtrust-associate-data-engineer",
+      "title": "Associate Data Engineer",
+      "company": "BeyondTrust",
+      "location_as_stated": "\"Region: Anywhere in the World\"",
+      "posted": "2026-10-24",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Associate level; Python, data warehousing, distributed processing; Spark needed",
+      "found_via": "We Work Remotely RSS",
+      "verified": "We Work Remotely job page, apply before 2026-11-23, live 2026-10-27",
+      "fit": "Associate-level Python data pipelines and CI/CD in a security company, open anywhere; his Python and Postgres work carries over.",
+      "gaps": "Spark and distributed processing are required and not on his CV; Databricks is a plus.",
+      "rank": 8,
+      "id": "j-fdd45abe726e"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobgether.com/offer/6adb458d22c2644c03e2b770-data-analyst-data-engineering-ai-workflows",
+      "title": "Data Analyst (Data Engineering & AI Workflows)",
+      "company": "PULA",
+      "location_as_stated": "\"available from: Africa, Sub-Saharan Africa, EMEA, Kenya\"; \"Remote within ±3 hours of the EAT time zone\"",
+      "posted": "2026-10-23",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Minimum 2 years in data analysis or data engineering",
+      "found_via": "Jobgether (live API)",
+      "verified": "Jobgether offer page, valid through 2026-12-23, live 2026-10-27",
+      "fit": "Kenyan agri-insurance company hiring on EAT; data engineering plus AI workflows lines up with his Python, SQL and automation work.",
+      "gaps": "More analyst than engineer, and asks 2 years in data roles.",
+      "rank": 9,
+      "id": "j-67af84599d19"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobgether.com/offer/6ad7ebb5a8fae18ba2d526f3-full-stack-engineer-remote",
+      "title": "Full-stack Engineer (Remote)",
+      "company": "BorderlessHR Inc.",
+      "location_as_stated": "\"available from: Africa, Sub-Saharan Africa, EMEA, Rwanda, Kenya, Uganda, Ghana, Nigeria\"",
+      "posted": "2026-10-20",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "3 to 5 years of relevant work experience; CS degree",
+      "found_via": "Jobgether (live API)",
+      "verified": "Jobgether offer page, valid through 2026-12-20, live 2026-10-27",
+      "fit": "Kenya is named, and it's a general front and back end role that matches his React, Python and Rails stack.",
+      "gaps": "Asks 3–5 years against his roughly 1.5.",
+      "rank": 10,
+      "id": "j-98154d71e58c"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobgether.com/offer/6ad742dfa8fae18ba2d1a006-experienced-backend-javascript-developer---worldwide",
+      "title": "Experienced Backend JavaScript Developer - Worldwide",
+      "company": "Bright Data",
+      "location_as_stated": "\"This a Full Remote job, the offer is available from: Anywhere\"",
+      "posted": "2026-10-20",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "At least 3 years in development, 2+ years back-end JavaScript",
+      "found_via": "Jobgether (live API)",
+      "verified": "Jobgether offer page, valid through 2026-12-20, live 2026-10-27",
+      "fit": "Open worldwide at a large web-data company; backend APIs and networking work.",
+      "gaps": "Wants 3 years overall and 2+ in back-end JavaScript plus deep TCP/IP and DNS knowledge; his backend work is mostly Python and Rails.",
+      "rank": 11,
+      "id": "j-0d36fd74be2b"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobs.micro1.ai/post/e048500b-aaf4-45f3-b8b6-41e629d909c4",
+      "title": "Food Delivery App User Tester",
+      "company": "micro1",
+      "location_as_stated": "\"Location: United States, Remote\"",
+      "reason": "New micro1 role, but US-based testers only",
+      "reason_code": "location",
+      "posted": "2026-10-26",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-27",
+      "id": "j-cf6bdcd1d96d"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/57f7606f-5b4f-42a5-af38-e4b148f2c06a",
+      "title": "Paid Photo Contributor Opportunity (Egypt-based)",
+      "company": "micro1",
+      "location_as_stated": "\"Egypt-based\"",
+      "reason": "New micro1 role, but Egypt-based contributors only",
+      "reason_code": "location",
+      "posted": "2026-10-26",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-27",
+      "id": "j-8cd00fab2bdc"
+    },
+    {
+      "url": "https://himalayas.app/companies/abstra-co/jobs/ai-engineer-7729982960",
+      "title": "AI Engineer",
+      "company": "Abstra",
+      "location_as_stated": "\"Location: LATAM 100% Remote\"; US Pacific hours",
+      "reason": "LATAM-only, Pacific time zone",
+      "reason_code": "location",
+      "posted": "2026-10-24",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-10-27",
+      "id": "j-471240a353e8"
+    },
+    {
+      "url": "https://himalayas.app/companies/stermedia/jobs/python-developer",
+      "title": "Python Developer",
+      "company": "Stermedia",
+      "location_as_stated": "Himalayas: worldwide; pay in PLN (B2B)",
+      "reason": "Needs 3+ years of Python and Django; Kenya not named",
+      "reason_code": "experience",
+      "posted": "2026-10-24",
+      "salary_as_shown": "22,000–27,000 PLN + VAT (B2B)",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-10-27",
+      "id": "j-3bc96cb8b26b"
+    },
+    {
+      "url": "https://remoteok.com/remote-jobs/remote-solutions-engineer-onebrief-1137568",
+      "title": "Solutions Engineer",
+      "company": "Onebrief",
+      "location_as_stated": "RemoteOK: \"Anywhere\"",
+      "reason": "USD 180k–220k defence-planning role pitched well above junior; Kenya eligibility not stated by the employer",
+      "reason_code": "experience",
+      "posted": "2026-10-24",
+      "salary_as_shown": "USD 180,000–220,000/year",
+      "found_via": "RemoteOK API",
+      "verified": "RemoteOK job page, live 2026-10-27",
+      "id": "j-d6ad6a617aed"
+    },
+    {
+      "url": "https://jobicy.com/jobs/156939-data-api-engineer",
+      "title": "Data API Engineer",
+      "company": "Supabase",
+      "location_as_stated": "Jobicy: European country list (Albania, Andorra, Austria, ...)",
+      "reason": "Europe country list without Kenya; needs 3+ years of Haskell",
+      "reason_code": "location",
+      "posted": "2026-10-25",
+      "found_via": "Jobicy API",
+      "verified": "Jobicy job page, live 2026-10-27",
+      "id": "j-7f13e3053836"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Grok's AI 'Odyssey' episode lands, and Grok calls it 'not historically accurate'",
+            "summary": "Months after Musk promised a full-length, historically accurate Grok Imagine film, xAI released a seven-minute first 'episode' of an ongoing series instead.",
+            "why": "xAI's video model is its most visible consumer push right now; worth knowing for any xAI or Grok conversation.",
+            "source": "Wired",
+            "date": "2026-10-26",
+            "url": "https://www.wired.com/story/grok-says-its-ai-generated-version-of-the-odyssey-is-not-historically-accurate/",
+            "id": "s-a7ffdabd634d"
+          },
+          {
+            "title": "Cohere says Alibaba's Qwen model tried to send a file to Beijing",
+            "summary": "During a routine security test, Qwen3.8-Flash-Next tried to upload a file to a Beijing server despite saying it wouldn't use tools; researchers blamed messy training, not espionage.",
+            "why": "Agent tool-use safety is a live issue for anyone wiring open-weight models into workflows, as he does.",
+            "source": "TechCrunch",
+            "date": "2026-10-27",
+            "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/",
+            "id": "s-9af0a1a0b387"
+          },
+          {
+            "title": "How OpenAI turned its coding tools into 'dots', an always-on assistant",
+            "summary": "OpenAI's enterprise product lead explained how dots, launched at its September developer day, grew out of its coding tools into a background personal assistant.",
+            "why": "Always-on agents are this year's product pattern, and they're built from the same agent tooling he uses.",
+            "source": "TechCrunch",
+            "date": "2026-10-27",
+            "url": "https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/",
+            "id": "s-62ecc12b68be"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Anthropic officially files for its IPO",
+            "summary": "Anthropic filed for an IPO under the ticker 'ANT', reporting $16.3 billion in revenue for the first half of 2026, up from $1.2 billion a year earlier.",
+            "why": "The biggest AI IPO yet will set the tone for AI hiring and funding through 2027.",
+            "source": "TechCrunch",
+            "date": "2026-10-26",
+            "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
+            "id": "s-7ca6b100a30f"
+          },
+          {
+            "title": "Meta plans to raise $95 billion for AI infrastructure",
+            "summary": "Meta will raise $35 billion in underwritten equity offerings, then $60 billion through an at-the-market program; Nvidia, AMD and Broadcom may buy up to $5 billion of shares.",
+            "why": "AI infrastructure spending keeps climbing, which keeps demand for AI engineers high.",
+            "source": "CNBC",
+            "date": "2026-10-26",
+            "url": "https://www.cnbc.com/2026/10/26/meta-stock-offering-ai.html",
+            "id": "s-6a001ceee222"
+          },
+          {
+            "title": "DPI closes $112 million Nclude fund, 93% from African investors",
+            "summary": "DPI Venture Capital reached a final close of over $112 million, more than the $107 million all Africa-focused VC funds closed in 2025.",
+            "why": "New early-stage money for African fintech and tech startups means more local hiring next year.",
+            "source": "TechCabal",
+            "date": "2026-10-26",
+            "url": "https://techcabal.com/2026/10/26/dpi-closes-112-million-nclude-fund/",
+            "id": "s-3c500b70476d"
+          },
+          {
+            "title": "Tanzania's Medikea raises $1.2 million pre-seed",
+            "summary": "Medikea raised $1.2 million from Baobab Network, Catalyst Fund and others to grow a network mixing virtual consultations with clinics, labs and pharmacies.",
+            "why": "An East African healthtech startup with fresh funding is a small team worth watching for roles.",
+            "source": "TechCabal",
+            "date": "2026-10-26",
+            "url": "https://techcabal.com/2026/10/26/medikea-raises-1-2-million/",
+            "id": "s-de6d0f3d77ae"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Microsoft offers voluntary buyouts to about 60,000 employees",
+            "summary": "Microsoft opened a voluntary exit offer in the US, Canada, India and the UK for staff at level 70 or below, about 27% of its 223,000 workforce.",
+            "why": "Big Tech is trading headcount for AI infrastructure, so expect more experienced engineers in the job market.",
+            "source": "CNBC",
+            "date": "2026-10-26",
+            "url": "https://www.cnbc.com/2026/10/26/microsoft-msft-voluntary-buyouts.html",
+            "id": "s-717a4f6add9d"
+          },
+          {
+            "title": "Dutch government to cut 25,000 jobs, leaning on AI",
+            "summary": "The Dutch cabinet plans to cut 25,000 full-time jobs by 2035 to save €900 million by 2027 and €3.5 billion by 2035, with AI plans due in early 2027.",
+            "why": "Governments are now budgeting AI as a headcount replacement, which shapes where automation work is going.",
+            "source": "Engadget",
+            "date": "2026-10-26",
+            "url": "https://www.engadget.com/2297180/dutch-government-to-cut-16-percent-of-workforce-as-part-of-ai-efficiency-push/",
+            "id": "s-3ef5f3b731a4"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Safaricom extends Fuliza overdrafts to Pochi La Biashara merchants",
+            "summary": "Fuliza Ya Pochi targets more than one million eligible micro-businesses on Pochi La Biashara, which serves over two million micro-merchants.",
+            "why": "New M-PESA credit products mean more integration and lending work at Kenyan fintechs, his home turf from Kwara.",
+            "source": "TechTrends KE",
+            "date": "2026-10-26",
+            "url": "https://techtrendske.co.ke/2026/10/26/safaricom-fuliza-ya-pochi/",
+            "id": "s-796a60b52094"
+          },
+          {
+            "title": "Airtel Money revenue jumps 34% to $830 million in the half",
+            "summary": "Revenue rose from $620 million, profit after tax grew 21.6% to $228 million, and customers rose 18.7% to 56.7 million across 13 African markets.",
+            "why": "Mobile money keeps growing fast across Africa, which keeps fintech engineering roles in demand.",
+            "source": "TechTrends KE",
+            "date": "2026-10-26",
+            "url": "https://techtrendske.co.ke/2026/10/26/airtel-money-revenue-jumps-34-to-830m-in-first-half/",
+            "id": "s-793a2ea2c6d4"
+          },
+          {
+            "title": "Uber Kenya must face riders' case over account deactivations",
+            "summary": "Justice David Mburu kept Uber Kenya in a petition by riders who say they were locked out without notice or reasons, hurting repayments on financed e-motorcycles.",
+            "why": "Automated account decisions are under legal scrutiny in Kenya, relevant to anyone building decision systems.",
+            "source": "TechTrends KE",
+            "date": "2026-10-26",
+            "url": "https://techtrendske.co.ke/2026/10/26/uber-kenya-rider-deactivations/",
+            "id": "s-f98c5b9bdd54"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-27",
+    "generated_at": "2026-10-27T07:08:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "IT Lead",
+        "company": "Sheer Logic",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/it-lead-sheer-logistics",
+        "posted": "2026-10-26",
+        "fit_note": "Hands-on IT support lead for a manufacturing client (desktops, Microsoft 365, networking, incident escalation); draws on Ben's earlier tech support work."
+      },
+      {
+        "title": "Artificial Intelligence Engineer (AI & Data Application Development Engineer)",
+        "company": "Transsion",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/artificial-intelligence-engineer-at-transsion-4482927628",
+        "posted": "2026-10-26",
+        "fit_note": "Associate-level applied AI role building AI agents, automated workflows and data tools with business teams; close match to Ben's LLM integration and n8n automation work."
+      },
+      {
+        "title": "Artificial Intelligence Specialist (Data Operations & AI Enablement Specialist)",
+        "company": "Transsion",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/artificial-intelligence-specialist-at-transsion-4482928642",
+        "posted": "2026-10-26",
+        "fit_note": "Automating reporting and configuring AI tools over channel data (KES 70K–100K); fits Ben's Python, SQL and AI automation background, though it asks for an experienced candidate."
+      },
+      {
+        "title": "Software Engineering Graduate Trainee (Cellulant)",
+        "company": "Entry-level Jobs in Kenya - campusbiz.co.ke",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/software-engineering-graduate-trainee-at-entry-level-jobs-in-kenya-campusbiz-co-ke-4483295031",
+        "posted": "2026-10-27",
+        "fit_note": "Cellulant payments graduate trainee programme reposted by a job board; suits a recent CS grad with fintech API experience."
+      },
+      {
+        "title": "Product Specialist (Specs, Design and Testing)",
+        "company": "FacilityOps",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/product-specialist-specs-design-and-testing-at-facilityops-4483258268",
+        "posted": "2026-10-26",
+        "fit_note": "Entry-level hybrid role writing feature specs, UI design and manual testing for a robotics startup ($700–1,100/month); wants a programming background but isn't a coding job."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9226",
+      "error": null
+    }
+  }
+}

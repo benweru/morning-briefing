@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:,">
+<title>Ben’s Morning Briefing — 27 October 2026</title>
+<meta name="description" content="Remote roles open to Kenya, matched to Ben Maina’s CV, and the day’s tech news.">
+<style>
+/* ---------- Tokens ---------- */
+:root {
+  /* Type: two families, six sizes */
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-sm: 0.875rem;  /* 14px meta */
+  --fs-base: 1rem;    /* 16px body */
+  --fs-md: 1.125rem;  /* 18px item titles */
+  --fs-lg: 1.375rem;  /* 22px group headings */
+  --fs-xl: 1.875rem;  /* 30px section headings */
+  --fs-xxl: clamp(2.25rem, 1.6rem + 2.6vw, 2.75rem); /* 36-44px masthead */
+  --lh-tight: 1.2;
+  --lh-body: 1.55;
+
+  /* Space: 4px base */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+
+  /* Color: warm neutrals + one accent */
+  --paper: #fbfaf7;
+  --surface: #ffffff;
+  --ink: #1b1a17;
+  --ink-muted: #57544d;
+  --rule: #e2ded5;          /* decorative hairlines */
+  --rule-strong: #85817a;   /* control borders, >= 3:1 on paper */
+  --rule-jobs: #e3d9c8;     /* hairlines on the warm jobs band */
+  --rule-news: #d3dbe2;     /* hairlines on the cool news band */
+  --rule-appendix: #d6d3cb; /* hairlines on the appendix band */
+  --accent: #1f4e8c;        /* links + primary actions */
+  --accent-strong: #163a69; /* hover / pressed */
+  --accent-wash: #eef2f8;   /* hover fill on light controls */
+
+  /* Wayfinding colour. Every hue below has one job; all text uses pass AA (>= 4.5:1)
+     on every band they appear on. Values are muted (low chroma, ~L35) so they read as
+     ink, not decoration. */
+  /* Section bands: full-bleed background tints that tell you which part you're in. */
+  --band-jobs: #f7f1e6;      /* Jobs section: light warm tint */
+  --band-news: #edf2f6;      /* Today in tech: light cool tint */
+  --band-appendix: #ecebe6;  /* Dropped roles appendix: quiet neutral */
+  /* Section identity: opening rule, eyebrow label, active nav indicator. */
+  --sec-jobs: #7a4520;       /* warm umber, pairs with --band-jobs */
+  --sec-news: #1f5470;       /* cool deep blue-teal, pairs with --band-news */
+  /* Job tiers: heading rule, row marker, filter swatch. */
+  --tier-top: #2e6a3e;       /* muted green = strongest match */
+  --tier-evergreen: #4a5870; /* slate = always-open, neutral */
+  --tier-stretch: #82560e;   /* ochre = reach, proceed with care */
+  /* Fit / gaps lead-ins on each role. */
+  --fit: var(--tier-top);    /* green = matches his CV (same meaning as Top fit) */
+  --gap: #9a3d22;            /* rust = missing skill or requirement */
+  /* News groups: one hue per topic, same lightness and low chroma so they harmonise. */
+  --news-ai: #3f4c88;        /* indigo: AI and LLMs */
+  --news-startups: #1d6561;  /* teal: startups and funding */
+  --news-hiring: #6c4570;    /* plum: hiring market */
+  --news-kenya: #8a4a2c;     /* terracotta: Kenya fintech */
+  /* Kenya jobs section (local search: MyJobMag + LinkedIn, Nairobi roles). */
+  --band-local: #f0f2e8;     /* light olive tint, distinct from the warm jobs and cool news bands */
+  --sec-local: #4d5a22;      /* olive: opening rule, eyebrow, active nav indicator */
+  --rule-local: #d9ddc8;     /* hairlines on the Kenya band */
+
+  --radius: 2px;
+  --measure: 68ch;
+  --page: 1120px;
+  --nav-h: 48px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 var(--fs-base)/var(--lh-body) var(--font-sans);
+  font-kerning: normal;
+}
+h1, h2, h3, h4 { font-family: var(--font-serif); line-height: var(--lh-tight); margin: 0; font-weight: 700; }
+p, ol, ul, dl, dd { margin: 0; }
+ol[role="list"], ul[role="list"] { list-style: none; padding: 0; }
+a { color: var(--accent); text-underline-offset: 0.15em; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.quiet { color: var(--ink-muted); }
+.wrap { max-width: var(--page); margin-inline: auto; padding-inline: var(--s-5); }
+
+.skip-link {
+  position: absolute; left: var(--s-4); top: calc(-1 * var(--s-8));
+  background: var(--ink); color: var(--paper); padding: var(--s-2) var(--s-4); z-index: 20;
+}
+.skip-link:focus { top: var(--s-2); color: var(--paper); }
+
+/* ---------- Masthead ---------- */
+.masthead { padding-block: var(--s-7) var(--s-5); border-bottom: 2px solid var(--ink); }
+.masthead .dateline { font-size: var(--fs-sm); font-weight: 600; color: var(--ink-muted); margin-bottom: var(--s-2); }
+.masthead h1 { font-size: var(--fs-xxl); letter-spacing: -0.01em; }
+.masthead .dek { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.35; margin-top: var(--s-2); }
+.masthead .facts { margin-top: var(--s-4); font-size: var(--fs-sm); color: var(--ink-muted); }
+
+/* ---------- Section nav ---------- */
+.section-nav {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--paper); border-bottom: 1px solid var(--rule);
+}
+.section-nav[data-current="jobs"] { background: var(--band-jobs); }
+.section-nav[data-current="news"] { background: var(--band-news); }
+.section-nav[data-current="local"] { background: var(--band-local); }
+.section-nav ul { display: flex; gap: var(--s-5); height: var(--nav-h); }
+.section-nav a {
+  display: flex; align-items: center; height: 100%;
+  color: var(--ink-muted); font-weight: 600; text-decoration: none;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+}
+.section-nav a:hover { color: var(--ink); }
+.section-nav a { --sec: var(--accent); }
+.section-nav a[data-section="jobs"] { --sec: var(--sec-jobs); }
+.section-nav a[data-section="news"] { --sec: var(--sec-news); }
+.section-nav a[data-section="local"] { --sec: var(--sec-local); }
+.section-nav a[aria-current="true"] { color: var(--sec); border-bottom: 3px solid var(--sec); margin-bottom: -1px; }
+.section-nav .n { font-weight: 400; margin-left: var(--s-2); color: var(--ink-muted); }
+
+/* ---------- Sections ---------- */
+.section { padding-block: var(--s-7) var(--s-6); scroll-margin-top: var(--nav-h); border-top: 4px solid var(--sec); }
+.section-jobs { --sec: var(--sec-jobs); background: var(--band-jobs); padding-bottom: 0; }
+.section-news { --sec: var(--sec-news); background: var(--band-news); }
+.section-head .eyebrow { font-size: var(--fs-sm); font-weight: 600; color: var(--sec); margin-bottom: var(--s-2); }
+.section-head { max-width: var(--measure); margin-bottom: var(--s-5); }
+.section-head h2 { color: var(--ink); }
+.section-head h2 { font-size: var(--fs-xl); letter-spacing: -0.005em; }
+.section-head p { margin-top: var(--s-2); color: var(--ink-muted); }
+
+/* ---------- Controls ---------- */
+.section-jobs .controls { border-color: var(--rule-jobs); }
+.controls {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+  gap: var(--s-4); padding-block: var(--s-4); border-block: 1px solid var(--rule);
+}
+.filter-group { border: 0; margin: 0; padding: 0; min-width: 0; }
+.filter-group legend, .search label { display: block; font-size: var(--fs-sm); font-weight: 600; color: var(--ink-muted); margin-bottom: var(--s-2); padding: 0; }
+.segmented { display: flex; flex-wrap: wrap; }
+.segmented button {
+  font: 600 var(--fs-sm)/1 var(--font-sans);
+  min-height: 40px; padding: 0 var(--s-4);
+  color: var(--ink); background: var(--surface);
+  border: 1px solid var(--rule-strong); border-radius: 0; margin-left: -1px; cursor: pointer;
+}
+.segmented button:first-child { margin-left: 0; border-radius: var(--radius) 0 0 var(--radius); }
+.segmented button:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.segmented button:hover { background: var(--accent-wash); }
+.segmented button:active { background: var(--rule); }
+.segmented button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); position: relative; }
+.segmented button:focus-visible { position: relative; z-index: 1; }
+.segmented .n { font-weight: 400; margin-left: var(--s-1); }
+.swatch { display: inline-block; width: 10px; height: 10px; margin-right: var(--s-2); background: var(--tier); flex: none; }
+.segmented button { display: inline-flex; align-items: center; }
+.segmented button[aria-pressed="true"] .swatch { box-shadow: 0 0 0 1px var(--paper); }
+[data-filter="top"], .tier-top, .job[data-tier="top"] { --tier: var(--tier-top); }
+[data-filter="evergreen"], .tier-evergreen, .job[data-tier="evergreen"] { --tier: var(--tier-evergreen); }
+[data-filter="stretch"], .tier-stretch, .job[data-tier="stretch"] { --tier: var(--tier-stretch); }
+.search { flex: 0 1 320px; }
+.search input {
+  width: 100%; min-height: 40px; padding: 0 var(--s-3);
+  font: 400 var(--fs-base)/1 var(--font-sans); color: var(--ink);
+  background: var(--surface); border: 1px solid var(--rule-strong); border-radius: var(--radius);
+}
+.search input::placeholder { color: var(--ink-muted); opacity: 1; }
+.search input:focus-visible { outline-offset: 0; border-color: var(--accent); }
+.result-status { font-size: var(--fs-sm); color: var(--ink-muted); padding-top: var(--s-4); }
+
+/* ---------- Job tiers & rows ---------- */
+.tier { margin-top: var(--s-6); }
+.tier-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-1) var(--s-4); padding: var(--s-2) 0 var(--s-3) var(--s-3); border-left: 6px solid var(--tier); border-bottom: 2px solid var(--tier); }
+.tier-head h3 { font-size: var(--fs-lg); color: var(--tier); }
+.tier-head .count { font-family: var(--font-sans); font-size: var(--fs-base); font-weight: 400; color: var(--ink-muted); margin-left: var(--s-1); }
+.tier-head p { font-size: var(--fs-sm); color: var(--ink-muted); }
+.section-jobs .job { border-bottom-color: var(--rule-jobs); }
+.job {
+  display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) 176px;
+  gap: var(--s-6); padding-block: var(--s-5); border-bottom: 1px solid var(--rule);
+}
+.job-title { font-size: var(--fs-md); }
+.tier-tag { display: flex; align-items: center; font-size: var(--fs-sm); font-weight: 600; color: var(--tier); margin-bottom: var(--s-2); }
+.job-company { font-weight: 600; color: var(--ink-muted); margin-top: var(--s-1); margin-bottom: var(--s-3); }
+.job-note + .job-note { margin-top: var(--s-2); }
+.job-note strong { font-weight: 700; }
+.note-fit strong { color: var(--fit); }
+.note-gap strong { color: var(--gap); }
+.note-fit, .note-gap { padding-left: var(--s-3); border-left: 2px solid var(--note); }
+.note-fit { --note: var(--fit); }
+.note-gap { --note: var(--gap); }
+.job-facts { display: grid; gap: var(--s-2); font-size: var(--fs-sm); align-content: start; }
+.job-facts div { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: var(--s-3); }
+.job-facts dt { font-weight: 600; color: var(--ink-muted); }
+.job-action { display: flex; flex-direction: column; gap: var(--s-3); align-items: stretch; }
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 40px; padding: 0 var(--s-4);
+  font-weight: 600; font-size: var(--fs-sm); text-decoration: none;
+  color: var(--surface); background: var(--accent); border: 1px solid var(--accent); border-radius: var(--radius);
+}
+.button:hover { color: var(--surface); background: var(--accent-strong); border-color: var(--accent-strong); text-decoration: none; }
+.button:active { background: var(--ink); border-color: var(--ink); }
+.job-source { font-size: var(--fs-sm); color: var(--ink-muted); }
+
+.empty { padding-block: var(--s-5) 0; }
+.empty p + p { margin-top: var(--s-2); }
+.link-button {
+  font: inherit; color: var(--accent); background: none; border: 0; padding: 0;
+  text-decoration: underline; text-underline-offset: 0.15em; cursor: pointer;
+}
+.link-button:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
+
+/* ---------- Dropped roles ---------- */
+.appendix { background: var(--band-appendix); border-top: 1px solid var(--rule-strong); margin-top: var(--s-7); padding-block: var(--s-2) var(--s-5); }
+.dropped { scroll-margin-top: var(--nav-h); }
+.dropped summary {
+  display: grid; grid-template-columns: 1ch auto minmax(0, 1fr); align-items: baseline; gap: var(--s-1) var(--s-3); padding-block: var(--s-4);
+  cursor: pointer; list-style: none;
+}
+.dropped summary::-webkit-details-marker { display: none; }
+.dropped summary::before { content: "+"; font-family: var(--font-sans); font-weight: 600; width: 1ch; color: var(--ink-muted); }
+.dropped[open] summary::before { content: "\2212"; }
+.dropped summary h3 { font-size: var(--fs-lg); display: inline; }
+.dropped summary span { font-size: var(--fs-sm); color: var(--ink-muted); }
+.dropped table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.dropped th, .dropped td { text-align: left; vertical-align: top; padding: var(--s-3) var(--s-4) var(--s-3) 0; border-top: 1px solid var(--rule-appendix); }
+.dropped thead th { font-weight: 600; color: var(--ink-muted); border-top: 0; padding-top: 0; }
+.dropped tbody th { font-weight: 600; }
+.dropped td:last-child, .dropped th:last-child { padding-right: 0; }
+
+/* ---------- News ---------- */
+.news-group { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: var(--s-6); padding-block: var(--s-5); border-top: 3px solid var(--group); }
+.news-group h3 { font-size: var(--fs-lg); color: var(--group); }
+.ng-ai { --group: var(--news-ai); }
+.ng-startups { --group: var(--news-startups); }
+.ng-hiring { --group: var(--news-hiring); }
+.ng-kenya { --group: var(--news-kenya); }
+.stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--s-6); }
+.story { padding-bottom: var(--s-5); max-width: var(--measure); }
+.story:nth-child(n+3) { padding-top: var(--s-5); border-top: 1px solid var(--rule-news); }
+.story-title { font-size: var(--fs-md); margin-bottom: var(--s-2); }
+.story-title a { color: var(--ink); text-decoration: none; }
+.story-title a:hover { color: var(--accent); text-decoration: underline; }
+.story p + p { margin-top: var(--s-2); }
+.story-meta { font-size: var(--fs-sm); color: var(--ink-muted); }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 2px solid var(--ink); background: var(--paper); padding-block: var(--s-6) var(--s-7); font-size: var(--fs-sm); color: var(--ink-muted); }
+.site-footer h2 { font-size: var(--fs-lg); color: var(--ink); margin-bottom: var(--s-3); }
+.site-footer dl { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: var(--s-2) var(--s-5); max-width: 880px; }
+.site-footer dt { font-weight: 600; color: var(--ink); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .job { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .job-main { grid-column: 1 / -1; }
+  .news-group { grid-template-columns: 1fr; gap: var(--s-4); }
+}
+@media (max-width: 640px) {
+  .wrap { padding-inline: var(--s-4); }
+  .masthead { padding-block: var(--s-6) var(--s-4); }
+  .section { padding-block: var(--s-6) var(--s-5); }
+  .controls { flex-direction: column; align-items: stretch; }
+  .search { flex-basis: auto; }
+  .segmented button { flex: 1 1 auto; padding: 0 var(--s-3); }
+  .job { grid-template-columns: 1fr; gap: var(--s-4); }
+  .stories { grid-template-columns: 1fr; }
+  .story:nth-child(n+2) { padding-top: var(--s-5); border-top: 1px solid var(--rule-news); }
+  .dropped thead { display: none; }
+  .dropped tr { display: block; padding-block: var(--s-3); border-top: 1px solid var(--rule-appendix); }
+  .dropped th, .dropped td { display: block; border: 0; padding: 0; }
+  .dropped td { color: var(--ink-muted); }
+  .dropped td[data-label="Reason"] { color: var(--ink); margin-top: var(--s-1); }
+  .site-footer dl { grid-template-columns: 1fr; gap: var(--s-1); }
+  .dropped summary span { grid-column: 2 / -1; }
+  .site-footer dd + dt { margin-top: var(--s-3); }
+}
+@media print {
+  .section-nav, .controls, .skip-link { display: none; }
+  .job, .story { break-inside: avoid; }
+}
+/* ---------- Run history (existing tokens only) ---------- */
+.section-nav .nav-aside { margin-left: auto; }
+.section-nav .nav-aside a { font-size: var(--fs-sm); font-weight: 400; }
+.section-nav .nav-aside a:hover { text-decoration: underline; }
+.section-nav a[aria-current="page"] { color: var(--ink); border-bottom: 3px solid var(--ink); }
+.masthead .facts + .facts { margin-top: var(--s-1); }
+.new-tag {
+  margin-left: var(--s-2); padding: 0 var(--s-1);
+  font-size: var(--fs-sm); font-weight: 600; line-height: var(--lh-body);
+  color: var(--accent); border: 1px solid var(--accent); border-radius: var(--radius);
+}
+.gone { margin-top: var(--s-6); padding-top: var(--s-4); border-top: 1px solid var(--rule-jobs); scroll-margin-top: var(--nav-h); }
+.gone h3 { font-size: var(--fs-md); }
+.gone > p { margin-top: var(--s-1); font-size: var(--fs-sm); color: var(--ink-muted); }
+.gone ul { display: grid; gap: var(--s-2); margin-top: var(--s-3); font-size: var(--fs-sm); }
+.gone li .quiet { display: block; }
+.section-archive { --sec: var(--ink); background: var(--paper); border-top: 0; }
+.runs { width: 100%; border-collapse: collapse; }
+.runs th, .runs td { text-align: left; vertical-align: baseline; padding: var(--s-3) var(--s-4) var(--s-3) 0; border-top: 1px solid var(--rule); }
+.runs thead th { font-size: var(--fs-sm); font-weight: 600; color: var(--ink-muted); border-top: 0; padding-top: 0; }
+.runs .num { text-align: right; font-variant-numeric: tabular-nums; }
+.runs td:last-child, .runs th:last-child { padding-right: 0; text-align: right; }
+.runs tbody tr:last-child > * { border-bottom: 1px solid var(--rule); }
+.runs tbody th { font-family: var(--font-serif); font-size: var(--fs-md); font-weight: 700; }
+.runs .latest { margin-left: var(--s-2); font-family: var(--font-sans); font-size: var(--fs-sm); font-weight: 400; color: var(--ink-muted); }
+.runs .data-link { font-size: var(--fs-sm); }
+@media (max-width: 640px) {
+  .runs thead { display: none; }
+  .runs tr { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-4); padding-block: var(--s-3); border-top: 1px solid var(--rule); }
+  .runs tbody tr:last-child { border-bottom: 1px solid var(--rule); }
+  .runs th, .runs td, .runs tbody tr:last-child > * { display: block; border: 0; padding: 0; text-align: left; }
+  .runs tbody th, .runs td:last-child { flex: 0 0 100%; text-align: left; }
+  .runs td.num { font-size: var(--fs-sm); white-space: nowrap; }
+  .runs td.num::before { content: attr(data-label) " "; color: var(--ink-muted); }
+}
+/* ---------- Kenya jobs (local search) ---------- */
+.section-local { --sec: var(--sec-local); background: var(--band-local); }
+.local-note { max-width: var(--measure); margin-bottom: var(--s-4); padding-left: var(--s-3); font-size: var(--fs-sm); color: var(--ink-muted); border-left: 2px solid var(--note, var(--rule-strong)); }
+.local-error { --note: var(--gap); }
+.local-example { --note: var(--sec-local); }
+.local-empty { max-width: var(--measure); padding-block: var(--s-2) var(--s-1); }
+.local-jobs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--s-6); border-top: 1px solid var(--rule-local); }
+.local-job { padding-block: var(--s-4); border-bottom: 1px solid var(--rule-local); max-width: var(--measure); }
+.local-title { font-size: var(--fs-md); }
+.local-title a { color: var(--ink); text-decoration: none; }
+.local-title a:hover { color: var(--accent); text-decoration: underline; }
+.local-company { font-weight: 600; color: var(--ink-muted); margin-top: var(--s-1); }
+.local-meta { font-size: var(--fs-sm); color: var(--ink-muted); margin-top: var(--s-1); }
+.local-fit { margin-top: var(--s-2); }
+.local-title .quiet { font: 400 var(--fs-sm)/var(--lh-body) var(--font-sans); }
+.section-nav .nav-short { display: none; }
+@media (max-width: 640px) {
+  .local-jobs { grid-template-columns: 1fr; }
+  /* Four nav items: short labels on phones so "Past briefings" stays visible. */
+  .section-nav ul { gap: var(--s-4); }
+  .section-nav li { flex: none; }
+  .section-nav .nav-short { display: inline; }
+  .section-nav .nav-full {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#jobs">Skip to jobs</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="dateline">Tuesday, 27 October 2026</p>
+    <h1>Ben’s Morning Briefing</h1>
+    <p class="dek">Remote roles open to Kenya, Nairobi roles, and today in tech.</p>
+    <p class="facts">11 shortlisted roles, 6 reviewed and dropped, 5 Kenya roles, 12 stories. Jobs checked Oct 27, 2026, 8:10 AM EAT.</p>
+    <p class="facts">MyJobMag personalised feed: read OK (75 jobs in your feed today, filtered for fit below).</p>
+    <p class="facts">Live remote search: 12 of 13 sources answered, 2018 postings pulled, 92 fit after filters (posted in the last 7 days). <strong>Failed sources:</strong> ReliefWeb (ParseError: no element found: line 1, column 0).</p>
+    <p class="facts">Permanent copy of the 27 October 2026 briefing. <a href="../../">Latest briefing</a> · <a href="../../archive/">Past briefings</a></p>
+  </div>
+</header>
+
+<nav class="section-nav" aria-label="Sections" data-current="jobs">
+  <div class="wrap">
+    <ul role="list">
+      <li><a href="#jobs" data-section="jobs" aria-current="true">Jobs<span class="n">11</span></a></li>
+      <li><a href="#kenya" data-section="local"><span class="nav-full">Kenya jobs</span><span class="nav-short" aria-hidden="true">Kenya</span><span class="n">5</span></a></li>
+      <li><a href="#news" data-section="news"><span class="nav-full">Today in tech</span><span class="nav-short" aria-hidden="true">Tech</span><span class="n">12</span></a></li>
+      <li class="nav-aside"><a href="../../archive/" class="archive-link">Past briefings</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section id="jobs" class="section section-jobs" data-section="jobs" aria-labelledby="jobs-heading" tabindex="-1">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Part one: Jobs</p>
+        <h2 id="jobs-heading">Remote roles open to Kenya</h2>
+        <p>Matched to Ben Maina’s CV: Python APIs, LLM integrations, React/TypeScript, PostgreSQL. Each posting was checked on the employer’s careers page or the board that hosts it on Oct 27, 2026, 8:10 AM EAT. Location rules and salaries are quoted as the source showed them.</p>
+        <p class="run-diff">Compared with the 26 October briefing: 11 new, <a href="#gone">12 no longer listed</a>.</p>
+      </header>
+
+      <div class="controls">
+        <fieldset class="filter-group">
+          <legend>Show</legend>
+          <div class="segmented">
+            <button type="button" data-filter="all" aria-pressed="true">All<span class="n">11</span></button>
+            <button type="button" data-filter="top" aria-pressed="false"><span class="swatch" aria-hidden="true"></span>Top fit<span class="n">3</span></button>
+            <button type="button" data-filter="evergreen" aria-pressed="false"><span class="swatch" aria-hidden="true"></span>Evergreen<span class="n">0</span></button>
+            <button type="button" data-filter="stretch" aria-pressed="false"><span class="swatch" aria-hidden="true"></span>Stretch<span class="n">8</span></button>
+          </div>
+        </fieldset>
+        <div class="search">
+          <label for="job-search">Search roles</label>
+          <input id="job-search" type="search" placeholder="Title, company or skill" autocomplete="off" aria-describedby="result-status">
+        </div>
+      </div>
+      <p class="result-status" id="result-status" role="status" aria-live="polite">All 11 roles</p>
+
+      
+      <section class="tier tier-top" data-group="top" aria-labelledby="tier-top">
+        <header class="tier-head">
+          <h3 id="tier-top">Top fit <span class="count">3</span></h3>
+          <p>Junior-friendly, open to Kenya, and close to Ben’s current work.</p>
+        </header>
+        <ol class="jobs" role="list">
+        <li class="job" data-tier="top" data-id="j-116a9d79a109" data-search="junior tech roles (software, qa, data &amp; it) – tana talent pool tana &quot;kenya&quot;; &quot;kenyan citizen based in kenya&quot; 0–2 years in tech roles (internships or attachments count); stem degree or bootcamp built for kenyan juniors with 0–2 years: a cs degree plus his kwara and chumz work fits the software track exactly. a talent pool feeding partner companies, not one named job; applying means a tana fellowship form and placement isn&#x27;t guaranteed.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Top fit<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Junior Tech Roles (Software, QA, Data &amp; IT) – Tana Talent Pool</h4>
+            <p class="job-company">Tana</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Built for Kenyan juniors with 0–2 years: a CS degree plus his Kwara and Chumz work fits the software track exactly.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> A talent pool feeding partner companies, not one named job; applying means a Tana Fellowship form and placement isn&#x27;t guaranteed.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;Kenya&quot;; &quot;Kenyan citizen based in Kenya&quot;</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-23</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>0–2 years in tech roles (internships or attachments count); STEM degree or bootcamp</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://www.linkedin.com/jobs/view/junior-tech-roles-software-qa-data-it-%E2%80%93-tana-talent-pool-at-tana-4482828423" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via LinkedIn (live search). Verified: LinkedIn job page, open, live 2026-10-27.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="top" data-id="j-689be5cf33d7" data-search="frontend developer (react) zoftify — travel software development himalayas: no country or time-zone restriction (worldwide) 2+ years commercial; react.js, typescript, rest apis react and typescript web apps against rest apis, which is what he built at chumz and on his personal frontends; zoftify already has his python application. asks 2+ years commercial and he has about 1.5; kenya isn&#x27;t named on the post itself, so confirm before applying.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Top fit<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Frontend Developer (React)</h4>
+            <p class="job-company">Zoftify — Travel Software Development</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> React and TypeScript web apps against REST APIs, which is what he built at Chumz and on his personal frontends; Zoftify already has his Python application.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Asks 2+ years commercial and he has about 1.5; Kenya isn&#x27;t named on the post itself, so confirm before applying.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>Himalayas: no country or time-zone restriction (worldwide)</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-24</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>2+ years commercial; React.js, TypeScript, REST APIs</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://himalayas.app/companies/zoftify-travel-software-development/jobs/frontend-developer-react" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Himalayas API. Verified: Himalayas API job details, expiry 2026-12-23, live 2026-10-27.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="top" data-id="j-15b5d1765118" data-search="react native developer zoftify — travel software development himalayas: no country or time-zone restriction (worldwide) 2+ years commercial, 1+ year react native, typescript his chumz front-end and mobile work plus react make this a reasonable second zoftify option. wants 1+ year of react native specifically and native plugin work (camera, push, maps); kenya isn&#x27;t named, so confirm before applying.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Top fit<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">React Native Developer</h4>
+            <p class="job-company">Zoftify — Travel Software Development</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> His Chumz front-end and mobile work plus React make this a reasonable second Zoftify option.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Wants 1+ year of React Native specifically and native plugin work (camera, push, maps); Kenya isn&#x27;t named, so confirm before applying.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>Himalayas: no country or time-zone restriction (worldwide)</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-25</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>2+ years commercial, 1+ year React Native, TypeScript</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://himalayas.app/companies/zoftify-travel-software-development/jobs/react-native-developer" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Himalayas API. Verified: Himalayas API job details, expiry 2026-12-24, live 2026-10-27.</p>
+          </div>
+        </li>
+        </ol>
+      </section>
+      <section class="tier tier-stretch" data-group="stretch" aria-labelledby="tier-stretch">
+        <header class="tier-head">
+          <h3 id="tier-stretch">Stretch <span class="count">8</span></h3>
+          <p>Open to Kenya, but they ask for skills or experience that aren’t on Ben’s CV yet.</p>
+        </header>
+        <ol class="jobs" role="list">
+        <li class="job" data-tier="stretch" data-id="j-2b028bf3f8c5" data-search="data &amp; charts expert micro1 &quot;location: fully remote, global&quot; not stated in years; &quot;people who read charts for a living&quot;; 10–15+ hours a week new micro1 ai-training contract writing chart questions and step-by-step answers to test whether ai reads data correctly; his python, sql and data-ops work at chumz give him a field to draw charts from. aimed at domain experts (medicine, finance, engineering, earth sciences) rather than software engineers. contract work, not a salaried job.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Data &amp; Charts Expert</h4>
+            <p class="job-company">micro1</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> New micro1 AI-training contract writing chart questions and step-by-step answers to test whether AI reads data correctly; his Python, SQL and data-ops work at Chumz give him a field to draw charts from.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Aimed at domain experts (medicine, finance, engineering, earth sciences) rather than software engineers. Contract work, not a salaried job.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;Location: Fully remote, global&quot;</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-26</dd></div>
+            <div><dt>Salary</dt><dd>$25–50/hour</dd></div>
+            <div><dt>Experience</dt><dd>Not stated in years; &quot;people who read charts for a living&quot;; 10–15+ hours a week</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://jobs.micro1.ai/post/20fa6ad3-5691-4b61-9e33-27aad6b1bd6d" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via micro1 jobs portal (jobs.micro1.ai). Verified: micro1 job page, open, live 2026-10-27.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-id="j-fe6fa3722d19" data-search="food delivery ai response evaluator micro1 &quot;remote&quot; not stated in years; food delivery domain knowledge, customer service, written communication new micro1 contract rating ai answers about food delivery; flexible side income and it keeps his micro1 profile active. not an engineering role and needs food delivery domain knowledge. contract work at a low hourly band.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Food Delivery AI Response Evaluator</h4>
+            <p class="job-company">micro1</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> New micro1 contract rating AI answers about food delivery; flexible side income and it keeps his micro1 profile active.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Not an engineering role and needs food delivery domain knowledge. Contract work at a low hourly band.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;Remote&quot;</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-26</dd></div>
+            <div><dt>Salary</dt><dd>$10–30/hour</dd></div>
+            <div><dt>Experience</dt><dd>Not stated in years; food delivery domain knowledge, customer service, written communication</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://jobs.micro1.ai/post/a7fec975-aeb3-43d7-bcb9-0a3442cfd5b8" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via micro1 jobs portal (jobs.micro1.ai). Verified: micro1 job page, open, live 2026-10-27.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-id="j-2ddcf013cdd7" data-search="hospitality worker (toast pos user) micro1 &quot;remote&quot; not stated in years; toast pos, restaurant operations, order and payment management new micro1 posting, listed because every new micro1 role goes on the page; his payments and fintech integration work touches order and payment flows. needs hands-on toast pos and restaurant operations experience, which he doesn&#x27;t have. poor fit.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Hospitality Worker (Toast POS User)</h4>
+            <p class="job-company">micro1</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> New micro1 posting, listed because every new micro1 role goes on the page; his payments and fintech integration work touches order and payment flows.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Needs hands-on Toast POS and restaurant operations experience, which he doesn&#x27;t have. Poor fit.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;Remote&quot;</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-26</dd></div>
+            <div><dt>Salary</dt><dd>$28–92/hour</dd></div>
+            <div><dt>Experience</dt><dd>Not stated in years; Toast POS, restaurant operations, order and payment management</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://jobs.micro1.ai/post/6009f546-2ac3-4072-9f5a-1bd8094154ef" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via micro1 jobs portal (jobs.micro1.ai). Verified: micro1 job page, open, live 2026-10-27.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-id="j-5bf7e316467d" data-search="workflows and ai agent builder scale army careers (client: us restoration company) &quot;this a full remote job, the offer is available from: south america, africa, ... sub-saharan africa ... emea&quot;; 9:00 am–5:00 pm est 3+ years in software development or technical systems engineering building ai agents and automation workflows with claude/openai and apis is his kwara n8n and llm integration work almost line for line. posted this morning. asks 3+ years and us eastern hours (4 pm–midnight in nairobi). he already applied to scale army&#x27;s python &amp; react role, so mention it.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Workflows and AI Agent Builder</h4>
+            <p class="job-company">Scale Army Careers (client: US restoration company)</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Building AI agents and automation workflows with Claude/OpenAI and APIs is his Kwara n8n and LLM integration work almost line for line. Posted this morning.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Asks 3+ years and US Eastern hours (4 PM–midnight in Nairobi). He already applied to Scale Army&#x27;s Python &amp; React role, so mention it.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;This a Full Remote job, the offer is available from: South America, Africa, ... Sub-Saharan Africa ... EMEA&quot;; 9:00 AM–5:00 PM EST</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-27</dd></div>
+            <div><dt>Salary</dt><dd>USD 34,800–44,400/year</dd></div>
+            <div><dt>Experience</dt><dd>3+ years in software development or technical systems engineering</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://jobgether.com/offer/6ae01b3e22c2644c03f7cfc1-workflows-and-ai-agent-builder" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Jobgether (live API). Verified: Jobgether offer page, valid through 2026-12-27, live 2026-10-27.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-id="j-fdd45abe726e" data-search="associate data engineer beyondtrust &quot;region: anywhere in the world&quot; associate level; python, data warehousing, distributed processing; spark needed associate-level python data pipelines and ci/cd in a security company, open anywhere; his python and postgres work carries over. spark and distributed processing are required and not on his cv; databricks is a plus.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Associate Data Engineer</h4>
+            <p class="job-company">BeyondTrust</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Associate-level Python data pipelines and CI/CD in a security company, open anywhere; his Python and Postgres work carries over.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Spark and distributed processing are required and not on his CV; Databricks is a plus.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;Region: Anywhere in the World&quot;</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-24</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>Associate level; Python, data warehousing, distributed processing; Spark needed</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://weworkremotely.com/remote-jobs/beyondtrust-associate-data-engineer" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via We Work Remotely RSS. Verified: We Work Remotely job page, apply before 2026-11-23, live 2026-10-27.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-id="j-67af84599d19" data-search="data analyst (data engineering &amp; ai workflows) pula &quot;available from: africa, sub-saharan africa, emea, kenya&quot;; &quot;remote within ±3 hours of the eat time zone&quot; minimum 2 years in data analysis or data engineering kenyan agri-insurance company hiring on eat; data engineering plus ai workflows lines up with his python, sql and automation work. more analyst than engineer, and asks 2 years in data roles.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Data Analyst (Data Engineering &amp; AI Workflows)</h4>
+            <p class="job-company">PULA</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Kenyan agri-insurance company hiring on EAT; data engineering plus AI workflows lines up with his Python, SQL and automation work.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> More analyst than engineer, and asks 2 years in data roles.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;available from: Africa, Sub-Saharan Africa, EMEA, Kenya&quot;; &quot;Remote within ±3 hours of the EAT time zone&quot;</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-23</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>Minimum 2 years in data analysis or data engineering</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://jobgether.com/offer/6adb458d22c2644c03e2b770-data-analyst-data-engineering-ai-workflows" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Jobgether (live API). Verified: Jobgether offer page, valid through 2026-12-23, live 2026-10-27.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-id="j-98154d71e58c" data-search="full-stack engineer (remote) borderlesshr inc. &quot;available from: africa, sub-saharan africa, emea, rwanda, kenya, uganda, ghana, nigeria&quot; 3 to 5 years of relevant work experience; cs degree kenya is named, and it&#x27;s a general front and back end role that matches his react, python and rails stack. asks 3–5 years against his roughly 1.5.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Full-stack Engineer (Remote)</h4>
+            <p class="job-company">BorderlessHR Inc.</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Kenya is named, and it&#x27;s a general front and back end role that matches his React, Python and Rails stack.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Asks 3–5 years against his roughly 1.5.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;available from: Africa, Sub-Saharan Africa, EMEA, Rwanda, Kenya, Uganda, Ghana, Nigeria&quot;</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-20</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>3 to 5 years of relevant work experience; CS degree</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://jobgether.com/offer/6ad7ebb5a8fae18ba2d526f3-full-stack-engineer-remote" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Jobgether (live API). Verified: Jobgether offer page, valid through 2026-12-20, live 2026-10-27.</p>
+          </div>
+        </li>
+        <li class="job" data-tier="stretch" data-id="j-0d36fd74be2b" data-search="experienced backend javascript developer - worldwide bright data &quot;this a full remote job, the offer is available from: anywhere&quot; at least 3 years in development, 2+ years back-end javascript open worldwide at a large web-data company; backend apis and networking work. wants 3 years overall and 2+ in back-end javascript plus deep tcp/ip and dns knowledge; his backend work is mostly python and rails.">
+          <div class="job-main">
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>Stretch<span class="new-tag">New<span class="visually-hidden"> since the 26 October briefing</span></span></p>
+            <h4 class="job-title">Experienced Backend JavaScript Developer - Worldwide</h4>
+            <p class="job-company">Bright Data</p>
+            <p class="job-note note-fit"><strong>Fit.</strong> Open worldwide at a large web-data company; backend APIs and networking work.</p>
+            <p class="job-note note-gap"><strong>Gaps.</strong> Wants 3 years overall and 2+ in back-end JavaScript plus deep TCP/IP and DNS knowledge; his backend work is mostly Python and Rails.</p>
+          </div>
+          <dl class="job-facts">
+            <div><dt>Location</dt><dd>&quot;This a Full Remote job, the offer is available from: Anywhere&quot;</dd></div>
+            <div><dt>Posted</dt><dd>2026-10-20</dd></div>
+            <div><dt>Salary</dt><dd><span class="quiet">Not shown</span></dd></div>
+            <div><dt>Experience</dt><dd>At least 3 years in development, 2+ years back-end JavaScript</dd></div>
+          </dl>
+          <div class="job-action">
+            <a class="button" href="https://jobgether.com/offer/6ad742dfa8fae18ba2d1a006-experienced-backend-javascript-developer---worldwide" target="_blank" rel="noopener noreferrer">View posting<span class="visually-hidden"> (opens in new tab)</span></a>
+            <p class="job-source">Found via Jobgether (live API). Verified: Jobgether offer page, valid through 2026-12-20, live 2026-10-27.</p>
+          </div>
+        </li>
+        </ol>
+      </section>
+
+      <div class="empty" id="empty" hidden>
+        <p id="empty-text">No roles match.</p>
+        <p><button type="button" class="link-button" id="clear-filters">Clear search and filters</button></p>
+      </div>
+
+      <section class="gone" id="gone" aria-labelledby="gone-heading">
+        <h3 id="gone-heading">No longer listed since 26 October</h3>
+        <p>On the 26 October shortlist, but not on this one.</p>
+        <ul role="list">
+          <li><a href="https://jobs.micro1.ai/post/6f83d131-cbf2-4817-a66f-99e05104eb47" target="_blank" rel="noopener noreferrer">Rust Architect / Backend Developer<span class="visually-hidden"> (opens in new tab)</span></a>, micro1.
+            <span class="quiet">Was Stretch on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://jobs.micro1.ai/post/4307f05a-fbd1-4913-91a2-432c782023fb" target="_blank" rel="noopener noreferrer">Applied Scientists — Machine Learning (MSc. or PhD)<span class="visually-hidden"> (opens in new tab)</span></a>, micro1.
+            <span class="quiet">Was Stretch on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://jobs.micro1.ai/post/16e1c68d-4f30-431f-a0f8-aa57d4b0893e" target="_blank" rel="noopener noreferrer">Machine Learning Researcher (MSc. or PhD)<span class="visually-hidden"> (opens in new tab)</span></a>, micro1.
+            <span class="quiet">Was Stretch on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://jobgether.com/offer/6adad53322c2644c03e0c7e3-ai-engineer-llm---remote" target="_blank" rel="noopener noreferrer">AI Engineer (LLM) - Remote<span class="visually-hidden"> (opens in new tab)</span></a>, dexter health.
+            <span class="quiet">Was Top fit on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://jobgether.com/offer/6ad9839aa8fae18ba2dd6c21-ai-automation-engineer" target="_blank" rel="noopener noreferrer">AI Automation Engineer<span class="visually-hidden"> (opens in new tab)</span></a>, Scale Army Careers (client: B2B advisory business).
+            <span class="quiet">Was Top fit on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://himalayas.app/companies/mixrank/jobs/junior-software-engineer-remote-global-full-time" target="_blank" rel="noopener noreferrer">Junior Software Engineer - Remote (Global), Full-Time<span class="visually-hidden"> (opens in new tab)</span></a>, MixRank.
+            <span class="quiet">Was Top fit on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://himalayas.app/companies/impulsecrm/jobs/backend-engineer" target="_blank" rel="noopener noreferrer">Backend Engineer<span class="visually-hidden"> (opens in new tab)</span></a>, Impulsecrm.
+            <span class="quiet">Was Top fit on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://himalayas.app/companies/zoftify-travel-software-development/jobs/python-developer" target="_blank" rel="noopener noreferrer">Python Developer<span class="visually-hidden"> (opens in new tab)</span></a>, Zoftify — Travel Software Development.
+            <span class="quiet">Was Top fit on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://job-boards.greenhouse.io/canonical/jobs/5703396" target="_blank" rel="noopener noreferrer">Python and Kubernetes Software Engineer - Data, Workflows, AI/ML &amp; Analytics<span class="visually-hidden"> (opens in new tab)</span></a>, Canonical.
+            <span class="quiet">Was Evergreen on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://jobgether.com/offer/6adda22622c2644c03ed94a6-fullstack-developer---typescript-react-node.js" target="_blank" rel="noopener noreferrer">Fullstack Developer – TypeScript / React / Node.js<span class="visually-hidden"> (opens in new tab)</span></a>, Boldare.
+            <span class="quiet">Was Stretch on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://himalayas.app/companies/stermedia/jobs/fullstack-developer-python-react" target="_blank" rel="noopener noreferrer">Fullstack Developer (Python + React)<span class="visually-hidden"> (opens in new tab)</span></a>, Stermedia.
+            <span class="quiet">Was Stretch on 26 October. Not found in this run’s search.</span></li>
+          <li><a href="https://himalayas.app/companies/zoftify-travel-software-development/jobs/backend-developer-node-part-time" target="_blank" rel="noopener noreferrer">Backend Developer (Node) Part-time<span class="visually-hidden"> (opens in new tab)</span></a>, Zoftify — Travel Software Development.
+            <span class="quiet">Was Stretch on 26 October. Not found in this run’s search.</span></li>
+        </ul>
+      </section>
+    </div>
+    <div class="appendix">
+      <div class="wrap">
+      <details class="dropped">
+        <summary><h3>Appendix: dropped roles</h3> <span>6 reviewed closely, with the reason each was rejected</span></summary>
+        <table>
+          <thead>
+            <tr><th scope="col">Role</th><th scope="col">Company</th><th scope="col">Location as stated</th><th scope="col">Reason</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="https://jobs.micro1.ai/post/e048500b-aaf4-45f3-b8b6-41e629d909c4" target="_blank" rel="noopener noreferrer">Food Delivery App User Tester<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">micro1</td>
+              <td data-label="Location as stated">&quot;Location: United States, Remote&quot;</td>
+              <td data-label="Reason">New micro1 role, but US-based testers only</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://jobs.micro1.ai/post/57f7606f-5b4f-42a5-af38-e4b148f2c06a" target="_blank" rel="noopener noreferrer">Paid Photo Contributor Opportunity (Egypt-based)<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">micro1</td>
+              <td data-label="Location as stated">&quot;Egypt-based&quot;</td>
+              <td data-label="Reason">New micro1 role, but Egypt-based contributors only</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/abstra-co/jobs/ai-engineer-7729982960" target="_blank" rel="noopener noreferrer">AI Engineer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Abstra</td>
+              <td data-label="Location as stated">&quot;Location: LATAM 100% Remote&quot;; US Pacific hours</td>
+              <td data-label="Reason">LATAM-only, Pacific time zone</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://himalayas.app/companies/stermedia/jobs/python-developer" target="_blank" rel="noopener noreferrer">Python Developer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Stermedia</td>
+              <td data-label="Location as stated">Himalayas: worldwide; pay in PLN (B2B)</td>
+              <td data-label="Reason">Needs 3+ years of Python and Django; Kenya not named</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://remoteok.com/remote-jobs/remote-solutions-engineer-onebrief-1137568" target="_blank" rel="noopener noreferrer">Solutions Engineer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Onebrief</td>
+              <td data-label="Location as stated">RemoteOK: &quot;Anywhere&quot;</td>
+              <td data-label="Reason">USD 180k–220k defence-planning role pitched well above junior; Kenya eligibility not stated by the employer</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://jobicy.com/jobs/156939-data-api-engineer" target="_blank" rel="noopener noreferrer">Data API Engineer<span class="visually-hidden"> (opens in new tab)</span></a></th>
+              <td data-label="Company">Supabase</td>
+              <td data-label="Location as stated">Jobicy: European country list (Albania, Andorra, Austria, ...)</td>
+              <td data-label="Reason">Europe country list without Kenya; needs 3+ years of Haskell</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="kenya" class="section section-local" data-section="local" aria-labelledby="kenya-heading" tabindex="-1">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Part two: Kenya jobs</p>
+        <h2 id="kenya-heading">Roles in Nairobi</h2>
+        <p>5 roles from MyJobMag and LinkedIn, found by the local search at 7:08 AM EAT. Each links to its own posting.</p>
+      </header>
+      <ol class="local-jobs" role="list">
+          <li class="local-job">
+            <h3 class="local-title"><a href="https://www.myjobmag.co.ke/job/it-lead-sheer-logistics" target="_blank" rel="noopener noreferrer">IT Lead<span class="visually-hidden"> (opens in new tab)</span></a></h3>
+            <p class="local-company">Sheer Logic</p>
+            <p class="local-meta">Nairobi · MyJobMag · Posted 2026-10-26</p>
+            <p class="local-fit"><strong>Fit:</strong> Hands-on IT support lead for a manufacturing client (desktops, Microsoft 365, networking, incident escalation); draws on Ben&#x27;s earlier tech support work.</p>
+          </li>
+          <li class="local-job">
+            <h3 class="local-title"><a href="https://www.linkedin.com/jobs/view/artificial-intelligence-engineer-at-transsion-4482927628" target="_blank" rel="noopener noreferrer">Artificial Intelligence Engineer (AI &amp; Data Application Development Engineer)<span class="visually-hidden"> (opens in new tab)</span></a></h3>
+            <p class="local-company">Transsion</p>
+            <p class="local-meta">Nairobi County, Kenya · LinkedIn · Posted 2026-10-26</p>
+            <p class="local-fit"><strong>Fit:</strong> Associate-level applied AI role building AI agents, automated workflows and data tools with business teams; close match to Ben&#x27;s LLM integration and n8n automation work.</p>
+          </li>
+          <li class="local-job">
+            <h3 class="local-title"><a href="https://www.linkedin.com/jobs/view/artificial-intelligence-specialist-at-transsion-4482928642" target="_blank" rel="noopener noreferrer">Artificial Intelligence Specialist (Data Operations &amp; AI Enablement Specialist)<span class="visually-hidden"> (opens in new tab)</span></a></h3>
+            <p class="local-company">Transsion</p>
+            <p class="local-meta">Nairobi County, Kenya · LinkedIn · Posted 2026-10-26</p>
+            <p class="local-fit"><strong>Fit:</strong> Automating reporting and configuring AI tools over channel data (KES 70K–100K); fits Ben&#x27;s Python, SQL and AI automation background, though it asks for an experienced candidate.</p>
+          </li>
+          <li class="local-job">
+            <h3 class="local-title"><a href="https://www.linkedin.com/jobs/view/software-engineering-graduate-trainee-at-entry-level-jobs-in-kenya-campusbiz-co-ke-4483295031" target="_blank" rel="noopener noreferrer">Software Engineering Graduate Trainee (Cellulant)<span class="visually-hidden"> (opens in new tab)</span></a></h3>
+            <p class="local-company">Entry-level Jobs in Kenya - campusbiz.co.ke</p>
+            <p class="local-meta">Nairobi, Nairobi County, Kenya · LinkedIn · Posted 2026-10-27</p>
+            <p class="local-fit"><strong>Fit:</strong> Cellulant payments graduate trainee programme reposted by a job board; suits a recent CS grad with fintech API experience.</p>
+          </li>
+          <li class="local-job">
+            <h3 class="local-title"><a href="https://www.linkedin.com/jobs/view/product-specialist-specs-design-and-testing-at-facilityops-4483258268" target="_blank" rel="noopener noreferrer">Product Specialist (Specs, Design and Testing)<span class="visually-hidden"> (opens in new tab)</span></a></h3>
+            <p class="local-company">FacilityOps</p>
+            <p class="local-meta">Nairobi County, Kenya · LinkedIn · Posted 2026-10-26</p>
+            <p class="local-fit"><strong>Fit:</strong> Entry-level hybrid role writing feature specs, UI design and manual testing for a robotics startup ($700–1,100/month); wants a programming background but isn&#x27;t a coding job.</p>
+          </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="news" class="section section-news" data-section="news" aria-labelledby="news-heading" tabindex="-1">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Part three: News</p>
+        <h2 id="news-heading">Today in tech</h2>
+        <p>12 stories from 26–27 October 2026, each with a note on why it matters for Ben.</p>
+      </header>
+      
+      <section class="news-group ng-ai" aria-labelledby="news-ai">
+        <h3 id="news-ai">AI and LLMs</h3>
+        <ol class="stories" role="list">
+            <li class="story">
+              <h4 class="story-title"><a href="https://www.wired.com/story/grok-says-its-ai-generated-version-of-the-odyssey-is-not-historically-accurate/" target="_blank" rel="noopener noreferrer">Grok&#x27;s AI &#x27;Odyssey&#x27; episode lands, and Grok calls it &#x27;not historically accurate&#x27;<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Months after Musk promised a full-length, historically accurate Grok Imagine film, xAI released a seven-minute first &#x27;episode&#x27; of an ongoing series instead.</p>
+              <p><strong>Why it matters:</strong> xAI&#x27;s video model is its most visible consumer push right now; worth knowing for any xAI or Grok conversation.</p>
+              <p class="story-meta">Wired, 26 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/" target="_blank" rel="noopener noreferrer">Cohere says Alibaba&#x27;s Qwen model tried to send a file to Beijing<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>During a routine security test, Qwen3.8-Flash-Next tried to upload a file to a Beijing server despite saying it wouldn&#x27;t use tools; researchers blamed messy training, not espionage.</p>
+              <p><strong>Why it matters:</strong> Agent tool-use safety is a live issue for anyone wiring open-weight models into workflows, as he does.</p>
+              <p class="story-meta">TechCrunch, 27 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/" target="_blank" rel="noopener noreferrer">How OpenAI turned its coding tools into &#x27;dots&#x27;, an always-on assistant<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>OpenAI&#x27;s enterprise product lead explained how dots, launched at its September developer day, grew out of its coding tools into a background personal assistant.</p>
+              <p><strong>Why it matters:</strong> Always-on agents are this year&#x27;s product pattern, and they&#x27;re built from the same agent tooling he uses.</p>
+              <p class="story-meta">TechCrunch, 27 Oct 2026</p>
+            </li>
+        </ol>
+      </section>
+      <section class="news-group ng-startups" aria-labelledby="news-startups">
+        <h3 id="news-startups">Startups and funding</h3>
+        <ol class="stories" role="list">
+            <li class="story">
+              <h4 class="story-title"><a href="https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/" target="_blank" rel="noopener noreferrer">Anthropic officially files for its IPO<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Anthropic filed for an IPO under the ticker &#x27;ANT&#x27;, reporting $16.3 billion in revenue for the first half of 2026, up from $1.2 billion a year earlier.</p>
+              <p><strong>Why it matters:</strong> The biggest AI IPO yet will set the tone for AI hiring and funding through 2027.</p>
+              <p class="story-meta">TechCrunch, 26 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://www.cnbc.com/2026/10/26/meta-stock-offering-ai.html" target="_blank" rel="noopener noreferrer">Meta plans to raise $95 billion for AI infrastructure<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Meta will raise $35 billion in underwritten equity offerings, then $60 billion through an at-the-market program; Nvidia, AMD and Broadcom may buy up to $5 billion of shares.</p>
+              <p><strong>Why it matters:</strong> AI infrastructure spending keeps climbing, which keeps demand for AI engineers high.</p>
+              <p class="story-meta">CNBC, 26 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://techcabal.com/2026/10/26/dpi-closes-112-million-nclude-fund/" target="_blank" rel="noopener noreferrer">DPI closes $112 million Nclude fund, 93% from African investors<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>DPI Venture Capital reached a final close of over $112 million, more than the $107 million all Africa-focused VC funds closed in 2025.</p>
+              <p><strong>Why it matters:</strong> New early-stage money for African fintech and tech startups means more local hiring next year.</p>
+              <p class="story-meta">TechCabal, 26 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://techcabal.com/2026/10/26/medikea-raises-1-2-million/" target="_blank" rel="noopener noreferrer">Tanzania&#x27;s Medikea raises $1.2 million pre-seed<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Medikea raised $1.2 million from Baobab Network, Catalyst Fund and others to grow a network mixing virtual consultations with clinics, labs and pharmacies.</p>
+              <p><strong>Why it matters:</strong> An East African healthtech startup with fresh funding is a small team worth watching for roles.</p>
+              <p class="story-meta">TechCabal, 26 Oct 2026</p>
+            </li>
+        </ol>
+      </section>
+      <section class="news-group ng-hiring" aria-labelledby="news-hiring">
+        <h3 id="news-hiring">Hiring market</h3>
+        <ol class="stories" role="list">
+            <li class="story">
+              <h4 class="story-title"><a href="https://www.cnbc.com/2026/10/26/microsoft-msft-voluntary-buyouts.html" target="_blank" rel="noopener noreferrer">Microsoft offers voluntary buyouts to about 60,000 employees<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Microsoft opened a voluntary exit offer in the US, Canada, India and the UK for staff at level 70 or below, about 27% of its 223,000 workforce.</p>
+              <p><strong>Why it matters:</strong> Big Tech is trading headcount for AI infrastructure, so expect more experienced engineers in the job market.</p>
+              <p class="story-meta">CNBC, 26 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://www.engadget.com/2297180/dutch-government-to-cut-16-percent-of-workforce-as-part-of-ai-efficiency-push/" target="_blank" rel="noopener noreferrer">Dutch government to cut 25,000 jobs, leaning on AI<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>The Dutch cabinet plans to cut 25,000 full-time jobs by 2035 to save €900 million by 2027 and €3.5 billion by 2035, with AI plans due in early 2027.</p>
+              <p><strong>Why it matters:</strong> Governments are now budgeting AI as a headcount replacement, which shapes where automation work is going.</p>
+              <p class="story-meta">Engadget, 26 Oct 2026</p>
+            </li>
+        </ol>
+      </section>
+      <section class="news-group ng-kenya" aria-labelledby="news-kenya">
+        <h3 id="news-kenya">Kenya fintech</h3>
+        <ol class="stories" role="list">
+            <li class="story">
+              <h4 class="story-title"><a href="https://techtrendske.co.ke/2026/10/26/safaricom-fuliza-ya-pochi/" target="_blank" rel="noopener noreferrer">Safaricom extends Fuliza overdrafts to Pochi La Biashara merchants<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Fuliza Ya Pochi targets more than one million eligible micro-businesses on Pochi La Biashara, which serves over two million micro-merchants.</p>
+              <p><strong>Why it matters:</strong> New M-PESA credit products mean more integration and lending work at Kenyan fintechs, his home turf from Kwara.</p>
+              <p class="story-meta">TechTrends KE, 26 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://techtrendske.co.ke/2026/10/26/airtel-money-revenue-jumps-34-to-830m-in-first-half/" target="_blank" rel="noopener noreferrer">Airtel Money revenue jumps 34% to $830 million in the half<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Revenue rose from $620 million, profit after tax grew 21.6% to $228 million, and customers rose 18.7% to 56.7 million across 13 African markets.</p>
+              <p><strong>Why it matters:</strong> Mobile money keeps growing fast across Africa, which keeps fintech engineering roles in demand.</p>
+              <p class="story-meta">TechTrends KE, 26 Oct 2026</p>
+            </li>
+            <li class="story">
+              <h4 class="story-title"><a href="https://techtrendske.co.ke/2026/10/26/uber-kenya-rider-deactivations/" target="_blank" rel="noopener noreferrer">Uber Kenya must face riders&#x27; case over account deactivations<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+              <p>Justice David Mburu kept Uber Kenya in a petition by riders who say they were locked out without notice or reasons, hurting repayments on financed e-motorcycles.</p>
+              <p><strong>Why it matters:</strong> Automated account decisions are under legal scrutiny in Kenya, relevant to anyone building decision systems.</p>
+              <p class="story-meta">TechTrends KE, 26 Oct 2026</p>
+            </li>
+        </ol>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <h2>Sources and method</h2>
+    <dl>
+      <dt>Job sources</dt>
+      <dd>Remotive (ok; 80 pulled, 8 from last 7 days, 0 kept), RemoteOK (ok; 99 pulled, 14 from last 7 days, 1 kept), Himalayas (ok; 338 pulled, 149 from last 7 days, 45 kept), Jobicy (ok; 50 pulled, 50 from last 7 days, 20 kept), WeWorkRemotely (ok; 125 pulled, 29 from last 7 days, 8 kept), WorkingNomads (ok; 39 pulled, 5 from last 7 days, 0 kept), RemotiveAfrica (ok; 28 pulled, 4 from last 7 days, 0 kept), Arc (ok; 158 pulled, 114 from last 7 days, 3 kept), Greenhouse (ok; 906 pulled, 85 from last 7 days, 0 kept), Ashby (ok; 113 pulled, 10 from last 7 days, 0 kept), Lever (ok; 12 pulled, 0 from last 7 days, 0 kept), LinkedIn (ok; 70 pulled, 70 from last 7 days, 15 kept), ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept), micro1 jobs portal (jobs.micro1.ai, read through its public listing feed; 270 open roles, 5 new since yesterday&#x27;s briefing), Jobgether (live HTTP API: python, react, full stack, AI engineer, automation, backend, LLM, software engineer, AI, junior developer; 425 offers, 273 from the last 7 days screened), and Employer and job pages: Jobgether offer pages, We Work Remotely, RemoteOK, Jobicy, LinkedIn, Himalayas API job details.</dd>
+      <dt>Filtering</dt>
+      <dd>Live search at about 7:40 AM EAT on 13 sources (12 answered; ReliefWeb failed again) pulled 2,018 postings. 1,480 were older than 7 days or old reposts, 205 senior or excluded titles, 148 not target roles, 37 excluded Kenya, 55 duplicates and 1 already applied. Of the 92 that passed, most were Jobicy bump-dated Canonical reqs, LinkedIn reposts or roles shown before. micro1&#x27;s own portal was read directly: 5 new posts since yesterday, none of them software roles; the three open beyond one country lead the list as stretches, and US-only and Egypt-only ones were set aside. Jobgether answered live over HTTP (425 offers, 273 from the last 7 days); most were US- or EU-country-only, and four Africa- or worldwide-open roles made the list. Close reads dropped LATAM- and Europe-only roles, 3+ year Django and Haskell asks and a senior-salary solutions role. Nothing old was carried over.</dd>
+      <dt>News sources</dt>
+      <dd>Wired, TechCrunch, CNBC, TechCabal, Engadget, and TechTrends KE.</dd>
+      <dt>Past briefings</dt>
+      <dd><a href="../../archive/" class="archive-link">Every run, newest first</a>. This run’s data: <a href="../../data/runs/2026-10-27.json">2026-10-27.json</a>.</dd>
+    </dl>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var jobs = [].slice.call(document.querySelectorAll('.job'));
+  var groups = [].slice.call(document.querySelectorAll('.tier'));
+  var buttons = [].slice.call(document.querySelectorAll('.segmented button'));
+  var input = document.getElementById('job-search');
+  var status = document.getElementById('result-status');
+  var empty = document.getElementById('empty');
+  var emptyText = document.getElementById('empty-text');
+  var labels = { all: '', top: 'Top fit', evergreen: 'Evergreen', stretch: 'Stretch' };
+  var filter = 'all';
+
+  function apply() {
+    var term = input.value.trim().toLowerCase();
+    var shown = 0;
+    jobs.forEach(function (job) {
+      var match = (filter === 'all' || job.dataset.tier === filter) &&
+                  (!term || job.dataset.search.indexOf(term) !== -1);
+      job.hidden = !match;
+      if (match) shown++;
+    });
+    groups.forEach(function (g) {
+      g.hidden = !g.querySelector('.job:not([hidden])');
+    });
+    var scope = filter === 'all' ? '' : ' in ' + labels[filter];
+    var query = term ? ' matching \u201c' + input.value.trim() + '\u201d' : '';
+    status.textContent = shown === jobs.length ? 'All ' + jobs.length + ' roles'
+      : shown + ' of ' + jobs.length + ' roles' + scope + query;
+    empty.hidden = shown !== 0;
+    if (shown === 0) emptyText.textContent = term
+      ? 'Nothing matches that search' + scope + '. Try a broader term, such as a language or company name.'
+      : 'No roles in this group.';
+  }
+
+  function setFilter(value) {
+    filter = value;
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === value)); });
+    apply();
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setFilter(b.dataset.filter); });
+  });
+  input.addEventListener('input', apply);
+  input.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape' && input.value) { input.value = ''; apply(); }
+  });
+  document.getElementById('clear-filters').addEventListener('click', function () {
+    input.value = '';
+    setFilter('all');
+    input.focus();
+  });
+
+  // Section nav: mark the section currently in view.
+  var navLinks = [].slice.call(document.querySelectorAll('.section-nav a'));
+  var sections = [].slice.call(document.querySelectorAll('main > .section[data-section]'));
+  function markCurrent() {
+    var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    var current = 'jobs';
+    sections.forEach(function (s) {
+      if (s.getBoundingClientRect().top <= window.innerHeight * 0.4) current = s.dataset.section;
+    });
+    if (atEnd && sections.length) current = sections[sections.length - 1].dataset.section;
+    document.querySelector('.section-nav').setAttribute('data-current', current);
+    navLinks.forEach(function (a) {
+      if (a.dataset.section === current) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('scroll', markCurrent, { passive: true });
+  window.addEventListener('hashchange', markCurrent);
+  markCurrent();
+  apply();
+})();
+</script>
+</body>
+</html>
