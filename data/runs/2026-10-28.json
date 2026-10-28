@@ -1,0 +1,842 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-28",
+  "checked_at": "2026-10-28T08:45:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 80 pulled, 8 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 15 from last 7 days, 1 kept)",
+      "Himalayas (ok; 338 pulled, 155 from last 7 days, 46 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 15 kept)",
+      "WeWorkRemotely (ok; 125 pulled, 26 from last 7 days, 6 kept)",
+      "WorkingNomads (ok; 40 pulled, 2 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 28 pulled, 4 from last 7 days, 0 kept)",
+      "Arc (ok; 160 pulled, 116 from last 7 days, 3 kept)",
+      "Greenhouse (ok; 904 pulled, 80 from last 7 days, 0 kept)",
+      "Ashby (ok; 112 pulled, 9 from last 7 days, 0 kept)",
+      "Lever (ok; 12 pulled, 0 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 17 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
+      "micro1 jobs portal (jobs.micro1.ai, read through its public listing feed; 317 open roles, 274 expert roles, 21 new since yesterday's briefing)",
+      "Jobgether (live HTTP API: python, react, full stack, AI engineer, automation, backend, LLM, software engineer, AI, junior developer; 422 offers, 256 from the last 7 days screened)",
+      "Employer and job pages: micro1 job pages, Zoftify BambooHR, Jobgether offer pages, LinkedIn, Himalayas API job details"
+    ],
+    "news": [
+      "TechCrunch",
+      "CNBC",
+      "TechArena",
+      "Infisical",
+      "Felix Rieseberg (blog)",
+      "Tech-ish",
+      "TechTrends KE",
+      "Capital FM"
+    ]
+  },
+  "counts": {
+    "pulled": 2018,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1483,
+      "senior_title": 209,
+      "not_target_role": 140,
+      "location_or_timezone": 46
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 16,
+    "dropped": 19,
+    "reviewed_closely": 35,
+    "dropped_by_reason": {
+      "location": 10,
+      "experience": 1,
+      "closed": 1,
+      "requirement": 5,
+      "other": 2
+    },
+    "stories": 11
+  },
+  "method": {
+    "filtering_summary": "Live search at about 7:35 AM EAT on 13 sources (12 answered; ReliefWeb failed again) pulled 2,018 postings. 1,483 were older than 7 days or old reposts, 209 senior or excluded titles, 140 not target roles, 46 excluded Kenya, 51 duplicates and 1 already applied. Of the 88 that passed, most were Jobicy bump-dated Canonical reqs or roles shown before (KDCI, WeSoftYou, Canonical Python and Zoftify's other roles were left out as repeats). micro1's own portal was read directly: 21 posts new since yesterday. The eight open to anyone remotely that touch software or data lead the list; country-limited (US, US/Canada/UK/LatAm, US/UK/CAN/AUS) and specialist-licence ones are listed as set aside. Jobgether answered live over HTTP (422 offers, 256 from the last 7 days); three Africa- or worldwide-open roles made the list and on-site or Egypt/Uzbekistan-only ones were dropped. Close reads dropped a LatAm-only role, an unpaid internship, a closed listing and an unclear Power Platform role. Nothing old was carried over."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2018,
+    "kept_after_filters": 88,
+    "fresh_shortlisted": 16,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 80,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 15,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 338,
+        "fresh": 155,
+        "kept": 46,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 15,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 125,
+        "fresh": 26,
+        "kept": 6,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 40,
+        "fresh": 2,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 28,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 160,
+        "fresh": 116,
+        "kept": 3,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 904,
+        "fresh": 80,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 112,
+        "fresh": 9,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 12,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 17,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/ab040b63-3e78-47d4-87b5-319193171cc2",
+      "title": "Member of Technical Staff, Model Training (infra & platform)",
+      "company": "micro1",
+      "location_as_stated": "\"Location : Remote\"",
+      "posted": "2026-10-27",
+      "salary_as_shown": "Base $200,000–$320,000 (national pay range, plus equity)",
+      "experience_asked": "Not stated in years; owns distributed training systems and platforms",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-28",
+      "fit": "New micro1 in-house role on the systems behind model training; his Python, Docker and quantization work on Hermes 2 Pro is the closest match.",
+      "gaps": "Full-time internal micro1 engineering role; the pay range ($200k+ base) signals a senior hire, and no country limit is stated beyond \"Remote\". Asks for distributed computing and high-performance ML systems experience he does not have yet.",
+      "rank": 1,
+      "id": "j-2bb09e06b37f"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/cfaf2d70-673a-4edb-aeba-558fcf33eb9a",
+      "title": "Member of Technical Staff, Model Training (applied research)",
+      "company": "micro1",
+      "location_as_stated": "\"Location : Remote\"",
+      "posted": "2026-10-27",
+      "salary_as_shown": "Base $200,000–$320,000 (national pay range, plus equity)",
+      "experience_asked": "Not stated in years; research contributions or open-source applied ML work preferred",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-28",
+      "fit": "New micro1 research role across language models, multimodal and agent systems; his capstone LLM work and agent tooling give a talking point.",
+      "gaps": "Full-time internal micro1 engineering role; the pay range ($200k+ base) signals a senior hire, and no country limit is stated beyond \"Remote\". Research-heavy; publications or applied-ML open source are expected.",
+      "rank": 2,
+      "id": "j-5ca2ed96e0e1"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/0a40f373-eb85-4269-a115-07d75e7e59a2",
+      "title": "Member of Technical Staff, Model Training (post-training research)",
+      "company": "micro1",
+      "location_as_stated": "\"Location : Remote\"",
+      "posted": "2026-10-27",
+      "salary_as_shown": "Base $200,000–$320,000 (national pay range, plus equity)",
+      "experience_asked": "Not stated in years; post-training, synthetic data and self-improvement research",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-28",
+      "fit": "New micro1 role on how training data and algorithms shape models; ties to his FLAN-T5 versus Hermes 2 Pro comparison.",
+      "gaps": "Full-time internal micro1 engineering role; the pay range ($200k+ base) signals a senior hire, and no country limit is stated beyond \"Remote\". Research role well above his current level.",
+      "rank": 3,
+      "id": "j-af969543ea19"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/c4d9c64f-c30e-44fe-a32b-8ee6569b47b8",
+      "title": "Member of Technical Staff, Infrastructure",
+      "company": "micro1",
+      "location_as_stated": "\"Location : Remote\"",
+      "posted": "2026-10-24",
+      "salary_as_shown": "Base $220,000–$300,000 (national pay range, plus equity)",
+      "experience_asked": "Not stated in years; has operated complex production systems",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-28",
+      "fit": "New micro1 infra role that wants people already using AI coding agents to change how engineering is done, which is his strongest habit.",
+      "gaps": "Full-time internal micro1 engineering role; the pay range ($200k+ base) signals a senior hire, and no country limit is stated beyond \"Remote\". Wants deep production infrastructure experience.",
+      "rank": 4,
+      "id": "j-6d6c2767a395"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/a46ebe3b-f159-4e54-b892-89fe86b2554b",
+      "title": "Member of Technical Staff, Quality Engineering",
+      "company": "micro1",
+      "location_as_stated": "\"Location : Remote\"",
+      "posted": "2026-10-24",
+      "salary_as_shown": "Base $180,000–$250,000 (national pay range, plus equity)",
+      "experience_asked": "\"Staff-level engineer\" with deep test automation expertise",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-28",
+      "fit": "New micro1 role building agentic QA systems; fits his AI-agent and automation interest.",
+      "gaps": "Full-time internal micro1 engineering role; the pay range ($200k+ base) signals a senior hire, and no country limit is stated beyond \"Remote\". Explicitly Staff-level, so a long shot.",
+      "rank": 5,
+      "id": "j-8bd385bac60b"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/0e5cfd61-fe27-4955-ad5c-952e6e5d8198",
+      "title": "Member of Technical Staff, Data Engineering",
+      "company": "micro1",
+      "location_as_stated": "\"Location : Remote\"",
+      "posted": "2026-10-24",
+      "salary_as_shown": "Base $200,000–$260,000 (national pay range, plus equity)",
+      "experience_asked": "\"Staff-level\" engineer who has built data infrastructure from scratch",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-28",
+      "fit": "New micro1 data role; his n8n and SQL pipeline work at Kwara is the nearest experience.",
+      "gaps": "Full-time internal micro1 engineering role; the pay range ($200k+ base) signals a senior hire, and no country limit is stated beyond \"Remote\". Explicitly Staff-level, so a long shot.",
+      "rank": 6,
+      "id": "j-fb2623a42ec5"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/76ebe7ba-7dd2-48c5-bf47-46773bbc0e89",
+      "title": "Smartwatch User",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "posted": "2026-10-27",
+      "salary_as_shown": "$70 per device, one-time",
+      "experience_asked": "At least 18 months of continuous wearable data (Oura, WHOOP, Garmin, Samsung, Fitbit/Pixel or Apple Watch)",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-28",
+      "fit": "One-time paid data task, not a job; only worth it if he has a supported device with long history.",
+      "gaps": "Needs 18+ months of continuous data with no gap longer than 6 weeks.",
+      "rank": 7,
+      "id": "j-4d9ce48ededf"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/642573d8-555a-4eef-939a-b479af309c25",
+      "title": "Wearable Electronic User",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "posted": "2026-10-27",
+      "salary_as_shown": "$70 per device, one-time",
+      "experience_asked": "A supported wearable with historical health data",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-28",
+      "fit": "Same kind of one-time data export task as the Smartwatch User post.",
+      "gaps": "Not a job; only useful with a qualifying device.",
+      "rank": 8,
+      "id": "j-e24f499079a4"
+    },
+    {
+      "tier": "top",
+      "url": "https://zoftify.bamboohr.com/careers/41",
+      "title": "Full Stack Developer (React + Node.js)",
+      "company": "Zoftify",
+      "location_as_stated": "\"100% remote work from anywhere in the world\"",
+      "posted": "2025-11-13 (always-open listing, reposted on Himalayas 2026-10-27)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "2+ years commercial experience with React, Node.js and TypeScript, PostgreSQL and REST",
+      "found_via": "Himalayas",
+      "verified": "Zoftify BambooHR page, open, live 2026-10-28",
+      "fit": "React and Node full-stack work is his core stack from Chumz and Kwara, and it's open worldwide at mid level.",
+      "gaps": "He has already applied to Zoftify's Python, Frontend React and React Native roles, so this would be a fourth application to the same company.",
+      "rank": 9,
+      "id": "j-cf0951fbec4a"
+    },
+    {
+      "tier": "top",
+      "url": "https://himalayas.app/companies/fairarena/jobs/frontend-engineer",
+      "title": "Frontend Engineer",
+      "company": "Fairarena (Velocity)",
+      "location_as_stated": "Worldwide (no location restriction on Himalayas)",
+      "posted": "2026-10-25",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Mid-level; years not stated. React, Next.js, TypeScript, REST and state management",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-28; not confirmed on an employer site",
+      "fit": "React and Next.js dashboards for cloud workspaces; matches his React front-end work and Grok/AI tooling interest.",
+      "gaps": "Small, little-known company; no salary shown.",
+      "rank": 10,
+      "id": "j-bf2d23538205"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/xperteez-technology/jobs/frontend-engineer-remote-contract",
+      "title": "Frontend Engineer, Remote (Contract)",
+      "company": "Xperteez Technology",
+      "location_as_stated": "\"Location: Remote\"",
+      "posted": "2026-10-27",
+      "salary_as_shown": "Paid per task (output-based), minimum tasks per week",
+      "experience_asked": "\"Expert-level proficiency in React and React Native\"; Shopify experience",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-28",
+      "fit": "React and React Native contract with an AI interview step; he lists 2 years of React Native.",
+      "gaps": "Per-task contract with no rate shown, and Shopify experience is asked.",
+      "rank": 11,
+      "id": "j-87c97cae09ce"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://www.linkedin.com/jobs/view/highlevel-automation-integrations-specialist-at-remote-raven-4483668984",
+      "title": "HighLevel Automation & Integrations Specialist",
+      "company": "Remote Raven",
+      "location_as_stated": "Remote, Kenya (LinkedIn)",
+      "posted": "2026-10-27",
+      "salary_as_shown": "\"Up to $10/hour\"",
+      "experience_asked": "Minimum 2 years hands-on GoHighLevel experience at agency level",
+      "found_via": "LinkedIn (remote, Kenya)",
+      "verified": "LinkedIn job page, live 2026-10-28",
+      "fit": "Workflow automation with REST APIs, OAuth and webhooks, close to his n8n pipeline work at Kwara.",
+      "gaps": "Needs 2 years of GoHighLevel specifically, US Mountain-time full-time hours, and pay is low.",
+      "rank": 12,
+      "id": "j-0bec416746ee"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://www.linkedin.com/jobs/view/quality-assurance-automation-engineer-at-tana-4484208230",
+      "title": "Quality Assurance Automation Engineer",
+      "company": "Tana",
+      "location_as_stated": "\"Remote (based in Kenya)\"; 10:00 AM to 7:00 PM EAT",
+      "posted": "2026-10-27",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "2+ years professional work as a QA Engineer; AI in test automation a plus",
+      "found_via": "LinkedIn (remote, Kenya)",
+      "verified": "LinkedIn job page, live 2026-10-28",
+      "fit": "Kenya-based remote role on EAT hours that values AI in QA; his testing work and AI-tool habit help.",
+      "gaps": "He has no dedicated QA engineer title; LinkedIn marks it Mid-Senior.",
+      "rank": 13,
+      "id": "j-24f86853486b"
+    },
+    {
+      "tier": "evergreen",
+      "url": "https://jobgether.com/offer/6acebf9149c73d7b99793015-full-stack-engineer---emea",
+      "title": "Full Stack Engineer - EMEA",
+      "company": "Deel",
+      "location_as_stated": "\"Full Remote ... available from: Asia, United States, EMEA, APAC\" (KE in the country list)",
+      "posted": "2026-10-13 (Jobgether shows it re-listed 2026-10-27)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated in years on the offer page",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page (JobPosting data), open until 2026-12-13, live 2026-10-28",
+      "fit": "Full-stack role at a global payroll platform, a fintech-adjacent fit after Chumz.",
+      "gaps": "Two weeks old, so likely busy; Deel usually hires experienced engineers.",
+      "rank": 14,
+      "id": "j-5a368b5658be"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobgether.com/offer/6adac76c22c2644c03e081b9-software-developer-full-stack-m-f-d---remote-option",
+      "title": "Software Developer Full Stack (m/f/d), remote option",
+      "company": "PRIOjet GmbH",
+      "location_as_stated": "\"Full Remote ... available from: Anywhere\"",
+      "posted": "2026-10-23",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "\"Some years\" across backend, web and mobile; German a plus, not required",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, open until 2026-12-23, live 2026-10-28",
+      "fit": "Full-stack web and mobile work on a logistics SaaS, matching his React and React Native mix.",
+      "gaps": "German-based team, and experience is vague.",
+      "rank": 15,
+      "id": "j-d213c9a52d37"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobgether.com/offer/6adbd22f22c2644c03e592e9-ai-engineer",
+      "title": "AI Engineer",
+      "company": "ICON plc",
+      "location_as_stated": "\"Full Remote ... available from: Europe, Africa, ... Sub-Saharan Africa, EMEA\"",
+      "posted": "2026-10-23",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "3 years of experience",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, open until 2026-12-23, live 2026-10-28",
+      "fit": "AI engineering role open to Sub-Saharan Africa; his LLM and quantization work fits.",
+      "gaps": "Asks 3 years and is clinical-data focused.",
+      "rank": 16,
+      "id": "j-18c9d44cce77"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobs.micro1.ai/post/330180e9-9b6e-4a86-be6b-63fa85ead695",
+      "title": "Air Traffic Controller",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role, but needs ATC certification",
+      "reason_code": "requirement",
+      "posted": "2026-10-27",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-10a76316eabf"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/3206bc18-1644-45e1-b29c-38e9783effd2",
+      "title": "Aircraft Pilot",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role, but needs professional pilot experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-27",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-6c22a41dc30a"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/5ed081d3-01aa-4840-9ac6-c75a61993136",
+      "title": "Paralegal",
+      "company": "micro1",
+      "location_as_stated": "Open worldwide to paralegals with U.S. practice experience",
+      "reason": "New micro1 role, but needs 5+ years paralegal experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-27",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-ef12f7d0292d"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/73e0d113-91f0-40f4-94b0-67c02c31a3f1",
+      "title": "Chief of Staff",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role, but 4+ years in strategy or business operations",
+      "reason_code": "experience",
+      "posted": "2026-10-26",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-57ef5e1aedbc"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/b96124bf-0f96-4673-8d17-98a921e907ab",
+      "title": "Domain Researcher, Finance (M&A)",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role, but needs corporate development and M&A expertise",
+      "reason_code": "requirement",
+      "posted": "2026-10-22",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-26b1802fb738"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/9e74828a-963a-4093-be63-e30d0d144066",
+      "title": "Management Consulting Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Remote - US/Canada preferred; UK and Latin America also considered\"",
+      "reason": "New micro1 role, but US/Canada/UK/LatAm and 5+ years",
+      "reason_code": "location",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-116ce277d090"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/9a802ec5-4080-45e1-bb58-b97c36ac38d9",
+      "title": "Financial Due Diligence & Transaction Accounting Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Remote - US/Canada preferred; UK and Latin America also considered\"",
+      "reason": "New micro1 role, but US/Canada/UK/LatAm and 5+ years",
+      "reason_code": "location",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-d7066b415798"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/2904f048-0d04-4b2b-a6e8-946c3df9fa3c",
+      "title": "Investment Banking & M&A Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Remote - US/Canada preferred; UK and Latin America also considered\"",
+      "reason": "New micro1 role, but US/Canada/UK/LatAm and 5+ years",
+      "reason_code": "location",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-625e619acaeb"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/644f3f12-c2a2-4fb9-8652-57263a807c5e",
+      "title": "Corporate Finance & Financial Modeling Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Remote - US/Canada preferred; UK and Latin America also considered\"",
+      "reason": "New micro1 role, but US/Canada/UK/LatAm and 5+ years",
+      "reason_code": "location",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-64f74b4758cf"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/8e9b3e88-5bdc-4bbd-92bb-09a5a36b4e40",
+      "title": "Certified Inpatient Medical Coder",
+      "company": "micro1",
+      "location_as_stated": "US only",
+      "reason": "New micro1 role, but US-based certified coders only",
+      "reason_code": "location",
+      "posted": "2026-10-27",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-ce18b9bcfd1e"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/f0a479de-d301-42c3-93ec-b68b0074ce6e",
+      "title": "Registered Nurse",
+      "company": "micro1",
+      "location_as_stated": "\"United States, Remote\"",
+      "reason": "New micro1 role, but US-licensed nurses only",
+      "reason_code": "location",
+      "posted": "2026-10-27",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-281ab7a8852d"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/7a95bb30-2730-4338-9b65-0b4b7319467a",
+      "title": "Consulting Specialist",
+      "company": "micro1",
+      "location_as_stated": "US, UK, Canada or Australia",
+      "reason": "New micro1 role, but limited to US/UK/CAN/AUS",
+      "reason_code": "location",
+      "posted": "2026-10-27",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-0cdbe49e1751"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/e9bc2f1f-d2d0-4d6e-a43a-415ec8d657be",
+      "title": "Finance Specialist",
+      "company": "micro1",
+      "location_as_stated": "US, UK, Canada or Australia",
+      "reason": "New micro1 role, but limited to US/UK/CAN/AUS",
+      "reason_code": "location",
+      "posted": "2026-10-27",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, live 2026-10-28",
+      "id": "j-49b47b4e7b1f"
+    },
+    {
+      "url": "https://himalayas.app/companies/micro1/jobs/intelligence-analyst",
+      "title": "Intelligence Analyst",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "Needs all-source intelligence analysis experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-27",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-28",
+      "id": "j-846678410b3e"
+    },
+    {
+      "url": "https://himalayas.app/companies/gofasti/jobs/1182-junior-frontend-developer-part-time",
+      "title": "Junior Frontend Developer (Part-Time)",
+      "company": "GoFasti",
+      "location_as_stated": "\"based in Latin America\"",
+      "reason": "Latin America-based developers only",
+      "reason_code": "location",
+      "posted": "2026-10-25",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-28",
+      "id": "j-e900c642551a"
+    },
+    {
+      "url": "https://himalayas.app/companies/metasys/jobs/automation-qa-engineer-internship",
+      "title": "Automation QA Engineer Internship",
+      "company": "Metasys",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "Unpaid at first (\"Stipend: None initially\")",
+      "reason_code": "other",
+      "posted": "2026-10-23",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-28",
+      "id": "j-609e866ee4f0"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/ai-internship-at-entry-level-jobs-in-kenya-campusbiz-co-ke-4483649638",
+      "title": "AI Internship (Techno Brain, via campusbiz)",
+      "company": "Techno Brain",
+      "location_as_stated": "Nairobi",
+      "reason": "Listing says applications closed (deadline 27 October 2026)",
+      "reason_code": "closed",
+      "posted": "2026-10-27",
+      "found_via": "LinkedIn (remote, Kenya)",
+      "verified": "LinkedIn job page, live 2026-10-28",
+      "id": "j-26a256248104"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/ai-process-automation-engineer-at-eliason-corporation-4483742301",
+      "title": "AI & Process Automation Engineer",
+      "company": "Eliason Corporation",
+      "location_as_stated": "Remote, Kanzanzu, Kitui County, Kenya (LinkedIn)",
+      "reason": "Really a Power Platform business-analyst role with an unclear location",
+      "reason_code": "other",
+      "posted": "2026-10-26",
+      "found_via": "LinkedIn (remote, Kenya)",
+      "verified": "LinkedIn job page, live 2026-10-28",
+      "id": "j-7749179908cf"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae0fc0422c2644c03fc718a-systems-software-engineer",
+      "title": "Systems Software Engineer",
+      "company": "Simera Sense",
+      "location_as_stated": "\"Remote Opportunity: No\", Somerset West, South Africa",
+      "reason": "On-site in South Africa",
+      "reason_code": "location",
+      "posted": "2026-10-27",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-28",
+      "id": "j-85bfd72cb33b"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Google's Genie 4 world model adds audio and real-time steering",
+            "summary": "Google DeepMind released Genie 4 in research preview: more photorealistic interactive worlds, prompts typed mid-simulation to change the scene, and matching real-time audio.",
+            "why": "World models are the next big AI race after chatbots; useful context for any AI-lab interview.",
+            "source": "TechCrunch",
+            "date": "2026-10-27",
+            "url": "https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/",
+            "id": "s-a30b4228516c"
+          },
+          {
+            "title": "Cassava Technologies becomes an authorised reseller of Anthropic's Claude in Africa",
+            "summary": "Cassava can now resell access to Claude models through Amazon Bedrock, giving African businesses a local partner for frontier AI.",
+            "why": "Claude access through an African partner could mean more local AI-integration jobs and clients.",
+            "source": "TechArena",
+            "date": "2026-10-28",
+            "url": "https://www.techarena.co.ke/2026/10/28/cassava-technologies-anthropic-claude-ai-africa/",
+            "id": "s-3a226e13533d"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "VCs will make billions on Anthropic's IPO, but Amazon stands to make far more",
+            "summary": "Anthropic's S-1 shows no VC firm holds 5%, unusual for a tech IPO; at a $965 billion private valuation, strategic partner Amazon is likely the biggest winner.",
+            "why": "The Anthropic IPO is the AI story of the year; know the numbers.",
+            "source": "TechCrunch",
+            "date": "2026-10-28",
+            "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/",
+            "id": "s-1b16f2a2a47a"
+          },
+          {
+            "title": "Anthropic's IPO filing lists more than 90 pages of risk factors",
+            "summary": "The prospectus goes past boilerplate, covering catastrophic AI risks, competition pressure and the company's clash with the Trump administration.",
+            "why": "Shows how an AI lab frames safety as a business risk, a common interview theme.",
+            "source": "CNBC",
+            "date": "2026-10-27",
+            "url": "https://www.cnbc.com/2026/10/27/anthropic-five-surprising-risks-s1.html",
+            "id": "s-f72f7076d34f"
+          },
+          {
+            "title": "Infisical raises a $40M Series B at a $600M valuation",
+            "summary": "The secrets-management company, which helps firms let AI agents work without handing over credentials, raised a round led by Elad Gil.",
+            "why": "Agent security is a growing hiring area for developers who build with AI agents.",
+            "source": "Infisical",
+            "date": "2026-10-27",
+            "url": "https://infisical.com/blog/series-b",
+            "id": "s-a9a891ddddb9"
+          },
+          {
+            "title": "Disruptive raises a $10B fund for at least 10 late-stage bets",
+            "summary": "The Dallas firm behind bets on Palantir, Groq and ElevenLabs will write checks of up to $1 billion, mainly in AI and defense.",
+            "why": "More late-stage AI money means bigger hiring at the companies it backs.",
+            "source": "TechCrunch",
+            "date": "2026-10-27",
+            "url": "https://techcrunch.com/2026/10/27/disruptive-raises-10b-fund-to-make-big-bets-on-at-least-10-companies/",
+            "id": "s-195cb6337f5e"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "An Anthropic hiring manager stops giving coding interviews: 'hunger beats tenure'",
+            "summary": "Felix Rieseberg says he dropped coding challenges because Claude now beats them, and that junior engineers who work well with AI are outpacing longer-tenured coders.",
+            "why": "Directly relevant to Ben: early-career engineers who are strong with AI tools are what at least one top lab now looks for.",
+            "source": "Felix Rieseberg (blog)",
+            "date": "2026-10-27",
+            "url": "https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/",
+            "id": "s-6b6129fb93ff"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Safaricom CEO says M-PESA's next phase is savings, investing and insurance",
+            "summary": "Peter Ndegwa wants M-PESA to become a place to pay, save, invest and insure; it handles about 150 million transactions a day.",
+            "why": "Signals where Safaricom's fintech product and engineering work is heading.",
+            "source": "Tech-ish",
+            "date": "2026-10-27",
+            "url": "https://tech-ish.com/2026/10/27/safaricom-ceo-peter-ndegwa-says-m-pesas-next-phase-is-savings-investing-and-insurance/",
+            "id": "s-0cef5ab41f97"
+          },
+          {
+            "title": "Safaricom logs 1.25 billion intrusion attempts in FY26",
+            "summary": "Its sustainability report also counts more than 130,000 security events investigated; Ndegwa calls digital trust a leadership issue, not just IT.",
+            "why": "Security and trust are growing priorities at Kenya's biggest tech employer.",
+            "source": "TechTrends KE",
+            "date": "2026-10-27",
+            "url": "https://techtrendske.co.ke/2026/10/27/safaricom-logs-1-25bn-intrusion-attempts-in-fy26/",
+            "id": "s-1c060fe33a3e"
+          },
+          {
+            "title": "Safaricom says M-PESA created Sh478bn in social value",
+            "summary": "The same report says 57.8% of M-PESA transactions were free and Safaricom's ecosystem supported more than 1.4 million jobs.",
+            "why": "Context on M-PESA's scale for Kenyan fintech conversations.",
+            "source": "Capital FM",
+            "date": "2026-10-27",
+            "url": "https://capitalfm.africa/safaricom-says-m-pesa-generated-sh478bn-in-social-value/",
+            "id": "s-be1f8cc646b0"
+          },
+          {
+            "title": "NIFCA plans a $250 million technology and AI fund",
+            "summary": "Nairobi International Financial Centre Authority's Mainga said the fund, about KSh35 billion, would invest in Kenya and the wider continent from next year.",
+            "why": "More local capital could mean more funded Kenyan startups hiring engineers.",
+            "source": "TechTrends KE",
+            "date": "2026-10-27",
+            "url": "https://techtrendske.co.ke/2026/10/27/nifca-technology-ai-fund/",
+            "id": "s-5101b1ee005c"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-28",
+    "generated_at": "2026-10-28T07:12:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Junior Data Analyst (Internship)",
+        "company": "Moko Home + Living",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/junior-data-analyst-internship-moko-home-living",
+        "posted": "2026-10-27",
+        "fit_note": "Entry-level data analyst internship using SQL, Python/pandas and Metabase/Power BI dashboards; matches Ben's SQL and Python data ops background."
+      },
+      {
+        "title": "Qualifications Database Officer",
+        "company": "Kenya National Qualifications Authority (KNQA)",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/qualifications-database-officer-kenya-national-qualifications-authority-knqa",
+        "posted": "2026-10-27",
+        "fit_note": "Entry-level ICT officer role (application maintenance, user support, AD/LAN, website, backups) open to CS grads, KES 97K–116K/month per a LinkedIn repost; closes Nov 13."
+      },
+      {
+        "title": "Technical Support Representative | TP Kenya",
+        "company": "Teleperformance",
+        "location": "Nairobi (onsite)",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/technical-support-representative-tp-kenya-teleperformance",
+        "posted": "2026-10-27",
+        "fit_note": "Phone and chat troubleshooting for connected fitness equipment and home networks (2 years asked); draws on Ben's earlier tech support work."
+      },
+      {
+        "title": "Technical Operations Specialist",
+        "company": "Cebit Networks",
+        "location": "Nairobi County, Kenya (role advertised as fully remote)",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/technical-operations-specialist-at-cebit-networks-4481878439",
+        "posted": "2026-10-27",
+        "fit_note": "Entry-level contract-to-hire tech ops for an AI-heavy marketing agency (GA4/GTM tracking, integrations, GitHub, Framer with AI/MCP tools); fits Ben's integrations and automation skills."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9225",
+      "error": null
+    }
+  }
+}
