@@ -1,0 +1,978 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-29",
+  "checked_at": "2026-10-29T08:55:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 88 pulled, 16 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 13 from last 7 days, 1 kept)",
+      "Himalayas (ok; 332 pulled, 149 from last 7 days, 45 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 4 kept)",
+      "WeWorkRemotely (ok; 125 pulled, 26 from last 7 days, 7 kept)",
+      "WorkingNomads (ok; 41 pulled, 3 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 32 pulled, 8 from last 7 days, 0 kept)",
+      "Arc (ok; 162 pulled, 58 from last 7 days, 2 kept)",
+      "Greenhouse (ok; 894 pulled, 76 from last 7 days, 0 kept)",
+      "Ashby (ok; 116 pulled, 11 from last 7 days, 0 kept)",
+      "Lever (ok; 12 pulled, 0 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 17 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
+      "micro1 jobs portal (jobs.micro1.ai, read through its public listing feed; 338 open roles, 294 expert roles, 28 posted since yesterday's briefing)",
+      "Jobgether (live HTTP API; 418 offers, 240 from the last 7 days screened)",
+      "Employer and job pages: micro1 job pages, Supabase Ashby board, Jobgether offer pages, LinkedIn, Himalayas API job details"
+    ],
+    "news": [
+      "The Verge",
+      "TechCrunch",
+      "CNBC",
+      "TechArena",
+      "Tech-ish",
+      "TechTrends KE"
+    ]
+  },
+  "counts": {
+    "pulled": 2021,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1541,
+      "senior_title": 193,
+      "not_target_role": 133,
+      "location_or_timezone": 33
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 6,
+    "dropped": 42,
+    "reviewed_closely": 48,
+    "dropped_by_reason": {
+      "location": 7,
+      "experience": 4,
+      "requirement": 26,
+      "other": 5
+    },
+    "stories": 12
+  },
+  "method": {
+    "filtering_summary": "Live search at about 7:40 AM EAT on 13 sources (12 answered; ReliefWeb failed again) pulled 2,021 postings. 1,541 were older than 7 days or old reposts, 193 senior or excluded titles, 133 not target roles, 33 excluded Kenya, 44 duplicates and 1 already applied. Most of the 76 that passed were bump-dated reposts or roles shown before. micro1's own portal was read directly: 28 posts are new since yesterday. The two that touch software or AI lead the list; the rest need specialist backgrounds (intelligence, law, inspection, military) or are U.S.-only, and are listed as set aside. Jobgether answered live over HTTP (418 offers, 240 from the last 7 days); the only worldwide-open new ones need German or Spanish, so none made the list. A Supabase role that looked fresh on Jobicy was really posted on 2 September. Nothing old was carried over."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2021,
+    "kept_after_filters": 76,
+    "fresh_shortlisted": 6,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 88,
+        "fresh": 16,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 13,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 332,
+        "fresh": 149,
+        "kept": 45,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 4,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 125,
+        "fresh": 26,
+        "kept": 7,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 41,
+        "fresh": 3,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 32,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 162,
+        "fresh": 58,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 894,
+        "fresh": 76,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 116,
+        "fresh": 11,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 12,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 17,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/8c0ddeba-5240-4059-9e61-544dd2c8292f",
+      "title": "Electron.js Software Engineer (listed as \"Software Engineer (Electron.js)\")",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "posted": "2026-10-29",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "3+ years of production Electron.js, plus JavaScript/TypeScript and Node.js; cross-platform macOS and Windows desktop apps",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-29",
+      "fit": "New micro1 full-time engineering role on a JavaScript/TypeScript and Node.js stack, which sits next to his React work at Chumz and Kwara.",
+      "gaps": "Asks for 3+ years shipping Electron.js apps specifically, which he does not have; no pay is shown.",
+      "rank": 1,
+      "id": "j-b34a9bbcc5e0"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/2a540080-4b36-4fc3-ad1d-1eafa512a606",
+      "title": "AI Jailbreak & Prompt-Injection Security Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "posted": "2026-10-28",
+      "salary_as_shown": "$50–90 per hour (micro1 listing)",
+      "experience_asked": "Preferred: 2+ years in adversarial ML, red teaming or AI security",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 job page, open, live 2026-10-29",
+      "fit": "Contract work probing LLMs for jailbreaks and prompt injection; his hands-on LLM work (Hermes 2 Pro quantization, agent tooling) gives him a way in.",
+      "gaps": "Contractor role, and the preferred background is dedicated adversarial-ML or red-team experience he does not list.",
+      "rank": 2,
+      "id": "j-b2ee9af5e639"
+    },
+    {
+      "tier": "top",
+      "url": "https://himalayas.app/companies/nestifytech-solutions-private-limited/jobs/ai-chatbot-engineer",
+      "title": "AI Chatbot Engineer",
+      "company": "Nestifytech Solutions",
+      "location_as_stated": "Worldwide (no location restriction on Himalayas)",
+      "posted": "2026-10-29",
+      "salary_as_shown": "INR 1,500,000–2,000,000 (Himalayas)",
+      "experience_asked": "Bachelor's in CS or similar; 2+ years building chatbots or conversational AI; Python or Node.js; LangChain, Rasa or Botpress",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-29; not confirmed on an employer site",
+      "fit": "LLM chatbots in Python or Node.js wired into APIs, Slack and WhatsApp; close to his LLM capstone and AI-agent work, at mid level.",
+      "gaps": "Small Indian company not confirmed on its own site; pay is in rupees and modest.",
+      "rank": 3,
+      "id": "j-3ff4f74c1460"
+    },
+    {
+      "tier": "evergreen",
+      "url": "https://himalayas.app/companies/g2i/jobs/ai-engineer-llm-engineer-g2i-talent-pool",
+      "title": "AI Engineer / LLM Engineer, G2i Talent Pool",
+      "company": "G2i",
+      "location_as_stated": "Worldwide (no location restriction on Himalayas)",
+      "posted": "2026-10-28",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not stated in years; \"fresh graduates are welcome\"",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-29; not confirmed on an employer site",
+      "fit": "G2i places engineers on AI-lab projects (evals, RL environments, training data), and the pool welcomes new grads.",
+      "gaps": "A talent pool, so joining does not promise work right away.",
+      "rank": 4,
+      "id": "j-65b6f27951c5"
+    },
+    {
+      "tier": "evergreen",
+      "url": "https://himalayas.app/companies/g2i/jobs/full-stack-developer-g2i-talent-pool",
+      "title": "Full Stack Developer, G2i Talent Pool",
+      "company": "G2i",
+      "location_as_stated": "Worldwide (no location restriction on Himalayas)",
+      "posted": "2026-10-28",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Mid-level on Himalayas; years not stated",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-29; not confirmed on an employer site",
+      "fit": "Same G2i pool, for full-stack engineers; matches his React and Node work.",
+      "gaps": "Same pool as the AI/LLM listing, so one sign-up likely covers both; no work is promised.",
+      "rank": 5,
+      "id": "j-662f4a7a898c"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/nestifytech-solutions-private-limited/jobs/llm-engineer-large-language-model-engineer",
+      "title": "LLM Engineer",
+      "company": "Nestifytech Solutions",
+      "location_as_stated": "Worldwide (no location restriction on Himalayas)",
+      "posted": "2026-10-29",
+      "salary_as_shown": "INR 2,000,000–40,000,000 (Himalayas)",
+      "experience_asked": "3+ years in ML/NLP roles, 1+ year hands-on with LLMs; MSc/PhD preferred",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-29; not confirmed on an employer site",
+      "fit": "Fine-tuning, RAG and LoRA/QLoRA work, which lines up with his Hermes 2 Pro quantization capstone.",
+      "gaps": "Asks 3+ years in ML/NLP and prefers an advanced degree; not confirmed on an employer site.",
+      "rank": 6,
+      "id": "j-3e5d9f8d1dc9"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobs.micro1.ai/post/8d2f7ffc-121b-46a2-aef6-fcd1b53f96ff",
+      "title": "Senior Intelligence Analyst – National Security",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs national-security intelligence background",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-4f1c646bad65"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/29061934-9601-449c-ade0-9276cc70ee53",
+      "title": "Intelligence Operations & Collection Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs intelligence-operations background",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-a41bbabff4d7"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/f1872b8c-095f-4c61-a103-923e85274bdc",
+      "title": "Intelligence Agency Officer",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs intelligence-agency background",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-5776aca37376"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/23c516d6-21e5-4e65-8e69-7d1dc127211b",
+      "title": "Energy Regulatory Counsel",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs an active U.S. bar licence",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-a62f96a0588a"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/c80af4df-2031-4f3e-a16b-eae08b339e2f",
+      "title": "Gaming/Gambling Regulatory Attorney",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs a law licence and regulatory practice",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-db2a7a0a20d5"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/5888d8c4-69df-47b6-8d73-fac94ab909c0",
+      "title": "Consumer Product Safety Attorney",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs a law licence",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-91002b24cf0e"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/a4d53b22-5a99-42c4-b0ed-6e6f41d74ee5",
+      "title": "Senior Photographer",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs professional photography experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-ac374ebdd1b5"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/08cc8487-57fd-40a2-bf0b-5447a71f876e",
+      "title": "Senior Flight Operations Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs aviation operations experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-561a7fa4975a"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/de78ac45-2d2c-44f2-ae53-a0f6cd617a17",
+      "title": "Senior Technical Documentation, Parts and Annotation Specialist",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs industrial parts documentation experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-1ac501435f51"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/b3366c6a-012a-41f2-9a9f-29691578369e",
+      "title": "Nuclear & Radiological Security Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs nuclear security expertise",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-72fd61054014"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/f893f8d3-c965-4e92-860d-f534d8b54884",
+      "title": "Senior Industrial Trades and Maintenance Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs industrial trades experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-3a59d01d6d18"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/07eb95d9-2a5a-421e-ac18-c7df55561163",
+      "title": "Military Operations & IHL Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs military and humanitarian-law expertise",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-bddee6b04ac0"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/833e0bd5-9b5a-44af-a173-bd62210a68f5",
+      "title": "Senior Advanced NDT and Imaging Specialist",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs non-destructive testing certification",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-720958ba72f8"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/592578fa-213a-4f31-a03b-dfc077c63245",
+      "title": "Senior Cargo Condition and Securing Surveyor",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs marine cargo surveying experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-ef798d2ab177"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/c6de85cd-3286-41cf-a9f9-99cfb123d706",
+      "title": "Senior Specialty Inspection Expert, Crop, Auction and Rental",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs specialty inspection experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-5a1fa1f3dead"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/99276d85-ae7f-4778-8833-0cf33210b973",
+      "title": "Senior Claims Investigation and Evidence Review Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs insurance claims investigation experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-fc91510f9f01"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/bbc4f744-7e2e-4b1c-9e23-a241bcdfb86d",
+      "title": "Senior Property Damage and Restoration Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs property damage assessment experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-de873541a19d"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/bec1163a-9cf7-4bd0-83f0-b94db5b67d57",
+      "title": "Military Operations & Reporting SME",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs military operations experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-cbc67973cae8"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/cc9ebbec-5710-47cb-a503-d3ee95cc691a",
+      "title": "Senior Vehicle Damage and Condition Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs vehicle damage assessment experience",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-0145e6420cfb"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/913e51e8-97d0-4a4c-a432-4b4357c327aa",
+      "title": "Legal Specialist (Microsoft Office User)",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs a legal background",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-bf3248b4d081"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/cbb3f0f3-22f8-439c-8bc2-013be484b836",
+      "title": "Marketing Specialist (Microsoft Office User)",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs a marketing background",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-77c0f3ff08d0"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/542159e6-d897-4f0f-9f2e-8c32f11e703c",
+      "title": "Tamil Bilingual Expert",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote\"",
+      "reason": "New micro1 role outside software; needs native Tamil",
+      "reason_code": "requirement",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-acd06c5d14ae"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/71669fdd-8fe6-43b9-b55d-5f412ee0b5dc",
+      "title": "Senior DoD Staff Writing SME",
+      "company": "micro1",
+      "location_as_stated": "United States",
+      "reason": "New micro1 role, U.S. only",
+      "reason_code": "location",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-93f305b2ee83"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/c7f92818-49aa-4f83-9fbe-d09546b4f197",
+      "title": "Federal Staff Reporting Analyst",
+      "company": "micro1",
+      "location_as_stated": "United States",
+      "reason": "New micro1 role, U.S. only",
+      "reason_code": "location",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-ea47dd587136"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/25d62583-9246-4fa0-80bd-2a21c9a9c890",
+      "title": "Military Writing Specialist",
+      "company": "micro1",
+      "location_as_stated": "United States",
+      "reason": "New micro1 role, U.S. only",
+      "reason_code": "location",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-ed06d0b92700"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/ec344a27-5e27-48e8-a713-63336f5951a3",
+      "title": "Naval Subject Matter Expert (Cleared)",
+      "company": "micro1",
+      "location_as_stated": "On-site, Arlington, VA",
+      "reason": "New micro1 role, on-site in Virginia with a clearance",
+      "reason_code": "location",
+      "posted": "2026-10-28",
+      "found_via": "micro1 jobs portal (jobs.micro1.ai)",
+      "verified": "micro1 listing feed, live 2026-10-29",
+      "id": "j-dfc1be7f9d64"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adccf3d22c2644c03ea2239-desarrollador-backend-remoto---remoto",
+      "title": "Desarrollador Backend",
+      "company": "MAINSOFT",
+      "location_as_stated": "\"Full Remote ... available from: Anywhere\"",
+      "reason": "Spanish-language role asking 3+ years of Java",
+      "reason_code": "requirement",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-29",
+      "id": "j-5f9bfe556444"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adac76c22c2644c03e0816f-test-automation-engineer-m-w-d",
+      "title": "Test Automation Engineer (m/w/d)",
+      "company": "SPIRIT-ONSIDE",
+      "location_as_stated": "\"Full Remote ... available from: Anywhere\"",
+      "reason": "Needs German",
+      "reason_code": "requirement",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-29",
+      "id": "j-9023c2527b69"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adac74322c2644c03e07671-pflicht--praktikum-umschulung-automatisierung-website-betreuung---e-commerce---100-remote",
+      "title": "Pflichtpraktikum Automatisierung & Website-Betreuung",
+      "company": "Siegel",
+      "location_as_stated": "\"Full Remote ... available from: Anywhere\"",
+      "reason": "German-language internship",
+      "reason_code": "requirement",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-29",
+      "id": "j-dd47c7c048eb"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adac71822c2644c03e06af1-praktikant-in-als-llm-rag-machine-learning-engineer-m-w-d",
+      "title": "Praktikant/in LLM/RAG Machine Learning Engineer",
+      "company": "U-Glow",
+      "location_as_stated": "\"Full Remote ... available from: Anywhere\"",
+      "reason": "German-language internship",
+      "reason_code": "requirement",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-29",
+      "id": "j-047b18eb719c"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/software-engineer-storage-at-jobgether-4482996289",
+      "title": "Software Engineer, Storage (Jobgether repost)",
+      "company": "Supabase via Jobgether",
+      "location_as_stated": "Remote",
+      "reason": "Same Supabase role, 5+ years of Node.js",
+      "reason_code": "experience",
+      "found_via": "LinkedIn",
+      "verified": "LinkedIn job page, live 2026-10-29",
+      "id": "j-89652c6bff9c"
+    },
+    {
+      "url": "https://jobicy.com/jobs/156945-distributed-systems-engineer-3",
+      "title": "Distributed Systems Engineer",
+      "company": "Canonical",
+      "location_as_stated": "Remote",
+      "reason": "Senior role that mentors juniors",
+      "reason_code": "experience",
+      "found_via": "Jobicy",
+      "verified": "Jobicy page, live 2026-10-29",
+      "id": "j-c8e52b5fd7f1"
+    },
+    {
+      "url": "https://himalayas.app/companies/skillsecurex/jobs/full-stack-web-developer-intern",
+      "title": "Full Stack Web Developer Intern",
+      "company": "Skillsecurex",
+      "location_as_stated": "Worldwide",
+      "reason": "Beginner training internship; the only pay detail on the posting is \"Performance-Based\"",
+      "reason_code": "other",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-29",
+      "id": "j-2795b1b178e3"
+    },
+    {
+      "url": "https://himalayas.app/companies/g2i/jobs/backend-developer-g2i-talent-pool",
+      "title": "Backend Developer, G2i Talent Pool",
+      "company": "G2i",
+      "location_as_stated": "Worldwide",
+      "reason": "Same G2i pool as the two listed above",
+      "reason_code": "other",
+      "found_via": "Himalayas",
+      "verified": "Himalayas job API, live 2026-10-29",
+      "id": "j-2bbccbc0984c"
+    },
+    {
+      "url": "https://himalayas.app/companies/knowmad-mood/jobs/ai-agent-developer-latam",
+      "title": "AI Agent Developer (Latam)",
+      "company": "knowmad mood",
+      "location_as_stated": "Latin America",
+      "reason": "LatAm-only 3-month Copilot Studio contract",
+      "reason_code": "location",
+      "found_via": "Himalayas",
+      "verified": "posting, live 2026-10-29",
+      "id": "j-0a795afe4079"
+    },
+    {
+      "url": "https://himalayas.app/companies/fly/jobs/developer-relations-engineer",
+      "title": "Developer Relations Engineer",
+      "company": "Fly.io",
+      "location_as_stated": "North America and Europe",
+      "reason": "Limited to North America and Europe",
+      "reason_code": "location",
+      "found_via": "Himalayas",
+      "verified": "posting, live 2026-10-29",
+      "id": "j-439683ee2a32"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/edconic-front-end-developer",
+      "title": "Front-End Developer",
+      "company": "Edconic",
+      "location_as_stated": "\"Fully remote within the United States\"",
+      "reason": "U.S. only, 4+ years",
+      "reason_code": "location",
+      "found_via": "We Work Remotely",
+      "verified": "posting, live 2026-10-29",
+      "id": "j-8af774cbf3fd"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/planetscale-software-engineer-planetscale-postgres",
+      "title": "Software Engineer",
+      "company": "PlanetScale",
+      "location_as_stated": "Remote",
+      "reason": "Asks 5+ years",
+      "reason_code": "experience",
+      "found_via": "We Work Remotely",
+      "verified": "posting, live 2026-10-29",
+      "id": "j-4f6c9cfebfa8"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/ict-automation-engineer-at-tatu-city-4483533401",
+      "title": "ICT Automation Engineer",
+      "company": "Tatu City",
+      "location_as_stated": "Kenya",
+      "reason": "Asks 5–7 years and Power Platform",
+      "reason_code": "experience",
+      "found_via": "LinkedIn (remote, Kenya)",
+      "verified": "posting, live 2026-10-29",
+      "id": "j-5ecfb0762ff4"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/data-analyst-at-transsion-4482943040",
+      "title": "Data Analyst",
+      "company": "Transsion",
+      "location_as_stated": "Nairobi",
+      "reason": "Really a junior data specialist role at \"Salary: 25K - 40K\"",
+      "reason_code": "other",
+      "found_via": "LinkedIn (remote, Kenya)",
+      "verified": "posting, live 2026-10-29",
+      "id": "j-91aefb820ab6"
+    },
+    {
+      "url": "https://arc.dev/remote-jobs/j/pugy8dj8tg",
+      "title": "Full Stack SLM Development with Advanced ML/DL and Optimization",
+      "company": "Not shown (Arc listing)",
+      "location_as_stated": "Worldwide",
+      "reason": "The posting would not open, so it could not be confirmed",
+      "reason_code": "other",
+      "found_via": "Arc",
+      "verified": "Arc page, live 2026-10-29",
+      "id": "j-277c82ba743e"
+    },
+    {
+      "url": "https://arc.dev/remote-jobs/j/ptp8lc4kuu",
+      "title": "Full-Stack Developer WW-FT",
+      "company": "Not shown (Arc listing)",
+      "location_as_stated": "Worldwide",
+      "reason": "The posting would not open, so it could not be confirmed",
+      "reason_code": "other",
+      "found_via": "Arc",
+      "verified": "Arc page, live 2026-10-29",
+      "id": "j-981a90d3eefc"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "xAI is buying out Mississippi homeowners who promise not to sue over data center noise",
+            "summary": "A subsidiary of Elon Musk's xAI is offering to buy homes near its Southaven power plant if owners release their claims in a noise lawsuit; a realtor reportedly said it aims for 418 homes.",
+            "why": "The biggest xAI story this week, and a sign of how hard the AI power buildout is pressing on neighbours.",
+            "source": "The Verge",
+            "date": "2026-10-28",
+            "url": "https://www.theverge.com/ai-artificial-intelligence/1020596/xai-mississippi-neighborhood-data-center-lawsuit",
+            "id": "s-f010b1f4f032"
+          },
+          {
+            "title": "Google launches Gemini 4 Carbon with a big jump in cybersecurity",
+            "summary": "Google's new frontier model tops the Artificial Analysis Intelligence Index, ahead of Claude Opus 5.5 and GPT-6 Astra, with gains in coding and agentic tasks.",
+            "why": "The model race moves fast; worth knowing the current leaders before AI interviews.",
+            "source": "The Verge",
+            "date": "2026-10-28",
+            "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+            "id": "s-5ca8bf6a7f7b"
+          },
+          {
+            "title": "Nvidia releases Nemotron 3.5 Transcribe, a free open-weight speech model",
+            "summary": "It transcribes audio in up to 40 languages, handles hour-long recordings and tells up to eight speakers apart; Nvidia also released version 2 of its Granary speech dataset.",
+            "why": "Open voice models make transcription features cheap to build, including for Swahili-speaking users.",
+            "source": "TechCrunch",
+            "date": "2026-10-28",
+            "url": "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/",
+            "id": "s-d9d311919980"
+          },
+          {
+            "title": "Anthropic launches tools to show companies what their AI spending buys",
+            "summary": "New reporting tools break down the value teams get from token spend, as Anthropic's investor figures show 900% net revenue retention and a Q2 operating profit.",
+            "why": "Measuring AI value is becoming its own product area for engineers.",
+            "source": "TechCrunch",
+            "date": "2026-10-28",
+            "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+            "id": "s-ea370fdd96af"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Microsoft recorded $10 billion in revenue from OpenAI last quarter",
+            "summary": "A filing shows OpenAI deals brought in nearly 11% of Microsoft's $92.3 billion quarterly revenue, and $24.1 billion over fiscal 2026.",
+            "why": "Shows how much money is still tied up between the biggest AI players.",
+            "source": "TechCrunch",
+            "date": "2026-10-28",
+            "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+            "id": "s-f9d1493b929c"
+          },
+          {
+            "title": "Upwind raises $400M at a $3.8B valuation after turning down Datadog",
+            "summary": "The AI cloud-security startup's Series C was led by Bessemer, nine months after a $250 million round at $1.5 billion.",
+            "why": "Another large AI-security round; security engineering keeps attracting money and hires.",
+            "source": "TechCrunch",
+            "date": "2026-10-28",
+            "url": "https://techcrunch.com/2026/10/28/upwind-raises-400m-after-walking-away-from-datadog-acquisition-offer/",
+            "id": "s-823f1d2d8a8d"
+          },
+          {
+            "title": "Anthropic's public benefit structure adds a wrinkle for IPO investors",
+            "summary": "Anthropic aims to list at $1.5 trillion or more, and as a public benefit corporation it must balance its mission with standard duties to shareholders.",
+            "why": "The Anthropic IPO remains the defining AI listing of the year.",
+            "source": "CNBC",
+            "date": "2026-10-28",
+            "url": "https://www.cnbc.com/2026/10/28/anthropic-pbc-what-its-structure-means-for-investors-.html",
+            "id": "s-553342d9542a"
+          },
+          {
+            "title": "Madica gets another $6M from Flourish Ventures for African startups",
+            "summary": "The extra money extends Madica's investment pilot by three years to back 25 to 30 more early-stage companies; it has funded 18 startups in 10 African countries.",
+            "why": "More pre-seed money for African founders means more early-stage engineering jobs.",
+            "source": "TechArena",
+            "date": "2026-10-28",
+            "url": "https://www.techarena.co.ke/2026/10/28/madica-6m-funding-african-startups/",
+            "id": "s-de26f31abcb1"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Safaricom fired 118 staff over fraud and sent 14 cases to the police",
+            "summary": "Its FY2026 Sustainable Business Report shows 118 fraud cases investigated and 118 dismissals, up from 113, but no breakdown of what the fraud involved.",
+            "why": "Fraud and trust are a big focus at Kenya's largest tech employer.",
+            "source": "Tech-ish",
+            "date": "2026-10-28",
+            "url": "https://tech-ish.com/2026/10/28/safaricom-fired-118-staff-over-fraud-and-sent-14-cases-to-the-police/",
+            "id": "s-e93b68585bd5"
+          },
+          {
+            "title": "M-PESA wealth management reaches KSh21.1 billion in assets",
+            "summary": "Safaricom reported 2.2 million active customers on the service in the year to 31 March 2026.",
+            "why": "M-PESA keeps moving past payments into savings and investing, where fintech engineering work is growing.",
+            "source": "TechTrends KE",
+            "date": "2026-10-28",
+            "url": "https://techtrendske.co.ke/2026/10/28/mpesa-wealth-management-assets-fy2026/",
+            "id": "s-064515ef5596"
+          },
+          {
+            "title": "Safaricom joins Jamii's legal fight over Kenya's revised spectrum fees",
+            "summary": "The High Court let Safaricom into Jamii's challenge to the Communications Authority's band-based spectrum charges, which have been suspended since April 2025.",
+            "why": "The outcome shapes what Kenyan operators pay for mobile data capacity.",
+            "source": "TechTrends KE",
+            "date": "2026-10-28",
+            "url": "https://techtrendske.co.ke/2026/10/28/safaricom-spectrum-fees-dispute/",
+            "id": "s-ce42521d9dfe"
+          },
+          {
+            "title": "FirstRand renews its search for a Kenyan bank",
+            "summary": "South Africa's FirstRand is hunting for a smaller Kenyan lender to buy, after earlier talks failed on price, as Kenyan bank profits rose 16.3% to KSh241.65 billion.",
+            "why": "More regional banks entering Kenya can mean more local fintech and banking tech roles.",
+            "source": "TechTrends KE",
+            "date": "2026-10-28",
+            "url": "https://techtrendske.co.ke/2026/10/28/firstrand-kenya-acquisition/",
+            "id": "s-96d37f350757"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-29",
+    "generated_at": "2026-10-29T07:15:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "AI Fellow - Africa Regional Offices",
+        "company": "Gates Foundation",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/ai-fellow-africa-regional-offices-at-gates-foundation-4484736580",
+        "posted": "2026-10-28",
+        "fit_note": "12-month AI fellowship building AI decision-support tools for health and finance systems; asks for a CS degree and 2+ years, a stretch that fits Ben's LLM integration work. Apply by Nov 11."
+      },
+      {
+        "title": "Information Communication Technology Officer II",
+        "company": "Financial Reporting Centre (FRC)",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/information-communication-technology-officer-ii-financial-reporting-centre-frc",
+        "posted": "2026-10-29",
+        "fit_note": "Entry/mid government ICT officer role asking for a CS/SE/IT degree; fits Ben's CS degree and systems/support experience."
+      },
+      {
+        "title": "Graduate - Commercial & Data",
+        "company": "Tropical Heat",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/graduate-commercial-data-tropical-heat-1",
+        "posted": "2026-10-28",
+        "fit_note": "Graduate programme working alongside data scientists and analysts on commercial data projects; suits Ben's SQL and Python data work."
+      },
+      {
+        "title": "ICT Security SOC Analyst",
+        "company": "Co-operative Bank of Kenya",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/ict-security-soc-analyst-co-operative-bank-of-kenya",
+        "posted": "2026-10-28",
+        "fit_note": "1-year SIEM monitoring role at a bank (24-hour shifts); a junior entry into security that builds on Ben's fintech and technical support background."
+      },
+      {
+        "title": "Partner Quality Specialist",
+        "company": "Thunes",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/partner-quality-specialist-at-thunes-4474949625",
+        "posted": "2026-10-28",
+        "fit_note": "Payments ops role digging into payout failure data, automation and cross-team fixes (2-3 yrs asked, listed as part-time); fits Ben's fintech and tech support/data ops background."
+      },
+      {
+        "title": "Sales Development Representative",
+        "company": "Ebury",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/sales-development-representative-at-ebury-4484462225",
+        "posted": "2026-10-28",
+        "fit_note": "Entry-level, office-based fintech SDR (6-month contract) with training in FX and global payments; suits Ben's openness to tech sales plus fintech experience."
+      },
+      {
+        "title": "Financial Intelligence Officer II (Data Modelling & Analysis)",
+        "company": "Financial Reporting Centre (FRC)",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/financial-intelligence-officer-ii-data-modelling-analysis-financial-reporting-centre-frc",
+        "posted": "2026-10-29",
+        "fit_note": "Data modelling and analysis for financial intelligence; a stretch since it lists finance/economics/stats degrees, but matches Ben's Python, SQL and fintech data work."
+      },
+      {
+        "title": "Digital Solutions Global User Support Specialist",
+        "company": "International Maize and Wheat Improvement Center (CIMMYT)",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/digital-solutions-global-user-support-specialist-international-maize-and-wheat-improvement-center-cimmyt",
+        "posted": "2026-10-28",
+        "fit_note": "Application and user support for enterprise business systems (3 years asked); fits Ben's tech support and application work."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": false,
+      "count": 0,
+      "method": null,
+      "error": "attempt1 no box Chrome profile returned the personalised view via cookies; attempt1 browser tab fallback also did not show the personalised view; attempt2 no box Chrome profile returned the personalised view via cookies; attempt2 browser ta"
+    }
+  }
+}
