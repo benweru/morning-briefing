@@ -1,0 +1,747 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-10-30",
+  "checked_at": "2026-10-30T07:40:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 96 pulled, 16 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 13 from last 7 days, 2 kept)",
+      "Himalayas (ok; 303 pulled, 115 from last 7 days, 21 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 0 kept)",
+      "WeWorkRemotely (ok; 122 pulled, 21 from last 7 days, 5 kept)",
+      "WorkingNomads (ok; 38 pulled, 4 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 32 pulled, 4 from last 7 days, 0 kept)",
+      "Arc (ok; 164 pulled, 129 from last 7 days, 2 kept)",
+      "Greenhouse (ok; 906 pulled, 64 from last 7 days, 0 kept)",
+      "Ashby (ok; 111 pulled, 9 from last 7 days, 0 kept)",
+      "Lever (ok; 12 pulled, 0 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 15 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
+      "Jobgether (ok; 501 pulled, 215 from last 7 days, 31 kept)",
+      "micro1 (ok; 55 pulled, 10 from last 7 days, 7 kept)",
+      "Wellfound (ok; 170 pulled, 20 from last 7 days, 3 kept)",
+      "Employer and job pages: TensorOps Greenhouse board (EU), Vetto Greenhouse board, LinkedIn job pages, Jobgether offer pages, micro1 job page, Arc listing data, Himalayas API job details"
+    ],
+    "news": [
+      "The Tech Signal",
+      "Google",
+      "Mistral",
+      "IPOScoop",
+      "BBC",
+      "TechCrunch",
+      "CNBC",
+      "TechCabal",
+      "People Daily",
+      "TechTrends KE"
+    ]
+  },
+  "counts": {
+    "pulled": 2729,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1989,
+      "senior_title": 275,
+      "not_target_role": 141,
+      "location_or_timezone": 182
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 6,
+    "dropped": 16,
+    "reviewed_closely": 22,
+    "dropped_by_reason": {
+      "location": 14,
+      "experience": 2
+    },
+    "stories": 12
+  },
+  "method": {
+    "filtering_summary": "Live search at about 7:35 AM EAT on 16 sources (15 answered; ReliefWeb failed again) pulled 2,729 postings. 1,893 were older than 7 days and 96 were old reposts, 275 senior or excluded titles, 141 not target roles, 182 excluded Kenya and 56 duplicates, leaving 86. 30 of those had already been shown in earlier briefings (including micro1's Electron.js Software Engineer and AI Agent Tester), so they were skipped. Jobgether answered live (501 offers, 215 from the last 7 days, 31 kept), but every new engineering offer opened was limited to one European country, the UK, South Africa or U.S. residents, or asked 4+ years, so none made the list. micro1 had one new role (an imagery analyst contract for U.S.-based people), set aside. Wellfound (170 pulled, 3 kept) blocks automated page checks, so its three roles are shown from today's live listing data only. TensorOps and Vetto were confirmed on their own Greenhouse boards; an on-site Nairobi LLM role is listed under set aside."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2729,
+    "kept_after_filters": 86,
+    "fresh_shortlisted": 6,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 96,
+        "fresh": 16,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 13,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 303,
+        "fresh": 115,
+        "kept": 21,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 122,
+        "fresh": 21,
+        "kept": 5,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 38,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 32,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 164,
+        "fresh": 129,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 906,
+        "fresh": 64,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 111,
+        "fresh": 9,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 12,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 15,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 501,
+        "fresh": 215,
+        "kept": 31,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 55,
+        "fresh": 10,
+        "kept": 7,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": true,
+        "pulled": 170,
+        "fresh": 20,
+        "kept": 3,
+        "error": null
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "stretch",
+      "url": "https://job-boards.eu.greenhouse.io/tensorops/jobs/5019275101",
+      "title": "Mid AI Engineer",
+      "company": "TensorOps",
+      "location_as_stated": "\"Remote\" (Greenhouse location); \"we're 100% remote by design\"; Himalayas lists no country or time-zone restriction",
+      "posted": "2026-10-28",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "2+ years in ML, AI engineering or a related role (Mid-level); Python, RAG pipelines, LangChain, MLOps, AWS/GCP/Azure",
+      "found_via": "Himalayas API (listed 2026-10-30)",
+      "verified": "TensorOps careers page and Greenhouse API (first published 2026-10-28), live 2026-10-30",
+      "fit": "Client-facing LLM work (RAG, agentic workflows, fine-tuning) on Python, close to his Kwara LLM integrations and the quantized Hermes 2 Pro capstone.",
+      "gaps": "Asks 2+ years and hands-on ML model training/MLOps; the company is Portugal-based and Kenya isn't named; confirm before applying.",
+      "id": "j-2462babe76bb"
+    },
+    {
+      "rank": 2,
+      "tier": "stretch",
+      "url": "https://www.linkedin.com/jobs/view/ai-engineer-8330-at-softgic-4484559797",
+      "title": "AI Engineer 8330",
+      "company": "Softgic",
+      "location_as_stated": "\"Nairobi, Nairobi County, Kenya\" (found through LinkedIn's remote filter for Kenya)",
+      "posted": "2026-10-29",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Minimum 3 years in software engineering, including at least 1 year building and deploying LLM-powered applications in production",
+      "found_via": "LinkedIn (remote, Kenya)",
+      "verified": "LinkedIn job page, live 2026-10-30 (posted 21 hours ago)",
+      "fit": "LLM apps, AI agents, process automation, RAG and REST APIs in Python, which is what he built in the Kwara n8n loan pipeline.",
+      "gaps": "Wants 3 years of software experience (he has about 1) plus cloud, CI/CD and vector databases; the posting text doesn't spell out the remote setup.",
+      "id": "j-4a210115c36a"
+    },
+    {
+      "rank": 3,
+      "tier": "top",
+      "url": "https://wellfound.com/jobs/4884637-full-stack-developer-intern-clone",
+      "title": "Front End Developer Intern",
+      "company": "MiPrep AI",
+      "location_as_stated": "\"Anywhere\" (Wellfound listing data)",
+      "posted": "2026-10-23",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "0 years minimum (Wellfound listing data)",
+      "found_via": "Wellfound",
+      "verified": "Wellfound listing via live search 2026-10-30",
+      "fit": "Front-end role at an AI startup with no experience bar, matching his React work at Chumz and Kwara.",
+      "gaps": "An internship, a step below his level; Wellfound blocks automated checks, so the full posting, pay and location wording weren't read. Open it before applying.",
+      "id": "j-6a77eab52e70"
+    },
+    {
+      "rank": 4,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/4903437-software-engineer",
+      "title": "Software Engineer",
+      "company": "DC Tech Consulting",
+      "location_as_stated": "\"Anywhere\" (Wellfound listing data)",
+      "posted": "2026-10-29",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "3 years minimum (Wellfound listing data)",
+      "found_via": "Wellfound",
+      "verified": "Wellfound listing via live search 2026-10-30",
+      "fit": "General software engineering role open anywhere, posted yesterday.",
+      "gaps": "Asks 3 years; the stack and pay aren't known because Wellfound blocks automated checks. Open it before applying.",
+      "id": "j-6b831ed9969f"
+    },
+    {
+      "rank": 5,
+      "tier": "evergreen",
+      "url": "https://job-boards.greenhouse.io/vettoai/jobs/4387506009",
+      "title": "AI Research",
+      "company": "Vetto",
+      "location_as_stated": "\"Location: Global / Remote, with periodic in-person on-sites every few months\"",
+      "posted": "Himalayas listed 2026-10-25 (Greenhouse req first published 2026-08-28, updated 2026-09-25)",
+      "salary_as_shown": "Not shown (\"Competitive compensation and a stock option plan\")",
+      "experience_asked": "Empirical ML research or similar open-ended work; hands-on agentic systems (coding agents, automated research pipelines); strong Python; no single credential required",
+      "found_via": "Himalayas API",
+      "verified": "Vetto Greenhouse API and vetto.ai careers page, live 2026-10-30",
+      "fit": "Builds datasets, evals and agent environments for AI labs; his agent and LLM evaluation work and the Hermes 2 Pro vs FLAN-T5 capstone are relevant evidence.",
+      "gaps": "A research role rather than engineering, and an always-open listing first published in August; periodic in-person on-sites mean travel.",
+      "id": "j-e1aef9cb5368"
+    },
+    {
+      "rank": 6,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/4894454-full-stack-developer",
+      "title": "Full-Stack Developer",
+      "company": "Voke API",
+      "location_as_stated": "\"Anywhere\" (Wellfound listing data)",
+      "posted": "2026-10-25",
+      "salary_as_shown": "2.0% – 2.5% equity (no salary shown in listing data)",
+      "experience_asked": "4 years minimum (Wellfound listing data)",
+      "found_via": "Wellfound",
+      "verified": "Wellfound listing via live search 2026-10-30",
+      "fit": "Full-stack role at an API startup, open anywhere.",
+      "gaps": "Asks 4 years and the listing shows only equity, so it may be unpaid or founder-stage; Wellfound blocks automated checks, so open it before applying.",
+      "id": "j-ffa1a5ce927a"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobs.micro1.ai/post/448f7fb3-a4cf-44e8-9a13-de2de0f257a1",
+      "title": "Imagery Analyst - AI/ML Training Data",
+      "company": "micro1",
+      "location_as_stated": "\"Location: Remote, U.S.-based\"",
+      "reason": "U.S.-based contract labelling drone/maritime imagery in a secure Navy environment; U.S. citizenship preferred",
+      "reason_code": "location",
+      "posted": "2026-10-29",
+      "salary_as_shown": "$30 - $60/hour",
+      "experience_asked": "Data labelling; no prior AI experience required",
+      "found_via": "micro1 jobs portal",
+      "verified": "micro1 job page, live 2026-10-30",
+      "id": "j-f4a0c4bcb452"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/llm-developer-at-talent-match-africa-4484194192",
+      "title": "LLM Developer",
+      "company": "Talent Match Africa",
+      "location_as_stated": "\"Work on-site from our Nairobi, Kenya office\"",
+      "reason": "On-site at the Nairobi office, not remote (worth a look as a local role: asks LoRA/PEFT fine-tuning, distillation and quantisation, vLLM serving)",
+      "reason_code": "location",
+      "posted": "2026-10-29",
+      "salary_as_shown": "",
+      "experience_asked": "Strong Python, transformer fine-tuning, model serving; non-traditional office hours",
+      "found_via": "LinkedIn (remote, Kenya)",
+      "verified": "LinkedIn job page, live 2026-10-30",
+      "id": "j-74e8b7673aa2"
+    },
+    {
+      "url": "https://arc.dev/remote-jobs/j/pv6zp7x7w6",
+      "title": "Experienced Applied AI Engineer — Full-Stack & Production Systems",
+      "company": "Not shown (Arc listing)",
+      "location_as_stated": "Worldwide, no time-zone restriction (Arc listing data)",
+      "reason": "Arc marks it senior-level; contract",
+      "reason_code": "experience",
+      "posted": "2026-10-28",
+      "salary_as_shown": "$35–$55/hour",
+      "experience_asked": "Senior (Arc experience level)",
+      "found_via": "Arc",
+      "verified": "Arc listing data, live 2026-10-30 (job page redirects to the listing)",
+      "id": "j-154c2104e18c"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae3ad19d6c8b081a792b337-platform-software-engineer",
+      "title": "Platform Software Engineer",
+      "company": "CareCentrix",
+      "location_as_stated": "\"All candidates must reside permanently in the United States\"",
+      "reason": "Jobgether tags it Africa/EMEA, but the employer text requires U.S. residence; 3-4 yrs",
+      "reason_code": "location",
+      "posted": "2026-10-29",
+      "salary_as_shown": "USD 90,000–100,000/year",
+      "experience_asked": "3-4 years",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-2016b25c80e0"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae358b8d6c8b081a79126cd-react-native-developer",
+      "title": "React Native Developer",
+      "company": "Parvana",
+      "location_as_stated": "\"Location: South Africa | Work Type: Remote | Contract Duration: 12 Months\"",
+      "reason": "South Africa-based 12-month contract; 2-4 yrs React Native",
+      "reason_code": "location",
+      "posted": "2026-10-29",
+      "salary_as_shown": "",
+      "experience_asked": "2-4 years React Native, JavaScript/TypeScript",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-891898d648f5"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adfaa8f22c2644c03f579c8-backend-software-engineer",
+      "title": "Backend Software Engineer",
+      "company": "Soum",
+      "location_as_stated": "\"Africa, Asia, Middle East, Northern Africa, EMEA, APAC, Egypt, Uzbekistan\"; Sunday–Thursday, KSA hours",
+      "reason": "Asks 4–5+ years of backend experience",
+      "reason_code": "experience",
+      "posted": "2026-10-26",
+      "salary_as_shown": "",
+      "experience_asked": "4–5+ years backend",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-54e443354f93"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae2e88ad6c8b081a78f239a-backend-developer-python",
+      "title": "Backend Developer Python",
+      "company": "Mosano",
+      "location_as_stated": "\"Europe, European Union, EMEA, Portugal\"",
+      "reason": "Portugal-only remote; 4+ yrs Python (Django, FastAPI)",
+      "reason_code": "location",
+      "posted": "2026-10-29",
+      "salary_as_shown": "",
+      "experience_asked": "4+ years Python",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-f4ab95a46c18"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae39f09d6c8b081a7927ffa-junior-software-developer",
+      "title": "Junior Software Developer",
+      "company": "Volaris Group (ClickDimensions)",
+      "location_as_stated": "\"Europe, European Union, EMEA, Ireland\"",
+      "reason": "Ireland-only remote; .NET/Angular stack",
+      "reason_code": "location",
+      "posted": "2026-10-29",
+      "salary_as_shown": "",
+      "experience_asked": "12-18 months desirable",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-44659b6e8974"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adf9caf22c2644c03f53d8a-junior-ai-platform-engineer",
+      "title": "Junior AI Platform Engineer",
+      "company": "ABC Fitness",
+      "location_as_stated": "\"Europe, European Union, EMEA, Poland\"",
+      "reason": "Poland-only remote",
+      "reason_code": "location",
+      "posted": "2026-10-26",
+      "salary_as_shown": "",
+      "experience_asked": "Evidence of ownership over years",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-d0440e10297e"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adfe2de22c2644c03f689b3-ai-engineering-intern",
+      "title": "AI & Engineering Intern",
+      "company": "Addepto",
+      "location_as_stated": "\"Europe, European Union, EMEA, Poland\"",
+      "reason": "Poland-only; wants a mechatronics/mechanical engineering background",
+      "reason_code": "location",
+      "posted": "2026-10-26",
+      "salary_as_shown": "",
+      "experience_asked": "Intern; basic Python",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-62cc84f970b5"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adfb8b922c2644c03f5b6d7-backend-python-mcp-engineer",
+      "title": "Backend Python MCP Engineer",
+      "company": "EPAM Systems",
+      "location_as_stated": "\"join our team in Portugal in a fully remote working mode\"",
+      "reason": "Portugal-only remote",
+      "reason_code": "location",
+      "posted": "2026-10-26",
+      "salary_as_shown": "",
+      "experience_asked": "Mid-level (Jobgether tag)",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-256bfd76256a"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adfb8da22c2644c03f5c838-ai-software-engineer-python",
+      "title": "AI Software Engineer (Python)",
+      "company": "EPAM Systems",
+      "location_as_stated": "\"Europe, EMEA, Ukraine\"",
+      "reason": "Ukraine-only remote",
+      "reason_code": "location",
+      "posted": "2026-10-26",
+      "salary_as_shown": "",
+      "experience_asked": "Mid-level (Jobgether tag)",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-44bd979a621b"
+    },
+    {
+      "url": "https://jobgether.com/offer/6adfd4b222c2644c03f67494-applied-ai-engineer---llm-agentic-systems",
+      "title": "Applied AI Engineer – LLM & Agentic Systems",
+      "company": "AIDA Recruitment",
+      "location_as_stated": "\"Europe, EMEA, United Kingdom\"",
+      "reason": "UK-only; 3+ yrs",
+      "reason_code": "location",
+      "posted": "2026-10-26",
+      "salary_as_shown": "EUR 100,000–150,000/year",
+      "experience_asked": "3+ years backend",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-972b1d9268bd"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae24d8d22c2644c03036937-ai-software-engineer-forward-deployment-engineer",
+      "title": "AI Software Engineer (Forward Deployment Engineer)",
+      "company": "Agicap",
+      "location_as_stated": "\"Europe, European Union, EMEA, France\"",
+      "reason": "France-only remote; French-language posting",
+      "reason_code": "location",
+      "posted": "2026-10-28",
+      "salary_as_shown": "EUR 55,000–70,000/year",
+      "experience_asked": "Mid-level (Jobgether tag)",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-c4302d42dd34"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae0c3ce22c2644c03fb0de7-intermediate-backend-engineer-pipeline-authoring",
+      "title": "Intermediate Backend Engineer, Pipeline Authoring",
+      "company": "GitLab",
+      "location_as_stated": "\"Europe, European Union, EMEA, Poland\"",
+      "reason": "Poland-only remote (Jobgether entry)",
+      "reason_code": "location",
+      "posted": "2026-10-27",
+      "salary_as_shown": "",
+      "experience_asked": "Mid-level (Jobgether tag)",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-2e83ad58de26"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae32e7cd6c8b081a7902bdd-mid-backend-software-engineer",
+      "title": "Mid Backend Software Engineer",
+      "company": "Webinterpret",
+      "location_as_stated": "\"Europe, European Union, EMEA, Poland\"",
+      "reason": "Poland-only; 4+ yrs Python",
+      "reason_code": "location",
+      "posted": "2026-10-29",
+      "salary_as_shown": "",
+      "experience_asked": "4+ years Python (Flask/Falcon/FastAPI)",
+      "found_via": "Jobgether",
+      "verified": "Jobgether offer page, live 2026-10-30",
+      "id": "j-80f6116497e1"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Grok Bot 0.78 adds shopping cards, Shop Pay and subscription templates",
+            "summary": "Version 0.78.1 shows shopping results as product cards, adds a Buy now order you approve, Shop Pay in the Vault's Payments tab, and templates for free trials and unused subscriptions.",
+            "why": "xAI is pushing Grok Bot from answering into acting (buying, cancelling) with approval steps, the same agent-with-guardrails pattern he builds.",
+            "source": "The Tech Signal",
+            "date": "2026-10-29",
+            "url": "https://thetechsignal.co/2026/10/29/grok-bot-0-78-shopping-subscriptions/",
+            "id": "s-93a32129a127"
+          },
+          {
+            "title": "Google announces Gemini 4 Carbon, a cybersecurity-focused frontier model",
+            "summary": "Google says Carbon ranks #1 on Artificial Analysis Intelligence Index v5.0 at 59 and scores 88.2% on SEC-bench Pro; it starts with trusted cyber defenders in the Fairwind Program.",
+            "why": "Coding and secure-code gains at the frontier set the bar for the AI coding tools he uses every day.",
+            "source": "Google",
+            "date": "2026-10-28",
+            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+            "id": "s-6318bf62f2c5"
+          },
+          {
+            "title": "Mistral releases open weights for Large 4 (Le Chonk)",
+            "summary": "The 1-trillion-parameter multimodal model is now open weight under a modified MIT license, priced at $0.70 input and $2.10 output per million tokens via the API.",
+            "why": "A large open-weight model he can self-host with vLLM or SGLang, relevant to his quantization and self-hosting experience.",
+            "source": "Mistral",
+            "date": "2026-10-29",
+            "url": "https://mistral.ai/news/mistral-large-4-oss/",
+            "id": "s-8ccea7e89b70"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "OPay prices its NYSE IPO at $19, raising $304 million",
+            "summary": "Nigeria's OPay sold 16 million ADSs at the low end of its $19–$21 range, giving it a market cap of about $4.0 billion; trading is expected to start on Oct. 30.",
+            "why": "The biggest African fintech listing in years, a test of how U.S. investors value African payments businesses like the ones he has worked in.",
+            "source": "IPOScoop",
+            "date": "2026-10-29",
+            "url": "https://www.iposcoop.com/the-ipo-buzz-opay-ltd-opay-of-nigeria-prices-ipo-at-19-low-end/",
+            "id": "s-cb73698d51d8"
+          },
+          {
+            "title": "Binance says $6.3bn in crypto was hit by a hack",
+            "summary": "Binance says about $6.3bn of assets were impacted and about half frozen; early checks point to a compromised engineer's laptop, and TRM Labs attributes it to North Korea's TraderTraitor unit.",
+            "why": "Described as the largest hack in history, and it started with one engineer's machine, a reminder about access controls in fintech systems.",
+            "source": "BBC",
+            "date": "2026-10-30",
+            "url": "https://www.bbc.com/news/articles/cwg7xp8kx4v5o",
+            "id": "s-bdf00507b2ba"
+          },
+          {
+            "title": "Wabi raises $55M at a $1.25B valuation for its personal AI agent",
+            "summary": "Replika founder Eugenia Kuyda's Wabi, which builds mini apps as a personal agent, raised $55 million in a round led by IVP.",
+            "why": "More money flowing into consumer agent apps, the kind of startups hiring agent and full-stack engineers.",
+            "source": "TechCrunch",
+            "date": "2026-10-29",
+            "url": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round/",
+            "id": "s-5c450d9a985f"
+          },
+          {
+            "title": "Agent identity startup Mintive raises a $7M seed",
+            "summary": "Mintive has raised $11 million total; its platform includes an MCP gateway, an LLM gateway and agent identity management, with more than 50 enterprise customers.",
+            "why": "MCP gateways and agent governance are becoming their own product category, close to his MCP and automation skills.",
+            "source": "TechCrunch",
+            "date": "2026-10-29",
+            "url": "https://techcrunch.com/2026/10/29/agent-identity-startup-mintive-lands-cowboy-ventures-coatue-angels-jeff-dean-andrej-karpathy/",
+            "id": "s-c0ebd02c0deb"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Banks and healthcare firms are outbidding tech for software engineers",
+            "summary": "Randstad research finds healthcare pays up to 17% more and banks 13% more than tech for software engineers; job postings requiring AI capabilities grew fivefold in a year.",
+            "why": "Non-tech employers, especially banks, are hiring AI-capable engineers, which suits his fintech background.",
+            "source": "CNBC",
+            "date": "2026-10-29",
+            "url": "https://www.cnbc.com/2026/10/29/ai-jobs-software-engineers-tech-layoffs.html",
+            "id": "s-294914ceff64"
+          },
+          {
+            "title": "Grey launches Paycheck, a salary account for people paid in dollars, pounds and euros",
+            "summary": "The YC-backed cross-border payments company, which has processed nearly $5 billion, announced Paycheck at Moonshot in Lagos.",
+            "why": "Relevant if he lands a remote role paid in foreign currency.",
+            "source": "TechCabal",
+            "date": "2026-10-29",
+            "url": "https://techcabal.com/2026/10/29/grey-paycheck-fx-salary-accounts-moonshot/",
+            "id": "s-7e0ca6c51aec"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Safaricom dismissed 118 staff for fraud even as incidents fell 82%",
+            "summary": "Its 2026 Sustainable Business Report lists 118 dismissals in the year to March, up from 113, and more than four times the 28 in the year to March 2021.",
+            "why": "Insider fraud and automated controls around M-PESA are a live engineering problem at Kenya's biggest fintech.",
+            "source": "TechCabal",
+            "date": "2026-10-29",
+            "url": "https://techcabal.com/2026/10/29/safaricom-fires-118-staff-for-fraud/",
+            "id": "s-3755599a6252"
+          },
+          {
+            "title": "Fuliza Ya Pochi reaches over one million M-PESA merchants",
+            "summary": "Safaricom says the credit facility, launched on October 22, now extends working credit to more than one million eligible Pochi La Biashara merchants.",
+            "why": "Merchant credit built on transaction data, the same idea as the SACCO loan pipeline he built at Kwara.",
+            "source": "People Daily",
+            "date": "2026-10-29",
+            "url": "https://peopledaily.digital/business/safaricoms-fuliza-ya-pochi-hits-over-one-million-m-pesa-merchants-days-after-launch",
+            "id": "s-3209ee21dddb"
+          },
+          {
+            "title": "NCBA's LOOP launches LOOP BIZ+ for SME payments, stock and loans",
+            "summary": "LOOP BIZ+ combines a POS, an AI inventory tool and credit based on POS transaction history; LOOP Discover reaches more than 500,000 users.",
+            "why": "Kenyan banks are bundling AI tools and lending for small merchants, a growing area for fintech engineering jobs.",
+            "source": "TechTrends KE",
+            "date": "2026-10-29",
+            "url": "https://techtrendske.co.ke/2026/10/29/ncba-loop-launches-loop-biz/",
+            "id": "s-a6025abf7fb5"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-10-30",
+    "generated_at": "2026-10-30T07:10:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Technical Support Specialist",
+        "company": "Solvo Global",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/technical-support-specialist-solvo-global",
+        "posted": "2026-10-29",
+        "fit_note": "Onsite support for payroll/HR software used by US and Canadian clients, 1 year of help desk asked; a direct match for Ben's tech support background."
+      },
+      {
+        "title": "Internships - Data",
+        "company": "Taimba",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/internships-data-taimba",
+        "posted": "2026-10-29",
+        "fit_note": "Data internship at an agritech supply-chain startup (apply by emailing a CV); an easy entry that uses Ben's SQL and Python data work."
+      },
+      {
+        "title": "Enterprise Applications Specialist, Africa",
+        "company": "International Justice Mission (IJM)",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/enterprise-applications-specialist-africa-international-justice-mission-ijm",
+        "posted": "2026-10-29",
+        "fit_note": "Business-systems role gathering requirements, running UAT and training users on enterprise apps; fits Ben's mix of engineering and support experience."
+      },
+      {
+        "title": "LLM Developer",
+        "company": "Talent Match Africa",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/llm-developer-at-talent-match-africa-4484194192",
+        "posted": "2026-10-29",
+        "fit_note": "Applied LLM role building guardrail/intent-classification models (fine-tuning, quantisation, evals); a stretch, but matches Ben's hands-on quantisation and LLM integration work."
+      },
+      {
+        "title": "AI Engineer",
+        "company": "Softgic",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/ai-engineer-8330-at-softgic-4484559797",
+        "posted": "2026-10-29",
+        "fit_note": "Builds LLM apps, RAG and automation with Python and REST APIs; asks for 3 yrs, a stretch that lines up with Ben's LLM integration and n8n automation work."
+      },
+      {
+        "title": "Research Associate (Kenya)",
+        "company": "Precision Development (PxD)",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/research-associate-kenya-at-precision-development-pxd-4484932636",
+        "posted": "2026-10-29",
+        "fit_note": "Entry-level data role cleaning, checking and analysing survey data with reproducible code (2 yrs asked); suits Ben's Python/SQL data ops background. Apply by Nov 13."
+      },
+      {
+        "title": "Product Consultant",
+        "company": "Solvo Global Careers",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/product-consultant-at-solvo-global-careers-4483079168",
+        "posted": "2026-10-29",
+        "fit_note": "On-site software/payroll product support role (2+ yrs support asked); fits Ben's technical support background and fintech work."
+      },
+      {
+        "title": "LEAD GENERATION SPECIALIST",
+        "company": "OneSource",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/lead-generation-specialist-at-onesource-4483081457",
+        "posted": "2026-10-29",
+        "fit_note": "Junior-friendly sales support role researching and qualifying leads (evening shift, 4 PM to 1 AM); an entry into tech sales for Ben."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9228",
+      "error": null
+    }
+  }
+}
