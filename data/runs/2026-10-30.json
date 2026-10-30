@@ -20,6 +20,7 @@
       "Jobgether (ok; 501 pulled, 215 from last 7 days, 31 kept)",
       "micro1 (ok; 55 pulled, 10 from last 7 days, 7 kept)",
       "Wellfound (ok; 170 pulled, 20 from last 7 days, 3 kept)",
+      "Wellfound in the signed-in box browser (Ben's saved search: Remote, Africa, hides jobs not accepting Nairobi applicants; about 30 roles read at about 7:40 AM EAT)",
       "Employer and job pages: TensorOps Greenhouse board (EU), Vetto Greenhouse board, LinkedIn job pages, Jobgether offer pages, micro1 job page, Arc listing data, Himalayas API job details"
     ],
     "news": [
@@ -45,23 +46,24 @@
       "location_or_timezone": 182
     },
     "filtered_out_is_approximate": false,
-    "shortlisted": 6,
-    "dropped": 16,
-    "reviewed_closely": 22,
+    "stories": 12,
+    "shortlisted": 7,
+    "dropped": 19,
+    "reviewed_closely": 26,
     "dropped_by_reason": {
-      "location": 14,
-      "experience": 2
-    },
-    "stories": 12
+      "location": 16,
+      "experience": 2,
+      "other": 1
+    }
   },
   "method": {
-    "filtering_summary": "Live search at about 7:35 AM EAT on 16 sources (15 answered; ReliefWeb failed again) pulled 2,729 postings. 1,893 were older than 7 days and 96 were old reposts, 275 senior or excluded titles, 141 not target roles, 182 excluded Kenya and 56 duplicates, leaving 86. 30 of those had already been shown in earlier briefings (including micro1's Electron.js Software Engineer and AI Agent Tester), so they were skipped. Jobgether answered live (501 offers, 215 from the last 7 days, 31 kept), but every new engineering offer opened was limited to one European country, the UK, South Africa or U.S. residents, or asked 4+ years, so none made the list. micro1 had one new role (an imagery analyst contract for U.S.-based people), set aside. Wellfound (170 pulled, 3 kept) blocks automated page checks, so its three roles are shown from today's live listing data only. TensorOps and Vetto were confirmed on their own Greenhouse boards; an on-site Nairobi LLM role is listed under set aside."
+    "filtering_summary": "Live search at about 7:35 AM EAT on 16 sources (15 answered; ReliefWeb failed again) pulled 2,729 postings. 1,893 were older than 7 days and 96 were old reposts, 275 senior or excluded titles, 141 not target roles, 182 excluded Kenya and 56 duplicates, leaving 86. 30 of those had already been shown in earlier briefings (including micro1's Electron.js Software Engineer and AI Agent Tester), so they were skipped. Jobgether answered live (501 offers, 215 from the last 7 days, 31 kept), but every new engineering offer opened was limited to one European country, the UK, South Africa or U.S. residents, or asked 4+ years, so none made the list. micro1 had one new role (an imagery analyst contract for U.S.-based people), set aside. Wellfound (170 pulled, 3 kept) blocks automated page checks, so it was also read in the signed-in box browser using Ben's saved search (Remote, Africa, Nairobi-eligible only; about 30 roles). Three fresh roles from there were added (two at Chicken Road Productions and one at r:factory). Of the earlier three, DC Tech and Voke API didn't appear in that Nairobi-eligible search, so they were set aside; MiPrep stays with a note to confirm Kenya. Scanwick's intern role (posted '1 week ago') and older Wellfound roles were outside the 7-day window. TensorOps and Vetto were confirmed on their own Greenhouse boards; an on-site Nairobi LLM role is listed under set aside."
   },
   "search_health": {
     "window_days": 7,
     "pulled": 2729,
     "kept_after_filters": 86,
-    "fresh_shortlisted": 6,
+    "fresh_shortlisted": 7,
     "generated_by": "job-search-plus/live/remote_live.py",
     "sources": [
       {
@@ -196,7 +198,55 @@
   },
   "jobs": [
     {
+      "tier": "top",
+      "url": "https://wellfound.com/jobs/4901432-developer-junior",
+      "title": "Developer — Junior",
+      "company": "Chicken Road Productions",
+      "location_as_stated": "\"Remote only\" · \"Everywhere\" (Wellfound page, shown in Ben's saved search that hides jobs not accepting Nairobi applicants)",
+      "posted": "Wellfound shows 'posted 1 day ago' (about 2026-10-29)",
+      "salary_as_shown": "$14k – $24k, no equity",
+      "experience_asked": "Not shown on listing",
+      "found_via": "Wellfound (saved search: Remote, Africa, Nairobi-eligible)",
+      "verified": "Wellfound page in signed-in box browser, live 2026-10-30",
+      "fit": "Junior developer title, fully remote and shown as open to Nairobi applicants, posted yesterday.",
+      "gaps": "Only the title, location and pay were read, so the stack and years asked are unknown; open the full posting before applying. The pay band is low for a remote role.",
       "rank": 1,
+      "id": "j-7dffd5900c71"
+    },
+    {
+      "tier": "top",
+      "url": "https://wellfound.com/jobs/4901354-product-engineer",
+      "title": "Product Engineer",
+      "company": "r:factory",
+      "location_as_stated": "\"Remote only\" · \"Everywhere\" (Wellfound page, shown in Ben's saved search that hides jobs not accepting Nairobi applicants)",
+      "posted": "Wellfound shows 'posted 1 day ago' (about 2026-10-29)",
+      "salary_as_shown": "$18k – $24k",
+      "experience_asked": "Not shown on listing",
+      "found_via": "Wellfound (saved search: Remote, Africa, Nairobi-eligible)",
+      "verified": "Wellfound page in signed-in box browser, live 2026-10-30",
+      "fit": "Product engineering role, fully remote and shown as open to Nairobi applicants, posted yesterday; could fit his full-stack and React work.",
+      "gaps": "Only the title, location and pay were read, so the stack and level are unknown; check the full posting before applying.",
+      "rank": 2,
+      "id": "j-e814dc67fa5e"
+    },
+    {
+      "tier": "top",
+      "url": "https://wellfound.com/jobs/4901446-developer-junior-clone",
+      "title": "Developer — Mid",
+      "company": "Chicken Road Productions",
+      "location_as_stated": "\"Remote only\" · \"Everywhere\" (Wellfound page, shown in Ben's saved search that hides jobs not accepting Nairobi applicants)",
+      "posted": "Wellfound shows 'posted 1 day ago' (about 2026-10-29)",
+      "salary_as_shown": "$26k – $42k, no equity",
+      "experience_asked": "Not shown on listing",
+      "found_via": "Wellfound (saved search: Remote, Africa, Nairobi-eligible)",
+      "verified": "Wellfound page in signed-in box browser, live 2026-10-30",
+      "fit": "Mid-level developer role from the same company as the junior opening, fully remote and shown as open to Nairobi applicants, with higher pay.",
+      "gaps": "The years asked aren't known and \"Mid\" may expect more than his roughly 1 year; open the full posting before applying.",
+      "rank": 3,
+      "id": "j-c5081617ff63"
+    },
+    {
+      "rank": 4,
       "tier": "stretch",
       "url": "https://job-boards.eu.greenhouse.io/tensorops/jobs/5019275101",
       "title": "Mid AI Engineer",
@@ -212,7 +262,7 @@
       "id": "j-2462babe76bb"
     },
     {
-      "rank": 2,
+      "rank": 5,
       "tier": "stretch",
       "url": "https://www.linkedin.com/jobs/view/ai-engineer-8330-at-softgic-4484559797",
       "title": "AI Engineer 8330",
@@ -228,7 +278,7 @@
       "id": "j-4a210115c36a"
     },
     {
-      "rank": 3,
+      "rank": 6,
       "tier": "top",
       "url": "https://wellfound.com/jobs/4884637-full-stack-developer-intern-clone",
       "title": "Front End Developer Intern",
@@ -240,27 +290,11 @@
       "found_via": "Wellfound",
       "verified": "Wellfound listing via live search 2026-10-30",
       "fit": "Front-end role at an AI startup with no experience bar, matching his React work at Chumz and Kwara.",
-      "gaps": "An internship, a step below his level; Wellfound blocks automated checks, so the full posting, pay and location wording weren't read. Open it before applying.",
+      "gaps": "An internship, a step below his level. It didn't appear in Wellfound's Nairobi-eligible saved search (only \"Anywhere\" in the live listing data), so confirm Kenya is accepted before applying.",
       "id": "j-6a77eab52e70"
     },
     {
-      "rank": 4,
-      "tier": "stretch",
-      "url": "https://wellfound.com/jobs/4903437-software-engineer",
-      "title": "Software Engineer",
-      "company": "DC Tech Consulting",
-      "location_as_stated": "\"Anywhere\" (Wellfound listing data)",
-      "posted": "2026-10-29",
-      "salary_as_shown": "Not shown",
-      "experience_asked": "3 years minimum (Wellfound listing data)",
-      "found_via": "Wellfound",
-      "verified": "Wellfound listing via live search 2026-10-30",
-      "fit": "General software engineering role open anywhere, posted yesterday.",
-      "gaps": "Asks 3 years; the stack and pay aren't known because Wellfound blocks automated checks. Open it before applying.",
-      "id": "j-6b831ed9969f"
-    },
-    {
-      "rank": 5,
+      "rank": 7,
       "tier": "evergreen",
       "url": "https://job-boards.greenhouse.io/vettoai/jobs/4387506009",
       "title": "AI Research",
@@ -274,22 +308,6 @@
       "fit": "Builds datasets, evals and agent environments for AI labs; his agent and LLM evaluation work and the Hermes 2 Pro vs FLAN-T5 capstone are relevant evidence.",
       "gaps": "A research role rather than engineering, and an always-open listing first published in August; periodic in-person on-sites mean travel.",
       "id": "j-e1aef9cb5368"
-    },
-    {
-      "rank": 6,
-      "tier": "stretch",
-      "url": "https://wellfound.com/jobs/4894454-full-stack-developer",
-      "title": "Full-Stack Developer",
-      "company": "Voke API",
-      "location_as_stated": "\"Anywhere\" (Wellfound listing data)",
-      "posted": "2026-10-25",
-      "salary_as_shown": "2.0% – 2.5% equity (no salary shown in listing data)",
-      "experience_asked": "4 years minimum (Wellfound listing data)",
-      "found_via": "Wellfound",
-      "verified": "Wellfound listing via live search 2026-10-30",
-      "fit": "Full-stack role at an API startup, open anywhere.",
-      "gaps": "Asks 4 years and the listing shows only equity, so it may be unpaid or founder-stage; Wellfound blocks automated checks, so open it before applying.",
-      "id": "j-ffa1a5ce927a"
     }
   ],
   "dropped": [
@@ -516,6 +534,51 @@
       "found_via": "Jobgether",
       "verified": "Jobgether offer page, live 2026-10-30",
       "id": "j-80f6116497e1"
+    },
+    {
+      "url": "https://wellfound.com/jobs/4903437-software-engineer",
+      "title": "Software Engineer",
+      "company": "DC Tech Consulting",
+      "location_as_stated": "\"Anywhere\" (Wellfound listing data)",
+      "reason": "Not in Wellfound's Nairobi-eligible saved search, so Kenya isn't confirmed; asks 3 years",
+      "reason_code": "location",
+      "posted": "2026-10-29",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "3 years minimum (Wellfound listing data)",
+      "found_via": "Wellfound",
+      "verified": "Wellfound listing via live search 2026-10-30",
+      "note": "",
+      "id": "j-6b831ed9969f"
+    },
+    {
+      "url": "https://wellfound.com/jobs/4894454-full-stack-developer",
+      "title": "Full-Stack Developer",
+      "company": "Voke API",
+      "location_as_stated": "\"Anywhere\" (Wellfound listing data)",
+      "reason": "Not in Wellfound's Nairobi-eligible saved search, so Kenya isn't confirmed; asks 4 years and shows equity only",
+      "reason_code": "location",
+      "posted": "2026-10-25",
+      "salary_as_shown": "2.0% – 2.5% equity (no salary shown in listing data)",
+      "experience_asked": "4 years minimum (Wellfound listing data)",
+      "found_via": "Wellfound",
+      "verified": "Wellfound listing via live search 2026-10-30",
+      "note": "",
+      "id": "j-ffa1a5ce927a"
+    },
+    {
+      "url": "https://wellfound.com/jobs/4851928-backend-engineering-intern-python-fastapi-credit-logic-scanwick",
+      "title": "Backend Engineering Intern (Python, FastAPI, credit logic)",
+      "company": "Scanwick",
+      "location_as_stated": "\"Remote only\" · \"Everywhere\" (Wellfound page)",
+      "reason": "Wellfound shows 'posted 1 week ago'; its listing number is older than a 2026-10-23 listing, so it's likely outside the 7-day window",
+      "reason_code": "other",
+      "posted": "Wellfound shows 'posted 1 week ago'",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not shown on listing",
+      "found_via": "Wellfound (saved search: Remote, Africa, Nairobi-eligible)",
+      "verified": "Wellfound page in signed-in box browser, live 2026-10-30",
+      "note": "",
+      "id": "j-4f24d0cf28e8"
     }
   ],
   "news": {
