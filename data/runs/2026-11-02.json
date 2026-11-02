@@ -19,7 +19,7 @@
       "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
       "Jobgether (ok; 500 pulled, 209 from last 7 days, 33 kept)",
       "micro1 (ok; 57 pulled, 11 from last 7 days, 9 kept)",
-      "Wellfound (signed-in browser check; about 28 roles reviewed, 3 added)",
+      "Wellfound (signed-in browser check; about 28 roles reviewed, 2 added, 1 already shown Oct 30)",
       "Employer and job pages: Canonical Greenhouse API, Pavago Workable board, Jobgether offer page, micro1 job page, Remotive and We Work Remotely job pages, Arc listing data, Himalayas API job details"
     ],
     "news": [
@@ -57,7 +57,7 @@
     "stories": 11
   },
   "method": {
-    "filtering_summary": "Live search at about 7:31 AM EAT on 16 sources (14 answered; LinkedIn was rate-limited and ReliefWeb failed again) pulled 2,694 postings. 1,842 were older than 7 days and 50 were old reposts, 253 senior or excluded titles, 141 not target roles, 195 excluded Kenya and 82 duplicates, leaving 131. Roles already shown in earlier briefings were skipped. Jobgether answered live (500 offers, 209 from the last 7 days, 33 kept), but almost every new engineering offer was limited to one European country or the UK; only Oyster's EMEA Rails role made the list. micro1 answered live (57 pulled, 9 kept) but its 5 new roles were engineering-expert contracts and a DC on-site Forward Deployed Engineer role needing U.S. clearance, so none fit. Wellfound blocks automated page checks, so it was checked in Ben's signed-in browser: about 28 roles reviewed, and 3 live roles were added as stretch picks (Auroscale, Nova Legal Funding, DC Tech Consulting). Himalayas leads were confirmed through the Himalayas API and, where possible, the employer's own board (Canonical Greenhouse, Pavago Workable)."
+    "filtering_summary": "Live search at about 7:31 AM EAT on 16 sources (14 answered; LinkedIn was rate-limited and ReliefWeb failed again) pulled 2,694 postings. 1,842 were older than 7 days and 50 were old reposts, 253 senior or excluded titles, 141 not target roles, 195 excluded Kenya and 82 duplicates, leaving 131. Roles already shown in earlier briefings were skipped. Jobgether answered live (500 offers, 209 from the last 7 days, 33 kept), but almost every new engineering offer was limited to one European country or the UK; only Oyster's EMEA Rails role made the list. micro1 answered live (57 pulled, 9 kept) but its 5 new roles were engineering-expert contracts and a DC on-site Forward Deployed Engineer role needing U.S. clearance, so none fit. Wellfound blocks automated page checks, so it was checked in Ben's signed-in browser: about 28 roles reviewed, and 3 live roles were found. Auroscale and Nova Legal Funding were added as stretch picks; DC Tech Consulting's Software Engineer role was already on the Oct 30 briefing, so it is not repeated. Himalayas leads were confirmed through the Himalayas API and, where possible, the employer's own board (Canonical Greenhouse, Pavago Workable)."
   },
   "search_health": {
     "window_days": 7,
