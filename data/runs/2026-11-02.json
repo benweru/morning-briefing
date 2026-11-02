@@ -19,7 +19,7 @@
       "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
       "Jobgether (ok; 500 pulled, 209 from last 7 days, 33 kept)",
       "micro1 (ok; 57 pulled, 11 from last 7 days, 9 kept)",
-      "Wellfound (ok; 168 pulled, 24 from last 7 days, 3 kept)",
+      "Wellfound (signed-in browser check; about 28 roles reviewed, 3 added)",
       "Employer and job pages: Canonical Greenhouse API, Pavago Workable board, Jobgether offer page, micro1 job page, Remotive and We Work Remotely job pages, Arc listing data, Himalayas API job details"
     ],
     "news": [
@@ -46,9 +46,9 @@
       "location_or_timezone": 195
     },
     "filtered_out_is_approximate": false,
-    "shortlisted": 5,
+    "shortlisted": 7,
     "dropped": 6,
-    "reviewed_closely": 11,
+    "reviewed_closely": 13,
     "dropped_by_reason": {
       "location": 4,
       "experience": 1,
@@ -57,7 +57,7 @@
     "stories": 11
   },
   "method": {
-    "filtering_summary": "Live search at about 7:31 AM EAT on 16 sources (14 answered; LinkedIn was rate-limited and ReliefWeb failed again) pulled 2,694 postings. 1,842 were older than 7 days and 50 were old reposts, 253 senior or excluded titles, 141 not target roles, 195 excluded Kenya and 82 duplicates, leaving 131. Roles already shown in earlier briefings were skipped. Jobgether answered live (500 offers, 209 from the last 7 days, 33 kept), but almost every new engineering offer was limited to one European country or the UK; only Oyster's EMEA Rails role made the list. micro1 answered live (57 pulled, 9 kept) but its 5 new roles were engineering-expert contracts and a DC on-site Forward Deployed Engineer role needing U.S. clearance, so none fit. Wellfound blocks automated page checks; its browser check in Ben's saved search is pending, so no Wellfound roles are on this list yet. Himalayas leads were confirmed through the Himalayas API and, where possible, the employer's own board (Canonical Greenhouse, Pavago Workable)."
+    "filtering_summary": "Live search at about 7:31 AM EAT on 16 sources (14 answered; LinkedIn was rate-limited and ReliefWeb failed again) pulled 2,694 postings. 1,842 were older than 7 days and 50 were old reposts, 253 senior or excluded titles, 141 not target roles, 195 excluded Kenya and 82 duplicates, leaving 131. Roles already shown in earlier briefings were skipped. Jobgether answered live (500 offers, 209 from the last 7 days, 33 kept), but almost every new engineering offer was limited to one European country or the UK; only Oyster's EMEA Rails role made the list. micro1 answered live (57 pulled, 9 kept) but its 5 new roles were engineering-expert contracts and a DC on-site Forward Deployed Engineer role needing U.S. clearance, so none fit. Wellfound blocks automated page checks, so it was checked in Ben's signed-in browser: about 28 roles reviewed, and 3 live roles were added as stretch picks (Auroscale, Nova Legal Funding, DC Tech Consulting). Himalayas leads were confirmed through the Himalayas API and, where possible, the employer's own board (Canonical Greenhouse, Pavago Workable)."
   },
   "search_health": {
     "window_days": 7,
@@ -276,6 +276,38 @@
       "fit": "Backend product engineering at a big-name company, posted two days ago and listed as open anywhere; his CS degree meets the education bar.",
       "gaps": "Asks 3+ years. Kenya isn't named and Dropbox usually hires in set countries; confirm before applying.",
       "id": "j-a59a514691d2"
+    },
+    {
+      "rank": 6,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/4688521-full-stack-engineer-intern",
+      "title": "Full Stack Engineer Intern",
+      "company": "Auroscale",
+      "location_as_stated": "\"Hires remotely: Everywhere\" (remote only; prefers Central/Eastern US time; no visa sponsorship)",
+      "posted": "2026-10-30",
+      "salary_as_shown": "₹1L – ₹1.5L, no equity (period not stated)",
+      "experience_asked": "None stated; CS/IT degree",
+      "found_via": "Wellfound (signed-in browser check)",
+      "verified": "Wellfound job page opened in signed-in browser, live 2026-11-02 (Apply button, Actively Hiring)",
+      "fit": "Builds frontend and backend features for an AI-agent workflow automation platform in React, TypeScript and APIs, close to his React work at Chumz and his n8n pipeline and LLM integrations at Kwara. Open everywhere, with a possible move to full time.",
+      "gaps": "Intern level with low pay. Prefers US Central/Eastern hours. Page says Full Time but the title says intern.",
+      "id": "j-555c87fd11a2"
+    },
+    {
+      "rank": 7,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/4903378-full-stack-developer-help-ship-a-real-crm-built-with-ai-next-js-supabase",
+      "title": "Full-Stack Developer: help ship a real CRM built with AI (Next.js + Supabase)",
+      "company": "Nova Legal Funding",
+      "location_as_stated": "Los Angeles (listed Onsite; description says hybrid)",
+      "posted": "2026-10-29",
+      "salary_as_shown": "$70k – $130k listed; description says part-time $35–65/hr, 15–25 hrs/week, 3-month project",
+      "experience_asked": "None stated; students welcome",
+      "found_via": "Wellfound (signed-in browser check)",
+      "verified": "Wellfound job page opened in signed-in browser, live 2026-11-02 (Apply button, Actively Hiring)",
+      "fit": "Wants AI agents that take real actions, plus TypeScript/React, Next.js and Supabase, which matches his React and AI integration work. Students welcome, and a full-time CTO offer is possible.",
+      "gaps": "Needs presence in the LA office, so it is not open to Kenya unless they agree to remote. Ask before applying. Short part-time project.",
+      "id": "j-a7be34654b70"
     }
   ],
   "dropped": [
