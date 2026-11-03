@@ -1,0 +1,622 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-11-03",
+  "checked_at": "2026-11-03T07:40:57+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 96 pulled, 16 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 14 from last 7 days, 1 kept)",
+      "Himalayas (ok; 306 pulled, 218 from last 7 days, 73 kept)",
+      "Jobicy (FAILED: TimeoutError: The read operation timed out; 0 pulled, 0 from last 7 days, 0 kept)",
+      "WeWorkRemotely (ok; 139 pulled, 34 from last 7 days, 10 kept)",
+      "WorkingNomads (ok; 35 pulled, 4 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 36 pulled, 4 from last 7 days, 0 kept)",
+      "Arc (ok; 165 pulled, 131 from last 7 days, 2 kept)",
+      "Greenhouse (ok; 897 pulled, 49 from last 7 days, 0 kept)",
+      "Ashby (ok; 127 pulled, 28 from last 7 days, 0 kept)",
+      "Lever (ok; 12 pulled, 0 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 8 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
+      "Jobgether (ok; 495 pulled, 199 from last 7 days, 25 kept)",
+      "micro1 (ok; 59 pulled, 12 from last 7 days, 10 kept)",
+      "Wellfound (signed-in browser check; about 45 listings reviewed across Ben's Africa/remote feed and role pages, 0 kept)",
+      "Employer and job pages: Himalayas API job details, Canonical Greenhouse API, Jobgether offer pages, micro1 job API"
+    ],
+    "news": [
+      "TechCrunch",
+      "The Next Web",
+      "MarkTechPost",
+      "TechCabal",
+      "Forbes Africa",
+      "The Register",
+      "ITWeb Africa",
+      "Techweez",
+      "Business Standard (ANI press release)"
+    ]
+  },
+  "counts": {
+    "pulled": 2536,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1757,
+      "senior_title": 210,
+      "not_target_role": 177,
+      "location_or_timezone": 182
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 7,
+    "dropped": 7,
+    "reviewed_closely": 14,
+    "dropped_by_reason": {
+      "location": 4,
+      "experience": 2,
+      "requirement": 1
+    },
+    "stories": 11
+  },
+  "method": {
+    "filtering_summary": "Live search at about 7:35 AM EAT on 16 sources pulled 2,536 postings (13 answered; Jobicy timed out, ReliefWeb failed again, and Wellfound's automated fetch is switched off so it was checked in Ben's signed-in browser instead). 1,706 were older than 7 days and 51 were old reposts, 210 senior or excluded titles, 177 not target roles, 182 excluded Kenya, 14 already applied and 67 duplicates, leaving 129. Roles already shown in earlier briefings were skipped. Jobgether answered live (495 offers, 199 from the last 7 days, 25 kept by the script), but every new engineering offer on close review was limited to one European country or asked 3+ years, so none made the list. micro1 answered live (59 pulled, 10 kept by the script); only one new role fits, Data Analyst (AI Evaluation), and it is at the top. Wellfound: about 45 listings reviewed in the signed-in browser, none fit (one vague US-time-zone listing, unpaid internships, static-site freelance work). Himalayas leads were confirmed through the Himalayas API and, for Canonical, the Greenhouse board."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2536,
+    "kept_after_filters": 129,
+    "fresh_shortlisted": 8,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 96,
+        "fresh": 16,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 14,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 306,
+        "fresh": 218,
+        "kept": 73,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 139,
+        "fresh": 34,
+        "kept": 10,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 35,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 36,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 165,
+        "fresh": 131,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 897,
+        "fresh": 49,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 127,
+        "fresh": 28,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 12,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 495,
+        "fresh": 199,
+        "kept": 25,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 59,
+        "fresh": 12,
+        "kept": 10,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": true,
+        "pulled": 45,
+        "fresh": 45,
+        "kept": 0,
+        "error": null
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "tier": "top",
+      "url": "https://jobs.micro1.ai/post/9e458805-3508-4fba-b7c7-2429565ea971",
+      "title": "Data Analyst (AI Evaluation)",
+      "company": "micro1",
+      "location_as_stated": "Not stated on the listing (micro1 job portal, remote)",
+      "posted": "2026-11-02 (micro1 portal)",
+      "salary_as_shown": "USD 30-60 per hour (micro1 portal)",
+      "experience_asked": "Not shown; skills listed: data analysis, data review, attention to detail, handling ambiguity, error spotting",
+      "found_via": "micro1 public job API",
+      "verified": "micro1 job API and job page, live 2026-11-03",
+      "fit": "New micro1 role, and he has already passed a micro1 interview. Reviewing and scoring AI output lines up with his LLM evaluation work and the AI evaluation roles he has been applying for.",
+      "gaps": "It is analysis and review work rather than engineering, and the portal shows no location rule, so confirm Kenya is fine when applying.",
+      "rank": 1,
+      "id": "j-a1e36a01399e"
+    },
+    {
+      "tier": "top",
+      "url": "https://himalayas.app/companies/human-power-bg/jobs/full-stack-node-js-react-developer",
+      "title": "Full-Stack Node.js & React Developer",
+      "company": "Human Power BG (for a Berlin-based client)",
+      "location_as_stated": "\"You can join in from anywhere in the world\" (Himalayas listing, no country restriction, all time zones)",
+      "posted": "2026-11-01 (Himalayas)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Not shown; listed as mid-level",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-03 (expires 2026-11-20)",
+      "fit": "React and TypeScript front end with Node and GraphQL behind it, which matches his React work at Chumz and full-stack work at Kwara. Open to anyone, anywhere.",
+      "gaps": "Node, Apollo GraphQL, Hasura and Airtable rather than Python. The agency says most of its people are in Eastern Europe, so confirm Kenya is fine before applying.",
+      "rank": 2,
+      "id": "j-76638662a31a"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/onthegosystems/jobs/ai-engineer-ruby-on-rails",
+      "title": "AI Engineer - Ruby on Rails",
+      "company": "OnTheGoSystems (WPML)",
+      "location_as_stated": "\"Fully remote, async-friendly: Work from anywhere within EMEA hours\" (Kenya is on the Himalayas country list)",
+      "posted": "2026-11-02 (Himalayas)",
+      "salary_as_shown": "Not shown (\"Fair compensation\")",
+      "experience_asked": "Strong Ruby on Rails experience, \"ideally at a senior level\", plus practical AI/LLM building experience",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-03 (OTGS site blocked automated checks)",
+      "fit": "Building LLM features inside a Rails app is almost exactly his Kwara work: Rails plus LLM integrations, tests and production fixes. EMEA hours suit Nairobi.",
+      "gaps": "They want strong, ideally senior-level Rails, and he has about a year. Worth a try because the AI-plus-Rails mix is rare.",
+      "rank": 3,
+      "id": "j-61bcbeabaa13"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/banco-plata-s-a-institucion-de-banca-multiple/jobs/applied-ai-engineer",
+      "title": "Applied AI Engineer",
+      "company": "Plata (Banco Plata)",
+      "location_as_stated": "\"Flexible work from one of our offices or remotely within time zones from GMT-2 to GMT+5\"",
+      "posted": "2026-11-01 (Himalayas)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Experience in a machine learning role, agent frameworks, and designing evaluations for LLM systems",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-03",
+      "fit": "Fintech AI team building chatbots, copilots and internal automation on top of LLMs, with evals and A/B tests. Close to his Kwara automation and LLM work, and UTC+3 is inside their window.",
+      "gaps": "Asks for a prior ML role and hands-on LLM evaluation design; he has LoRA and serving experience but no production eval numbers.",
+      "rank": 4,
+      "id": "j-3da2691dc1f6"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/mendix/jobs/solutions-engineer-core-ai",
+      "title": "Solutions Engineer (Core AI)",
+      "company": "Mendix (Siemens)",
+      "location_as_stated": "Remote; Kenya is on the Himalayas country list (UTC-10 to UTC+14)",
+      "posted": "2026-11-01 (Himalayas)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Hands-on experience building agentic AI systems in production-like settings, RAG, evals and enterprise integrations; no years stated",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-03 (expires 2026-12-08)",
+      "fit": "Customer-facing prototyping of agentic AI and integrations, which fits his MCP, agents and automation work and the solutions-engineering roles he targets.",
+      "gaps": "Reads as mid-to-senior: deep agentic architecture, RAG and enterprise integration. He has only RAG familiarity, so this is a real stretch.",
+      "rank": 5,
+      "id": "j-16914924d5c5"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/nextalpha-nu-dawn/jobs/full-stack-engineer",
+      "title": "Full Stack Engineer",
+      "company": "NextAlpha (Nu Dawn)",
+      "location_as_stated": "Remote; Kenya is on the Himalayas country list. The company says it connects San Francisco startups with talent \"from Europe and Asia\"",
+      "posted": "2026-11-01 (Himalayas)",
+      "salary_as_shown": "Not shown (\"Competitive salary\")",
+      "experience_asked": "3+ years of professional full-stack experience",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-03",
+      "fit": "React and TypeScript front end with Python preferred on the back end, plus AWS and Postgres. A good stack match.",
+      "gaps": "Asks 3+ years, and the company talks about Europe and Asia talent. Kenya is listed but confirm before applying.",
+      "rank": 6,
+      "id": "j-c2361b60fe92"
+    },
+    {
+      "tier": "evergreen",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/2166631",
+      "title": "Software Developer in Observability",
+      "company": "Canonical",
+      "location_as_stated": "\"Home based - EMEA\" (Greenhouse)",
+      "posted": "Himalayas listed a junior version 2026-11-01 (Greenhouse req first published 2020-04-28, updated 2026-08-11)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Python developer, preferably with open source; working knowledge of Go",
+      "found_via": "Himalayas API, then Canonical Greenhouse API",
+      "verified": "Canonical Greenhouse API, live 2026-11-03",
+      "fit": "Python-first engineering at a fully remote company that hires across EMEA, which includes Kenya.",
+      "gaps": "Always-open listing, and it wants some Go and Linux/observability depth he hasn't shown yet. Canonical's process is long.",
+      "rank": 7,
+      "id": "j-ea0aad8d5b61"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://himalayas.app/companies/hivex/jobs/ai-python-jambonz-or-vapi-developer-3725261180",
+      "title": "AI Python (Jambonz or Vapi) developer",
+      "company": "Hivex",
+      "location_as_stated": "Worldwide (Himalayas)",
+      "reason": "Asks 3+ years of Python and proven Jambonz or Vapi experience",
+      "reason_code": "experience",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "",
+      "verified": "",
+      "note": "",
+      "id": "j-9b6cc87f1242"
+    },
+    {
+      "url": "https://himalayas.app/companies/madiff/jobs/conversational-ai-consultant-developer",
+      "title": "Conversational AI Consultant Developer",
+      "company": "Madiff",
+      "location_as_stated": "\"This is a remote position.\"",
+      "reason": "Requires fluent Polish and commercial chatbot platform delivery",
+      "reason_code": "requirement",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "",
+      "verified": "",
+      "note": "",
+      "id": "j-3c2b166920ef"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae84a545f4c309bcf5c8ca5-remote-ai-engineer",
+      "title": "Remote AI Engineer",
+      "company": "Turnblock.io",
+      "location_as_stated": "Europe, Asia, United States, EMEA, APAC (Jobgether)",
+      "reason": "Asks 3+ years (5+ preferred) shipping production AI systems",
+      "reason_code": "experience",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "",
+      "verified": "",
+      "note": "",
+      "id": "j-cf2b0c50b7a6"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae51ac0d6c8b081a79a23d7-ai-engineer-junior",
+      "title": "AI Engineer Junior",
+      "company": "Grupo TECDATA Engineering",
+      "location_as_stated": "\"available from: Europe, European Union, EMEA, Spain\" (Jobgether)",
+      "reason": "Spain only; Spanish-language role",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "",
+      "verified": "",
+      "note": "",
+      "id": "j-d6c6ab7f0d87"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae552f1d6c8b081a79b2b99-working-student-ai-engineer---llms-rag-ai-agents",
+      "title": "Working Student AI Engineer - LLMs, RAG & AI Agents",
+      "company": "datavent.io",
+      "location_as_stated": "\"available from: Europe, European Union, EMEA, Switzerland, Austria, Germany\" (Jobgether)",
+      "reason": "DACH countries only, and a working-student contract",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "",
+      "verified": "",
+      "note": "",
+      "id": "j-def24bc2ef37"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae56104d6c8b081a79b64e4-junior-technical-support-analyst-w.-python-second-shift",
+      "title": "Junior Technical (Support) Analyst w. Python (second shift)",
+      "company": "Clincierge",
+      "location_as_stated": "\"available from: Europe, European Union, EMEA, Romania\" (Jobgether)",
+      "reason": "Romania only",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "",
+      "verified": "",
+      "note": "",
+      "id": "j-912b93fbfd2e"
+    },
+    {
+      "url": "https://wellfound.com/jobs/4965695-software-engineer",
+      "title": "Software Engineer",
+      "company": "xloop digital",
+      "location_as_stated": "\"Hires remotely: Everywhere\"; preferred time zones Hawaii to Atlantic Time",
+      "reason": "Wants US/Canada time zones; vague listing with an unusually high salary for no stated experience",
+      "reason_code": "location",
+      "found_via": "Wellfound (signed-in browser)",
+      "verified": "Wellfound job page, live 2026-11-03",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "note": "",
+      "id": "j-11f0c58c793c"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Musk confirms Grok Bot usage limits were tightened over cost",
+            "summary": "Some users saw weekly usage jump from as low as 50% to 100% over Halloween weekend; Musk wrote that \"the cost of serving Grok Bot was unsustainably high relative to revenue\" and has not said how limits will work going forward.",
+            "why": "Agent tools are getting pricier and more rationed, so knowing how to work efficiently within usage limits is becoming a real skill for AI engineers.",
+            "source": "TechCrunch",
+            "date": "2026-11-02",
+            "url": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
+            "id": "s-272a05aa5da7"
+          },
+          {
+            "title": "Anthropic launches message threads beta for Claude API agents",
+            "summary": "Agents send the full conversation once, then only new messages plus the last reply ID; Anthropic says wait time on 500,000 to 1M token requests fell about 35%, with prices and rate limits unchanged and threads expiring five minutes after the last request.",
+            "why": "A practical API change for anyone building long-running coding or support agents, the kind of work Ben pitches in AI engineer applications.",
+            "source": "The Next Web",
+            "date": "2026-11-02",
+            "url": "https://thenextweb.com/news/anthropic-message-threads-beta-claude-api-agents",
+            "id": "s-0d813d5ec8df"
+          },
+          {
+            "title": "Deep Principle releases Hydrogen-1.0, a 753B open-weight science model",
+            "summary": "MIT-licensed post-train of Z.ai's GLM-5.3 with 1M-token context; self-reported 38.3% on FrontierScience-Research vs 33.3% for GPT-6-Astra; tested on 8 GPUs with SGLang behind an OpenAI-compatible API.",
+            "why": "Shows open weights moving into specialist domains, and the SGLang and quantized (NVFP4/MXFP4) serving setup lines up with Ben's vLLM and quantization experience.",
+            "source": "MarkTechPost",
+            "date": "2026-11-02",
+            "url": "https://www.marktechpost.com/2026/11/02/deep-principle-hydrogen-1-0-open-weight-scientific-model/",
+            "id": "s-15e77cf34f39"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Trajectory raises $45M Series A for continual-learning post-training",
+            "summary": "The 18-person startup raised $45 million at a $300 million valuation, led by Sequoia with Nvidia, Bessemer and Bain Capital Ventures; customers include Harvey, Rogo, Decagon, Mercor and Nvidia, and its platform is now publicly available.",
+            "why": "Post-training open models from feedback is close to Ben's LoRA fine-tuning work, and a freshly funded small team is likely to be hiring.",
+            "source": "TechCrunch",
+            "date": "2026-11-02",
+            "url": "https://techcrunch.com/2026/11/02/trajectory-raises-45m-to-make-ai-model-training-accessible-to-nontechnical-experts/",
+            "id": "s-b2485c91dd17"
+          },
+          {
+            "title": "OPay shelves its $304 million US IPO a day after pricing",
+            "summary": "OPay priced its ADS at $19 but trading never started; it withdrew the NYSE listing, citing a regulatory inquiry in an undisclosed foreign jurisdiction, leaving a planned $4 billion valuation in limbo.",
+            "why": "A big signal on how hard it is for African fintechs to reach public markets, which shapes funding and hiring across the sector Ben works in.",
+            "source": "TechCabal",
+            "date": "2026-11-02",
+            "url": "https://techcabal.com/2026/11/02/techcabal-daily-opays-ipo-hits-a-wall/",
+            "id": "s-6b701eb8dd70"
+          },
+          {
+            "title": "Nairobi took 41% of African tech funding in the first nine months of 2026",
+            "summary": "Tracxn says African tech raised $684 million in 9M 2026, up 30% from $527 million; Nairobi raised $277 million (41% of all funding), with Spiro the largest contributor; no new African unicorns this year.",
+            "why": "More capital landing in Nairobi means more local startups with money to hire engineers, though much of it sits with one company.",
+            "source": "Forbes Africa",
+            "date": "2026-11-02",
+            "url": "https://www.forbesafrica.com/current-affairs/2026/11/02/african-tech-funding-up-30-nairobi-takes-largest-share-of-raised-capital",
+            "id": "s-d1d24cfde570"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Squarespace cuts 19% of staff, mostly product and engineering",
+            "summary": "About 300 jobs go; the CEO memo cites \"smaller teams, more player coaches\" and offers at least 16 weeks of base salary plus benefits through May 2027, as vibe-coding site builders reshape the market.",
+            "why": "Another sign that AI is shrinking traditional web engineering teams, so Ben's AI and agent skills matter more than plain front-end work.",
+            "source": "TechCrunch",
+            "date": "2026-11-02",
+            "url": "https://techcrunch.com/2026/11/02/web-host-squarespace-lays-off-19-of-its-employees/",
+            "id": "s-60a2f0712c33"
+          },
+          {
+            "title": "SUSE to cut about 10% of its workforce, citing automation and AI",
+            "summary": "The CEO memo to SUSE's 1,900 staff says \"automation and AI are fundamentally shifting how software companies operate\"; affected staff will be told by November 4.",
+            "why": "Open-source infrastructure companies are also trimming roles AI can cover, which means more competition for remote jobs from experienced engineers.",
+            "source": "The Register",
+            "date": "2026-11-02",
+            "url": "https://www.theregister.com/software/2026/11/02/suse-to-cut-one-in-ten-employees-because-of-ai/5306950",
+            "id": "s-c64f7665838e"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Airtel Kenya buys 100MHz of 5G spectrum for KES 8.4 billion",
+            "summary": "Airtel got 25-year rights to 100MHz in the 3,500MHz band (about US$65 million); Kenya's 5G subscriptions reached 2.1 million in June 2026, up 75% from 1.2 million a year earlier.",
+            "why": "Stronger competition with Safaricom on data could mean cheaper, faster connectivity for the mobile products Kenyan developers build.",
+            "source": "ITWeb Africa",
+            "date": "2026-11-02",
+            "url": "https://itweb.africa/article/airtel-kenya-secures-100mhz-5g-spectrum/RgeVDvPR3g2MKJN3",
+            "id": "s-ff82d852a422"
+          },
+          {
+            "title": "KRA chair defends a 25% phone tax at network activation, though it is not law",
+            "summary": "The 25% activation tax was dropped from the Finance Act 2026, so the existing 10% excise duty on phones stays; KRA's chair argued import checks are beaten by under-declaration in consolidated cargo.",
+            "why": "Phone prices drive mobile and M-PESA adoption in Kenya, and the idea raises IMEI privacy questions relevant to anyone building local fintech.",
+            "source": "Techweez",
+            "date": "2026-11-02",
+            "url": "https://techweez.com/2026/11/02/why-kra-wants-to-tax-phones-at-25-when-they-connect-to-a-network/",
+            "id": "s-bb9b2fd5c9ee"
+          },
+          {
+            "title": "Kenswitch partners with PayU's Wibmo on 3-D Secure online card checks",
+            "summary": "Banks connected to Kenya's domestic payment switch get an EMV 3-D Secure Access Control Server, with risk-based checks using OTPs, biometrics or push approvals, plus stronger domestic e-commerce processing.",
+            "why": "Better local card authentication makes it easier for Kenyan web apps to take online card payments alongside M-PESA.",
+            "source": "Business Standard (ANI press release)",
+            "date": "2026-11-02",
+            "url": "https://www.business-standard.com/content/press-releases-ani/kenswitch-partners-with-payu-s-wibmo-to-strengthen-online-card-security-in-kenya-126110200460_1.html",
+            "id": "s-2b9ce164f88a"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-11-03",
+    "generated_at": "2026-11-03T07:08:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [
+      {
+        "source": "LinkedIn",
+        "message": "rate limited (HTTP 429); keywords 'python developer', 'AI engineer', 'full stack developer' returned nothing after two passes, a few others partially limited; rest fine"
+      }
+    ],
+    "jobs": [
+      {
+        "title": "Software QA Intern",
+        "company": "BURN",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/software-qa-intern-burn",
+        "posted": "Nov 3, 2026",
+        "fit_note": "Entry-level QA testing web/mobile apps and APIs with Postman and SQL; matches his API and SQL background (also on LinkedIn: https://www.linkedin.com/jobs/view/software-qa-intern-at-burn-4486199416)."
+      },
+      {
+        "title": "IT Executive",
+        "company": "Tire World Ltd",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/it-executive-tire-world-ltd-1",
+        "posted": "Nov 2, 2026",
+        "fit_note": "IT operations role with no stated experience bar; fits his CS degree and earlier tech support work."
+      },
+      {
+        "title": "Customer Success Intern",
+        "company": "Tier Data",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/customer-success-intern-tier-data-1",
+        "posted": "Nov 2, 2026",
+        "fit_note": "Internship at a tech company; a route into customer-facing tech/solutions work using his support background."
+      },
+      {
+        "title": "SAP CI DevOps Engineer",
+        "company": "Deloitte Consulting",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/sap-ci-devops-engineer-deloitte-consulting-2",
+        "posted": "Nov 2, 2026",
+        "fit_note": "Stretch (asks 2–4 yrs): integration work that lines up with his APIs, webhooks and n8n pipeline experience."
+      },
+      {
+        "title": "Solutions Engineer",
+        "company": "Cisco",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/solutions-engineer-cisco-1",
+        "posted": "Nov 2, 2026",
+        "fit_note": "Stretch (asks 3 yrs pre-sales): technical sales role he's open to, backed by engineering plus customer-facing experience (also on LinkedIn: https://www.linkedin.com/jobs/view/solutions-engineer-at-cisco-4486141994)."
+      },
+      {
+        "title": "Systems Developer IT Officer",
+        "company": "AAA Growers",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/systems-developer-it-officer-aaa-growers",
+        "posted": "Nov 2, 2026",
+        "fit_note": "Stretch (asks 3–5 yrs): in-house systems development and IT, matching his full-stack and support mix."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 50,
+      "method": "box-browser (signed-in, read by hand)",
+      "error": null
+    }
+  }
+}
