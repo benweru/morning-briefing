@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-11-04",
+  "checked_at": "2026-11-04T07:45:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 80 pulled, 8 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 16 from last 7 days, 2 kept)",
+      "Himalayas (ok; 306 pulled, 216 from last 7 days, 71 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 2 kept)",
+      "WeWorkRemotely (ok; 140 pulled, 33 from last 7 days, 10 kept)",
+      "WorkingNomads (ok; 35 pulled, 3 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 32 pulled, 4 from last 7 days, 0 kept)",
+      "Arc (ok; 168 pulled, 119 from last 7 days, 2 kept)",
+      "Greenhouse (ok; 900 pulled, 51 from last 7 days, 0 kept)",
+      "Ashby (ok; 127 pulled, 29 from last 7 days, 0 kept)",
+      "Lever (ok; 13 pulled, 0 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 7 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled)",
+      "Jobgether (ok; 495 pulled, 199 from last 7 days, 21 kept)",
+      "micro1 (ok; 65 pulled, 20 from last 7 days, 15 kept)",
+      "Wellfound (FAILED: automated fetch is switched off on purpose; signed-in browser check still to be done this morning; 0 pulled)",
+      "Employer and job pages: Himalayas API job details, Canonical Greenhouse API, RemoteOK API, LinkedIn job page, Arc job page"
+    ],
+    "news": [
+      "IT Brief Asia",
+      "Fortune",
+      "Tech City Authority",
+      "TechCrunch",
+      "SiliconANGLE",
+      "Value Add VC",
+      "Dice",
+      "Axios",
+      "Khusoko",
+      "TechCabal"
+    ]
+  },
+  "counts": {
+    "pulled": 2580,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1762,
+      "senior_title": 227,
+      "not_target_role": 184,
+      "location_or_timezone": 186
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 6,
+    "dropped": 6,
+    "reviewed_closely": 12,
+    "dropped_by_reason": {
+      "location": 2,
+      "experience": 2,
+      "closed": 1,
+      "requirement": 1
+    },
+    "stories": 10
+  },
+  "method": {
+    "filtering_summary": "Live search at about 7:37 AM EAT on 16 sources pulled 2,580 postings (ReliefWeb failed again, and Wellfound's automated fetch is switched off on purpose, so it is checked in Ben's signed-in browser separately). 1712 were older than 7 days and 50 were old reposts, 227 senior or excluded titles, 184 not target roles, 186 excluded Kenya, 18 already applied and 73 duplicates, leaving 130. Roles already shown in earlier briefings were skipped, including G2i's talent pools and Canonical's observability role. Jobgether answered live (495 offers, 199 from the last 7 days, 21 kept by the script), but every new engineering offer was tied to one European country, so none made the list. micro1 answered live (65 pulled, 15 kept by the script); the new roles are mostly specialist engineering-expert work (aerospace, CAD, electronics, SysML), and the only one near his stack is the Panda3D Python role, listed as a stretch. Jobicy answered but every date looked like a bump date."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2580,
+    "kept_after_filters": 130,
+    "fresh_shortlisted": 6,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 80,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 16,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 306,
+        "fresh": 216,
+        "kept": 71,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 140,
+        "fresh": 33,
+        "kept": 10,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 35,
+        "fresh": 3,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 32,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 168,
+        "fresh": 119,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 900,
+        "fresh": 51,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 127,
+        "fresh": 29,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 13,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 7,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 495,
+        "fresh": 199,
+        "kept": 21,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 65,
+        "fresh": 20,
+        "kept": 15,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "automated fetch is switched off on purpose; signed-in browser check still to be done this morning"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "tier": "top",
+      "url": "https://www.linkedin.com/jobs/view/back-end-developer-at-wanxai-africa-4485001828",
+      "title": "Back End Developer (Backend Engineer, Python, Platform and Data)",
+      "company": "WanxAI Africa (hiring for CineSports)",
+      "location_as_stated": "Remote (LinkedIn: Nairobi County, Kenya)",
+      "posted": "2026-11-04 (LinkedIn, \"1 hour ago\")",
+      "salary_as_shown": "Fixed fee with payment milestones (amount not shown)",
+      "experience_asked": "LinkedIn lists Entry level; contract for a defined scope",
+      "found_via": "LinkedIn remote search (Kenya)",
+      "verified": "LinkedIn job page, live 2026-11-04",
+      "fit": "Python backend with FastAPI, PostgreSQL, auth with SSO and role-based access, and processing pipelines, which is close to his Python API and Postgres work. Entry level and based in Nairobi.",
+      "gaps": "It's a fixed-fee contract, not a salaried job, and applying is by email to dev@wan-xai.com with GitHub, portfolio and a 'hardest problem' write-up. The GPU and film-processing side is new to him.",
+      "rank": 1,
+      "id": "j-1632dfaf8357"
+    },
+    {
+      "tier": "evergreen",
+      "url": "https://himalayas.app/companies/productive-playhouse/jobs/swahili-ai-product-evaluator",
+      "title": "Swahili - AI Product Evaluator",
+      "company": "Productive Playhouse",
+      "location_as_stated": "Kenya (Himalayas); \"Open to freelancers based outside the U.S.\"",
+      "posted": "Himalayas listed 2026-11-02 (talent pool for an upcoming project)",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Entry level; Swahili speakers",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-04",
+      "fit": "He's a native Swahili speaker and has been applying for AI evaluation work; this tests and scores AI chatbot answers in Swahili.",
+      "gaps": "Freelance talent pool rather than a job, and it's evaluation work, not engineering.",
+      "rank": 2,
+      "id": "j-123708140120"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/we-are-tims/jobs/fullstack-engineer-ai-product",
+      "title": "Fullstack Engineer (AI Product)",
+      "company": "We are Tims",
+      "location_as_stated": "Himalayas country list covering most countries, including Kenya",
+      "posted": "Himalayas listed 2026-11-01",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Mid-level (years not stated)",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-04",
+      "fit": "Hands-on full-stack work on an AI platform for real estate: prompt flows, tool use, APIs and CRM integrations, which matches his LLM and automation work.",
+      "gaps": "The posting is written in Spanish, so Spanish is likely expected. Kenya comes from Himalayas' country list; confirm before applying.",
+      "rank": 3,
+      "id": "j-eced800b7e20"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/hyre/jobs/operations-automation-specialist",
+      "title": "Operations Automation Specialist",
+      "company": "Hyre",
+      "location_as_stated": "100% remote; Himalayas lists 13 countries including Kenya",
+      "posted": "Himalayas listed 2026-11-01",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Mid-level; expert-level ClickUp, data integration, practical LLM (Claude) use",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-04",
+      "fit": "Building automated pipelines, LLM-written daily briefings and system integrations is very close to his automation and agent work.",
+      "gaps": "Standard US business hours, possibly weekend shifts, and it asks for expert ClickUp and financial data modelling.",
+      "rank": 4,
+      "id": "j-7d8993f68bf9"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/hivex/jobs/backend-developer-nestjs-8881375120",
+      "title": "Backend Developer (NestJS)",
+      "company": "Hivex",
+      "location_as_stated": "Worldwide",
+      "posted": "Himalayas listed 2026-11-01",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "1+ years with NestJS; JavaScript/TypeScript, RabbitMQ, Postgres or MySQL",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-04",
+      "fit": "Only one year asked, TypeScript and Postgres backend work, and it's open worldwide.",
+      "gaps": "He hasn't used NestJS or RabbitMQ. He already applied to Hivex's Junior+ Full Stack role on Nov 2.",
+      "rank": 5,
+      "id": "j-f605578701bd"
+    },
+    {
+      "tier": "stretch",
+      "url": "https://himalayas.app/companies/micro1/jobs/python-game-developer-panda3d-3488967032",
+      "title": "Python Game Developer (Panda3D)",
+      "company": "micro1",
+      "location_as_stated": "Remote, Worldwide",
+      "posted": "Himalayas listed 2026-11-03",
+      "salary_as_shown": "USD 50-120 per hour (Himalayas)",
+      "experience_asked": "Mid-level; experienced Panda3D developers",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-04",
+      "fit": "micro1 contract work in Python for an AI training project, and he has already passed a micro1 interview.",
+      "gaps": "It asks for real Panda3D and 3D game development experience, which he doesn't have.",
+      "rank": 6,
+      "id": "j-3e9292502d04"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobgether.com/offer/6aea1a711c8aea01fb7afcbd-full-stack-developer-python-angular",
+      "title": "Full Stack Developer (Python & Angular)",
+      "company": "Emergn",
+      "location_as_stated": "Europe, European Union, EMEA, Portugal",
+      "reason": "Jobgether lists Portugal as the hiring country",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Jobgether API",
+      "verified": "Jobgether API, 2026-11-04",
+      "note": "",
+      "id": "j-a10c1f12eb24"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae4b845d6c8b081a797c5d7-junior-technical-support-analyst-w.-python-second-shift",
+      "title": "Junior Technical (Support) Analyst w. Python (second shift)",
+      "company": "Suvoda",
+      "location_as_stated": "Europe, European Union, EMEA, Romania",
+      "reason": "Romania-based support role",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Jobgether API",
+      "verified": "Jobgether API, 2026-11-04",
+      "note": "",
+      "id": "j-35e08b70c063"
+    },
+    {
+      "url": "https://himalayas.app/companies/sophie-camp/jobs/freelancer-gtm-engineer-ai-automation-specialist-n8n-clay",
+      "title": "Freelancer GTM Engineer / AI Automation Specialist (n8n & Clay)",
+      "company": "Sophie.camp",
+      "location_as_stated": "Himalayas country list including Kenya",
+      "reason": "Posting is in German for a German-speaking founder; n8n fits but German is expected",
+      "reason_code": "requirement",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-04",
+      "note": "",
+      "id": "j-08e79f1a4e5c"
+    },
+    {
+      "url": "https://himalayas.app/companies/hivex/jobs/python-developer-1783009587",
+      "title": "Python developer",
+      "company": "Hivex",
+      "location_as_stated": "Worldwide",
+      "reason": "3+ years of commercial Python asked",
+      "reason_code": "experience",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, live 2026-11-04",
+      "note": "",
+      "id": "j-5b4432e83657"
+    },
+    {
+      "url": "https://remoteOK.com/remote-jobs/remote-ai-ml-engineer-docusketch-1137619",
+      "title": "AI ML Engineer",
+      "company": "Docusketch",
+      "location_as_stated": "Not stated (Europe-headquartered)",
+      "reason": "Preferably 5+ years training ML models; 3D computer vision",
+      "reason_code": "experience",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "RemoteOK API",
+      "verified": "RemoteOK API, 2026-11-04",
+      "note": "",
+      "id": "j-4480ac92cf35"
+    },
+    {
+      "url": "https://arc.dev/remote-jobs/j/pvo41a1usz",
+      "title": "Full-Stack Developer WW-PT",
+      "company": "Company not shown (Arc)",
+      "location_as_stated": "Worldwide",
+      "reason": "Job link now redirects to Arc's general job list",
+      "reason_code": "closed",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Arc",
+      "verified": "Arc job page, 2026-11-04",
+      "note": "",
+      "id": "j-a0df4c6ef898"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Mistral publishes open weights for Mistral Large 4",
+            "summary": "The 1 trillion-parameter multimodal model (52 billion active) is on Hugging Face and via API; Mistral says it is the top open model on Artificial Analysis' Coding Agent Index and scored 41% on Terminal-Bench 4.0.",
+            "why": "A strong open-weight coding model he can self-host is useful for agent builds and for fintech clients that want code and data kept in-house.",
+            "source": "IT Brief Asia",
+            "date": "2026-11-03",
+            "url": "https://itbrief.asia/story/mistral-releases-open-weight-ml4-for-coding-cyber",
+            "id": "s-749e277da295"
+          },
+          {
+            "title": "Grok Bot hits 800,000 paid weekly users as Musk flags serving costs",
+            "summary": "SpaceX said Grok Bot reached 800,000 paid weekly users in early October, double September; Musk wrote that \"the cost of serving Grok Bot was unsustainably high relative to revenue.\"",
+            "why": "Agent products are scaling fast but are expensive to run, so engineers who can make agents efficient are in demand.",
+            "source": "Fortune",
+            "date": "2026-11-03",
+            "url": "https://fortune.com/2026/11/03/grok-bot-is-growing-fast-but-elon-musk-says-its-costs-are-unsustainably-high-compared-to-revenue/",
+            "id": "s-494384043d6d"
+          },
+          {
+            "title": "Grok Bot preview build tests usage resets in exchange for training data",
+            "summary": "A leak from prerelease build 1.1.0-pre.12 shows a \"Get additional Grok Bot usage\" prompt offering a reset if users allow their interactions to train SpaceXSI's models; it may not ship.",
+            "why": "Shows how agent companies are trying to balance usage limits, cost and data, which matters for anyone building on these tools.",
+            "source": "Tech City Authority",
+            "date": "2026-11-03",
+            "url": "https://www.techcityauthority.com/2026/11/spacexsi-grok-bot-usage-reset-training-opt-in-leak.html",
+            "id": "s-7a3845cfb4df"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Fal raises $1.3B at a $16B valuation",
+            "summary": "The AI inference startup's Series F was led by Bessemer with Nvidia, Sound Ventures and T. Rowe Price; it doubles April's $8 billion valuation, and Fal passed $800 million in annualized revenue.",
+            "why": "Inference platforms are among the fastest-growing AI employers and keep hiring engineers who integrate open models.",
+            "source": "TechCrunch",
+            "date": "2026-11-03",
+            "url": "https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/",
+            "id": "s-42ec3b43220b"
+          },
+          {
+            "title": "Traversal raises $120M at a $1B valuation for AI site-reliability agents",
+            "summary": "Kleiner Perkins, Redpoint and Khosla led the round; Traversal grew revenue more than nine-fold in a year and says it will accelerate engineering hiring.",
+            "why": "Another well-funded agentic-AI company growing its engineering team.",
+            "source": "SiliconANGLE",
+            "date": "2026-11-03",
+            "url": "https://siliconangle.com/2026/11/03/autonomous-site-reliability-engineering-startup-traversal-bags-120m-in-funding-at-a-1b-valuation/",
+            "id": "s-a1e586afa33c"
+          },
+          {
+            "title": "42AI comes out of stealth with $62.5M for a behavioral world model",
+            "summary": "The Israeli startup says its model, which predicts how traders act, already runs at 10 large brokerages; the money came from founders and Infinity Group over three years.",
+            "why": "AI aimed at financial decision-making sits close to his fintech background.",
+            "source": "Value Add VC",
+            "date": "2026-11-03",
+            "url": "https://valueaddvc.com/pulse/42ai-62-5m-seed-world-model-2026",
+            "id": "s-b293a84ffe1a"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Dice: US tech postings up 20% year over year, AI/ML up 91%",
+            "summary": "Tech job postings rose 4% month over month in October; AI and machine-learning postings grew 91% year over year, with AI Trainers and MLOps engineers among the fastest-growing titles.",
+            "why": "AI skills are where hiring is growing fastest, which is exactly where his CV is pointed.",
+            "source": "Dice",
+            "date": "2026-11-03",
+            "url": "https://www.dice.com/hiring/recruitment/reports/dice-tech-job-report",
+            "id": "s-3863a9e6c614"
+          },
+          {
+            "title": "Goldman Sachs: workers laid off by AI take about a month longer to find work",
+            "summary": "Workers most likely displaced by AI in 2025 took roughly a month longer to find new jobs and were about 10 points more likely to still be unemployed a year later.",
+            "why": "A reminder that building AI skills, rather than competing with automation, is the safer path.",
+            "source": "Axios",
+            "date": "2026-11-03",
+            "url": "https://www.axios.com/2026/11/03/ai-employment-technology-goldman-sachs",
+            "id": "s-2faf4bab54f5"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Safaricom plans Tunza Biashara business-asset cover from KSh1,700 a year",
+            "summary": "Safaricom's NextGen Fintech Group says the cover for small traders will be sold through the M-PESA Business Hub \"soon\"; M-PESA revenue rose 13.4% to KSh182.7 billion.",
+            "why": "M-PESA keeps adding financial products, which means more fintech integration work in Kenya.",
+            "source": "Khusoko",
+            "date": "2026-11-03",
+            "url": "https://khusoko.com/2026/11/03/safaricom-tunza-biashara-business-insurance/",
+            "id": "s-9a869f09315e"
+          },
+          {
+            "title": "Kenya-based fintech Yiksi gets South African FSCA authorisation",
+            "summary": "Yiksi's South African entity is now a Category I Financial Services Provider for crypto assets (FSP 55213), supporting its stablecoin wallet and cross-border payments push.",
+            "why": "A Nairobi-headquartered fintech expanding across Africa is a possible employer to watch.",
+            "source": "TechCabal (partner content)",
+            "date": "2026-11-02",
+            "url": "https://techcabal.com/2026/11/02/kenyan-headquartered-fintech-yiksi-secures-south-african-fsca-authorisation-strengthening-its-pan-african-digital-finance-ambitions/",
+            "id": "s-48ba98251bbf"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-11-04",
+    "generated_at": "2026-11-04T07:10:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [
+      {
+        "source": "LinkedIn",
+        "message": "one rate-limited request (HTTP 429) for keyword 'AI engineer'; retried and the rest of the searches were fine"
+      }
+    ],
+    "jobs": [
+      {
+        "title": "AI Engineers",
+        "company": "Craft Silicon",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/ai-engineers-craft-silicon",
+        "posted": "Nov 3, 2026",
+        "fit_note": "AI engineering across fintech and digital banking, a direct match for his LLM integration work at a Nairobi fintech; no experience bar stated."
+      },
+      {
+        "title": "Assistant Manager, Data Scientist",
+        "company": "I&M Bank",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/assistant-manager-data-scientist-i-m-bank",
+        "posted": "Nov 3, 2026",
+        "fit_note": "Stretch (asks 2–5 yrs): building data science models at a bank, drawing on his Python, SQL and fintech data experience."
+      },
+      {
+        "title": "Back End Developer",
+        "company": "WanxAI Africa",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/back-end-developer-at-wanxai-africa-4485001828",
+        "posted": "2026-11-04",
+        "fit_note": "Python backend role (auth, SSO, PostgreSQL, data platform) for a sports-analytics product; matches his Python REST API and data work, no experience bar stated."
+      },
+      {
+        "title": "Terms of Reference: Consultant – Software Engineer",
+        "company": "Living Goods",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/terms-of-reference-consultant-%E2%80%93-software-engineer-at-living-goods-4486099762",
+        "posted": "2026-11-03",
+        "fit_note": "Stretch (asks 2 yrs): one-year software engineering contract on community-health mobile and digital tools, fitting his full-stack and Flutter background."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9226",
+      "error": null
+    }
+  }
+}
