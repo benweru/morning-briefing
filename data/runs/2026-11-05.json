@@ -1,0 +1,562 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-11-05",
+  "checked_at": "2026-11-05T07:45:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 88 pulled, 16 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 20 from last 7 days, 1 kept)",
+      "Himalayas (ok; 306 pulled, 215 from last 7 days, 68 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 9 kept)",
+      "WeWorkRemotely (ok; 143 pulled, 33 from last 7 days, 9 kept)",
+      "WorkingNomads (ok; 34 pulled, 2 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 36 pulled, 8 from last 7 days, 0 kept)",
+      "Arc (ok; 171 pulled, 131 from last 7 days, 1 kept)",
+      "Greenhouse (ok; 910 pulled, 60 from last 7 days, 0 kept)",
+      "Ashby (ok; 121 pulled, 23 from last 7 days, 0 kept)",
+      "Lever (ok; 14 pulled, 1 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 9 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled)",
+      "Jobgether (ok; 508 pulled, 230 from last 7 days, 30 kept)",
+      "micro1 (ok; 62 pulled, 21 from last 7 days, 14 kept)",
+      "Wellfound (FAILED: automated fetch is switched off on purpose; signed-in browser check still to be done this morning; 0 pulled)",
+      "Employer and job pages: Himalayas API job details, Canonical Greenhouse API, micro1 job portal API, LinkedIn job pages"
+    ],
+    "news": [
+      "TeslaNorth",
+      "Tech Times",
+      "TechCabal",
+      "Tech Startups",
+      "AlleyWatch",
+      "TechCrunch",
+      "Samwise Agency",
+      "TechTrends Kenya"
+    ]
+  },
+  "counts": {
+    "pulled": 2612,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1732,
+      "senior_title": 242,
+      "not_target_role": 212,
+      "location_or_timezone": 189
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 3,
+    "dropped": 10,
+    "reviewed_closely": 13,
+    "dropped_by_reason": {
+      "location": 5,
+      "experience": 3,
+      "requirement": 1,
+      "other": 1
+    },
+    "stories": 10
+  },
+  "method": {
+    "filtering_summary": "Live search at about 7:30 AM EAT on 16 sources pulled 2,612 postings (ReliefWeb failed again, and Wellfound's automated fetch is switched off on purpose, so it is checked in Ben's signed-in browser separately). 1679 were older than 7 days and 53 were old reposts, 242 senior or excluded titles, 212 not target roles, 189 excluded Kenya, 22 already applied and 74 duplicates, leaving 141. Roles already shown in earlier briefings were skipped, along with new copies of G2i's talent-pool listings. Jobgether answered live (508 offers, 230 from the last 7 days, 30 kept by the script), but every new engineering offer was tied to one European country, so none made the list. micro1 answered live (62 pulled, 14 kept by the script); the new roles are mostly specialist engineering-expert work (SysML, electronics, CAD, aerospace), and the AI Agent Evaluator role is the one that fits. Jobicy answered but every date looked like a bump date."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2612,
+    "kept_after_filters": 141,
+    "fresh_shortlisted": 7,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 88,
+        "fresh": 16,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 20,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 306,
+        "fresh": 215,
+        "kept": 68,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 9,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 143,
+        "fresh": 33,
+        "kept": 9,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 34,
+        "fresh": 2,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 36,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 171,
+        "fresh": 131,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 910,
+        "fresh": 60,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 121,
+        "fresh": 23,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 14,
+        "fresh": 1,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 9,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 508,
+        "fresh": 230,
+        "kept": 30,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 62,
+        "fresh": 21,
+        "kept": 14,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "automated fetch is switched off on purpose; signed-in browser check still to be done this morning"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "top",
+      "url": "https://jobs.micro1.ai/post/b884c432-4a78-4169-bd33-2e6c6320f987",
+      "title": "AI Agent Evaluator",
+      "company": "micro1",
+      "location_as_stated": "Remote (global)",
+      "posted": "2026-11-04",
+      "salary_as_shown": "USD 25–45 per hour (micro1 portal)",
+      "experience_asked": "Not shown; listed as a generalist role",
+      "found_via": "micro1 job portal API",
+      "verified": "micro1 job portal API, live 2026-11-05",
+      "fit": "Skills listed are AI agents, ChatGPT, Muse, screen recording and mobile, which matches his daily work with AI coding agents and his Muse Code access. He has already passed a micro1 interview.",
+      "gaps": "The portal shows no description beyond the skills list, so the exact tasks and hours aren't clear. It's hourly contract work, not a salaried job.",
+      "id": "j-60ecafc6d814"
+    },
+    {
+      "rank": 2,
+      "tier": "top",
+      "url": "https://www.linkedin.com/jobs/view/sprout-junior-product-development-engineering-consultant-at-prosper-global-4487243881",
+      "title": "Sprout Junior Product Development Engineering Consultant",
+      "company": "Prosper Global (formerly Mercy Corps)",
+      "location_as_stated": "Kenya (LinkedIn remote search, Kenya)",
+      "posted": "2026-11-04 (LinkedIn, \"16 hours ago\")",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "LinkedIn lists Entry level; contract",
+      "found_via": "LinkedIn remote search (Kenya)",
+      "verified": "LinkedIn job page, live 2026-11-05",
+      "fit": "Leads the Sprout platform chatbot and digital services MVP and evolves a weather advisory service for Kenya and Senegal, which suits his LLM, chatbot and prototyping work. Entry level and Kenya-based.",
+      "gaps": "It's a consultancy roster: being added doesn't guarantee an engagement. It also includes donor reporting, partner support and business development, not just engineering.",
+      "id": "j-3135b4b5596e"
+    },
+    {
+      "rank": 3,
+      "tier": "top",
+      "url": "https://www.linkedin.com/jobs/view/web-engineering-consultant-at-prosper-global-4487262041",
+      "title": "Web Engineering Consultant (Sprout Platform)",
+      "company": "Prosper Global (formerly Mercy Corps)",
+      "location_as_stated": "Kenya (LinkedIn remote search, Kenya)",
+      "posted": "2026-11-04 (LinkedIn, \"16 hours ago\")",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "LinkedIn lists Entry level; contract",
+      "found_via": "LinkedIn remote search (Kenya)",
+      "verified": "LinkedIn job page, live 2026-11-05",
+      "fit": "Feature development, UI and UX fixes, page-speed work and user acceptance testing on the Sprout web platform, close to his React and full-stack work. Entry level and Kenya-based.",
+      "gaps": "A roster with no guaranteed engagement, and a lot of it is technical support and training partner organisations. Over 100 people have applied.",
+      "id": "j-fc6873dc302b"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobgether.com/offer/6aeb6beb1c8aea01fb823ba5-junior-full-stack-developer-python-angular",
+      "title": "Junior Full Stack Developer (Python & Angular)",
+      "company": "Emergn",
+      "location_as_stated": "Europe, European Union, EMEA, Portugal",
+      "reason": "Jobgether lists Portugal as the hiring country",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Jobgether API",
+      "verified": "Jobgether API, 2026-11-05",
+      "note": "",
+      "id": "j-5e21eef4c711"
+    },
+    {
+      "url": "https://jobgether.com/offer/6aeadf3b1c8aea01fb7f4f37-junior-backend-developer-python",
+      "title": "Junior Backend Developer (Python)",
+      "company": "MasterBorn Software",
+      "location_as_stated": "Europe, European Union, EMEA, Poland",
+      "reason": "Jobgether lists Poland as the hiring country",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Jobgether API",
+      "verified": "Jobgether API, 2026-11-05",
+      "note": "",
+      "id": "j-dc58fc121de9"
+    },
+    {
+      "url": "https://jobgether.com/offer/6aeb88061c8aea01fb82bcab-ai-solutions-engineer---agents-automation",
+      "title": "AI Solutions Engineer - Agents & Automation",
+      "company": "HeadQuarters",
+      "location_as_stated": "Europe, EMEA, Serbia",
+      "reason": "Jobgether lists Serbia as the hiring country",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Jobgether API",
+      "verified": "Jobgether API, 2026-11-05",
+      "note": "",
+      "id": "j-111b332c3643"
+    },
+    {
+      "url": "https://jobgether.com/offer/6aeb4fcf1c8aea01fb81988f-ai-forward-deployed-engineer",
+      "title": "AI Forward Deployed Engineer",
+      "company": "Databricks",
+      "location_as_stated": "Europe, EMEA, United Kingdom",
+      "reason": "UK-based role",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Jobgether API",
+      "verified": "Jobgether API, 2026-11-05",
+      "note": "",
+      "id": "j-86338d354426"
+    },
+    {
+      "url": "https://himalayas.app/companies/asg-company/jobs/full-stack-developer-intern",
+      "title": "Full Stack Developer Intern",
+      "company": "ASG Company",
+      "location_as_stated": "\"You can work anywhere in the Philippines\"",
+      "reason": "Philippines only, US Central shift, PHP salary",
+      "reason_code": "location",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, 2026-11-05",
+      "note": "",
+      "id": "j-ad5eceb0f076"
+    },
+    {
+      "url": "https://himalayas.app/companies/hivex/jobs/middle-full-stack-developer-7114667442",
+      "title": "Middle Full stack developer",
+      "company": "Hivex",
+      "location_as_stated": "Worldwide",
+      "reason": "Asks for 5+ years",
+      "reason_code": "experience",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, 2026-11-05",
+      "note": "",
+      "id": "j-53a1508b2af6"
+    },
+    {
+      "url": "https://himalayas.app/companies/hivex/jobs/react-native-developer-5428119961",
+      "title": "React Native Developer",
+      "company": "Hivex",
+      "location_as_stated": "Worldwide",
+      "reason": "3+ years of React Native plus React Native Web; mobile-only",
+      "reason_code": "experience",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, 2026-11-05",
+      "note": "",
+      "id": "j-673a2775404f"
+    },
+    {
+      "url": "https://himalayas.app/companies/hivex/jobs/middle-react-developer-6818943107",
+      "title": "Middle React Developer",
+      "company": "Hivex",
+      "location_as_stated": "Worldwide",
+      "reason": "3+ years, front-end only",
+      "reason_code": "experience",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API job details, 2026-11-05",
+      "note": "",
+      "id": "j-43ab96fea698"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/request-for-proposal-independent-red-teaming-and-ai-safety-evaluation-at-girl-effect-4485095507",
+      "title": "Request for Proposal: Independent Red Teaming and AI Safety Evaluation",
+      "company": "Girl Effect",
+      "location_as_stated": "Kenya",
+      "reason": "A tender for an independent organisation or specialist consultancy (Mid-Senior), not a job; proposals due 18 Nov",
+      "reason_code": "requirement",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "LinkedIn remote search (Kenya)",
+      "verified": "LinkedIn job page, 2026-11-05",
+      "note": "",
+      "id": "j-61eb0881e2d8"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/full-stack-development-and-mobile-app-develepment-at-samis-systems-4485066738",
+      "title": "Full stack development and mobile app develepment",
+      "company": "SAMIS SYSTEMS",
+      "location_as_stated": "Nairobi, Nairobi County, Kenya (\"full-time, on-site role based in Nairobi\")",
+      "reason": "On-site in Nairobi, not remote; it's listed in the Kenya jobs section instead",
+      "reason_code": "other",
+      "posted": "",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "LinkedIn remote search (Kenya)",
+      "verified": "LinkedIn job page, 2026-11-05",
+      "note": "",
+      "id": "j-bb0edc2edbfe"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Grok Bot can now make phone calls",
+            "summary": "The official Grok Bot account said on Nov 4 that the bot can place calls for users: it shows a call card to approve, runs a live transcript, and lets the user take over or end the call. Coverage says it is limited to US numbers for now.",
+            "why": "Agents that act over voice, with an approval step and a live transcript, are exactly the agent-plus-human-in-the-loop pattern he builds and can point to in interviews.",
+            "source": "TeslaNorth",
+            "date": "2026-11-04",
+            "url": "https://teslanorth.com/2026/11/04/grok-bot-phone-calls-live/",
+            "id": "s-e0ecd32271bd"
+          },
+          {
+            "title": "Musk tightens Grok Bot usage limits, citing serving costs",
+            "summary": "Elon Musk said the cost of serving Grok Bot was \"unsustainably high relative to revenue\" as subscribers reported weekly allowances running out early.",
+            "why": "Inference cost is now the constraint for agent products, so engineers who can make agents cheaper to run are in demand.",
+            "source": "Tech Times",
+            "date": "2026-11-04",
+            "url": "https://www.techtimes.co.uk/elon-musk-defends-tighter-grok-bot-limits-1809699",
+            "id": "s-a740033d6c8d"
+          },
+          {
+            "title": "Anthropic prepares IPO as compute costs weigh",
+            "summary": "TechCabal reports Anthropic is preparing an IPO, possibly as soon as Nov 16, after earning $17 billion in Q3 2026 revenue while spending about $10 billion on compute.",
+            "why": "The biggest AI IPO so far will shape funding and hiring across AI startups, including the ones he applies to.",
+            "source": "TechCabal",
+            "date": "2026-11-04",
+            "url": "https://techcabal.com/2026/11/04/%f0%9f%91%a8%f0%9f%8f%bf%f0%9f%9a%80techcabal-daily-caireful-what-you-bid-for/",
+            "id": "s-58ef43747276"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Fal raises $1.3B at a $16B valuation",
+            "summary": "AI inference startup Fal raised a $1.3 billion Series F led by Bessemer, with Nvidia participating, doubling its valuation from $8 billion in April.",
+            "why": "Inference platforms are where much of the AI money is going, and hosted model APIs like Fal's are tools he can use in agent builds.",
+            "source": "Tech Startups",
+            "date": "2026-11-04",
+            "url": "https://techstartups.com/2026/11/04/startup-funding-news-today-november-4-2026-fal-traversal-lingchuan-technology-more/",
+            "id": "s-d090fbcaff9a"
+          },
+          {
+            "title": "Traversal raises $120M for AI agents that fix outages",
+            "summary": "New York-based Traversal raised a $120 million Series B led by Kleiner Perkins, Redpoint and Khosla, bringing total funding to $173 million.",
+            "why": "Agents for site reliability are a growing niche, and the company says it will hire in research and engineering.",
+            "source": "AlleyWatch",
+            "date": "2026-11-04",
+            "url": "https://www.alleywatch.com/2026/11/the-alleywatch-startup-daily-funding-report-11-4-2026/",
+            "id": "s-51117e81a57b"
+          },
+          {
+            "title": "Lazarus AI and Guava raise for self-hosted and voice AI",
+            "summary": "Boston-based Lazarus AI raised $43 million for AI systems organisations run under their own control, and Guava raised $12.5 million for enterprise voice AI.",
+            "why": "Self-hosted AI and voice agents both match his quantised-LLM and agent experience.",
+            "source": "Tech Startups",
+            "date": "2026-11-04",
+            "url": "https://techstartups.com/2026/11/04/startup-funding-news-today-november-4-2026-fal-traversal-lingchuan-technology-more/",
+            "id": "s-d090fbcaff9a"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Canva cuts 1,271 roles, about 22% of staff",
+            "summary": "Canva is cutting or changing 22% of its workforce as growth slows and AI costs rise, merging product, growth and platform teams and moving hybrid staff back to the office part of the week.",
+            "why": "Even strong product companies are trimming and asking people to cover more ground, which favours generalist full-stack and AI engineers.",
+            "source": "TechCrunch",
+            "date": "2026-11-04",
+            "url": "https://techcrunch.com/2026/11/04/canva-lays-off-over-1200-people-amid-slowing-growth/",
+            "id": "s-fc7287d32812"
+          },
+          {
+            "title": "Fiserv has cut 3,000 jobs; US openings rise to 7.52 million",
+            "summary": "Fiserv said it has cut 3,000 jobs since June, while US job openings rose to 7.52 million in September, though hiring is at its slowest pace since 2013.",
+            "why": "Payments giants are cutting while overall hiring stays slow, so fewer seats open up for new graduates, which makes targeted applications matter more.",
+            "source": "Samwise Agency",
+            "date": "2026-11-04",
+            "url": "https://samwise.agency/newsletters/high-tech-recruiting/high-tech-recruiting-newsletter-2026-11-04/",
+            "id": "s-217cbd62cb44"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Nedbank completes takeover of 66% of NCBA",
+            "summary": "South Africa's Nedbank completed its purchase of a 66% stake in NCBA, Kenya's fifth-largest bank, pushing NSE trading to KES 107.7 billion in a day.",
+            "why": "A new owner often brings technology and digital-banking changes, so NCBA may be one to watch for fintech engineering roles.",
+            "source": "TechCabal",
+            "date": "2026-11-04",
+            "url": "https://techcabal.com/2026/11/04/%f0%9f%91%a8%f0%9f%8f%bf%f0%9f%9a%80techcabal-daily-caireful-what-you-bid-for/",
+            "id": "s-58ef43747276"
+          },
+          {
+            "title": "Safaricom says M-PESA created KES 478bn in social value",
+            "summary": "Safaricom's sustainability report says M-PESA generated about KES 478.1 billion in social value in FY26 and that 57.8% of M-PESA transactions carried no customer charge.",
+            "why": "M-PESA remains the backbone of Kenyan fintech integrations, which is the kind of work he did on loans and payments.",
+            "source": "TechTrends Kenya",
+            "date": "2026-11-04",
+            "url": "https://techtrendske.co.ke/2026/11/04/m-pesa-generated-kes478bn-in-social-value-in-fy26-safaricom/",
+            "id": "s-3480bfa50788"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-11-05",
+    "generated_at": "2026-11-05T07:12:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Junior Software Engineer (50k)",
+        "company": "Sheer Logic",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/junior-software-engineer-50k-sheer-logistics",
+        "posted": "Nov 4, 2026",
+        "fit_note": "Junior role building features and REST APIs with Laravel and a modern frontend, matching his API and full-stack work (asks 2 yrs)."
+      },
+      {
+        "title": "Business & Digital Transformation Officer",
+        "company": "Adjacent Possible Finance",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/business-digital-transformation-officer-adjacent-possible-finance",
+        "posted": "Nov 4, 2026",
+        "fit_note": "Stretch (asks 3 yrs): process automation and integrations with core banking, loan origination and credit bureaus, close to his n8n fintech pipeline work."
+      },
+      {
+        "title": "Full Stack and Mobile App Developer",
+        "company": "SAMIS SYSTEMS",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/full-stack-development-and-mobile-app-develepment-at-samis-systems-4485066738",
+        "posted": "2026-11-04",
+        "fit_note": "On-site full-stack web plus Android/iOS role (React, Node, APIs, databases), matching his full-stack, API and Flutter mobile work; no experience bar stated."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9226",
+      "error": null
+    }
+  }
+}
