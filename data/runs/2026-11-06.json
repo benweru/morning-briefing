@@ -1,0 +1,494 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-11-06",
+  "checked_at": "2026-11-06T07:50:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive (ok; 80 pulled, 8 from last 7 days, 0 kept)",
+      "RemoteOK (ok; 99 pulled, 22 from last 7 days, 3 kept)",
+      "Himalayas (ok; 305 pulled, 210 from last 7 days, 67 kept)",
+      "Jobicy (ok; 50 pulled, 50 from last 7 days, 8 kept)",
+      "WeWorkRemotely (ok; 151 pulled, 42 from last 7 days, 8 kept)",
+      "WorkingNomads (ok; 33 pulled, 2 from last 7 days, 0 kept)",
+      "RemotiveAfrica (ok; 32 pulled, 4 from last 7 days, 0 kept)",
+      "Arc (ok; 172 pulled, 129 from last 7 days, 2 kept)",
+      "Greenhouse (ok; 918 pulled, 58 from last 7 days, 0 kept)",
+      "Ashby (ok; 118 pulled, 22 from last 7 days, 0 kept)",
+      "Lever (ok; 15 pulled, 1 from last 7 days, 0 kept)",
+      "LinkedIn (ok; 70 pulled, 70 from last 7 days, 7 kept)",
+      "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled)",
+      "Jobgether (ok; 499 pulled, 212 from last 7 days, 27 kept)",
+      "micro1 (ok; 65 pulled, 22 from last 7 days, 13 kept)",
+      "Wellfound (browser check ok; 15 listings on signed-in Remote/Africa/Nairobi search, 0 kept as junior/mid Kenya-eligible full-stack or AI fits; automated fetch stays disabled)",
+      "Employer and job pages: Insider One Lever, Canonical Greenhouse API, Jobgether offer pages, Himalayas Hivex listing, micro1 portal API, Wellfound signed-in browser"
+    ],
+    "news": [
+      "OpenAI",
+      "Mistral AI",
+      "Google",
+      "TechCrunch",
+      "Launch Base Africa",
+      "Disrupt Africa",
+      "Dice",
+      "InformationWeek",
+      "Safaricom",
+      "TechCabal",
+      "TechTrendsKE"
+    ]
+  },
+  "counts": {
+    "pulled": 2607,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1755,
+      "senior_title": 244,
+      "not_target_role": 214,
+      "location_or_timezone": 174
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 2,
+    "dropped": 4,
+    "reviewed_closely": 6,
+    "dropped_by_reason": {
+      "location": 2,
+      "experience": 1,
+      "stack": 1
+    },
+    "stories": 12
+  },
+  "method": {
+    "filtering_summary": "Live search at about 7:35 AM EAT on 16 sources pulled 2,607 postings (ReliefWeb failed again; Wellfound’s automated fetch stays disabled and was checked in the signed-in browser instead). 1697 were older than 7 days and 58 were old reposts, 244 senior or excluded titles, 214 not target roles, 174 excluded Kenya, 19 already applied and 66 duplicates, leaving 135. Roles already shown in earlier briefings were skipped. Jobgether answered live (499 offers, 212 from the last 7 days, 27 kept by the script); the clear Kenya-eligible junior hit is Insider One’s backend AI role, while most other Jobgether engineering offers are country-tied in Europe (Poland, Netherlands, Romania) or need Polish. micro1 answered live (65 pulled, 13 kept by the script); new listings are mostly specialist expert work (SysML, electronics, CAD, aerospace) or US-based image evaluation, so no new fitting micro1 role joins the shortlist (yesterday’s AI Agent Evaluator stays already surfaced). Wellfound signed-in browser: pulled 15 on a Remote/Africa/Nairobi saved search, kept 0 salaried junior/mid fits (co-founder equity, Scanwick intern Ben already declined, unpaid and senior roles only). Jobicy answered but many dates look like bump dates."
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2607,
+    "kept_after_filters": 135,
+    "fresh_shortlisted": 10,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 80,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 99,
+        "fresh": 22,
+        "kept": 3,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 305,
+        "fresh": 210,
+        "kept": 67,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 151,
+        "fresh": 42,
+        "kept": 8,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 33,
+        "fresh": 2,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 32,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 172,
+        "fresh": 129,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 918,
+        "fresh": 58,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 118,
+        "fresh": 22,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 15,
+        "fresh": 1,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 7,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 499,
+        "fresh": 212,
+        "kept": 27,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 65,
+        "fresh": 22,
+        "kept": 13,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": true,
+        "pulled": 15,
+        "fresh": 15,
+        "kept": 0,
+        "error": null
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "top",
+      "url": "https://jobs.lever.co/insiderone/176f6234-e706-492e-a984-9eee80d28d22",
+      "title": "Junior Software Engineer (Backend, AI-Enabled) — Remote",
+      "company": "Insider One",
+      "location_as_stated": "\"This a Full Remote job, the offer is available from: Asia, Middle East, EMEA, APAC, Turkey\" (Jobgether/Lever; Kenya is in the Jobgether applicant country list)",
+      "posted": "2026-11-05",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "0–2 years (internships included); Go or Python project; end-to-end backend project",
+      "found_via": "Jobgether API → Insider One Lever",
+      "verified": "Lever posting + Jobgether offer page, live 2026-11-06",
+      "fit": "Junior backend role asking for Python or Go, SQL, Git, Docker and daily use of AI coding tools, which matches his stack and how he already works. EMEA/APAC remote with Kenya listed among eligible countries on Jobgether.",
+      "gaps": "Lever’s category location is Turkey; confirm Kenya eligibility on the form before spending time on a long application. Vue is preferred for the nice-to-have frontend, though React is accepted.",
+      "id": "j-5a40af0ef537"
+    },
+    {
+      "rank": 2,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/4995272-co-founder-lead-full-stack-engineer",
+      "title": "Co-Founder & Lead Full-Stack Engineer",
+      "company": "Nzubia",
+      "location_as_stated": "Remote only, Everywhere (Wellfound Remote / Africa / Nairobi filter)",
+      "posted": "Yesterday (Wellfound, as of 2026-11-06 morning)",
+      "salary_as_shown": "5–10% equity (no cash salary shown)",
+      "experience_asked": "Lead / co-founder full-stack",
+      "found_via": "Wellfound signed-in browser (Remote, Africa, Nairobi)",
+      "verified": "Wellfound job card in signed-in browser, 2026-11-06",
+      "fit": "Africa-remote full-stack founding seat that passed the Nairobi-eligible Wellfound filter.",
+      "gaps": "Co-founder/lead title and equity-only pay; not a salaried junior/mid role. Only worth a look if he wants startup equity risk.",
+      "id": "j-5330d5ca1763"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8922249002",
+      "title": "Intermediate Fullstack Engineer, Subscription Lifecycle",
+      "company": "GitLab",
+      "location_as_stated": "Greenhouse: \"Remote, Canada; Remote, United States\" (Himalayas AMEA country list contradicted by ATS)",
+      "reason": "Greenhouse offices are Canada and United States only",
+      "reason_code": "location",
+      "posted": "2026-11-06 (Himalayas); Greenhouse updated 2026-11-05",
+      "salary_as_shown": "US$115,200–$194,400 (US residents only)",
+      "experience_asked": "Intermediate fullstack; Ruby on Rails and Vue.js",
+      "found_via": "Himalayas API → GitLab Greenhouse",
+      "verified": "GitLab Greenhouse API, 2026-11-06",
+      "note": "",
+      "id": "j-222995544c21"
+    },
+    {
+      "url": "https://arc.dev/remote-jobs/j/pwxt4tdjcn",
+      "title": "Full-Stack Developer WW-PT",
+      "company": "Arc Exclusive",
+      "location_as_stated": "Overlap with Eastern Time (US & Canada) working hours",
+      "reason": "Listed as Freelance and Senior on Arc",
+      "reason_code": "experience",
+      "posted": "2026-11-04",
+      "salary_as_shown": "Hourly rate (not shown)",
+      "experience_asked": "Senior",
+      "found_via": "Arc.dev",
+      "verified": "Arc job board HTML, 2026-11-06",
+      "note": "",
+      "id": "j-bc6458960bfc"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/32dd2150-5c80-486b-bdb1-19223b728f33",
+      "title": "AI Image Specialist (US Based)",
+      "company": "micro1",
+      "location_as_stated": "Remote (global) / title says US Based",
+      "reason": "US-based image/photo evaluation, not software or AI engineering",
+      "reason_code": "stack",
+      "posted": "2026-11-05",
+      "salary_as_shown": "",
+      "experience_asked": "",
+      "found_via": "micro1 job portal API",
+      "verified": "micro1 API listing, 2026-11-06",
+      "note": "Only new micro1 role with fit_score≥2; others are CAD/aerospace/electronics specialists or recruiting",
+      "id": "j-01c26f183a10"
+    },
+    {
+      "url": "https://jobgether.com/offer/6ae528d9d6c8b081a79a335c-full-stack-developer----bucharest",
+      "title": "Full Stack Developer — Bucharest",
+      "company": "EC Markets",
+      "location_as_stated": "Romania / Europe / EU / EMEA",
+      "reason": "Bucharest-tied European role",
+      "reason_code": "location",
+      "posted": "2026-10-30",
+      "salary_as_shown": "",
+      "experience_asked": "Mid-level (2–5 years)",
+      "found_via": "Jobgether API",
+      "verified": "Jobgether listing, 2026-11-06",
+      "note": "",
+      "id": "j-91b85e8ebf10"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "OpenAI launches GPT-6 Cyber for aligned vulnerability research",
+            "summary": "GPT-6 Cyber scores 48.5% on ExploitGym (up from 32.1% for GPT-5.6 Cyber), helped find 81 novel high-severity Firefox bugs and develop exploits for 948 Linux privilege-escalation issues, and is initially available via Daybreak Red to approved customers alongside a $1B defenders grant program.",
+            "why": "Cyber-aligned agents and Daybreak access are becoming a distinct hiring niche; security-aware full-stack and AI engineers who can review AI-assisted code will stand out.",
+            "source": "OpenAI",
+            "date": "2026-11-05",
+            "url": "https://openai.com/index/introducing-gpt-6-cyber",
+            "id": "s-53c56afbaf05"
+          },
+          {
+            "title": "Mistral Studio adds managed agents, workflows, and apps",
+            "summary": "On 2026-11-05 Mistral expanded Studio with managed agents (Agents SDK, agents deploy), natural-language workflow builder, apps CLI, HTTP connectors, managed search index, and default agent tracing/evaluations for enterprise deployments.",
+            "why": "Enterprise agent platforms are where Nairobi full-stack/AI talent can ship production agentic systems without owning all the infra—skills in agents, MCP, and observability match rising JD language.",
+            "source": "Mistral AI",
+            "date": "2026-11-05",
+            "url": "https://mistral.ai/news/build-with-studio/",
+            "id": "s-1184d3a025fd"
+          },
+          {
+            "title": "Google ships Gemini Omni 1.2 Flash with 15s video and 30% lower price",
+            "summary": "Gemini Omni 1.2 Flash is generally available on the Gemini API and Google Cloud, supports native video up to 15 seconds (from 10), multi-turn conversational editing, and costs $0.07 per second for 720p—30% less than Omni 1.1.",
+            "why": "Cheaper multimodal APIs expand product surface for builders shipping video features; useful talking point for AI product and full-stack roles that touch Gemini/GCP.",
+            "source": "Google",
+            "date": "2026-11-05",
+            "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+            "id": "s-d7e9e3e89ee7"
+          },
+          {
+            "title": "Anthropic rolls out Claude Personal Finance with read-only Plaid links",
+            "summary": "Claude’s Personal Finance beta (Pro/Max/Ultra, U.S.) lets users connect bank and credit-card accounts via Plaid for read-only spending analysis; Anthropic says chats in the hub are not used for training.",
+            "why": "Shows how LLMs are productizing into regulated verticals (finance); fintech-adjacent engineers who know Plaid/bank data patterns stay relevant as AI copilots enter money products.",
+            "source": "TechCrunch",
+            "date": "2026-11-05",
+            "url": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/",
+            "id": "s-7b187a5bdc28"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Enza raises $6M Seed+ for Africa payments infrastructure",
+            "summary": "Payments infra startup Enza closed a $6mn Seed+ led by 4DX Ventures, with BII joining and Quona Capital and Algebra Ventures increasing stakes; it serves banks/fintechs across 12 countries with card, real-time, and wallet rails.",
+            "why": "African payments plumbing keeps attracting DFI and VC capital—useful signal for Nairobi engineers targeting fintech infra, rails, and bank-tech roles.",
+            "source": "Launch Base Africa",
+            "date": "2026-11-04",
+            "url": "https://launchbaseafrica.com/2026/11/04/enza-raises-6mn-as-investors-bet-on-africas-payments-plumbing/",
+            "id": "s-e4e108067aa7"
+          },
+          {
+            "title": "Kenya’s PayServe raising $1M Series A for managed-estate billing",
+            "summary": "Nairobi proptech/fintech PayServe is raising a US$1 million Series A; it bills 10,000+ units across 50+ properties, has deployed 3,000 smart meters, processed KES1 billion (US$7.7 million), and integrates M-Pesa plus Absa, Co-op, NCBA, Equity, and KCB.",
+            "why": "Local SaaS+payments startups hiring full-stack talent who can wire Daraja, banks, and accounting APIs—directly relevant Nairobi market.",
+            "source": "Disrupt Africa",
+            "date": "2026-11-04",
+            "url": "https://disruptafrica.com/2026/11/04/how-kenyas-payserve-is-building-the-operating-layer-for-managed-real-estate/",
+            "id": "s-8e9bcebfd660"
+          },
+          {
+            "title": "Dropbox buys Tigris Data for $350M to build DBX Agent Cloud",
+            "summary": "Dropbox announced a $350 million acquisition of Tigris Data (expected to close Q4 2026) to power DBX Agent Cloud object storage for AI models and agents; it says no headcount cuts planned from the deal after cutting 9% last month.",
+            "why": "Big-tech agent infrastructure M&A shows storage/agent platforms are a growth hiring area even as legacy SaaS trims staff.",
+            "source": "TechCrunch",
+            "date": "2026-11-05",
+            "url": "https://techcrunch.com/2026/11/05/dropbox-acquires-tigris-data-for-350m-to-bolster-its-ai-iinfrastructure/",
+            "id": "s-aecc9a23fd3c"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Dice: AI/ML job postings up 91% YoY as agentic skills surge",
+            "summary": "U.S. tech postings rose 4% MoM in October and 20% YoY; AI/ML postings grew 91% YoY, with YoY skill demand above 200% for Claude AI, GitHub Copilot, Agentic AI, AI Agents, RAG, and Responsible AI (data as of 2026-11-03).",
+            "why": "Quantifies what JDs already show: agentic AI, RAG, and AI coding-tool fluency beat generic ‘knows React’—tailor CVs and projects accordingly.",
+            "source": "Dice",
+            "date": "2026-11-03",
+            "url": "https://www.dice.com/hiring/recruitment/reports/dice-tech-job-report",
+            "id": "s-3863a9e6c614"
+          },
+          {
+            "title": "Canva restructure hits 1,271 staff (22%) amid SaaS reset",
+            "summary": "InformationWeek’s Nov 4 tracker notes Canva’s Nov 3 restructure affecting 1,271 employees (22%), consolidating product/growth/platform, prioritizing Sydney hubs and 2–3 office days from January, while Microsoft, Oracle and others also cite AI-driven workforce shifts.",
+            "why": "SaaS layoffs + AI investment reshape openings toward AI-native builders; remote/junior seekers should prioritize companies still hiring into AI product and infrastructure.",
+            "source": "InformationWeek",
+            "date": "2026-11-04",
+            "url": "https://www.informationweek.com/it-staffing-careers/2026-tech-company-layoffs",
+            "id": "s-6960061d0a97"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Safaricom HY net income hits KES 58.2B; M-PESA crosses KES 100B",
+            "summary": "For six months to 30 Sep 2026, Safaricom Group net income rose 35.9% to KES 58.2 billion, Group service revenue 13.1% to KES 226.1 billion, and M-PESA revenue 13.6% to KES 100.1 billion; Kenya EBIT reached KES 101.8 billion.",
+            "why": "Safaricom/M-PESA remains Kenya’s largest tech employer and API ecosystem—strong half-year results mean continued Daraja, merchant, and fintech product hiring.",
+            "source": "Safaricom",
+            "date": "2026-11-05",
+            "url": "https://www.safaricom.co.ke/media-center-landing/press-releases/safaricom-group-net-income-surges-36-to-kes-58-2-billion-as-ethiopia-start-up-losses-falls-to-kes-434-4-million-in-hy27",
+            "id": "s-51aeb9d6f1a8"
+          },
+          {
+            "title": "Fuliza revenue jumps 86% as borrowers nearly double to 17.2M",
+            "summary": "TechCabal reports Fuliza made KES 4.9 billion ($38 million) in H1 to Sep 2026 (+86%), with borrowers up 88.9% to 17.2 million and disbursements KES 1.16 trillion ($8.97 billion); credit revenue overall rose 54.4% to KES 7 billion.",
+            "why": "Credit-on-wallet is the growth engine of Kenyan fintech—engineers who understand scoring, partners (NCBA/KCB), and risk APIs stay in demand.",
+            "source": "TechCabal",
+            "date": "2026-11-05",
+            "url": "https://techcabal.com/2026/11/05/safaricom-fuliza-m-pesa-revenue-rise/",
+            "id": "s-385367b3cf3b"
+          },
+          {
+            "title": "Safaricom expands M-PESA merchant tools; 4.5M merchants active",
+            "summary": "At HY27 briefing Safaricom said active merchants reached 4.5 million (+90.3%), Pochi la Biashara 3.2 million (+115.3%), merchant volumes 4.7 billion (+52.6%) for KSh8.18 billion revenue (+34.6%), with plans to add credit, invoicing, and reconciliation for SMEs.",
+            "why": "Merchant OS beyond payments is a product/engineering roadmap (reconciliation, invoicing, credit)—fits full-stack roles at Safaricom partners and Kenyan fintechs.",
+            "source": "TechTrendsKE",
+            "date": "2026-11-05",
+            "url": "https://techtrendske.co.ke/2026/11/05/mpesa-merchant-services/",
+            "id": "s-07348cf09725"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-11-06",
+    "generated_at": "2026-11-06T07:12:07+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Internship & Talent Development Programme-Technology",
+        "company": "WasaaChat",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/internship-talent-development-programme-technology-wasaachat",
+        "posted": "05 November",
+        "fit_note": "Nairobi tech internship/talent programme for recent grads (ICT), a path into his software and AI stack."
+      },
+      {
+        "title": "Customer Growth Associate (Technical)",
+        "company": "TamuPOS",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/customer-growth-associate-technical-at-tamupos-4485801596",
+        "posted": "2026-11-05",
+        "fit_note": "On-the-ground tech sales plus product setup and light coding (Claude Code) for an AI-native POS startup in Nairobi."
+      },
+      {
+        "title": "Software Developer",
+        "company": "Jumba",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/software-developer-jumba",
+        "posted": "05 November",
+        "fit_note": "Stretch (asks 3 yrs): Nairobi software developer role matching his full-stack and API work."
+      },
+      {
+        "title": "Software Engineer",
+        "company": "APA Life Assurance",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/software-engineer-apa-life-assurance-company-ltd-1",
+        "posted": "05 November",
+        "fit_note": "Stretch (asks 3 yrs): Nairobi software engineer at a life insurer, close to his fintech API and backend work."
+      },
+      {
+        "title": "Cloud Engineer",
+        "company": "APA Life Assurance",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/cloud-engineer-apa-life-assurance-company-ltd",
+        "posted": "05 November",
+        "fit_note": "Stretch (asks 3-5 yrs): cloud role adjacent to his AWS/IaC exposure; leaner fit than the software engineer opening."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": false,
+      "count": 0,
+      "method": null,
+      "error": "no result"
+    }
+  }
+}
