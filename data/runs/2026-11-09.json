@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "run_date": "2026-11-09",
-  "checked_at": "2026-11-09T21:56:00+03:00",
+  "checked_at": "2026-11-09T22:05:00+03:00",
   "sources": {
     "jobs": [
       "Remotive (ok; 96 pulled, 40 from last 7 days, 0 kept)",
@@ -19,8 +19,8 @@
       "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
       "Jobgether (ok; 503 pulled, 200 from last 7 days, 20 kept)",
       "micro1 (ok; 78 pulled, 36 from last 7 days, 14 kept)",
-      "Wellfound (PLACEHOLDER: automated fetch disabled; parent agent browsing wellfound.com/jobs in the signed-in browser this run — leave section empty until merge)",
-      "Employer and job pages: micro1 jobs portal API, LinkedIn guest job posting API (Connex), Greenhouse API (GitLab), Jobgether API, Himalayas API, RemoteOK API, Hivex careers-page.com board"
+      "Wellfound (browser check ok; 176 listings on signed-in Remote/Worldwide most-recent last-7-days search, 13 kept; automated fetch stays disabled)",
+      "Employer and job pages: micro1 jobs portal API, LinkedIn guest job posting API (Connex), Greenhouse API (GitLab), Jobgether API, Himalayas API, RemoteOK API, Hivex careers-page.com board, Wellfound signed-in browser (Remote/Worldwide)"
     ],
     "news": [
       "Google Cloud Blog",
@@ -43,23 +43,24 @@
       "location_or_timezone": 165
     },
     "filtered_out_is_approximate": false,
-    "shortlisted": 2,
-    "dropped": 2,
-    "reviewed_closely": 4,
+    "shortlisted": 11,
+    "dropped": 3,
+    "reviewed_closely": 14,
     "dropped_by_reason": {
       "location": 1,
-      "experience": 1
+      "experience": 1,
+      "other": 1
     },
     "stories": 8
   },
   "method": {
-    "filtering_summary": "Evening re-run of the live search at about 9:52 PM EAT on 16 sources pulled 2,628 postings. 1776 were older than 7 days and 53 were old reposts, 324 were senior or excluded titles, 195 were not target roles, 165 were excluded by Kenya eligibility, 9 were already applied and 27 duplicates, leaving 79 kept by the script. Roles already shown in earlier briefings were skipped. Jobgether (503 pulled, 200 from the last 7 days, 20 kept) and micro1 (78 pulled, 36 from the last 7 days, 14 kept) answered live. The only new fitting micro1 role is AI Safety & Evaluation Specialist (posted today); Frontend / UI Engineer remains live and stays on the shortlist. Other new micro1 listings are specialist expert work (electronics, metrology, drilling, semiconductor, SysML, Open 3D Engine) or US-based image evaluation. Jobgether engineering offers checked tonight are tied to European countries (Poland, Portugal, Netherlands, Ukraine, Romania, Serbia) or already surfaced (Insider One). Claims, Salvo and Hyre from this morning’s shortlist are skipped (applied today). Connex Technology’s Nairobi LinkedIn listing asks for 5+ years. GitLab’s Subscription Lifecycle role is US/Canada on the Greenhouse board despite a broad Himalayas country list. Hivex FullStack (react + node.js) appears on Himalayas but is not on Hivex’s careers-page.com board tonight. ReliefWeb failed (ParseError). Wellfound’s automated fetch stays disabled; this run leaves a Wellfound PLACEHOLDER while the parent browses wellfound.com/jobs in the signed-in browser. Jobicy dates still look like bump dates. Only 2 roles passed the live check and fit; nothing old was added to fill the list. Kenya jobs come from /workspace/shared/local-jobs/latest.json (generated 2026-11-09T07:12:00+03:00); MyJobMag personalized feed status is ok (not signed_out)."
+    "filtering_summary": "Evening re-run of the live search at about 9:52 PM EAT on 16 sources pulled 2,628 postings, then Wellfound was filled from the signed-in browser (Remote/Worldwide, most recent, last 7 days: 176 pulled, 13 kept). 1776 were older than 7 days and 53 were old reposts, 324 were senior or excluded titles, 195 were not target roles, 165 were excluded by Kenya eligibility, 9 were already applied and 27 duplicates, leaving 79 kept by the script before Wellfound. Roles already shown in earlier briefings were skipped. Jobgether (503 pulled, 200 from the last 7 days, 20 kept) and micro1 (78 pulled, 36 from the last 7 days, 14 kept) answered live. New fitting micro1 role: AI Safety & Evaluation Specialist; Frontend / UI Engineer remains live. Wellfound paid fits shortlisted: SWARA, 9Falcons, Simbian, CritPath, Tigerless Health, LucentraCode, Vaccine Genie, Ideactra, Marvedge. Four unpaid Wellfound internships collapsed to one low-priority dropped line. None of the Wellfound companies appear in applied_log.csv. Claims, Salvo and Hyre from this morning’s shortlist stay skipped (applied today). ReliefWeb failed (ParseError). Wellfound’s automated fetch stays disabled; browser check completed. Kenya jobs from /workspace/shared/local-jobs/latest.json (2026-11-09T07:12:00+03:00); MyJobMag personalized ok (not signed_out)."
   },
   "search_health": {
     "window_days": 7,
     "pulled": 2628,
     "kept_after_filters": 79,
-    "fresh_shortlisted": 2,
+    "fresh_shortlisted": 11,
     "generated_by": "job-search-plus/live/remote_live.py",
     "sources": [
       {
@@ -184,11 +185,11 @@
       },
       {
         "name": "Wellfound",
-        "ok": false,
-        "pulled": 0,
-        "fresh": 0,
-        "kept": 0,
-        "error": "automated fetch disabled by design; Wellfound PLACEHOLDER this run — parent is browsing wellfound.com/jobs in the signed-in browser; merge when ready"
+        "ok": true,
+        "pulled": 176,
+        "fresh": 176,
+        "kept": 13,
+        "error": null
       }
     ]
   },
@@ -226,9 +227,177 @@
       "gaps": "Project-based contract paid per approved task (about 8 hours each), not a salary. A strong public GitHub profile is called essential, and the posting does not name Kenya, so confirm eligibility during the screening questions. It also needs an AI interview.",
       "note": "Apply: https://jobs.micro1.ai/post/526b27c6-df46-441e-b04d-97dbeb4f5904",
       "id": "j-b04eed47317e"
+    },
+    {
+      "rank": 3,
+      "tier": "top",
+      "url": "https://wellfound.com/jobs/4970091-software-engineer-clone",
+      "title": "Software Developer",
+      "company": "SWARA",
+      "location_as_stated": "Remote (Wellfound Remote/Worldwide search)",
+      "posted": "2026-11-03",
+      "salary_as_shown": "$80k–$90k + 5–10% equity",
+      "experience_asked": "No experience required; full-stack Python / React / Next.js / LLMs",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "fit": "Paid full-stack role on Python, React, Next.js and LLMs with no experience bar, which matches his stack and early-career profile.",
+      "gaps": "Equity-heavy early startup; confirm the clone-product scope and that Kenya-based remote is accepted on apply.",
+      "note": "",
+      "id": "j-2b4fe31f9264"
+    },
+    {
+      "rank": 4,
+      "tier": "top",
+      "url": "https://wellfound.com/jobs/4985558-ai-automation-engineer",
+      "title": "AI Automation Engineer",
+      "company": "9Falcons",
+      "location_as_stated": "London (listed on Wellfound Remote/Worldwide search)",
+      "posted": "2026-11-04",
+      "salary_as_shown": "$45k–$50k",
+      "experience_asked": "2+ years; Python, agents, RAG",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "fit": "Python agents and RAG are core to his recent work, and the pay band is realistic for a remote automation seat.",
+      "gaps": "Card shows London—confirm it is truly worldwide remote and not UK-only before applying.",
+      "note": "",
+      "id": "j-bc1200c0e6e9"
+    },
+    {
+      "rank": 5,
+      "tier": "top",
+      "url": "https://wellfound.com/jobs/4980159-frontend-engineer",
+      "title": "AI Frontend Engineer",
+      "company": "Simbian",
+      "location_as_stated": "Remote Everywhere",
+      "posted": "2026-11-04",
+      "salary_as_shown": "INR 10L–20L",
+      "experience_asked": "1–3 years; React / TypeScript",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "fit": "React and TypeScript frontend for an AI product, with Everywhere remote and a stated salary band.",
+      "gaps": "Pay is in INR; confirm currency conversion and contracting from Kenya on the application.",
+      "note": "",
+      "id": "j-f71f494231d7"
+    },
+    {
+      "rank": 6,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5008746-founding-full-stack-engineer-contract-to-hire",
+      "title": "Founding Full-Stack Engineer (contract-to-hire)",
+      "company": "CritPath",
+      "location_as_stated": "Remote (Wellfound Remote/Worldwide search)",
+      "posted": "2026-11-07",
+      "salary_as_shown": "$3,000/month",
+      "experience_asked": "4 years asked; Python / React / LLMs",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "fit": "Contract-to-hire full-stack with Python, React and LLMs matches his stack if they will flex on years.",
+      "gaps": "Asks for about 4 years, which he does not have; founding/contract pay is modest—confirm hours and conversion path.",
+      "note": "",
+      "id": "j-033dafea7bad"
+    },
+    {
+      "rank": 7,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/4965809-ai-agent-engineer-bilingual-english-mandarin",
+      "title": "AI Agent Engineer",
+      "company": "Tigerless Health",
+      "location_as_stated": "Remote (Wellfound); Mandarin preferred",
+      "posted": "2026-11-05",
+      "salary_as_shown": "$30k–$36k",
+      "experience_asked": "3 years; bilingual English/Mandarin preferred",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "fit": "AI agent engineering at a stated salary, adjacent to his agent and automation work.",
+      "gaps": "Pay is low for full-time; Mandarin preferred and 3 years asked are real filters.",
+      "note": "",
+      "id": "j-ef3713c53164"
+    },
+    {
+      "rank": 8,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/4995200-ai-engineer-intern",
+      "title": "AI Engineer Intern",
+      "company": "LucentraCode",
+      "location_as_stated": "Remote (Wellfound Remote/Worldwide search)",
+      "posted": "2026-11-05",
+      "salary_as_shown": "INR 15k–35k",
+      "experience_asked": "Internship; AI engineering",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "fit": "Paid AI engineering internship with a stated stipend band.",
+      "gaps": "Internship stipend in INR is low; only worth it if the learning path is clear.",
+      "note": "",
+      "id": "j-a6d70400d7dd"
+    },
+    {
+      "rank": 9,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5026927-full-stack-developer-intern",
+      "title": "Full Stack Developer Intern",
+      "company": "Vaccine Genie",
+      "location_as_stated": "Remote (Wellfound Remote/Worldwide search)",
+      "posted": "2026-11-09",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Internship; full-stack",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "fit": "Fresh full-stack internship posting (today) on a product that may use his web stack.",
+      "gaps": "Salary not shown—confirm pay before spending time on the application.",
+      "note": "",
+      "id": "j-5d3e00e3df8e"
+    },
+    {
+      "rank": 10,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5015936-software-engineer-intern",
+      "title": "Software Engineer Intern",
+      "company": "Ideactra",
+      "location_as_stated": "Remote (Wellfound Remote/Worldwide search)",
+      "posted": "2026-11-07",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Internship; React / React Native",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "fit": "React/React Native internship aligned with his frontend skills.",
+      "gaps": "Salary not shown; internship priority only if paid on confirm.",
+      "note": "",
+      "id": "j-45420e5cf07e"
+    },
+    {
+      "rank": 11,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/4995303-full-stack-developer-intern",
+      "title": "Full Stack Developer Intern",
+      "company": "Marvedge",
+      "location_as_stated": "Remote (Wellfound Remote/Worldwide search)",
+      "posted": "2026-11-06",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Internship; full-stack",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "fit": "Another full-stack internship from the Wellfound remote sweep.",
+      "gaps": "Salary not shown; treat as low priority until pay is confirmed.",
+      "note": "",
+      "id": "j-b4a18b84dda2"
     }
   ],
   "dropped": [
+    {
+      "url": "https://wellfound.com/jobs/5027301-software-engineering-intern",
+      "title": "Unpaid Wellfound internships (collapsed)",
+      "company": "HUGGED; Lupira; Envite Nyc",
+      "location_as_stated": "Remote (Wellfound)",
+      "reason": "Unpaid, low priority — HUGGED SWE Intern; Lupira AI/ML Intern; Lupira PERN Intern; Envite Nyc RN Intern",
+      "reason_code": "other",
+      "posted": "2026-11",
+      "salary_as_shown": "Unpaid",
+      "experience_asked": "Internship",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-09 ~22:00 EAT",
+      "note": "Links: https://wellfound.com/jobs/5027301-software-engineering-intern ; https://wellfound.com/jobs/4284712-ai-ml-engineer-intern ; https://wellfound.com/jobs/4689852-pern-stack-developer-intern ; https://wellfound.com/jobs/4995079-frontend-intern-react-native-for-b2c-app",
+      "id": "j-1633a8b5528b"
+    },
     {
       "url": "https://www.linkedin.com/jobs/view/full-stack-engineer-react-typescript-aws-at-connex-technology-4487156198",
       "title": "Full Stack Engineer (React, TypeScript, AWS)",
