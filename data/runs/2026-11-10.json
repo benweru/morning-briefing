@@ -19,9 +19,8 @@
       "ReliefWeb (FAILED: ParseError: no element found: line 1, column 0; 0 pulled, 0 from last 7 days, 0 kept)",
       "Jobgether (ok; 502 pulled, 192 from last 7 days, 19 kept)",
       "micro1 (ok; 78 pulled, 34 from last 7 days, 13 kept)",
-      "Wellfound (FAILED: RuntimeError: automated fetch disabled; check in signed-in browser; 0 pulled, 0 from last 7 days, 0 kept)",
-      "Wellfound (NOT checked this run: signed-in browser check pending; automated fetch stays disabled)",
-      "LinkedIn guest job posting page (MyDevConnect), live 2026-11-10"
+      "Wellfound (browser check ok; 113 listings on signed-in Remote/Worldwide most-recent last-7-days search, 6 kept; automated fetch stays disabled)",
+      "LinkedIn guest job posting page (MyDevConnect), live 2026-11-10; Wellfound signed-in browser (Remote/Worldwide)"
     ],
     "news": [
       "TechCrunch",
@@ -39,20 +38,20 @@
       "location_or_timezone": 160
     },
     "filtered_out_is_approximate": false,
-    "shortlisted": 1,
+    "shortlisted": 6,
     "dropped": 0,
-    "reviewed_closely": 1,
+    "reviewed_closely": 6,
     "dropped_by_reason": {},
     "stories": 8
   },
   "method": {
-    "filtering_summary": "The live search on 16 sources pulled 2,631 postings; 1,826 were older than 7 days, 310 were senior or excluded titles, 171 were not target roles, 160 failed Kenya eligibility, 11 were already applied to and 30 were duplicates. Most of what was left was already shown in earlier briefings. Jobgether (502 pulled, 192 from the last 7 days, 19 kept) and micro1 (78 pulled, 34 from the last 7 days, 13 kept) both answered live; no new fitting micro1 role today. Wellfound and ReliefWeb were not read this run."
+    "filtering_summary": "The live search on 16 sources pulled 2,631 postings; 1,826 were older than 7 days, 310 were senior or excluded titles, 171 were not target roles, 160 failed Kenya eligibility, 11 were already applied to and 30 were duplicates. Most of what was left was already shown in earlier briefings. Jobgether (502 pulled, 192 from the last 7 days, 19 kept) and micro1 (78 pulled, 34 from the last 7 days, 13 kept) both answered live; no new fitting micro1 role today. Wellfound was filled from the signed-in browser (Remote/Worldwide, most recent, last 7 days: 113 pulled, 6 kept). Wellfound fits shortlisted: Muze, Vaccine Genie, Noomoo Lab, Nexvia, Arcloop, Stealth. Unpaid Wellfound internships (Lupira x2, HUGGED, Envite NYC) were excluded. ReliefWeb failed (ParseError). Wellfound’s automated fetch stays disabled; browser check completed."
   },
   "search_health": {
     "window_days": 7,
     "pulled": 2631,
     "kept_after_filters": 70,
-    "fresh_shortlisted": 1,
+    "fresh_shortlisted": 7,
     "generated_by": "job-search-plus/live/remote_live.py",
     "sources": [
       {
@@ -177,25 +176,34 @@
       },
       {
         "name": "Wellfound",
-        "ok": false,
-        "pulled": 0,
-        "fresh": 0,
-        "kept": 0,
-        "error": "RuntimeError: automated fetch disabled; check in signed-in browser"
-      },
-      {
-        "name": "Wellfound",
-        "ok": false,
-        "pulled": 0,
-        "fresh": 0,
-        "kept": 0,
-        "error": "Not checked in the signed-in browser at publish time; automated fetch stays disabled"
+        "ok": true,
+        "pulled": 113,
+        "fresh": 113,
+        "kept": 6,
+        "error": null
       }
     ]
   },
   "jobs": [
     {
       "rank": 1,
+      "tier": "top",
+      "url": "https://wellfound.com/jobs/3363278-junior-frontend-developer-react-typescript",
+      "title": "Junior Frontend Developer (React + TypeScript)",
+      "company": "Muze",
+      "location_as_stated": "Remote Everywhere",
+      "posted": "2026-11-10",
+      "salary_as_shown": "INR 3.6L–8L/yr",
+      "experience_asked": "1+ years; React / TypeScript",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-10 ~07:50 EAT",
+      "fit": "Strong React and TypeScript match for a junior frontend seat, posted today, with Everywhere remote and a stated salary band.",
+      "gaps": "Pay is in INR; confirm currency and that Kenya-based remote is accepted on apply.",
+      "note": "",
+      "id": "j-31a159b06ba8"
+    },
+    {
+      "rank": 2,
       "tier": "stretch",
       "url": "https://www.linkedin.com/jobs/view/mid-level-full-stack-engineer-at-mydevconnect-4489120807",
       "title": "Mid-Level Full-Stack Engineer",
@@ -210,6 +218,74 @@
       "gaps": "Asks for 2–4 years and AWS (Lambda, DynamoDB, SQS) he has less of; the listed pay is low. 60 applicants already.",
       "note": "Apply: https://www.linkedin.com/jobs/view/mid-level-full-stack-engineer-at-mydevconnect-4489120807",
       "id": "j-726b31ebfc57"
+    },
+    {
+      "rank": 3,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5023994-ai-agents-full-stack-engineer-internship",
+      "title": "AI Agents & Full-Stack Engineer Internship",
+      "company": "Noomoo Lab",
+      "location_as_stated": "Remote (Marrakesh-based)",
+      "posted": "2026-11-09",
+      "salary_as_shown": "€300/month + €300 bonus",
+      "experience_asked": "Internship; LLM agents + full-stack",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-10 ~07:50 EAT",
+      "fit": "Paid internship on LLM agents and full-stack work, which matches his recent agent and web experience.",
+      "gaps": "Stipend is modest (€300/month plus a €300 bonus). Company is Marrakesh-based; confirm Kenya-based remote is accepted.",
+      "note": "",
+      "id": "j-8e9c615c2baf"
+    },
+    {
+      "rank": 4,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5023987-full-stack-developer-intern",
+      "title": "Full Stack Developer Intern",
+      "company": "Nexvia",
+      "location_as_stated": "Remote Everywhere (description says Remote – India)",
+      "posted": "2026-11-09",
+      "salary_as_shown": "INR 3.5L–4.2L",
+      "experience_asked": "Internship; React + Node/Python",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-10 ~07:50 EAT",
+      "fit": "React plus Node or Python internship with a stated stipend band, aligned with his stack.",
+      "gaps": "Listed as remote everywhere, but the description says Remote – India, so Kenya eligibility is unclear. Confirm location and pay currency before applying.",
+      "note": "",
+      "id": "j-cd27c69fa8a8"
+    },
+    {
+      "rank": 5,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5024002-ai-ml-engineering-drawing-analysis-intern",
+      "title": "AI/ML & Engineering Drawing Analysis Intern",
+      "company": "Arcloop",
+      "location_as_stated": "Remote Everywhere",
+      "posted": "2026-11-09",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Internship; Python, computer vision / OCR",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-10 ~07:50 EAT",
+      "fit": "Python internship focused on computer vision and OCR for engineering drawings, adjacent to his Python work.",
+      "gaps": "Salary not shown. Computer vision and OCR are less central to his recent projects than full-stack or agents.",
+      "note": "",
+      "id": "j-be57f9714122"
+    },
+    {
+      "rank": 6,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5026974-developer-needed-ai-powered-email-creation-tool",
+      "title": "Developer for an AI-Powered Email Creation Tool",
+      "company": "Stealth",
+      "location_as_stated": "Remote Everywhere",
+      "posted": "2026-11-09",
+      "salary_as_shown": "INR 80k–1L (contract)",
+      "experience_asked": "2+ years; React/TypeScript, Node, LLM MCP integrations",
+      "found_via": "Wellfound signed-in browser",
+      "verified": "Wellfound job card (signed-in Remote/Worldwide search), live 2026-11-10 ~07:50 EAT",
+      "fit": "Contract role building an AI-powered email tool on React, TypeScript, Node and LLM MCP integrations, close to his stack.",
+      "gaps": "Asks for 2+ years, which is a stretch. Pay is in INR and looks modest for a contract; confirm scope, hours and Kenya eligibility.",
+      "note": "",
+      "id": "j-0f554cc22fe2"
     }
   ],
   "dropped": [],
@@ -346,10 +422,10 @@
       }
     ],
     "mjm_personalised": {
-      "ok": false,
-      "count": 0,
-      "method": null,
-      "error": "attempt1 no box Chrome profile returned the personalised view via cookies; attempt1 browser tab fallback also did not show the personalised view; attempt2 no box Chrome profile returned the personalised view via cookies; attempt2 browser ta"
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9228",
+      "error": null
     }
   }
 }
