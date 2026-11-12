@@ -1,0 +1,386 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "jobs": [
+      "Remotive",
+      "RemoteOK",
+      "Himalayas",
+      "Jobicy",
+      "WeWorkRemotely",
+      "WorkingNomads",
+      "RemotiveAfrica",
+      "Arc",
+      "Greenhouse",
+      "Ashby",
+      "Lever",
+      "LinkedIn",
+      "ReliefWeb",
+      "Jobgether",
+      "micro1",
+      "Wellfound",
+      "MyJobMag and LinkedIn (via Local Search Bot)"
+    ],
+    "news": [
+      "TechCrunch",
+      "TechTarget",
+      "Mint",
+      "Tech Startups",
+      "The Next Web",
+      "TechCabal",
+      "TechTrendsKE"
+    ]
+  },
+  "run_date": "2026-11-12",
+  "checked_at": "2026-11-12T07:50:00+03:00",
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2282,
+    "kept_after_filters": 56,
+    "fresh_shortlisted": 4,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 104,
+        "fresh": 24,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 98,
+        "fresh": 23,
+        "kept": 4,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "URLError: <urlopen error timed out>"
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 47,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 158,
+        "fresh": 36,
+        "kept": 4,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 37,
+        "fresh": 22,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "URLError: <urlopen error timed out>"
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 173,
+        "fresh": 117,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 898,
+        "fresh": 62,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 115,
+        "fresh": 11,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 14,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 11,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 492,
+        "fresh": 178,
+        "kept": 23,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 73,
+        "fresh": 29,
+        "kept": 13,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "Not checked: automated fetch is disabled on purpose and the signed-in browser pass has not run yet in this build"
+      }
+    ]
+  },
+  "counts": {
+    "pulled": 2282,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1663,
+      "senior_title": 285,
+      "not_target_role": 109,
+      "location_or_timezone": 150
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 1,
+    "dropped": 0,
+    "reviewed_closely": 1,
+    "dropped_by_reason": {},
+    "stories": 8
+  },
+  "method": {
+    "filtering_summary": "The live search pulled 2,282 postings; 1,660 were older than 7 days, 285 were senior or excluded titles, 109 were not target roles, 150 failed Kenya eligibility and 5 were already applied to. Jobgether (492 pulled, 178 recent, 23 kept) and micro1 (73 pulled, 29 recent, 13 kept) both answered live. Wellfound was not checked yet: automated fetch is disabled and the signed-in browser pass has not run. Himalayas, Remotive Africa and ReliefWeb failed (timeouts or empty feed). Jobgether pages block curl, so those roles rest on the public API listing."
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "stretch",
+      "url": "https://jobgether.com/offer/6aba420d8a27695aea04b81c-full-stack-software-engineer---ai-first",
+      "title": "Full Stack Software Engineer - AI-First",
+      "company": "WorkFlex",
+      "location_as_stated": "Anywhere (as tagged by Jobgether)",
+      "posted": "2026-11-11",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Mid-level (2-5 years)",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether public API listing, live 2026-11-12 (jobgether.com page returns 403 to curl; employer page not opened)",
+      "fit": "Full-stack and AI-first, tagged Anywhere, which suits his React and Python work.",
+      "gaps": "Asks for 2-5 years against his roughly one year; confirm on the employer page.",
+      "note": "",
+      "id": "j-7542676feb12"
+    }
+  ],
+  "dropped": [],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "name": "AI and LLMs",
+        "stories": [
+          {
+            "title": "Anthropic IPO draws orders several times the shares on offer",
+            "summary": "Bloomberg reports demand is several times the offering as Anthropic seeks up to $90.4 billion; pricing is expected November 18 and Nasdaq trading (ticker ANT) November 19.",
+            "why": "The biggest AI listing so far, and a read on how the market values AI labs.",
+            "source": "Mint",
+            "date": "2026-11-12",
+            "url": "https://www.livemint.com/companies/news/anthropic-ipo-draws-multiple-times-the-available-orders-why-wall-street-sees-it-as-a-test-of-the-ai-boom-11794451339447.html",
+            "id": "s-07f260da791f"
+          },
+          {
+            "title": "Anthropic sets IPO range at $70 to $78 a share, about a $1.4 trillion valuation",
+            "summary": "825 million Class A shares, plus a $26 billion private sale to AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC; run-rate revenue reached $81 billion by end of October.",
+            "why": "Shows how far AI revenue has scaled and who is funding it.",
+            "source": "TechCrunch",
+            "date": "2026-11-10",
+            "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
+            "id": "s-9871791e1b1f"
+          },
+          {
+            "title": "Anthropic releases Claude Fable 5.2 and Mythos 5.2 at lower prices",
+            "summary": "Both models cost $8 per million input tokens and $40 per million output tokens, down from $10 and $50, with gains in coding, reasoning and vision.",
+            "why": "Cheaper coding models matter for the AI tools he builds with.",
+            "source": "TechTarget",
+            "date": "2026-11-11",
+            "url": "https://www.techtarget.com/news/with-ipo-looming-anthropic-launches-new-ai-models-workplace-tools/874410/",
+            "id": "s-7fbbb1c280cb"
+          },
+          {
+            "title": "Plurai raises $13M seed to test AI agents with simulations",
+            "summary": "Team8 led the round; the startup builds digital twins of a company's systems to find agent edge cases before production.",
+            "why": "Agent reliability is exactly the problem in the automation roles he targets.",
+            "source": "TechCrunch",
+            "date": "2026-11-11",
+            "url": "https://techcrunch.com/2026/11/11/plurai-wants-to-help-ai-agents-work-better-using-the-same-approach-that-helped-get-self-driving-cars-to-roads/",
+            "id": "s-0ccfb511c0c8"
+          }
+        ]
+      },
+      {
+        "id": "startups",
+        "name": "Startups and funding",
+        "stories": [
+          {
+            "title": "Mercor raises $750M at a $20B valuation",
+            "summary": "Series D backed by Nvidia, Salesforce and Benchmark, including an undisclosed employee share tender.",
+            "why": "It supplies expert work to AI labs, the same market as micro1.",
+            "source": "Tech Startups",
+            "date": "2026-11-11",
+            "url": "https://techstartups.com/2026/11/11/mercor-raises-750m-at-20b-valuation-doubling-its-worth-in-just-over-a-year-with-backing-from-nvidia-salesforce/",
+            "id": "s-0f912522d6bf"
+          },
+          {
+            "title": "Fractile raises $720M Series C for AI chips",
+            "summary": "The British startup, backed by the UK Sovereign AI Fund, is valued above 5 billion pounds and plans to ship its first chips next year.",
+            "why": "Shows investors still paying heavily for AI inference hardware.",
+            "source": "TechCrunch",
+            "date": "2026-11-11",
+            "url": "https://techcrunch.com/2026/11/11/with-720m-round-britains-fractile-gets-a-leg-up-in-the-race-for-ai-chips/",
+            "id": "s-6f3c74a04fea"
+          },
+          {
+            "title": "Torus raises $500M to put AI compute on spare grid power",
+            "summary": "Magnetar led the round; Foundry units run 1 to 20 megawatts of inference at existing sites in 12 to 16 weeks.",
+            "why": "Power is becoming the bottleneck for AI capacity.",
+            "source": "The Next Web",
+            "date": "2026-11-11",
+            "url": "https://thenextweb.com/news/torus-foundry-500m-magnetar-modular-ai-inference",
+            "id": "s-0d71df25113b"
+          }
+        ]
+      },
+      {
+        "id": "kenya",
+        "name": "Kenya fintech",
+        "stories": [
+          {
+            "title": "WayaWaya partners with Choice Bank for AI-powered banking",
+            "summary": "WayaWaya Banking lets customers open accounts, hold multiple currencies, transfer money and pay bills on a CBK-regulated platform. Published November 6.",
+            "why": "A Nairobi fintech building with AI, close to his Kwara background.",
+            "source": "TechCabal",
+            "date": "2026-11-06",
+            "url": "https://techcabal.com/2026/11/06/wayawaya-partners-choice-bank/",
+            "id": "s-0f75d18d5546"
+          }
+        ]
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-11-12",
+    "generated_at": "2026-11-12T07:09:35+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "ICT Officer II, Software Development",
+        "company": "Digital Health Agency (DHA)",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/ict-officer-ii-software-development-digital-health-agency-dha",
+        "posted": "2026-11-11",
+        "fit_note": "Software development role in Nairobi that matches his full-stack background."
+      },
+      {
+        "title": "IT",
+        "company": "OPPO Kenya",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/it-oppo-kenya",
+        "posted": "2026-11-11",
+        "fit_note": "IT role in Nairobi; check the level and scope."
+      },
+      {
+        "title": "Fullstack Developer (6 months Fixed Term Contract)",
+        "company": "Britam",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/fullstack-developer-6-months-fixed-term-contract-britam-1",
+        "posted": "2026-11-12",
+        "fit_note": "Full-stack contract role in Nairobi, fits his React and API experience."
+      },
+      {
+        "title": "Technical Support Engineer",
+        "company": "Onfon Media",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/technical-support-engineer-onfon-media",
+        "posted": "2026-11-11",
+        "fit_note": "Technical support role that matches his earlier support and data ops work."
+      },
+      {
+        "title": "DevOps Engineer",
+        "company": "Onfon Media",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/devops-engineer-onfon-media",
+        "posted": "2026-11-11",
+        "fit_note": "DevOps role; he has Docker, AWS and Terraform exposure."
+      },
+      {
+        "title": "Data Analyst",
+        "company": "Ideon Limited",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/data-analyst-ideon-limited-1",
+        "posted": "2026-11-11",
+        "fit_note": "Data analyst role that matches his SQL and Python."
+      },
+      {
+        "title": "Jr SAP Application Analyst – FI-CO (S/4HANA)",
+        "company": "Sucafina",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/jr-sap-application-analyst-fi-co-s-4hana-sucafina",
+        "posted": "2026-11-11",
+        "fit_note": "Junior application analyst role; SAP is outside his stack, so a stretch."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9226",
+      "error": null
+    }
+  }
+}
