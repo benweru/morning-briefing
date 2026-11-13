@@ -346,7 +346,9 @@ def attach_local_jobs(run, path=LOCAL_JOBS_PATH, today=None, allow_example=False
         return 'kept existing Kenya jobs snapshot' if 'local_jobs' in run else 'no Kenya jobs snapshot (run is not dated today)'
     run['local_jobs'] = read_local_jobs(path, today, allow_example)
     lj = run['local_jobs']
-    lj['mjm_personalised'] = mjm_personalised_check(today)
+    m = mjm_personalised_check(today)
+    if m is not None:
+        lj['mjm_personalised'] = m
     if lj['status'] == 'ok':
         return f'Kenya jobs: {len(lj["jobs"])} from {path}' + (f'; errors: {lj["errors"]}' if lj['errors'] else '')
     return f'Kenya jobs: not shown ({lj["reason"]})'
@@ -368,6 +370,10 @@ def mjm_personalised_check(today):
         except (OSError, ValueError):
             return None
     d = load()
+    if (not d or d.get('status') != 'ok') and os.environ.get('BRIEFING_SKIP_MJM_FETCH'):
+        # Set when re-publishing without re-reading the browser session (e.g. a manual rebuild):
+        # no fetch, and no personalised-feed line on the page.
+        return None
     if not d or d.get('status') != 'ok':
         try:
             subprocess.run(['python3', MJM_FETCHER], timeout=240, capture_output=True)

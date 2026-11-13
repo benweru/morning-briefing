@@ -18,6 +18,8 @@ build/verify_run.py            headless-Chrome checks
 build/publish_run.py           validate -> render -> verify -> commit -> push -> wait for Pages
 build/RUNBOOK.md               how to do a daily run end to end
 build/backfill_2026_10_07.py   one-off conversion of the first run
+build/inputs/YYYY-MM-DD.py     per-day script that writes that day's run file
+build/JOB_SEARCH_PLUS_RUNBOOK.md  setup and daily use of the live search (job-search-plus)
 ```
 
 ## Publish a run

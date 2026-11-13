@@ -35,6 +35,13 @@ mkdir -p /workspace/build && cp /workspace/briefing-site/build/* /workspace/buil
 python3 -m venv /workspace/.pwvenv && /workspace/.pwvenv/bin/pip install playwright jsonschema
 ```
 
+Also recreate the live-search venv (it is not in git):
+
+```bash
+cd /workspace/job-search-plus && python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
+./.venv/bin/python render.py --quiet   # smoke test; back up state/ first if you don't want seen.json touched
+```
+
 Then use system Chrome as is, or run `/workspace/.pwvenv/bin/playwright install chromium` and change
 `CHROME` in `verify_run.py`.
 
@@ -371,3 +378,28 @@ Then report to Ben, starting from the printed morning message:
 | Pages wait times out | Check `gh api repos/benweru/morning-briefing/pages/builds/latest` (with `GH_TOKEN` exported) and the repo's Actions/Pages settings, then re-run the script; it skips the commit if nothing changed. |
 | Kenya section says the local search didn't run | Check the `[publish] Kenya jobs:` line for the reason (missing, stale date, unreadable, example). Don't edit the file; tell Ben, and Local Search Bot if it's missing or stale. If the file appears later the same morning, re-running `publish_run.py` for today refreshes the snapshot. |
 | Run for a past date | Works. `index.html` keeps showing the newest run; only that day's archive page and the archive index change. |
+
+
+## Box reset recovery and run generators (added 2026-11-13)
+
+On 2026-11-12 at about 14:04 EAT the box was restored and `/workspace/build/`, this runbook,
+`/workspace/job-search-plus/RUNBOOK.md` and `/workspace/job-search-plus/.venv` did not come back.
+The scripts were restored on 2026-11-13 from the copy in this repo's `build/` folder (git), which is
+why `publish_run.py` copies itself there on every publish. Recovery is the "If the box was reset"
+block in section 0.
+
+Changes made during the recovery:
+- **Run generators.** Write each day's run file with a small script, `/workspace/build/inputs/YYYY-MM-DD.py`,
+  that reads `job-search-plus/out/remote-live-YYYY-MM-DD.json` (counts, `search_health`) and holds the
+  hand-verified shortlist, dropped list and news. Run it with `python3`, then publish. `publish_run.py`
+  copies `inputs/*.py` into the repo's `build/inputs/`, so the day's research survives a reset too.
+- **Push auth.** If neither `GH_TOKEN` nor `GITHUB_TOKEN` is set, `publish_run.py` uses gh's own
+  signed-in session (`gh auth status` must pass). Never print or export the token by hand.
+- **MyJobMag personalised-feed check.** `BRIEFING_SKIP_MJM_FETCH=1` makes `attach_local_jobs` skip
+  re-running `mjm_personalized.py` (which reads browser cookies) when today's state file is missing;
+  the page then shows no personalised-feed line. Use it for manual rebuilds outside the morning routine.
+
+Daily order (EAT): Local Search Bot writes `shared/local-jobs/latest.json` at about 6:58-7:11 ->
+run `remote_live.py` -> review and verify leads, gather news -> write `build/inputs/YYYY-MM-DD.py`
+and run it -> `publish_run.py YYYY-MM-DD --no-push` -> `publish_run.py YYYY-MM-DD` -> report to Ben.
+Never include X Money in any section.

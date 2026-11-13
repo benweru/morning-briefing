@@ -43,7 +43,7 @@ AUTHOR_NAME = 'Ben Waweru Maina'
 AUTHOR_EMAIL = '138494503+benweru@users.noreply.github.com'
 GH_REPO = 'benweru/morning-briefing'
 LIVE = 'https://benweru.github.io/morning-briefing/'
-BUILD_FILES = ['briefing_lib.py', 'verify_run.py', 'publish_run.py', 'backfill_2026_10_07.py', 'RUNBOOK.md']
+BUILD_FILES = ['briefing_lib.py', 'verify_run.py', 'publish_run.py', 'backfill_2026_10_07.py', 'RUNBOOK.md', 'JOB_SEARCH_PLUS_RUNBOOK.md']
 
 
 def say(msg):
@@ -135,14 +135,26 @@ def sync_build_scripts(repo):
     for f in BUILD_FILES:
         if os.path.exists(os.path.join(HERE, f)):
             shutil.copyfile(os.path.join(HERE, f), os.path.join(dest, f))
+    # per-day run generators (build/inputs/YYYY-MM-DD.py), so a box reset can't lose them
+    src_in = os.path.join(HERE, 'inputs')
+    if os.path.isdir(src_in):
+        os.makedirs(os.path.join(dest, 'inputs'), exist_ok=True)
+        for f in os.listdir(src_in):
+            if f.endswith('.py'):
+                shutil.copyfile(os.path.join(src_in, f), os.path.join(dest, 'inputs', f))
 
 
 def git_env():
     env = dict(os.environ)
     token = env.get('GH_TOKEN') or env.get('GITHUB_TOKEN')
-    if not token:
-        sys.exit('GH_TOKEN / GITHUB_TOKEN is not set; cannot push')
-    env['GH_TOKEN'] = token
+    if token:
+        env['GH_TOKEN'] = token
+    else:
+        # No token in the environment: fall back to gh's own signed-in session (gh auth login).
+        # The token is never read or printed here; `gh auth setup-git` wires git to gh's helper.
+        p = subprocess.run(['gh', 'auth', 'status'], capture_output=True, text=True)
+        if p.returncode != 0:
+            sys.exit('GH_TOKEN / GITHUB_TOKEN is not set and gh is not signed in; cannot push')
     env['GIT_TERMINAL_PROMPT'] = '0'
     return env, token
 

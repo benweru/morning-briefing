@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-11-13",
+  "checked_at": "2026-11-13T10:20:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive",
+      "RemoteOK",
+      "Himalayas",
+      "Jobicy",
+      "WeWorkRemotely",
+      "WorkingNomads",
+      "RemotiveAfrica",
+      "Arc",
+      "Greenhouse",
+      "Ashby",
+      "Lever",
+      "LinkedIn",
+      "ReliefWeb",
+      "Jobgether",
+      "micro1",
+      "Wellfound",
+      "Greenhouse API (Canonical recheck)",
+      "MyJobMag and LinkedIn (via Local Search Bot)"
+    ],
+    "news": [
+      "Google",
+      "Hugging Face blog",
+      "Unite.AI",
+      "PR Newswire",
+      "Tech Startups",
+      "The Next Web",
+      "TechCabal",
+      "Indeed Hiring Lab",
+      "Business Daily"
+    ]
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2614,
+    "kept_after_filters": 74,
+    "fresh_shortlisted": 3,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 112,
+        "fresh": 40,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 98,
+        "fresh": 18,
+        "kept": 3,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 308,
+        "fresh": 102,
+        "kept": 15,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 4,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 163,
+        "fresh": 31,
+        "kept": 3,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 37,
+        "fresh": 22,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 32,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 172,
+        "fresh": 100,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 857,
+        "fresh": 57,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 115,
+        "fresh": 13,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 14,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 12,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 510,
+        "fresh": 185,
+        "kept": 25,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 76,
+        "fresh": 31,
+        "kept": 11,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "Not checked: automated fetch is disabled on purpose and the signed-in browser pass did not run today"
+      }
+    ]
+  },
+  "counts": {
+    "pulled": 2614,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1887,
+      "senior_title": 301,
+      "not_target_role": 160,
+      "location_or_timezone": 157
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 3,
+    "dropped": 12,
+    "reviewed_closely": 15,
+    "dropped_by_reason": {
+      "location": 6,
+      "experience": 5,
+      "other": 1
+    },
+    "stories": 11
+  },
+  "method": {
+    "filtering_summary": "The live search pulled 2,614 postings; 1,834 were older than 7 days, 53 were reposts of listings over 30 days old, 301 were senior or excluded titles, 160 were not target roles, 157 failed Kenya eligibility, 13 were already applied to and 22 were duplicates. Of the closely reviewed roles, three micro1 Software Engineer contracts and Canonical's Python Container Images role were left off because they match roles he has already applied to or seen. Most Jobgether leads were Europe-only once the posting was opened. Wellfound was not checked (it needs the signed-in browser pass) and ReliefWeb failed with a parse error. Jobicy's dates look like bump dates, so its listings were rechecked at the source."
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "top",
+      "url": "https://himalayas.app/companies/workster-jobs/jobs/ai-llm-engineer-remote-in-emea",
+      "title": "AI LLM Engineer - Remote in EMEA",
+      "company": "Workster Jobs (recruiter; client not named)",
+      "location_as_stated": "\"Remote opportunity for candidates based in the EMEA region\"",
+      "posted": "2026-11-12",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Professional experience in software engineering or ML; no years stated (Himalayas tags it Mid-level)",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API listing and full description, live 2026-11-13 (himalayas.app pages return 403 to curl)",
+      "fit": "LLM features, RAG, prompt and evaluation work plus backend APIs, which is the core of his current AI automation role.",
+      "gaps": "A recruiter post with the client unnamed. Himalayas time-zone tags look wrong (UTC-10 to UTC-3), so confirm UTC+3 is fine before applying.",
+      "id": "j-e8829d1cb649"
+    },
+    {
+      "rank": 2,
+      "tier": "stretch",
+      "url": "https://jobgether.com/offer/6af5334b1b1a9ee7d669632b-mid-level-fullstack-engineer-typescript-node-react",
+      "title": "Mid-level Fullstack Engineer (Typescript, Node, React)",
+      "company": "SoSafe",
+      "location_as_stated": "\"Remote from: Portugal, Europe, European Union, EMEA\" (Jobgether)",
+      "posted": "2026-11-12",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "Mid-level (2-5 years); \"proven track record of professional full-stack development using Typescript + React\"",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page opened 2026-11-13 via a reader (curl gets 403); SoSafe careers page not opened",
+      "fit": "TypeScript, Node and React on an identity and access team, with AI-assisted tooling welcome; close to his React/TypeScript work.",
+      "gaps": "Kenya isn't named; confirm before applying (the tags lean Europe/Portugal). Asks for 2-5 years against his roughly one, plus CI/CD and observability depth.",
+      "id": "j-5ab485db2142"
+    },
+    {
+      "rank": 3,
+      "tier": "stretch",
+      "url": "https://jobs.micro1.ai/post/7fc07dfa-1d0e-4795-b8b2-805d3d41a48a",
+      "title": "Junior Machine Learning Engineer",
+      "company": "micro1",
+      "location_as_stated": "Worldwide (Himalayas tag); no restriction on the micro1 portal listing",
+      "posted": "2026-11-12",
+      "salary_as_shown": "$60-$120/hour (micro1 portal)",
+      "experience_asked": "Junior (title); not stated in years",
+      "found_via": "Himalayas API, confirmed on micro1 portal API",
+      "verified": "micro1 portal API, live 2026-11-13",
+      "fit": "Junior-level ML contract; his data science certificate and LLM work give him a start.",
+      "gaps": "ML engineering is beyond his main CV focus (applied LLM and automation); hourly contract; micro1 AI interview still pending.",
+      "id": "j-7160fcdafd23"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobgether.com/offer/6af4c2ac1b1a9ee7d6673189-junior-ai-engineer",
+      "title": "Junior AI Engineer",
+      "company": "CENSUS",
+      "location_as_stated": "\"Location: Remote in Europe.\" \"Europe-based candidates are prioritised.\"",
+      "reason": "Remote in Europe only; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-11",
+      "experience_asked": "At least 1 year hands-on AI/ML, internships count",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page, 2026-11-13",
+      "id": "j-bcbf7b4bf6d0"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af3712a1b1a9ee7d6606124-full-stack-engineer-backend-heavy",
+      "title": "Full Stack Engineer (Backend Heavy)",
+      "company": "QuantumLoopAi",
+      "location_as_stated": "\"Fully remote from India, aligned to UK business hours\"",
+      "reason": "India-based only; 2-3 yrs Node/TypeScript.",
+      "reason_code": "location",
+      "posted": "2026-11-10",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page, 2026-11-13",
+      "id": "j-600dc16bb9e5"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af605f7081ddfee5002540b-remote-ai-engineer",
+      "title": "Remote AI Engineer",
+      "company": "Huzzle.com",
+      "location_as_stated": "Remote from: North Macedonia, Europe, EMEA",
+      "reason": "North Macedonia hire; 3+ yrs.",
+      "reason_code": "location",
+      "posted": "2026-11-12",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page, 2026-11-13",
+      "id": "j-e913224b7ef8"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af63e2e081ddfee500348a6-jr-226156-azure-ai-foundry-engineer",
+      "title": "JR-226156 Azure AI Foundry Engineer",
+      "company": "Customertimes Corp",
+      "location_as_stated": "\"Remote (European and United States time zones)\"",
+      "reason": "EU/US time zones; 2+ yrs Azure AI Foundry with an agent in production.",
+      "reason_code": "location",
+      "posted": "2026-11-12",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page, 2026-11-13",
+      "id": "j-93fe774bd758"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af355021b1a9ee7d65fd180-full-stack-engineer",
+      "title": "Full Stack Engineer",
+      "company": "Feefo",
+      "location_as_stated": "Remote from: United Kingdom, Europe, EMEA",
+      "reason": "UK-tagged; 3-5 yrs Java/Spring Boot.",
+      "reason_code": "location",
+      "posted": "2026-11-10",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page, 2026-11-13",
+      "id": "j-64d2e1c9170e"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af3712a1b1a9ee7d6606112-backend-developer",
+      "title": "Backend Developer",
+      "company": "Pulse Games",
+      "location_as_stated": "Remote from: Turkey, Asia, Middle East, EMEA",
+      "reason": "Turkey-tagged; 3 yrs with mobile game teams.",
+      "reason_code": "location",
+      "posted": "2026-11-10",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page, 2026-11-13",
+      "id": "j-53870f2a7aa3"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af37f241b1a9ee7d6609635-full-stack-data-analyst",
+      "title": "Full Stack Data Analyst",
+      "company": "Fabulous",
+      "location_as_stated": "Remote from: Tunisia, Africa, Northern Africa, EMEA",
+      "reason": "4+ yrs data science/analytics; Tunisia-tagged.",
+      "reason_code": "experience",
+      "posted": "2026-11-10",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page, 2026-11-13",
+      "id": "j-c000018cec9f"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs/view/software-engineer-ai-tooling-at-jobgether-4489090730",
+      "title": "Software Engineer - AI Tooling",
+      "company": "Jobgether (for a partner company)",
+      "location_as_stated": "Kenya; \"work from anywhere in the world\"",
+      "reason": "At least 5 years of professional software engineering.",
+      "reason_code": "experience",
+      "posted": "2026-11-12",
+      "found_via": "LinkedIn (Remote, Kenya search)",
+      "verified": "LinkedIn guest job page, 2026-11-13",
+      "id": "j-06b56965b77b"
+    },
+    {
+      "url": "https://himalayas.app/companies/operationsarmy/jobs/accounting-ai-analyst-kenya-remote",
+      "title": "Accounting AI Analyst | Kenya | Remote",
+      "company": "OperationsArmy",
+      "location_as_stated": "Kenya; shifts between 8:00 AM and 8:00 PM EST",
+      "reason": "AI data-labelling and accounting QA, not engineering; US-hours shifts.",
+      "reason_code": "other",
+      "posted": "2026-11-10",
+      "found_via": "Himalayas API",
+      "verified": "Himalayas API, 2026-11-13",
+      "id": "j-fffc73dd1c32"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af525041b1a9ee7d6691fb1-tech-generalist-software-engineer",
+      "title": "Tech Generalist (Software Engineer)",
+      "company": "Capchase",
+      "location_as_stated": "Remote from: Estonia, Hungary, Bulgaria, Romania and other listed countries (Jobgether)",
+      "reason": "4+ yrs production TypeScript/Node; Kenya not in the country list.",
+      "reason_code": "experience",
+      "posted": "2026-11-12",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page, 2026-11-13",
+      "id": "j-8a6fe20036ae"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af3e1c81b1a9ee7d6629308-software-engineer---database---bitnomial",
+      "title": "Software Engineer - Database - Bitnomial",
+      "company": "Kraken",
+      "location_as_stated": "Remote from: Cyprus, United Arab Emirates, Lithuania and other listed countries (Jobgether)",
+      "reason": "3+ yrs with Haskell, Rust or C++.",
+      "reason_code": "experience",
+      "posted": "2026-11-11",
+      "salary_as_shown": "$96K - $192K / year",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page, 2026-11-13",
+      "id": "j-46c35163db37"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/karat-software-engineer-interviewer",
+      "title": "Software Engineer Interviewer",
+      "company": "Karat",
+      "location_as_stated": "Anywhere in the World; \"we hire worldwide and rotate which countries we recruit in\"",
+      "reason": "3+ yrs as a software engineer; task-paid contractor.",
+      "reason_code": "experience",
+      "posted": "2026-11-06",
+      "found_via": "We Work Remotely RSS",
+      "verified": "We Work Remotely page, 2026-11-13",
+      "id": "j-92f5187e1eb3"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Google releases Gemini 4 Hydrogen for fast coding and agent work",
+            "summary": "Rolling out across the Gemini API, AI Studio and the Gemini app; priced at $1.50 per million input tokens and $7.50 per million output tokens across a 1M-token context.",
+            "why": "A cheaper, fast model aimed at the agent workflows he builds.",
+            "source": "Google",
+            "date": "2026-11-12",
+            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+            "id": "s-8fdb0296ea11"
+          },
+          {
+            "title": "Salesforce open-sources SOV-Transcribe-1 speech model",
+            "summary": "Open-weight ASR model with 4 billion active parameters (26 billion total), released on Hugging Face under Apache 2.0.",
+            "why": "A self-hostable transcription option for voice-agent and automation projects.",
+            "source": "Hugging Face blog",
+            "date": "2026-11-12",
+            "url": "https://huggingface.co/blog/salesforce-sovereign-intelligence/sov-transcribe-1",
+            "id": "s-aeed48585495"
+          },
+          {
+            "title": "Perplexity releases Decider v1.3 classification models",
+            "summary": "Decider and Decider Flash v1.3 add exact text-span extraction and Apache-2.0 weights; Perplexity reports 91.6% mean accuracy across 63 query-classification tasks.",
+            "why": "Routing and classification models like this are building blocks for agent pipelines.",
+            "source": "Unite.AI",
+            "date": "2026-11-12",
+            "url": "https://www.unite.ai/perplexity-releases-decider-v1-3-models-with-text-span-extraction/",
+            "id": "s-abe0d39c33c1"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Kindo raises $30M to manage enterprise AI agents",
+            "summary": "Crosspoint Capital and Forgepoint Capital co-led the round, bringing total funding to $57.6 million; revenue grew about 800% year over year in 2026.",
+            "why": "Agent governance is a growing hiring area next to his automation work.",
+            "source": "PR Newswire",
+            "date": "2026-11-12",
+            "url": "https://www.prnewswire.com/news-releases/kindo-secures-57-6-million-to-expand-enterprise-control-over-ai-agent-actions-and-reduce-costs-302937058.html",
+            "id": "s-919395a1b305"
+          },
+          {
+            "title": "Rox raises $100M at a $1.3B valuation for sales AI agents",
+            "summary": "Series B co-led by General Catalyst and March Capital, part of a day that also saw Fractile raise $720 million.",
+            "why": "Well-funded agent startups are the ones likely to hire automation engineers.",
+            "source": "Tech Startups",
+            "date": "2026-11-12",
+            "url": "https://techstartups.com/2026/11/12/startup-funding-news-today-november-12-2026-fractile-uforce-agile-robots-imprint-more/",
+            "id": "s-6d0f319c6bc9"
+          },
+          {
+            "title": "Axle raises $9M to add AI agents to investment-bank software",
+            "summary": "Eniac and Bonfire Ventures led the round; the money goes into AI agents for corporate-access teams.",
+            "why": "Another early-stage agent company building in finance, close to his fintech background.",
+            "source": "The Next Web",
+            "date": "2026-11-12",
+            "url": "https://thenextweb.com/news/axle-9m-ai-agents-investment-banks-corporate-access",
+            "id": "s-8080ac23ceaa"
+          },
+          {
+            "title": "Huang's exit tests Nvidia's African AI bet",
+            "summary": "Jensen Huang resigned as Nvidia CEO; partner Cassava's rollout could cost up to $720 million for 12,000 GPUs, with Kenya part of the expansion plan.",
+            "why": "Local GPU capacity in Kenya would shape AI jobs and tools in Nairobi.",
+            "source": "TechCabal",
+            "date": "2026-11-12",
+            "url": "https://techcabal.com/2026/11/12/jensen-huang-exit-puts-nvidia-africa-test/",
+            "id": "s-ff63a25c6022"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Indeed: US tech job postings up from a year ago in Q3",
+            "summary": "Overall US postings rose 3.1% year over year to October 23; every tech category is up, led by software development, and software wage growth hit 2.9% in September.",
+            "why": "A modest recovery in tech hiring, though still below early-2020 levels.",
+            "source": "Indeed Hiring Lab",
+            "date": "2026-11-12",
+            "url": "https://hiringlab.indeed.com/2026/11/12/2026-q3-us-tech-labor-market-update/",
+            "id": "s-d0226c1a41c1"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Airtel Money opens wallet-to-bank transfers via PesaLink",
+            "summary": "Through a partnership with IPSL, Airtel Money users can send money to accounts at 30 banks, Saccos and microfinance institutions.",
+            "why": "More interoperability in Kenyan payments, the space his fintech work touches.",
+            "source": "Business Daily",
+            "date": "2026-11-11",
+            "url": "https://www.businessdailyafrica.com/bd/markets/currencies/airtel-money-mobile-to-bank-transfers-open-via-pesalink-5667226",
+            "id": "s-a9157d30193a"
+          },
+          {
+            "title": "Treasury proposes seizing unclaimed crypto and stablecoins",
+            "summary": "Idle digital assets would join shares and bank accounts that the Unclaimed Financial Assets Authority can take over.",
+            "why": "Signals how Kenya plans to regulate digital assets held by fintech users.",
+            "source": "Business Daily",
+            "date": "2026-11-12",
+            "url": "https://www.businessdailyafrica.com/bd/economy/treasury-seeks-to-seize-idle-cryptos-5668938",
+            "id": "s-16882c9c069e"
+          },
+          {
+            "title": "Kenya opens SecureKE sovereign security operations centre at Konza",
+            "summary": "KoTDA and Kenyan firm SecureKE set up the SOC about 65 km southeast of Nairobi to serve government and private organisations.",
+            "why": "New local security work and demand for engineers who can automate monitoring.",
+            "source": "TechCabal",
+            "date": "2026-11-12",
+            "url": "https://techcabal.com/2026/11/12/%f0%9f%91%a8%f0%9f%8f%bf%f0%9f%9a%80techcabal-daily-ghanas-big-5g-promise/",
+            "id": "s-1f612796ea63"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-11-13",
+    "generated_at": "2026-11-13T07:11:26+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "GIS Data Analyst",
+        "company": "Genesis Analytics",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/gis-data-analyst-genesis-analytics",
+        "posted": "12 November",
+        "fit_note": "Python and data work; needs PostGIS/web GIS, so a partial fit."
+      },
+      {
+        "title": "Microsoft Sales Specialist",
+        "company": "CloudPlexo",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://ke.linkedin.com/jobs/view/microsoft-sales-specialist-at-cloudplexo-4488539291",
+        "posted": "2026-11-12",
+        "fit_note": "Tech sales role, which Ben is open to."
+      }
+    ]
+  }
+}
