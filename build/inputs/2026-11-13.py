@@ -127,7 +127,7 @@ news = {'groups': [
 ]}
 dr = live['dropped']
 run = {
- 'schema_version': 1, 'run_date': D, 'checked_at': '2026-11-13T10:20:00+03:00',
+ 'schema_version': 1, 'run_date': D, 'checked_at': '2026-11-13T10:00:00+03:00',
  'sources': {'jobs': list(live['sources'].keys()) + ['Greenhouse API (Canonical recheck)', 'MyJobMag and LinkedIn (via Local Search Bot)'],
              'news': ['Google', 'Hugging Face blog', 'Unite.AI', 'PR Newswire', 'Tech Startups', 'The Next Web', 'TechCabal', 'Indeed Hiring Lab', 'Business Daily']},
  'search_health': {'window_days': live['window_days'], 'pulled': live['pulled'], 'kept_after_filters': len(live['kept']),
