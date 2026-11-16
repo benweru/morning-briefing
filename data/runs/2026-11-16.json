@@ -1,0 +1,710 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-11-16",
+  "checked_at": "2026-11-16T07:45:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive",
+      "RemoteOK",
+      "Himalayas",
+      "Jobicy",
+      "WeWorkRemotely",
+      "WorkingNomads",
+      "RemotiveAfrica",
+      "Arc",
+      "Greenhouse",
+      "Ashby",
+      "Lever",
+      "LinkedIn",
+      "ReliefWeb",
+      "Jobgether",
+      "micro1",
+      "Wellfound",
+      "Fuzu (signed-in browser pass)",
+      "MyJobMag personalised feed (signed-in browser pass)",
+      "Greenhouse API (Canonical and GitLab recheck)",
+      "Ashby API (Supabase recheck)",
+      "micro1 portal API (recheck)",
+      "MyJobMag and LinkedIn (via Local Search Bot)"
+    ],
+    "news": [
+      "The Decoder",
+      "Alibaba Cloud Model Studio",
+      "TechCrunch",
+      "TechTrendsKE",
+      "Business Daily",
+      "StartupNews Africa",
+      "TechCabal"
+    ]
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2633,
+    "kept_after_filters": 60,
+    "fresh_shortlisted": 2,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 128,
+        "fresh": 40,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 97,
+        "fresh": 15,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 305,
+        "fresh": 80,
+        "kept": 7,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 4,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 180,
+        "fresh": 49,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 34,
+        "fresh": 23,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 36,
+        "fresh": 4,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 170,
+        "fresh": 125,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 854,
+        "fresh": 55,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 115,
+        "fresh": 14,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 14,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": true,
+        "pulled": 70,
+        "fresh": 70,
+        "kept": 11,
+        "error": null
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 507,
+        "fresh": 168,
+        "kept": 24,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 73,
+        "fresh": 25,
+        "kept": 7,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "Cloudflare 403 security check on the signed-in browser pass; 0 pulled"
+      },
+      {
+        "name": "Fuzu (signed-in browser pass)",
+        "ok": true,
+        "pulled": 32,
+        "fresh": 2,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "MyJobMag personalised feed (signed-in browser pass)",
+        "ok": true,
+        "pulled": 125,
+        "fresh": 5,
+        "kept": 5,
+        "error": null
+      }
+    ]
+  },
+  "counts": {
+    "pulled": 2633,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1915,
+      "senior_title": 298,
+      "not_target_role": 177,
+      "location_or_timezone": 153
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 2,
+    "dropped": 20,
+    "reviewed_closely": 22,
+    "dropped_by_reason": {
+      "location": 14,
+      "closed": 1,
+      "stack": 3,
+      "other": 2
+    },
+    "stories": 9
+  },
+  "method": {
+    "filtering_summary": "The live search pulled 2,633 postings; 1,860 were older than 7 days, 55 were reposts of listings over 30 days old, 298 were senior or excluded titles, 177 were not target roles, 153 failed Kenya eligibility, 14 were already applied to and 16 were duplicates. A signed-in browser pass of Wellfound failed with a Cloudflare 403 security check (0 pulled). ReliefWeb failed with a parse error. Jobicy's dates look like bump dates, so its listings were rechecked at the source. Fuzu was checked in the signed-in browser (~32 pulled, 2 kept): Britam Fullstack Developer is already in the applied log (12 November); Onfon Media Forensic Investigations Assistant is a different role from the Onfon DevOps and L3 Support applications of 12 November. The MyJobMag personalised feed was also checked in the signed-in browser (~125 pulled, 5 kept): Bridge Talent Junior Software Developer and CGH Technical Officer, Data Analytics are already in the applied log; Tamu Group Associate Programmer Graduate Training Programme, DHA ICT Officer II Software Development, and Onfon Mobile Forensic Investigations Assistant are not. micro1's Software Engineer, Software Engineer - Backend and Software Engineer - Open Source Contributions roles were left off the shortlist because they match earlier micro1 Software Engineer applications under the already-surfaced company-and-title rule. Supabase's Software Engineer - AI Tooling role is open worldwide but asks for 5+ years, so it was dropped. The Arc Python Developer listing returned 404. Most Jobgether leads were Europe-only or used a country list that did not include Kenya. Canonical's Junior Ubuntu Software Engineer role was left off because it was already surfaced in an earlier briefing. The remote shortlist is shorter than the usual 6-10 because few fresh, junior-to-mid roles both stayed open, clearly included Kenya, and had not already been shown."
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "top",
+      "url": "https://jobs.micro1.ai/post/9dd55f6b-f862-41a1-8412-4c3012507646",
+      "title": "AI Conversation Evaluator",
+      "company": "micro1",
+      "location_as_stated": "\"Remote – Global (English required)\" (Himalayas API listing; no restriction on the micro1 portal listing)",
+      "posted": "2026-11-12",
+      "salary_as_shown": "$45-$70/hour (Himalayas API listing)",
+      "experience_asked": "Entry-level (Himalayas tag). No coding or previous AI evaluation experience needed; must be an active ChatGPT user (at least 3 times per week) with a personal ChatGPT Free or Plus account, and available 15-18 November.",
+      "found_via": "Himalayas API, confirmed on micro1 portal API",
+      "verified": "micro1 portal API and Himalayas API, live 2026-11-16 (jobs.micro1.ai and himalayas.app pages return 403 to curl)",
+      "fit": "A short, paid remote evaluation of conversational AI. No engineering bar, worldwide, and the pay is in the same micro1 contractor range he already knows.",
+      "gaps": "Not an engineering role. It is a roughly 7.5-hour contract whose project window is 15-18 November, so only two days remain as of this briefing. A personal ChatGPT account is required.",
+      "id": "j-d9440b718b4f"
+    },
+    {
+      "rank": 2,
+      "tier": "stretch",
+      "url": "https://weworkremotely.com/remote-jobs/sezzle-data-engineer-ii-credit-reporting",
+      "title": "Data Engineer II, Credit Reporting",
+      "company": "Sezzle",
+      "location_as_stated": "We Work Remotely region tag: \"EMEA Only\"",
+      "posted": "2026-11-11",
+      "salary_as_shown": "$2,800-$4,500 per month (Gross in USD); the listing also shows $25,000-$48,999 USD",
+      "experience_asked": "3+ years of relevant experience in data engineering or software engineering, including hands-on ownership of production data pipelines; advanced SQL and strong Python; demonstrated experience with Claude or equivalent LLM tools is required. Apply before 11 December 2026.",
+      "found_via": "We Work Remotely RSS",
+      "verified": "We Work Remotely posting opened 2026-11-16",
+      "fit": "Python, SQL and PostgreSQL on a fintech credit-reporting pipeline, with LLM tools required, which is close to his Python, data-ops and fintech work.",
+      "gaps": "Asks for 3+ years against his roughly one. It is a data-engineering role, not a backend or AI-product role. Confirm the EMEA-only tag still includes Kenya before applying.",
+      "id": "j-2139d5806915"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://arc.dev/remote-jobs/j/pyp6at47f2",
+      "title": "Python Developer (Website Completion) - PT - Worldwide",
+      "company": "Not shown (Arc listing)",
+      "location_as_stated": "Worldwide (Arc.dev collector label)",
+      "reason": "The Arc listing URL returned 404 on 16 November; the posting could not be confirmed as open.",
+      "reason_code": "closed",
+      "posted": "2026-11-11",
+      "found_via": "Arc.dev",
+      "verified": "arc.dev returned 404, 2026-11-16",
+      "id": "j-b8f467649d0e"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/d2b-technical-support-engineer",
+      "title": "Technical Support Engineer",
+      "company": "D2B",
+      "location_as_stated": "\"Africa Only\" (We Work Remotely); posting says \"independent contractor based in South Africa\" and a \"fully equipped home office environment in South Africa\"",
+      "reason": "South Africa-based contractor role, not open to Kenya; also a support role asking for 3+ years.",
+      "reason_code": "location",
+      "posted": "2026-11-14",
+      "salary_as_shown": "25,000 ZAR to 32,000 ZAR",
+      "experience_asked": "3+ years of technical support, application support, product support, or customer-facing engineering",
+      "found_via": "We Work Remotely RSS",
+      "verified": "We Work Remotely posting opened 2026-11-16",
+      "id": "j-1dd70c30f6f5"
+    },
+    {
+      "url": "https://jobgether.com/offer/6afa2495081ddfee50143607-mid-level-fullstack-developer---octopus-by-rtg---remote---4-months",
+      "title": "Mid-Level FullStack Developer - Octopus by RTG - Remote - 4 Months",
+      "company": "robusta",
+      "location_as_stated": "\"the offer is available from: Africa, Middle East, Northern Africa, EMEA, Egypt\" (Jobgether)",
+      "reason": "Tagged Northern Africa and Egypt; Kenya is not named. Also 3+ years Node.js and React on a 4-month contract.",
+      "reason_code": "location",
+      "posted": "2026-11-15",
+      "experience_asked": "3+ years of professional full-stack development, strong Node.js and React",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page (JSON-LD), 2026-11-16",
+      "id": "j-db9a17d0f452"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af72d53081ddfee5007c7ef-ai-engineer",
+      "title": "AI Engineer",
+      "company": "Ruby Labs",
+      "location_as_stated": "\"the offer is available from: Europe, Asia, United States, European Union, Middle East, EMEA, APAC, Turkey, Georgia (country), Republic of Moldova, Ukraine, North Macedonia, Albania, Kazakhstan, Montenegro, Serbia, Georgia (USA)\" (Jobgether)",
+      "reason": "Country list does not include Kenya. Listed as Strong Middle / Senior.",
+      "reason_code": "location",
+      "posted": "2026-11-13",
+      "experience_asked": "Strong Middle / Senior level",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether offer page (JSON-LD), 2026-11-16",
+      "id": "j-ae4bbaf18eee"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af97bcb081ddfee5011c109-full-stack-software-engineer-lystrup",
+      "title": "Full-stack Software Engineer, Lystrup",
+      "company": "Terma Group",
+      "location_as_stated": "Europe, European Union, EMEA, Denmark (Jobgether)",
+      "reason": "Denmark / Europe hire; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-15",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether listing tags, 2026-11-16",
+      "id": "j-142bf4a6ba69"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af7e41d081ddfee500b5c0d-software-engineer-intern---zurich-2027",
+      "title": "Software Engineer Intern - Zurich (2027)",
+      "company": "Snowflake",
+      "location_as_stated": "Europe, EMEA, Switzerland (Jobgether)",
+      "reason": "Switzerland / Zurich internship for 2027; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-14",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether listing tags, 2026-11-16",
+      "id": "j-5a9922fc1a1a"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af79dd7081ddfee5009b577-software-engineer",
+      "title": "Software Engineer",
+      "company": "Virtuozzo",
+      "location_as_stated": "Europe, European Union, EMEA, Bulgaria (Jobgether)",
+      "reason": "Bulgaria-tagged; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-13",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether listing tags, 2026-11-16",
+      "id": "j-8e1f1378a984"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af79dd7081ddfee5009b579-software-engineer-backend-focus",
+      "title": "Software Engineer, Backend focus",
+      "company": "Virtuozzo",
+      "location_as_stated": "Europe, EMEA, Georgia (country), Serbia (Jobgether)",
+      "reason": "Georgia / Serbia hire; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-13",
+      "experience_asked": "Mid-level (2-5 years)",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether listing tags, 2026-11-16",
+      "id": "j-9ea548764a93"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af72d49081ddfee5007c41f-software-engineer-ii-fullstack-international",
+      "title": "Software Engineer II, Fullstack (International)",
+      "company": "Affirm",
+      "location_as_stated": "Europe, European Union, EMEA, Poland, United Kingdom (Jobgether)",
+      "reason": "Poland / UK hire; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-13",
+      "experience_asked": "Mid-level (2-5 years)",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether listing tags, 2026-11-16",
+      "id": "j-060dbdc7dcc7"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af5f7e3081ddfee500202d7-software-engineer",
+      "title": "Software Engineer",
+      "company": "Motorola Solutions",
+      "location_as_stated": "Europe, EMEA, United Kingdom (Jobgether)",
+      "reason": "UK-tagged; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-12",
+      "experience_asked": "Mid-level (2-5 years)",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether listing tags, 2026-11-16",
+      "id": "j-5ecc75be9bce"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af257e51b1a9ee7d65a3c52-mis-backend-engineer",
+      "title": "Mis Backend Engineer",
+      "company": "Uncapped",
+      "location_as_stated": "Europe, European Union, EMEA, Poland (Jobgether)",
+      "reason": "Poland-tagged; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-09",
+      "experience_asked": "Mid-level (2-5 years)",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether listing tags, 2026-11-16",
+      "id": "j-c2765f386fcb"
+    },
+    {
+      "url": "https://jobgether.com/offer/6af3a9421b1a9ee7d661520c-software-engineer-in-test---ai-focus-ai-tooling-remote-greece-or-cyprus",
+      "title": "Software Engineer in Test - AI Focus/AI Tooling (Remote, Greece or Cyprus)",
+      "company": "LearnWorlds",
+      "location_as_stated": "Europe, European Union, Middle East, EMEA, Cyprus, Greece (Jobgether)",
+      "reason": "Greece or Cyprus only; also an SDET role.",
+      "reason_code": "location",
+      "posted": "2026-11-10",
+      "found_via": "Jobgether public API",
+      "verified": "Jobgether listing tags, 2026-11-16",
+      "id": "j-c50071d6ae75"
+    },
+    {
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8937825002",
+      "title": "Customer Success Engineer, EMEA",
+      "company": "Gitlab",
+      "location_as_stated": "Remote, Israel (Greenhouse)",
+      "reason": "Israel-based remote listing; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-15",
+      "found_via": "Greenhouse boards",
+      "verified": "Greenhouse listing, 2026-11-16",
+      "id": "j-a1a69e10e48a"
+    },
+    {
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8928253002",
+      "title": "Professional Services Engineer - KSA",
+      "company": "Gitlab",
+      "location_as_stated": "Remote, KSA (Greenhouse)",
+      "reason": "Saudi Arabia listing; Kenya not eligible.",
+      "reason_code": "location",
+      "posted": "2026-11-09",
+      "found_via": "Greenhouse boards",
+      "verified": "Greenhouse listing, 2026-11-16",
+      "id": "j-aa2132780b45"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/b50510f6-633a-445a-aa53-e52080793f6c",
+      "title": "Enterprise Client Partner, Enterprise AI",
+      "company": "micro1",
+      "location_as_stated": "Remote (global) (micro1 portal)",
+      "reason": "Sales and outbound client-acquisition role, not engineering.",
+      "reason_code": "other",
+      "posted": "2026-11-12",
+      "found_via": "micro1 public job portal API",
+      "verified": "micro1 portal API, live 2026-11-16",
+      "id": "j-1303716809fb"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/39b344d9-4774-4c9e-8220-620084da3df5",
+      "title": "AI Video Editor (Premiere Pro & After Effects)",
+      "company": "micro1",
+      "location_as_stated": "Remote (global) (micro1 portal)",
+      "reason": "Video editing and motion graphics, not a software role.",
+      "reason_code": "stack",
+      "posted": "2026-11-09",
+      "found_via": "micro1 public job portal API",
+      "verified": "micro1 portal API, live 2026-11-16",
+      "id": "j-d482065b090c"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/778a5a12-8b98-41d7-a0a4-6d23f0ee76cc",
+      "title": "Electronics Engineer (DesignSpark PCB Specialist)",
+      "company": "micro1",
+      "location_as_stated": "Remote (global) (micro1 portal)",
+      "reason": "PCB and electronics design, not his software stack.",
+      "reason_code": "stack",
+      "posted": "2026-11-11",
+      "found_via": "micro1 public job portal API",
+      "verified": "micro1 portal API, live 2026-11-16",
+      "id": "j-6136ba23b7cb"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/74769642-30f7-4b92-a185-de399d703aa1",
+      "title": "Independent Consultant/Entrepreneur, Finance, Data & Engineering (Domain Expert)",
+      "company": "micro1",
+      "location_as_stated": "Remote (global) (micro1 portal)",
+      "reason": "Domain-expert consulting across finance and data, not a software engineering opening.",
+      "reason_code": "other",
+      "posted": "2026-11-11",
+      "found_via": "micro1 public job portal API",
+      "verified": "micro1 portal API, live 2026-11-16",
+      "id": "j-bf61faf31597"
+    },
+    {
+      "url": "https://remoteOK.com/remote-jobs/remote-data-engineer-addepto-1137714",
+      "title": "Data Engineer",
+      "company": "Addepto",
+      "location_as_stated": "RemoteOK label: \"Probably worldwide\"; posting says you can \"work remotely or from modern offices and coworking spaces\"",
+      "reason": "Kenya is not named, and RemoteOK only marks it as probably worldwide. Also asks for 3+ years in data or analytics engineering (GCP, Snowflake, dbt).",
+      "reason_code": "location",
+      "posted": "2026-11-10",
+      "experience_asked": "3+ years of commercial experience in Data Engineering or Analytics Engineering",
+      "found_via": "RemoteOK API",
+      "verified": "RemoteOK posting opened 2026-11-16",
+      "id": "j-93bbe78bf712"
+    },
+    {
+      "url": "https://jobicy.com/jobs/161660-embedded-desktop-linux-systems-engineer-optimisation-2",
+      "title": "Embedded & Desktop Linux Systems Engineer - Optimisation",
+      "company": "Canonical",
+      "location_as_stated": "Home based - Worldwide (Greenhouse)",
+      "reason": "Always-open listing first published 26 March 2022; asks for C/C++ and Linux packaging depth, which is not his CV focus.",
+      "reason_code": "stack",
+      "posted": "Jobicy listed 2026-11-12 (Greenhouse req first published 2022-03-26, updated 2026-08-05)",
+      "found_via": "Jobicy API",
+      "verified": "Greenhouse API, live 2026-11-16",
+      "id": "j-fb91584f82ef"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Meituan releases LongCat-2.5 weights, a 1.6-trillion-parameter agent model",
+            "summary": "The mixture-of-experts model has about 48 billion active parameters per token, a 1-million-token API context and MIT-licensed weights; Meituan is charging a promotional price of about EUR 0.27 per million input tokens and EUR 1.07 per million output tokens.",
+            "why": "An open-weight, agent-oriented model with OpenAI- and Anthropic-compatible APIs is another option for the automation work he builds.",
+            "source": "The Decoder",
+            "date": "2026-11-15",
+            "url": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/",
+            "id": "s-6fc6bc2d3ff2"
+          },
+          {
+            "title": "Alibaba puts Qwen4-Max on its international Model Studio",
+            "summary": "The 16 November changelog lists Qwen4-Max as a flagship multimodal model for coding, office work, frontend design and agent tasks, with web search, tool calling, structured outputs and OpenAI- and Anthropic-compatible APIs.",
+            "why": "A new flagship with tool calling and familiar API formats is relevant to the LLM integrations he ships.",
+            "source": "Alibaba Cloud Model Studio",
+            "date": "2026-11-16",
+            "url": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/newly-released-models",
+            "id": "s-607adeea159e"
+          },
+          {
+            "title": "Apple opens a US study app on how people use clinically grounded health AI",
+            "summary": "In partnership with OpenEvidence, Apple aims for up to 200,000 US participants aged over 21 on iPhone 15 or later; answers are grounded in sources including NEJM, JAMA and Nature, data is not used to train models, and OpenEvidence deletes query and response data after 24 hours.",
+            "why": "It shows how a large consumer platform is testing health AI, even though the study itself is limited to the US.",
+            "source": "TechCrunch",
+            "date": "2026-11-15",
+            "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
+            "id": "s-09862cd7036c"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Bharat Semi raises $24 million to build AI-enabled image sensors",
+            "summary": "The all-equity seed round was led by Info Edge Group, South Park Commons and Indus Bridge Ventures; the pre-revenue New Delhi startup has about 75 employees, plans first commercial production in 2027, and has begun hiring engineers in Europe.",
+            "why": "A well-funded hardware-and-AI startup that is already hiring engineers outside India is a reminder of where specialised AI roles are opening.",
+            "source": "TechCrunch",
+            "date": "2026-11-15",
+            "url": "https://techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market/",
+            "id": "s-fc91828979fb"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Australia's central bank: AI effects are showing up first among young software workers",
+            "summary": "An RBA analysis finds job postings have fallen since ChatGPT launched in late 2022, with the steepest drop in the most AI-exposed occupations, and weaker employment among workers aged 15 to 24 and young graduates in that group; the article also cites an Anthropic review that junior technical hires fell from 27 percent to 9 percent since early 2025.",
+            "why": "Junior software hiring is under pressure in AI-exposed fields, which is the market he is applying into.",
+            "source": "The Decoder",
+            "date": "2026-11-15",
+            "url": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/",
+            "id": "s-7611c876b17c"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Safaricom is pushing M-Pesa beyond payments into a wider financial-services platform",
+            "summary": "In the six months to 30 September 2026, M-Pesa revenue was KSh100.1 billion (42.8 percent of Safaricom revenue) and financial-services revenue was KSh7.1 billion, up 55.3 percent, with 17.5 million credit customers, 3.4 million money-market-fund customers and 67,500 insurance policies issued, up 852.2 percent.",
+            "why": "The payments and credit stack he already works around in Kenyan fintech is still expanding.",
+            "source": "TechTrendsKE",
+            "date": "2026-11-15",
+            "url": "https://techtrendske.co.ke/2026/11/15/mpesa-financial-services-expansion/",
+            "id": "s-e94007f5f386"
+          },
+          {
+            "title": "Kenya weighs child social-media rules as Meta expands AI age checks",
+            "summary": "The proposed Online Safety Bill 2026 would require parental consent and age verification; companies that fail to comply could face fines of up to Sh500 million or 10 percent of annual global turnover, whichever is higher.",
+            "why": "New platform rules in Kenya can change how consumer-tech and fintech products handle identity and age checks.",
+            "source": "Business Daily",
+            "date": "2026-11-15",
+            "url": "https://www.businessdailyafrica.com/bd/corporate/technology/kenya-weighs-child-social-media-curbs-5672128",
+            "id": "s-ad43012cdd1e"
+          },
+          {
+            "title": "CBK and CMA tell virtual-asset providers to apply for licences",
+            "summary": "A joint public notice dated 13 November 2026, reported on 15 November, requires anyone providing or intending to provide virtual-asset services in or from Kenya to apply under the Virtual Asset Service Providers Act, 2025; most categories carry a KSh100,000 application fee, and the regulator must decide within 30 days once due diligence is complete.",
+            "why": "Licensing for virtual-asset firms is a live compliance issue in the Kenyan fintech market.",
+            "source": "StartupNews Africa",
+            "date": "2026-11-15",
+            "url": "https://startupnews.africa/2026/11/15/kenya-vasp-licence-notice-cbk-cma/",
+            "id": "s-d014b16ba127"
+          },
+          {
+            "title": "A Microsoft outage pushed Kenyan banks onto WhatsApp and phone lines",
+            "summary": "The outage began around 4 PM GMT on Thursday and affected users in 74 countries; in Kenya at least six lenders sent notices, including Equity, Standard Chartered, Stanbic, UBA, I&M, Loop and NCBA's digital bank, while payments and mobile banking were reported as unaffected.",
+            "why": "It shows how Kenyan financial institutions still depend on a single cloud vendor for everyday operations.",
+            "source": "TechCabal",
+            "date": "2026-11-15",
+            "url": "https://techcabal.com/2026/11/15/the-next-wave-microsofts-outage-showed-africas-banks-had-no-real-plan-b/",
+            "id": "s-ccd76e453114"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-11-16",
+    "generated_at": "2026-11-16T07:14:12+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Associate Programmer – Graduate Training Programme",
+        "company": "Tamu Group",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/associate-programmer-graduate-training-programme-tamu-group",
+        "posted": "13 November",
+        "fit_note": "Graduate programme for programmers; fits his CS degree and full-stack work."
+      },
+      {
+        "title": "Back End Engineer",
+        "company": "d.light",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/back-end-engineer-d-light-1",
+        "posted": "13 November",
+        "fit_note": "Backend role; matches his Python REST APIs and webhooks at Kwara (check seniority)."
+      },
+      {
+        "title": "IT Officer",
+        "company": "Ignite Energy Access",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/it-officer-ignite-energy-access",
+        "posted": "13 November",
+        "fit_note": "IT support role matching his tech support background."
+      },
+      {
+        "title": "Business Intelligence (BI) Analyst",
+        "company": "Teleperformance Kenya",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/business-intelligence-bi-analyst-teleperformance",
+        "posted": "13 November",
+        "fit_note": "Data/BI role; SQL and Python from data ops work."
+      },
+      {
+        "title": "Drupal/UI-UX Consultant",
+        "company": "CDL Human Resource",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/drupal-ui-ux-consultant-cdl-human-resouce",
+        "posted": "13 November",
+        "fit_note": "Web front-end work; partial fit via React and web builds."
+      },
+      {
+        "title": "Application Engineer",
+        "company": "Talent Match Africa",
+        "location": "Nairobi",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/application-engineer-at-talent-match-africa-4489830029",
+        "posted": "2026-11-13",
+        "fit_note": "Application engineering role; fits his APIs and integrations experience."
+      },
+      {
+        "title": "IT Service Desk - Kenya",
+        "company": "A&O Corsaire",
+        "location": "Nairobi",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/it-service-desk-kenya-at-a-o-corsaire-4490753892",
+        "posted": "2026-11-13",
+        "fit_note": "IT service desk; matches his earlier tech support."
+      },
+      {
+        "title": "Solution Consultant, Africa",
+        "company": "Faria Education Group",
+        "location": "Nairobi",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/solution-consultant-africa-at-faria-education-group-4489579669",
+        "posted": "2026-11-13",
+        "fit_note": "Solution consultant role; client-facing technical work he's open to."
+      },
+      {
+        "title": "Data Analytics Internship",
+        "company": "Entry-level Jobs in Kenya - campusbiz.co.ke",
+        "location": "Nairobi",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/data-analytics-internship-at-entry-level-jobs-in-kenya-campusbiz-co-ke-4490265131",
+        "posted": "2026-11-16",
+        "fit_note": "Data analytics internship; SQL and Python background."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9226",
+      "error": null
+    }
+  }
+}
