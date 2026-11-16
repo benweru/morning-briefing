@@ -341,6 +341,12 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 .local-meta { font-size: var(--fs-sm); color: var(--ink-muted); margin-top: var(--s-1); }
 .local-fit { margin-top: var(--s-2); }
 .local-title .quiet { font: 400 var(--fs-sm)/var(--lh-body) var(--font-sans); }
+/* ---------- From your feeds (inside the Kenya band; existing tokens only) ---------- */
+.feeds { margin-top: var(--s-6); padding-top: var(--s-4); border-top: 2px solid var(--sec-local); scroll-margin-top: var(--nav-h); }
+.feeds-head { max-width: var(--measure); margin-bottom: var(--s-4); }
+.feeds-head h3 { font-size: var(--fs-lg); color: var(--ink); }
+.feeds-head p { margin-top: var(--s-2); color: var(--ink-muted); }
+.feed-job { padding-block: var(--s-4); border-bottom: 1px solid var(--rule-local); max-width: var(--measure); }
 .section-nav .nav-short { display: none; }
 @media (max-width: 640px) {
   .local-jobs { grid-template-columns: 1fr; }
@@ -363,7 +369,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
     <p class="dateline">Monday, 16 November 2026</p>
     <h1>Ben’s Morning Briefing</h1>
     <p class="dek">Remote roles open to Kenya, Nairobi roles, and today in tech.</p>
-    <p class="facts">2 shortlisted roles, 20 reviewed and dropped, 9 Kenya roles, 9 stories. Jobs checked Nov 16, 2026, 7:45 AM EAT.</p>
+    <p class="facts">2 shortlisted roles, 20 reviewed and dropped, 9 Kenya roles, 2 from your feeds, 9 stories. Jobs checked Nov 16, 2026, 7:45 AM EAT.</p>
     <p class="facts">MyJobMag personalised feed: read OK (75 jobs in your feed today, filtered for fit below).</p>
     <p class="facts">Live remote search: 16 of 18 sources answered, 2633 postings pulled, 60 fit after filters (posted in the last 7 days). <strong>Failed sources:</strong> ReliefWeb (ParseError: no element found: line 1, column 0) and Wellfound (Cloudflare 403 security check on the signed-in browser pass; 0 pulled).</p>
     <p class="facts">Permanent copy of the 16 November 2026 briefing. <a href="../../">Latest briefing</a> · <a href="../../archive/">Past briefings</a></p>
@@ -374,7 +380,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
   <div class="wrap">
     <ul role="list">
       <li><a href="#jobs" data-section="jobs" aria-current="true">Jobs<span class="n">2</span></a></li>
-      <li><a href="#kenya" data-section="local"><span class="nav-full">Kenya jobs</span><span class="nav-short" aria-hidden="true">Kenya</span><span class="n">9</span></a></li>
+      <li><a href="#kenya" data-section="local"><span class="nav-full">Kenya jobs</span><span class="nav-short" aria-hidden="true">Kenya</span><span class="n">11</span></a></li>
       <li><a href="#news" data-section="news"><span class="nav-full">Today in tech</span><span class="nav-short" aria-hidden="true">Tech</span><span class="n">9</span></a></li>
       <li class="nav-aside"><a href="../../archive/" class="archive-link">Past briefings</a></li>
     </ul>
@@ -681,6 +687,29 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
             <p class="local-fit"><strong>Fit:</strong> Data analytics internship; SQL and Python background.</p>
           </li>
       </ol>
+      <section class="feeds" id="feeds" aria-labelledby="feeds-heading">
+        <header class="feeds-head">
+          <h3 id="feeds-heading">From your feeds</h3>
+          <p>2 roles from Ben’s own job feeds that aren’t in the Kenya jobs above and that he hasn’t applied to. Checked in the signed-in browser: MyJobMag personalised (about 125 pulled, 5 kept) and Fuzu (about 32 pulled, 2 kept).</p>
+        </header>
+      <p class="local-note feed-excluded">Left out: Bridge Talent Junior Software Developer, CGH Technical Officer, Data Analytics, and Britam Fullstack Developer (already applied); Tamu Group Associate Programmer – Graduate Training Programme (already in the Kenya jobs above).</p>
+      <ol class="local-jobs feed-jobs" role="list">
+          <li class="feed-job" data-source="MyJobMag personalised">
+            <h4 class="local-title"><a href="https://www.myjobmag.co.ke/job/ict-officer-ii-software-development-digital-health-agency-dha" target="_blank" rel="noopener noreferrer">ICT Officer II, Software Development<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+            <p class="local-company">Digital Health Agency (DHA)</p>
+            <p class="local-meta">Nairobi · MyJobMag personalised · Posted 11 Nov 2026 · Closes 1 Dec 2026</p>
+            <p class="local-meta">Also listed in the 12 November briefing.</p>
+            <p class="local-fit"><strong>Fit:</strong> Entry/training-grade software development post in Nairobi; matches his CS degree and software work.</p>
+          </li>
+          <li class="feed-job" data-source="MyJobMag personalised">
+            <h4 class="local-title"><a href="https://www.myjobmag.co.ke/job/forensic-investigations-assistant-onfon-mobile" target="_blank" rel="noopener noreferrer">Forensic Investigations Assistant<span class="visually-hidden"> (opens in new tab)</span></a></h4>
+            <p class="local-company">Onfon Mobile</p>
+            <p class="local-meta">Nairobi · MyJobMag personalised · Posted 13 Nov 2026 · Closes 20 Nov 2026</p>
+            <p class="local-meta">Also on Fuzu: <a href="https://www.fuzu.com/kenya/jobs/forensic-investigations-assistant-onfon-media-ltd" target="_blank" rel="noopener noreferrer">same role on Fuzu<span class="visually-hidden"> (opens in new tab)</span></a> (Onfon Media, posted 12 Nov 2026, closes 20 Nov 2026).</p>
+            <p class="local-fit"><strong>Fit:</strong> Asks for basic Python and SQL, both on his CV. A different role from his 12 November Onfon DevOps and L3 Support applications.</p>
+          </li>
+      </ol>
+      </section>
     </div>
   </section>
 
@@ -777,7 +806,7 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
       <dt>Job sources</dt>
       <dd>Remotive, RemoteOK, Himalayas, Jobicy, WeWorkRemotely, WorkingNomads, RemotiveAfrica, Arc, Greenhouse, Ashby, Lever, LinkedIn, ReliefWeb, Jobgether, micro1, Wellfound, Fuzu (signed-in browser pass), MyJobMag personalised feed (signed-in browser pass), Greenhouse API (Canonical and GitLab recheck), Ashby API (Supabase recheck), micro1 portal API (recheck), and MyJobMag and LinkedIn (via Local Search Bot).</dd>
       <dt>Filtering</dt>
-      <dd>The live search pulled 2,633 postings; 1,860 were older than 7 days, 55 were reposts of listings over 30 days old, 298 were senior or excluded titles, 177 were not target roles, 153 failed Kenya eligibility, 14 were already applied to and 16 were duplicates. A signed-in browser pass of Wellfound failed with a Cloudflare 403 security check (0 pulled). ReliefWeb failed with a parse error. Jobicy&#x27;s dates look like bump dates, so its listings were rechecked at the source. Fuzu was checked in the signed-in browser (~32 pulled, 2 kept): Britam Fullstack Developer is already in the applied log (12 November); Onfon Media Forensic Investigations Assistant is a different role from the Onfon DevOps and L3 Support applications of 12 November. The MyJobMag personalised feed was also checked in the signed-in browser (~125 pulled, 5 kept): Bridge Talent Junior Software Developer and CGH Technical Officer, Data Analytics are already in the applied log; Tamu Group Associate Programmer Graduate Training Programme, DHA ICT Officer II Software Development, and Onfon Mobile Forensic Investigations Assistant are not. micro1&#x27;s Software Engineer, Software Engineer - Backend and Software Engineer - Open Source Contributions roles were left off the shortlist because they match earlier micro1 Software Engineer applications under the already-surfaced company-and-title rule. Supabase&#x27;s Software Engineer - AI Tooling role is open worldwide but asks for 5+ years, so it was dropped. The Arc Python Developer listing returned 404. Most Jobgether leads were Europe-only or used a country list that did not include Kenya. Canonical&#x27;s Junior Ubuntu Software Engineer role was left off because it was already surfaced in an earlier briefing. The remote shortlist is shorter than the usual 6-10 because few fresh, junior-to-mid roles both stayed open, clearly included Kenya, and had not already been shown.</dd>
+      <dd>The live search pulled 2,633 postings; 1,860 were older than 7 days, 55 were reposts of listings over 30 days old, 298 were senior or excluded titles, 177 were not target roles, 153 failed Kenya eligibility, 14 were already applied to and 16 were duplicates. A signed-in browser pass of Wellfound failed with a Cloudflare 403 security check (0 pulled). ReliefWeb failed with a parse error. Jobicy&#x27;s dates look like bump dates, so its listings were rechecked at the source. Fuzu was checked in the signed-in browser (~32 pulled, 2 kept): Britam Fullstack Developer is already in the applied log (12 November); Onfon Media Forensic Investigations Assistant is a different role from the Onfon DevOps and L3 Support applications of 12 November. The MyJobMag personalised feed was also checked in the signed-in browser (~125 pulled, 5 kept): Bridge Talent Junior Software Developer and CGH Technical Officer, Data Analytics are already in the applied log; Tamu Group Associate Programmer Graduate Training Programme, DHA ICT Officer II Software Development, and Onfon Mobile Forensic Investigations Assistant are not. micro1&#x27;s Software Engineer, Software Engineer - Backend and Software Engineer - Open Source Contributions roles were left off the shortlist because they match earlier micro1 Software Engineer applications under the already-surfaced company-and-title rule. Supabase&#x27;s Software Engineer - AI Tooling role is open worldwide but asks for 5+ years, so it was dropped. The Arc Python Developer listing returned 404. Most Jobgether leads were Europe-only or used a country list that did not include Kenya. Canonical&#x27;s Junior Ubuntu Software Engineer role was left off because it was already surfaced in an earlier briefing. The remote shortlist is shorter than the usual 6-10 because few fresh, junior-to-mid roles both stayed open, clearly included Kenya, and had not already been shown. Feed roles that are not already in the Kenya jobs or the applied log are listed under From your feeds.</dd>
       <dt>News sources</dt>
       <dd>The Decoder, Alibaba Cloud Model Studio, TechCrunch, TechTrendsKE, Business Daily, StartupNews Africa, and TechCabal.</dd>
       <dt>Past briefings</dt>

@@ -212,7 +212,7 @@
     "stories": 9
   },
   "method": {
-    "filtering_summary": "The live search pulled 2,633 postings; 1,860 were older than 7 days, 55 were reposts of listings over 30 days old, 298 were senior or excluded titles, 177 were not target roles, 153 failed Kenya eligibility, 14 were already applied to and 16 were duplicates. A signed-in browser pass of Wellfound failed with a Cloudflare 403 security check (0 pulled). ReliefWeb failed with a parse error. Jobicy's dates look like bump dates, so its listings were rechecked at the source. Fuzu was checked in the signed-in browser (~32 pulled, 2 kept): Britam Fullstack Developer is already in the applied log (12 November); Onfon Media Forensic Investigations Assistant is a different role from the Onfon DevOps and L3 Support applications of 12 November. The MyJobMag personalised feed was also checked in the signed-in browser (~125 pulled, 5 kept): Bridge Talent Junior Software Developer and CGH Technical Officer, Data Analytics are already in the applied log; Tamu Group Associate Programmer Graduate Training Programme, DHA ICT Officer II Software Development, and Onfon Mobile Forensic Investigations Assistant are not. micro1's Software Engineer, Software Engineer - Backend and Software Engineer - Open Source Contributions roles were left off the shortlist because they match earlier micro1 Software Engineer applications under the already-surfaced company-and-title rule. Supabase's Software Engineer - AI Tooling role is open worldwide but asks for 5+ years, so it was dropped. The Arc Python Developer listing returned 404. Most Jobgether leads were Europe-only or used a country list that did not include Kenya. Canonical's Junior Ubuntu Software Engineer role was left off because it was already surfaced in an earlier briefing. The remote shortlist is shorter than the usual 6-10 because few fresh, junior-to-mid roles both stayed open, clearly included Kenya, and had not already been shown."
+    "filtering_summary": "The live search pulled 2,633 postings; 1,860 were older than 7 days, 55 were reposts of listings over 30 days old, 298 were senior or excluded titles, 177 were not target roles, 153 failed Kenya eligibility, 14 were already applied to and 16 were duplicates. A signed-in browser pass of Wellfound failed with a Cloudflare 403 security check (0 pulled). ReliefWeb failed with a parse error. Jobicy's dates look like bump dates, so its listings were rechecked at the source. Fuzu was checked in the signed-in browser (~32 pulled, 2 kept): Britam Fullstack Developer is already in the applied log (12 November); Onfon Media Forensic Investigations Assistant is a different role from the Onfon DevOps and L3 Support applications of 12 November. The MyJobMag personalised feed was also checked in the signed-in browser (~125 pulled, 5 kept): Bridge Talent Junior Software Developer and CGH Technical Officer, Data Analytics are already in the applied log; Tamu Group Associate Programmer Graduate Training Programme, DHA ICT Officer II Software Development, and Onfon Mobile Forensic Investigations Assistant are not. micro1's Software Engineer, Software Engineer - Backend and Software Engineer - Open Source Contributions roles were left off the shortlist because they match earlier micro1 Software Engineer applications under the already-surfaced company-and-title rule. Supabase's Software Engineer - AI Tooling role is open worldwide but asks for 5+ years, so it was dropped. The Arc Python Developer listing returned 404. Most Jobgether leads were Europe-only or used a country list that did not include Kenya. Canonical's Junior Ubuntu Software Engineer role was left off because it was already surfaced in an earlier briefing. The remote shortlist is shorter than the usual 6-10 because few fresh, junior-to-mid roles both stayed open, clearly included Kenya, and had not already been shown. Feed roles that are not already in the Kenya jobs or the applied log are listed under From your feeds."
   },
   "jobs": [
     {
@@ -608,6 +608,59 @@
       }
     ]
   },
+  "feed_jobs": [
+    {
+      "title": "ICT Officer II, Software Development",
+      "company": "Digital Health Agency (DHA)",
+      "location": "Nairobi",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/ict-officer-ii-software-development-digital-health-agency-dha",
+      "posted": "2026-11-11",
+      "deadline": "2026-12-01",
+      "salary_as_shown": "Not shown",
+      "fit_note": "Entry/training-grade software development post in Nairobi; matches his CS degree and software work.",
+      "already_applied": false,
+      "seen_before": "2026-11-12"
+    },
+    {
+      "title": "Forensic Investigations Assistant",
+      "company": "Onfon Mobile",
+      "location": "Nairobi",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/forensic-investigations-assistant-onfon-mobile",
+      "posted": "2026-11-13",
+      "deadline": "2026-11-20",
+      "salary_as_shown": "Not shown",
+      "fit_note": "Asks for basic Python and SQL, both on his CV. A different role from his 12 November Onfon DevOps and L3 Support applications.",
+      "already_applied": false,
+      "also_on": [
+        {
+          "source": "Fuzu",
+          "company": "Onfon Media",
+          "posted": "2026-11-12",
+          "deadline": "2026-11-20",
+          "url": "https://www.fuzu.com/kenya/jobs/forensic-investigations-assistant-onfon-media-ltd"
+        }
+      ],
+      "seen_before": null
+    }
+  ],
+  "feed_health": {
+    "MyJobMag personalised": {
+      "pulled": 125,
+      "pulled_is_approximate": true,
+      "kept": 5,
+      "signed_in": true,
+      "error": null
+    },
+    "Fuzu": {
+      "pulled": 32,
+      "pulled_is_approximate": true,
+      "kept": 2,
+      "signed_in": true,
+      "error": null
+    }
+  },
   "local_jobs": {
     "status": "ok",
     "date": "2026-11-16",
@@ -706,5 +759,32 @@
       "method": "cdp-cookies:9226",
       "error": null
     }
-  }
+  },
+  "feed_excluded": [
+    {
+      "title": "Associate Programmer – Graduate Training Programme",
+      "company": "Tamu Group",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/associate-programmer-graduate-training-programme-tamu-group",
+      "reason": "already in Kenya jobs"
+    },
+    {
+      "title": "Junior Software Developer",
+      "company": "Bridge Talent",
+      "source": "MyJobMag personalised",
+      "reason": "already applied"
+    },
+    {
+      "title": "Technical Officer, Data Analytics",
+      "company": "CGH",
+      "source": "MyJobMag personalised",
+      "reason": "already applied"
+    },
+    {
+      "title": "Fullstack Developer",
+      "company": "Britam",
+      "source": "Fuzu",
+      "reason": "already applied"
+    }
+  ]
 }

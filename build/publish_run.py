@@ -19,6 +19,8 @@ What it does, in order (stops at the first failure, nothing is pushed unless all
      URLs, story ids, counts) and validates it against the schema rules in briefing_lib.
      If the run is dated today (EAT), it also snapshots the Kenya jobs file into run["local_jobs"]:
      the jobs only when the file's "date" is today, otherwise a not-run record (page shows one line).
+     Optional run["feed_jobs"] (signed-in MyJobMag personalised + Fuzu pass) are cleaned for today's
+     run: already applied or already in local_jobs -> run["feed_excluded"]; same URL -> merged.
   2. Renders index.html (latest run), archive/YYYY-MM-DD/index.html and archive/index.html.
      Older archive pages are left untouched, so they stay permanent.
   3. Verifies with headless Chrome (verify_run.py): HTTP 200 under /morning-briefing/, counts,
@@ -102,6 +104,10 @@ def build(repo, date, rebuild_all, local_jobs=bl.LOCAL_JOBS_PATH, allow_example=
             if d == bl.today_eat():
                 ex = bl.exclude_surfaced(r, bl.already_surfaced(repo, d))
                 say(f'excluded already-surfaced/reviewed roles: {ex}')
+            if 'feed_jobs' in r:
+                # From your feeds: drop roles already applied to or already in today's Kenya jobs,
+                # merge duplicates; earlier briefings only add a seen_before date, they never hide a role.
+                say(f'feed jobs: {bl.filter_feed_jobs(r, repo)}; {len(r["feed_jobs"])} shown')
         r = bl.normalise_run(r)
         errs, warns = bl.validate_run(r, d)
         errs += schema_errors(repo, r)

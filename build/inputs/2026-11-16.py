@@ -231,6 +231,37 @@ news = {'groups': [
  ]},
 ]}
 dr = live['dropped']
+# From your feeds: the signed-in computerUse browser pass of the MyJobMag personalised feed and Fuzu
+# (about 07:30-07:40 EAT). Only what that pass reported. publish_run.py moves already-applied roles and
+# roles already in Grao's local_jobs to feed_excluded; the rest render under "From your feeds".
+feed_jobs = [
+ dict(title='ICT Officer II, Software Development', company='Digital Health Agency (DHA)', location='Nairobi',
+      source='MyJobMag personalised',
+      url='https://www.myjobmag.co.ke/job/ict-officer-ii-software-development-digital-health-agency-dha',
+      posted='2026-11-11', deadline='2026-12-01', salary_as_shown='Not shown',
+      fit_note='Entry/training-grade software development post in Nairobi; matches his CS degree and software work.',
+      already_applied=False),
+ dict(title='Forensic Investigations Assistant', company='Onfon Mobile', location='Nairobi',
+      source='MyJobMag personalised',
+      url='https://www.myjobmag.co.ke/job/forensic-investigations-assistant-onfon-mobile',
+      posted='2026-11-13', deadline='2026-11-20', salary_as_shown='Not shown',
+      fit_note='Asks for basic Python and SQL, both on his CV. A different role from his 12 November Onfon DevOps and L3 Support applications.',
+      already_applied=False,
+      also_on=[dict(source='Fuzu', company='Onfon Media', posted='2026-11-12', deadline='2026-11-20',
+                    url='https://www.fuzu.com/kenya/jobs/forensic-investigations-assistant-onfon-media-ltd')]),
+ # Reported by the pass but filtered at publish time (kept here so the page says why they are missing):
+ dict(title='Associate Programmer – Graduate Training Programme', company='Tamu Group', location='Nairobi',
+      source='MyJobMag personalised',
+      url='https://www.myjobmag.co.ke/job/associate-programmer-graduate-training-programme-tamu-group',
+      already_applied=False),   # already in Grao's local_jobs today
+ dict(title='Junior Software Developer', company='Bridge Talent', source='MyJobMag personalised', already_applied=True),
+ dict(title='Technical Officer, Data Analytics', company='CGH', source='MyJobMag personalised', already_applied=True),
+ dict(title='Fullstack Developer', company='Britam', source='Fuzu', already_applied=True),
+]
+feed_health = {
+ 'MyJobMag personalised': {'pulled': 125, 'pulled_is_approximate': True, 'kept': 5, 'signed_in': True, 'error': None},
+ 'Fuzu': {'pulled': 32, 'pulled_is_approximate': True, 'kept': 2, 'signed_in': True, 'error': None},
+}
 run = {
  'schema_version': 1, 'run_date': D, 'checked_at': '2026-11-16T07:45:00+03:00',
  'sources': {'jobs': list(live['sources'].keys()) + [
@@ -256,8 +287,11 @@ run = {
       "The MyJobMag personalised feed was also checked in the signed-in browser (~125 pulled, 5 kept): Bridge Talent Junior Software Developer and CGH Technical Officer, Data Analytics are already in the applied log; Tamu Group Associate Programmer Graduate Training Programme, DHA ICT Officer II Software Development, and Onfon Mobile Forensic Investigations Assistant are not. "
       "micro1's Software Engineer, Software Engineer - Backend and Software Engineer - Open Source Contributions roles were left off the shortlist because they match earlier micro1 Software Engineer applications under the already-surfaced company-and-title rule. "
       "Supabase's Software Engineer - AI Tooling role is open worldwide but asks for 5+ years, so it was dropped. The Arc Python Developer listing returned 404. Most Jobgether leads were Europe-only or used a country list that did not include Kenya. "
-      "The remote shortlist is shorter than the usual 6-10 because few fresh, junior-to-mid roles both stayed open and clearly included Kenya after the employer-page check.")},
+      "Canonical's Junior Ubuntu Software Engineer role was left off because it was already surfaced in an earlier briefing. "
+      "The remote shortlist is shorter than the usual 6-10 because few fresh, junior-to-mid roles both stayed open, clearly included Kenya, and had not already been shown. "
+      "Feed roles that are not already in the Kenya jobs or the applied log are listed under From your feeds.")},
  'jobs': jobs, 'dropped': dropped, 'news': news,
+ 'feed_jobs': feed_jobs, 'feed_health': feed_health,
 }
 json.dump(run, open(f'/workspace/briefing-site/data/runs/{D}.json', 'w'), indent=2, ensure_ascii=False)
 print('wrote', len(jobs), 'jobs', len(dropped), 'dropped', sum(len(g['stories']) for g in news['groups']), 'stories')

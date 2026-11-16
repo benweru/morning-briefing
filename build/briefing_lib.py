@@ -246,6 +246,7 @@ def validate_run(run, filename_date=None):
                 E.append(f'{w}: dated after the run')
     if n == 0:
         E.append('news: at least one story is required')
+    E += validate_feed(run)
     if not 6 <= len(run['jobs']) <= 10:
         W.append(f'{len(run["jobs"])} shortlisted jobs (runbook target is 6-10)')
     if not 8 <= n <= 12:
@@ -526,8 +527,9 @@ def exclude_surfaced(run, seen):
 
 def surfaced_urls(run):
     lj = run.get('local_jobs') or {}
-    return [j['url'] for j in (run.get('jobs') or []) + (run.get('dropped') or []) + (lj.get('jobs') or [])
+    urls = [j['url'] for j in (run.get('jobs') or []) + (run.get('dropped') or []) + (lj.get('jobs') or [])
             if isinstance(j, dict) and j.get('url')]
+    return urls + [u for j in (run.get('feed_jobs') or []) if isinstance(j, dict) for u in _feed_urls(j)]
 
 
 def record_surfaced(run):
@@ -545,6 +547,190 @@ def record_surfaced(run):
 def local_count(run):
     lj = run.get('local_jobs')
     return len(lj['jobs']) if lj and lj.get('status') == 'ok' else None
+
+
+# ---------------------------------------------------------------- From your feeds (signed-in browser pass)
+# Optional run fields, filled by hand each morning from the computerUse pass of Ben's MyJobMag
+# personalised feed (https://www.myjobmag.co.ke/personalized) and Fuzu:
+#   feed_jobs:   [{title, company, location, source, url, posted, deadline, salary_as_shown, fit_note,
+#                  already_applied, also_on: [{source, url, company, title, posted, deadline}]}]
+#   feed_health: {"MyJobMag personalised": {pulled, pulled_is_approximate, kept, signed_in, error}, "Fuzu": {...}}
+# filter_feed_jobs() (run only for today's run) moves roles already applied to, or already in that
+# day's local_jobs, into feed_excluded. It never hides a role just because an earlier briefing showed
+# it; such roles get seen_before = that run's date instead. Runs without feed_jobs render nothing.
+FEED_SOURCES = ('MyJobMag personalised', 'Fuzu')
+FEED_REASONS = ('already applied', 'already in Kenya jobs', 'duplicate')
+
+
+def _feed_urls(j):
+    return [u for u in [j.get('url')] + [a.get('url') for a in (j.get('also_on') or []) if isinstance(a, dict)] if u]
+
+
+def _co_match(a, b):
+    """Normalised company names equal, or one a prefix of the other (at least 4 chars)."""
+    if not a or not b:
+        return False
+    return a == b or (min(len(a), len(b)) >= 4 and (a.startswith(b) or b.startswith(a)))
+
+
+def _ct_loose(key, keys):
+    if not key:
+        return False
+    c, t = key
+    return any(_co_match(c, sc) and (t == st or t.startswith(st) or st.startswith(t)) for sc, st in keys)
+
+
+def applied_keys(path=None):
+    """URL keys and (company, title) keys from applied_log.csv. Both column orders are added for
+    dated rows, because a few rows were logged as date,company,title."""
+    import csv
+    path = path or APPLIED_LOG_PATH
+    urls, ct = set(), set()
+    if not os.path.exists(path):
+        return urls, ct
+    for row in csv.reader(open(path, encoding='utf-8')):
+        if not row or row[0] == 'date':
+            continue
+        for cell in row:
+            if cell.startswith('http'):
+                urls.add(_url_key(cell))
+        if re.match(r'\d{4}-\d{2}-\d{2}$', row[0]) and len(row) > 2:
+            for k in (_ct_key(row[2], row[1]), _ct_key(row[1], row[2])):
+                if k:
+                    ct.add(k)
+        elif len(row) > 1:
+            k = _ct_key(row[0], row[1])
+            if k:
+                ct.add(k)
+    return urls, ct
+
+
+def _earlier_urls(repo, today):
+    """{normalised URL: earliest run date} for every URL shown in runs dated before `today`."""
+    import glob
+    seen = {}
+    for f in sorted(glob.glob(os.path.join(repo, 'data', 'runs', '*.json'))):
+        d = os.path.basename(f)[:10]
+        if d >= today:
+            continue
+        try:
+            r = json.load(open(f, encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
+        lj = r.get('local_jobs') or {}
+        for j in (r.get('jobs') or []) + (r.get('dropped') or []) + (lj.get('jobs') or []) + (r.get('feed_jobs') or []):
+            if isinstance(j, dict):
+                for u in _feed_urls(j):
+                    seen.setdefault(_url_key(u), d)
+    return seen
+
+
+def filter_feed_jobs(run, repo=None, applied=None):
+    """Clean today's feed_jobs in place. Returns {"applied": n, "kenya": n, "duplicate": n, "seen_before": n}."""
+    out = {'applied': 0, 'kenya': 0, 'duplicate': 0, 'seen_before': 0}
+    if not isinstance(run.get('feed_jobs'), list):
+        return out
+    a_urls, a_ct = applied if applied is not None else applied_keys()
+    lj = run.get('local_jobs') or {}
+    l_jobs = (lj.get('jobs') or []) if lj.get('status') == 'ok' else []
+    l_urls = {_url_key(j['url']) for j in l_jobs if j.get('url')}
+    l_ct = {k for k in (_ct_key(j.get('company'), j.get('title')) for j in l_jobs) if k}
+    excluded = run.setdefault('feed_excluded', [])
+    have_ex = {(x.get('company', '').lower(), x.get('title', '').lower()) for x in excluded}
+
+    def exclude(j, reason):
+        k = (j.get('company', '').lower(), j.get('title', '').lower())
+        if k not in have_ex:
+            have_ex.add(k)
+            excluded.append({k2: j[k2] for k2 in ('title', 'company', 'source', 'url') if j.get(k2)} | {'reason': reason})
+
+    keep, by_url = [], {}
+    for j in run['feed_jobs']:
+        if not isinstance(j, dict):
+            continue
+        keys = {_url_key(u) for u in _feed_urls(j)}
+        ct = _ct_key(j.get('company'), j.get('title'))
+        if j.get('already_applied') or keys & a_urls or _ct_loose(ct, a_ct):
+            exclude(j, 'already applied'); out['applied'] += 1
+            continue
+        if keys & l_urls or _ct_loose(ct, l_ct):
+            exclude(j, 'already in Kenya jobs'); out['kenya'] += 1
+            continue
+        hit = next((by_url[k] for k in keys if k in by_url), None)
+        if hit is not None:            # same posting listed twice: merge as also_on
+            for u in _feed_urls(j):
+                if _url_key(u) not in {_url_key(x) for x in _feed_urls(hit)}:
+                    hit.setdefault('also_on', []).append({'source': j.get('source'), 'url': u})
+            out['duplicate'] += 1
+            continue
+        for k in keys:
+            by_url[k] = j
+        keep.append(j)
+    run['feed_jobs'] = keep
+    if not excluded:
+        run.pop('feed_excluded')
+    if repo:
+        earlier = _earlier_urls(repo, run.get('run_date', '9999'))
+        for j in keep:
+            dates = [earlier[k] for k in (_url_key(u) for u in _feed_urls(j)) if k in earlier]
+            j['seen_before'] = min(dates) if dates else None
+            out['seen_before'] += bool(dates)
+    return out
+
+
+def feed_count(run):
+    fj = run.get('feed_jobs')
+    return len(fj) if isinstance(fj, list) else None
+
+
+def validate_feed(run):
+    """Errors for the optional feed_jobs / feed_health fields."""
+    E = []
+    fj = run.get('feed_jobs')
+    if fj is None:
+        return E
+    if not isinstance(fj, list):
+        return ['feed_jobs must be a list']
+    if not isinstance(run.get('feed_health'), dict) or not run['feed_health']:
+        E.append('feed_health is required when feed_jobs is present (one entry per source checked)')
+    seen = set()
+    for i, j in enumerate(fj):
+        w = f'feed_jobs[{i}] {j.get("title", "?") if isinstance(j, dict) else "?"}'
+        if not isinstance(j, dict):
+            E.append(f'{w}: must be an object'); continue
+        for k in ('title', 'company', 'source', 'url'):
+            if not _text(j.get(k)):
+                E.append(f'{w}: missing "{k}"')
+        if j.get('source') not in FEED_SOURCES:
+            E.append(f'{w}: source must be one of {FEED_SOURCES}')
+        if 'already_applied' in j and not isinstance(j['already_applied'], bool):
+            E.append(f'{w}: already_applied must be true or false')
+        if j.get('already_applied'):
+            E.append(f'{w}: already applied; it should have been moved to feed_excluded')
+        for a in j.get('also_on') or []:
+            if not isinstance(a, dict) or a.get('source') not in FEED_SOURCES:
+                E.append(f'{w}: also_on entries need a source from {FEED_SOURCES}')
+        for u in _feed_urls(j):
+            if not str(u).startswith(('https://', 'http://')):
+                E.append(f'{w}: url must be http(s): {u}')
+            k = _url_key(u)
+            if k in seen:
+                E.append(f'{w}: duplicate feed URL {u}')
+            seen.add(k)
+    for src, h in (run.get('feed_health') or {}).items():
+        if src not in FEED_SOURCES:
+            E.append(f'feed_health: unknown source {src!r} (use {FEED_SOURCES})')
+        if not isinstance(h, dict) or not isinstance(h.get('signed_in'), bool):
+            E.append(f'feed_health {src}: signed_in (true/false) is required')
+    lj = run.get('local_jobs') or {}
+    l_urls = {_url_key(j['url']) for j in (lj.get('jobs') or []) if j.get('url')} if lj.get('status') == 'ok' else set()
+    dup = [u for j in fj if isinstance(j, dict) for u in _feed_urls(j) if _url_key(u) in l_urls]
+    if dup:
+        E.append(f'feed_jobs repeat roles already in local_jobs: {dup}')
+    for x in run.get('feed_excluded') or []:
+        if x.get('reason') not in FEED_REASONS:
+            E.append(f'feed_excluded {x.get("title")}: reason must be one of {FEED_REASONS}')
+    return E
 
 # ---------------------------------------------------------------- diff
 
@@ -900,6 +1086,12 @@ a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
 .local-meta { font-size: var(--fs-sm); color: var(--ink-muted); margin-top: var(--s-1); }
 .local-fit { margin-top: var(--s-2); }
 .local-title .quiet { font: 400 var(--fs-sm)/var(--lh-body) var(--font-sans); }
+/* ---------- From your feeds (inside the Kenya band; existing tokens only) ---------- */
+.feeds { margin-top: var(--s-6); padding-top: var(--s-4); border-top: 2px solid var(--sec-local); scroll-margin-top: var(--nav-h); }
+.feeds-head { max-width: var(--measure); margin-bottom: var(--s-4); }
+.feeds-head h3 { font-size: var(--fs-lg); color: var(--ink); }
+.feeds-head p { margin-top: var(--s-2); color: var(--ink-muted); }
+.feed-job { padding-block: var(--s-4); border-bottom: 1px solid var(--rule-local); max-width: var(--measure); }
 .section-nav .nav-short { display: none; }
 @media (max-width: 640px) {
   .local-jobs { grid-template-columns: 1fr; }
@@ -1085,13 +1277,16 @@ def _local_item(j):
     return ''.join(out)
 
 
-def _local_html(lj, part):
-    """The Kenya jobs section, rendered only from the run's local_jobs snapshot."""
+def _local_html(lj, part, feeds=''):
+    """The Kenya jobs section, rendered only from the run's local_jobs snapshot, followed by the
+    optional 'From your feeds' block (feeds). lj is None when only feeds exist."""
     head = f'''
       <header class="section-head">
         <p class="eyebrow">Part {part}: Kenya jobs</p>
         <h2 id="kenya-heading">Roles in Nairobi</h2>'''
-    if lj.get('status') != 'ok':
+    if lj is None:
+        body = '\n      </header>'
+    elif lj.get('status') != 'ok':
         body = f'''
       </header>
       <p class="local-empty">{LOCAL_NOT_RUN}</p>'''
@@ -1124,10 +1319,109 @@ def _local_html(lj, part):
       </header>{notes}{lst}'''
     return f'''
   <section id="kenya" class="section section-local" data-section="local" aria-labelledby="kenya-heading" tabindex="-1">
-    <div class="wrap">{head}{body}
+    <div class="wrap">{head}{body}{feeds}
     </div>
   </section>
 '''
+
+
+def _feed_date(s):
+    s = _text(s)
+    if DATE_RE.match(s):
+        try:
+            return short_date(to_date(s))
+        except ValueError:
+            return s
+    return s
+
+
+def _feed_item(j):
+    title = e(j['title'])
+    link = f'<a href="{e(j["url"])}" target="_blank" rel="noopener noreferrer">{title}{NEWTAB}</a>'
+    meta = [e(x) for x in (_text(j.get('location')), _text(j.get('source'))) if x]
+    if _text(j.get('posted')):
+        meta.append(f'Posted {e(_feed_date(j["posted"]))}')
+    if _text(j.get('deadline')):
+        meta.append(f'Closes {e(_feed_date(j["deadline"]))}')
+    out = [f'\n          <li class="feed-job" data-source="{e(j["source"])}">',
+           f'\n            <h4 class="local-title">{link}</h4>',
+           f'\n            <p class="local-company">{e(j["company"])}</p>']
+    if meta:
+        out.append(f'\n            <p class="local-meta">{" · ".join(meta)}</p>')
+    sal = _text(j.get('salary_as_shown'))
+    if sal and sal.lower() != 'not shown':
+        out.append(f'\n            <p class="local-meta">Salary: {e(sal)}</p>')
+    for a in j.get('also_on') or []:
+        bits = [e(_text(a.get('company')))] if _text(a.get('company')) else []
+        if _text(a.get('posted')):
+            bits.append(f'posted {e(_feed_date(a["posted"]))}')
+        if _text(a.get('deadline')):
+            bits.append(f'closes {e(_feed_date(a["deadline"]))}')
+        extra = f' ({", ".join(bits)})' if bits else ''
+        out.append(f'\n            <p class="local-meta">Also on {e(a["source"])}: '
+                   f'<a href="{e(a["url"])}" target="_blank" rel="noopener noreferrer">same role on {e(a["source"])}{NEWTAB}</a>{extra}.</p>')
+    if j.get('seen_before'):
+        try:
+            sb = day_month(to_date(j['seen_before']))
+        except ValueError:
+            sb = j['seen_before']
+        out.append(f'\n            <p class="local-meta">Also listed in the {e(sb)} briefing.</p>')
+    if _text(j.get('fit_note')):
+        out.append(f'\n            <p class="local-fit"><strong>Fit:</strong> {e(j["fit_note"])}</p>')
+    out.append('\n          </li>')
+    return ''.join(out)
+
+
+def _feed_html(run):
+    """'From your feeds': roles from the signed-in browser pass of MyJobMag personalised and Fuzu."""
+    fj = run.get('feed_jobs')
+    if not isinstance(fj, list):
+        return ''
+    health = run.get('feed_health') or {}
+    srcs = [s for s in FEED_SOURCES if s in health] + [s for s in health if s not in FEED_SOURCES]
+
+    def pulled(h):
+        n = h.get('pulled')
+        return '' if not isinstance(n, int) else (f'about {n:,}' if h.get('pulled_is_approximate') else f'{n:,}')
+    parts = []
+    for s in srcs:
+        h = health[s]
+        bits = [f'{pulled(h)} pulled' if pulled(h) else '', f'{h["kept"]} kept' if isinstance(h.get('kept'), int) else '']
+        bits = [b for b in bits if b]
+        parts.append(e(s) + (f' ({", ".join(bits)})' if bits else ''))
+    checked = f' Checked in the signed-in browser: {join_and(parts)}.' if parts else ''
+    if fj:
+        intro = (f'{plural(len(fj), "role")} from Ben\u2019s own job feeds that aren\u2019t in the Kenya jobs above '
+                 f'and that he hasn\u2019t applied to.{checked}')
+    else:
+        intro = ('No new roles from Ben\u2019s own job feeds today after removing ones already applied to '
+                 f'or already listed above.{checked}')
+    notes = ''
+    for s in srcs:
+        h = health[s]
+        if h.get('signed_in') is False or _text(h.get('error')):
+            why = 'wasn\u2019t signed in' if h.get('signed_in') is False else 'reported a problem'
+            msg = f' ({e(_text(h.get("error")))})' if _text(h.get('error')) else ''
+            notes += (f'\n      <p class="local-note local-error feed-error">{e(s)} {why} this morning{msg}, '
+                      'so some of its roles may be missing.</p>')
+    ex = run.get('feed_excluded') or []
+    if ex:
+        groups = []
+        for reason, label in (('already applied', 'already applied'), ('already in Kenya jobs', 'already in the Kenya jobs above'), ('duplicate', 'duplicates')):
+            names = [e(f'{x.get("company", "")} {x.get("title", "")}'.strip()) for x in ex if x.get('reason') == reason]
+            if names:
+                groups.append(f'{join_and(names)} ({label})')
+        notes += f'\n      <p class="local-note feed-excluded">Left out: {"; ".join(groups)}.</p>'
+    lst = ''
+    if fj:
+        items = ''.join(_feed_item(j) for j in fj)
+        lst = f'\n      <ol class="local-jobs feed-jobs" role="list">{items}\n      </ol>'
+    return (f'\n      <section class="feeds" id="feeds" aria-labelledby="feeds-heading">'
+            f'\n        <header class="feeds-head">'
+            f'\n          <h3 id="feeds-heading">From your feeds</h3>'
+            f'\n          <p>{intro}</p>'
+            f'\n        </header>{notes}{lst}'
+            f'\n      </section>')
 
 
 def _diff_line(d):
@@ -1172,15 +1466,21 @@ def render_run_page(run, prev, root, archived):
     counts = {t: sum(1 for j in jobs if j['tier'] == t) for t in TIER_IDS}
     lj = run.get('local_jobs')            # Kenya jobs snapshot; None on runs from before the section existed
     n_local = local_count(run)
-    news_part = 'three' if lj else 'two'
-    local_section = _local_html(lj, 'two') if lj else ''
+    feeds = _feed_html(run)              # '' unless the run has feed_jobs (older runs unchanged)
+    n_feed = feed_count(run)
+    has_local = bool(lj) or bool(feeds)
+    news_part = 'three' if has_local else 'two'
+    local_section = _local_html(lj, 'two', feeds) if has_local else ''
     local_nav = ''
-    if lj:
-        n_html = f'<span class="n">{n_local}</span>' if n_local is not None else ''
+    if has_local:
+        n_total = (n_local or 0) + (n_feed or 0) if (n_local is not None or n_feed is not None) else None
+        n_html = f'<span class="n">{n_total}</span>' if n_total is not None else ''
         local_nav = f'''
       <li><a href="#kenya" data-section="local"><span class="nav-full">Kenya jobs</span><span class="nav-short" aria-hidden="true">Kenya</span>{n_html}</a></li>'''
     local_fact = f' {plural(n_local, "Kenya role")},' if n_local is not None else ''
-    dek = 'Remote roles open to Kenya, Nairobi roles, and today in tech.' if lj else 'Remote roles open to Kenya, and today in tech.'
+    if n_feed is not None:
+        local_fact += f' {n_feed} from your feeds,'
+    dek = 'Remote roles open to Kenya, Nairobi roles, and today in tech.' if has_local else 'Remote roles open to Kenya, and today in tech.'
 
     tiers_html = []
     for tid, tname, tdesc in TIERS:
@@ -1356,6 +1656,10 @@ def chat_summary(run, prev, live_url):
         lines.append(line)
     elif lj:
         lines.append('Kenya jobs: the local search didn\u2019t run today.')
+    fj = run.get('feed_jobs')
+    if isinstance(fj, list):
+        srcs = join_and(list((run.get('feed_health') or {}).keys())) or 'your feeds'
+        lines.append(f'From your feeds: {plural(len(fj), "role")} from {srcs}, not already listed or applied to.')
     lines.append(live_url)
     return '\n'.join(lines)
 

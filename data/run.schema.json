@@ -459,6 +459,177 @@
           }
         }
       }
+    },
+    "feed_jobs": {
+      "type": "array",
+      "description": "Optional. Roles from the signed-in browser pass of Ben's MyJobMag personalised feed and Fuzu, filled by hand from that pass. publish_run.py removes roles already in applied_log.csv (URL, or company and title, or already_applied true) and roles already in that day's local_jobs, merges duplicate URLs, and moves removed ones to feed_excluded. Runs without it show no 'From your feeds' block.",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "company",
+          "source",
+          "url"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "company": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location": {
+            "type": "string"
+          },
+          "source": {
+            "enum": [
+              "MyJobMag personalised",
+              "Fuzu"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          "posted": {
+            "type": "string"
+          },
+          "deadline": {
+            "type": "string"
+          },
+          "salary_as_shown": {
+            "type": "string"
+          },
+          "fit_note": {
+            "type": "string"
+          },
+          "already_applied": {
+            "type": "boolean"
+          },
+          "also_on": {
+            "type": "array",
+            "description": "The same role listed on another feed source (merged into one entry).",
+            "items": {
+              "type": "object",
+              "required": [
+                "source",
+                "url"
+              ],
+              "properties": {
+                "source": {
+                  "enum": [
+                    "MyJobMag personalised",
+                    "Fuzu"
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "pattern": "^https?://"
+                },
+                "company": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "posted": {
+                  "type": "string"
+                },
+                "deadline": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "seen_before": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "derived: date of the earliest earlier run that showed this URL, or null."
+          },
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "feed_health": {
+      "type": "object",
+      "description": "Optional. Per feed source (key = 'MyJobMag personalised' or 'Fuzu'): what the signed-in browser pass pulled and kept.",
+      "propertyNames": {
+        "enum": [
+          "MyJobMag personalised",
+          "Fuzu"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "signed_in"
+        ],
+        "properties": {
+          "pulled": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "pulled_is_approximate": {
+            "type": "boolean"
+          },
+          "kept": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "signed_in": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "feed_excluded": {
+      "type": "array",
+      "description": "derived (and may be seeded by hand): feed roles left out of the section, with the reason.",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "company",
+          "reason"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "reason": {
+            "enum": [
+              "already applied",
+              "already in Kenya jobs",
+              "duplicate"
+            ]
+          }
+        }
+      }
     }
   }
 }

@@ -218,7 +218,7 @@ Rules (enforced in `briefing_lib.read_local_jobs` / `attach_local_jobs`):
 - Each job links to its own `url` (non-http URLs are dropped and shown as "no link given"); company,
   location, source (MyJobMag / LinkedIn), posted and fit note appear only when present. Each entry
   in `errors` becomes a small note naming the failed source. Nothing is added or rewritten.
-- **Never edit `latest.json` and never add Kenya jobs to the run file by hand.** If the section says
+- **Never edit `latest.json` and never add Kenya jobs to `local_jobs` by hand** (roles from Ben's own feeds go in `feed_jobs`, section 3b). If the section says
   the search didn't run, that's the correct output; mention it to Ben instead.
 
 ### MyJobMag personalised feed self-check (added 2026-10-14)
@@ -235,9 +235,39 @@ When the run is dated today, `publish_run.py` drops every remote job, dropped-li
 job whose URL (normalised) is in `/workspace/job-search-plus/state/reviewed_jobs.txt`,
 `applied_log.csv`, or any earlier run in `data/runs/` (`briefing_lib.already_surfaced` /
 `exclude_surfaced`), then renumbers ranks. After a successful push it appends every URL it showed
-to `reviewed_jobs.txt` under `# surfaced in briefing YYYY-MM-DD` (lines tagged with today's date
-are ignored on a same-day rebuild). When shortlisting, skip these URLs up front so the page isn't
+to `reviewed_jobs.txt` (feed roles included) under `# surfaced in briefing YYYY-MM-DD` (lines tagged with today's date
+are ignored on a same-day rebuild). `feed_jobs` are the exception: they are never hidden for having been shown before (section 3b). When shortlisting, skip these URLs up front so the page isn't
 left short; don't add them back by hand.
+
+## 3b. From your feeds (signed-in browser pass, added 2026-11-16)
+
+Each morning the parent agent runs a computerUse pass, signed in as Ben, over his MyJobMag
+personalised feed (`https://www.myjobmag.co.ke/personalized`) and Fuzu. Those roles go into the run
+as `feed_jobs` and render as a **From your feeds** block at the end of the Kenya jobs section
+(same olive band and tokens; no new colours). Fill it in `build/inputs/YYYY-MM-DD.py`:
+
+```python
+feed_jobs = [dict(title=..., company=..., location='Nairobi', source='MyJobMag personalised',  # or 'Fuzu'
+                  url='<exact posting URL from the pass>', posted='YYYY-MM-DD', deadline='YYYY-MM-DD',
+                  salary_as_shown='Not shown', fit_note='One factual line.', already_applied=False,
+                  also_on=[dict(source='Fuzu', url=..., company=..., posted=..., deadline=...)])]   # same role on the other site
+feed_health = {'MyJobMag personalised': {'pulled': 125, 'pulled_is_approximate': True, 'kept': 5, 'signed_in': True, 'error': None},
+               'Fuzu': {'pulled': 32, 'pulled_is_approximate': True, 'kept': 2, 'signed_in': True, 'error': None}}
+```
+
+- Add **every role the pass kept**, including ones you know are already applied (`already_applied=True`,
+  URL optional) or already in Grao's Kenya file. `publish_run.py` (today's run only, `bl.filter_feed_jobs`)
+  moves them to `feed_excluded` with the reason (`already applied` by flag, applied_log URL, or
+  company + title; `already in Kenya jobs` by URL or company + title; same URL twice is merged), and the
+  page prints one "Left out: ..." line. Nothing is ever dropped silently.
+- Feed roles are **not** hidden because an earlier briefing showed them: Ben's feed decides. If the URL
+  was on an earlier run, the role gets `seen_before` and the line "Also listed in the D Month briefing".
+- If a site wasn't signed in or failed, set `signed_in: False` / `error: '...'`; the block shows a note.
+  If you skipped the pass entirely, leave `feed_jobs` out (no block), don't write an empty list.
+- Only what the pass showed: exact URLs, dates and salaries as listed. Never apply or contact anyone.
+- `verify_run.py` checks the block's count and links (url + `also_on`, in order) against the JSON, the
+  error and left-out notes, and that no role repeats one in `local_jobs`. Runs without `feed_jobs`
+  (all runs before 2026-11-16) render exactly as before.
 
 ## 4. Write the run file
 
@@ -334,6 +364,7 @@ Or do a dry run first, which builds and verifies but doesn't commit:
    - "Past briefings" links work from the nav and footer, and archive rows and links resolve;
    - the Kenya jobs section matches `local_jobs` (job count, links, error notes), or shows only the
      "didn't run today" line; runs without `local_jobs` have no Kenya section;
+   - the From your feeds block matches `feed_jobs` (count, links, notes); absent without `feed_jobs`;
    - colour tokens are exactly v3 plus the three Kenya tokens (`--band-local #f0f2e8`,
      `--sec-local #4d5a22`, `--rule-local #d9ddc8`) and all text pairs pass WCAG AA (lowest is 5.68:1);
    - only the v3 type sizes (14/16/18/22/30/44px) are used;
@@ -400,6 +431,7 @@ Changes made during the recovery:
   the page then shows no personalised-feed line. Use it for manual rebuilds outside the morning routine.
 
 Daily order (EAT): Local Search Bot writes `shared/local-jobs/latest.json` at about 6:58-7:11 ->
-run `remote_live.py` -> review and verify leads, gather news -> write `build/inputs/YYYY-MM-DD.py`
+run `remote_live.py` -> signed-in browser pass of MyJobMag personalised + Fuzu (section 3b) ->
+review and verify leads, gather news -> write `build/inputs/YYYY-MM-DD.py`
 and run it -> `publish_run.py YYYY-MM-DD --no-push` -> `publish_run.py YYYY-MM-DD` -> report to Ben.
 Never include X Money in any section.

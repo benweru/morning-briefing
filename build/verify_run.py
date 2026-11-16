@@ -6,6 +6,8 @@ Pages uses), then checks index.html, archive/<date>/ and archive/:
   - counts match the run JSON (jobs, tiers, dropped, stories, groups, New labels, gone list)
   - Kenya jobs section matches run["local_jobs"]: every job with a url is linked, or the single
     'didn't run today' line is shown; no section on runs without a snapshot
+  - 'From your feeds' block matches run["feed_jobs"]: count, every link (url + also_on, in order),
+    sign-in/error notes, left-out note, no role repeated from local_jobs; absent when no feed_jobs
   - every job / dropped / story URL from the JSON is linked; external links open in a new tab
   - 'Past briefings' links in nav and footer resolve; archive rows match data/runs, newest first
   - filters, search and the empty state still work
@@ -149,11 +151,19 @@ def verify(repo, date, shots=None):
                   localJobs: document.querySelectorAll('#kenya .local-job').length,
                   localLinks: [...document.querySelectorAll('#kenya .local-job a[href^="http"]')].map(a => a.getAttribute('href')),
                   localEmpty: [...document.querySelectorAll('#kenya .local-empty')].map(p => p.textContent),
-                  localErrors: document.querySelectorAll('#kenya .local-error').length,
+                  localErrors: document.querySelectorAll('#kenya .local-error:not(.feed-error)').length,
+                  feeds: !!document.getElementById('feeds'),
+                  feedJobs: document.querySelectorAll('#feeds .feed-job').length,
+                  feedLinks: [...document.querySelectorAll('#feeds .feed-job a[href^="http"]')].map(a => a.getAttribute('href')),
+                  feedErrors: document.querySelectorAll('#feeds .feed-error').length,
+                  feedExcluded: document.querySelectorAll('#feeds .feed-excluded').length,
                 })''')
                 lj = r.get('local_jobs')
                 if lj is None:
-                    check(not got['kenya'] and not got['kenyaNav'], f'{label}: Kenya section shown but the run has no local_jobs snapshot')
+                    if r.get('feed_jobs') is None:
+                        check(not got['kenya'] and not got['kenyaNav'], f'{label}: Kenya section shown but the run has no local_jobs snapshot')
+                    else:
+                        check(got['localJobs'] == 0 and not got['localEmpty'], f'{label}: Kenya jobs shown without a local_jobs snapshot')
                 elif lj.get('status') == 'ok':
                     check(lj.get('date') == r['run_date'], f'{label}: local_jobs dated {lj.get("date")}, run is {r["run_date"]}')
                     check(got['kenya'] and got['kenyaNav'], f'{label}: Kenya section or nav link missing')
@@ -165,6 +175,21 @@ def verify(repo, date, shots=None):
                 else:
                     check(got['kenya'] and got['localJobs'] == 0 and got['localEmpty'] == [bl.LOCAL_NOT_RUN],
                           f'{label}: Kenya not-run state wrong: jobs={got["localJobs"]} line={got["localEmpty"]}')
+                fj = r.get('feed_jobs')
+                if fj is None:
+                    check(not got['feeds'], f'{label}: From your feeds shown but the run has no feed_jobs')
+                else:
+                    check(got['feeds'] and got['kenya'] and got['kenyaNav'], f'{label}: From your feeds section, Kenya section or nav link missing')
+                    check(got['feedJobs'] == len(fj), f'{label}: {got["feedJobs"]} feed jobs, JSON has {len(fj)}')
+                    want_feed = [u for j in fj for u in bl._feed_urls(j)]
+                    check(got['feedLinks'] == want_feed, f'{label}: feed links {got["feedLinks"]} != {want_feed}')
+                    fh = r.get('feed_health') or {}
+                    n_err = sum(1 for h in fh.values() if h.get('signed_in') is False or (h.get('error') or '').strip())
+                    check(got['feedErrors'] == n_err, f'{label}: feed error notes {got["feedErrors"]} != {n_err}')
+                    check(got['feedExcluded'] == (1 if r.get('feed_excluded') else 0), f'{label}: feed left-out note wrong')
+                    l_urls = {bl._url_key(j['url']) for j in ((r.get('local_jobs') or {}).get('jobs') or []) if j.get('url')}
+                    twice = [u for u in want_feed if bl._url_key(u) in l_urls]
+                    check(not twice, f'{label}: feed roles also in Kenya jobs: {twice}')
                 tiers = ','.join(f'{t}:{n}' for t in bl.TIER_IDS if (n := sum(1 for j in r['jobs'] if j['tier'] == t)))
                 exp_groups = ','.join(g for g in bl.NEWS_GROUPS if g in {x['id'] for x in r['news']['groups']})
                 check(got['jobs'] == len(r['jobs']), f'{label}: {got["jobs"]} jobs, JSON has {len(r["jobs"])}')
@@ -203,7 +228,8 @@ def verify(repo, date, shots=None):
                 check(pg.url == base + 'archive/' and 'Past briefings' in pg.title(), f'{label}: nav Past briefings went to {pg.url}')
                 return {'jobs': got['jobs'], 'dropped': got['dropped'], 'stories': got['stories'], 'new': len(d['new_ids']),
                         'gone': len(d['gone']), 'diff_line': got['diff'], 'links': len(got['hrefs']),
-                        'kenya': None if lj is None else (got['localJobs'] if lj.get('status') == 'ok' else 'not run')}
+                        'kenya': None if lj is None else (got['localJobs'] if lj.get('status') == 'ok' else 'not run'),
+                        'feeds': None if fj is None else got['feedJobs']}
 
             report['index'] = check_run_page(base, latest, 'index')
             report[f'archive/{date}/'] = check_run_page(base + f'archive/{date}/', run, f'archive/{date}')
