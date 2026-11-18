@@ -500,11 +500,19 @@ class SeenSet(set):
 
 def exclude_surfaced(run, seen):
     """Drop already-surfaced URLs from today's remote jobs, dropped list and Kenya jobs; renumber
-    ranks. Returns {"remote": n, "dropped": n, "kenya": n} removed."""
+    ranks. Returns {"remote": n, "dropped": n, "kenya": n} removed.
+
+    A run may set `surfaced_exemptions` to a list of posting URLs that should still be shown
+    on this run only (for example a new URL whose company and title match an earlier role).
+    Days that omit the field are unchanged.
+    """
     out = {}
+    exempt = {_url_key(u) for u in (run.get('surfaced_exemptions') or []) if u}
     def keep(lst):
         def hit(j):
             if not isinstance(j, dict):
+                return False
+            if j.get('url') and _url_key(j['url']) in exempt:
                 return False
             if j.get('url') and _url_key(j['url']) in seen:
                 return True
