@@ -1,0 +1,785 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-11-20",
+  "checked_at": "2026-11-20T08:30:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive",
+      "RemoteOK",
+      "Himalayas",
+      "Jobicy",
+      "WeWorkRemotely",
+      "WorkingNomads",
+      "RemotiveAfrica",
+      "Arc",
+      "Greenhouse",
+      "Ashby",
+      "Lever",
+      "LinkedIn",
+      "ReliefWeb",
+      "Jobgether",
+      "micro1",
+      "Wellfound",
+      "Fuzu (signed-in browser pass)",
+      "MyJobMag personalised feed (signed-in browser pass)",
+      "Wellfound (signed-in browser pass)",
+      "Jobgether (signed-in browser pass)",
+      "Greenhouse API (Canonical recheck)",
+      "MyJobMag and LinkedIn (via Local Search Bot)"
+    ],
+    "news": [
+      "CNBC",
+      "Elonosphere",
+      "Google",
+      "TechCabal",
+      "TechCrunch",
+      "TechMoran",
+      "xAI"
+    ]
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 1877,
+    "kept_after_filters": 47,
+    "fresh_shortlisted": 5,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 97,
+        "fresh": 11,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": true,
+        "pulled": 306,
+        "fresh": 157,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 43,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 134,
+        "fresh": 54,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 36,
+        "fresh": 7,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 28,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 165,
+        "fresh": 50,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 854,
+        "fresh": 76,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 126,
+        "fresh": 20,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 14,
+        "fresh": 1,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "ParseError: no element found: line 1, column 0"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 110,
+        "fresh": 110,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 67,
+        "fresh": 8,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": true,
+        "pulled": 80,
+        "fresh": 80,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Fuzu (signed-in browser pass)",
+        "ok": true,
+        "pulled": 45,
+        "fresh": 45,
+        "kept": 6,
+        "error": null
+      },
+      {
+        "name": "MyJobMag personalised feed (signed-in browser pass)",
+        "ok": true,
+        "pulled": 25,
+        "fresh": 25,
+        "kept": 4,
+        "error": null
+      }
+    ]
+  },
+  "counts": {
+    "pulled": 1877,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1450,
+      "senior_title": 152,
+      "not_target_role": 140,
+      "location_or_timezone": 57
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 4,
+    "dropped": 15,
+    "reviewed_closely": 19,
+    "dropped_by_reason": {
+      "location": 3,
+      "experience": 4,
+      "stale": 3,
+      "stack": 1,
+      "requirement": 2,
+      "other": 2
+    },
+    "stories": 9
+  },
+  "method": {
+    "filtering_summary": "The live search pulled 1,877 postings; 1,379 were older than 7 days, 71 were reposts of listings over 30 days old, 152 were senior or excluded titles, 140 were not target roles, 57 failed Kenya eligibility, 13 were already applied to and 18 were duplicates. Remotive and LinkedIn failed (SSL errors), ReliefWeb failed with a parse error and the Jobgether API closed the connection, so those four returned nothing to the automated search. The automated Wellfound fetch is disabled by design. Browser passes (signed in, 20 Nov): Jobgether (about 110 listings reviewed from four searches, 1 kept), Wellfound (about 80 of 992 results loaded, 2 shortlisted; Cloudflare check cleared by itself), Fuzu (45 jobs in IT, software and data, 6 kept) and the MyJobMag personalised feed (about 25 listings, 4 kept). micro1 returned 67 roles, 4 of them new; the AI Agent Tester role is on the shortlist and the two machine-learning research roles are in the dropped list because no description was readable. Most Himalayas and Jobgether leads were mid-level, limited to Europe or the US, or posted weeks ago; the shortlist is short because few fresh junior-to-mid roles named Kenya or worldwide and had not been shown before."
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "top",
+      "url": "https://jobs.micro1.ai/post/d4080820-66c9-48b1-a29a-b8b1752b8e79",
+      "title": "AI Agent Tester",
+      "company": "micro1",
+      "location_as_stated": "Remote (global) (micro1 job portal)",
+      "posted": "2026-11-16",
+      "salary_as_shown": "$25-$45/hour (micro1 portal)",
+      "experience_asked": "Generalist role. Skills listed on the portal: ChatGPT, AI agents, attention to detail, following instructions, screen recording, mobile. The job page is built in the browser and shows only the title to a plain fetch, so the full description was not readable.",
+      "found_via": "micro1 job portal API (live search)",
+      "verified": "micro1 portal API listing and job page opened, 2026-11-20; apply link: https://jobs.micro1.ai/post/d4080820-66c9-48b1-a29a-b8b1752b8e79",
+      "fit": "Hands-on testing of AI agents, like the agent and automation work he already does, and in the same family as the micro1 evaluator role he applied to.",
+      "gaps": "Task-based contract at an hourly rate, not a salary. The description was not readable, so check scope, hours and the AI interview step on the page before applying.",
+      "id": "j-bf0138848bfb"
+    },
+    {
+      "rank": 2,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5106048-founding-engineer-agentbus",
+      "title": "Founding Engineer, AgentBus",
+      "company": "Stays Up",
+      "location_as_stated": "Remote (Everywhere), San Francisco (Wellfound); \"Hires remotely in Everywhere\"",
+      "posted": "2026-11-20",
+      "salary_as_shown": "$100k-$140k",
+      "experience_asked": "No years stated. Wants someone who uses coding agents daily and has built things in the open; stack is TypeScript and Go.",
+      "found_via": "Signed-in Wellfound browser pass",
+      "verified": "Wellfound page opened, \"Posted: today\", 2026-11-20; apply at https://staysup.io/apply (no account needed)",
+      "fit": "Builds an open-source tool for running Claude Code and Codex agents, which matches his daily use of AI coding assistants and his own bots.",
+      "gaps": "Founding-engineer scope at a team of 1-10, and the core is Go, which is not on his CV. They want visible open-source work; his best projects are private or not CV-worthy. Visa sponsorship and relocation are not available.",
+      "id": "j-bc542b6437cc"
+    },
+    {
+      "rank": 3,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5106013-ai-computer-science-engineer",
+      "title": "AI Computer Science Engineer",
+      "company": "drytis",
+      "location_as_stated": "Remote only, hires in Israel, Africa, Egypt and the Philippines (Wellfound)",
+      "posted": "2026-11-20",
+      "salary_as_shown": "$4.26-$17/hour",
+      "experience_asked": "Wellfound tag says no experience required, but the text asks for proven mid-level full-stack experience, React and TypeScript, PHP and Laravel, and prompt engineering with LLM APIs.",
+      "found_via": "Signed-in Wellfound browser pass",
+      "verified": "Wellfound page opened, \"Posted: today\", 2026-11-20",
+      "fit": "React, TypeScript and LLM API work match his CV, and Africa is named.",
+      "gaps": "Part-time contract with a wide hourly range; Laravel is coursework-level only; the text and the experience tag disagree.",
+      "id": "j-ed8dd3cc2756"
+    },
+    {
+      "rank": 4,
+      "tier": "stretch",
+      "url": "https://weworkremotely.com/remote-jobs/elvoro-ai-creative-engineer-social-media",
+      "title": "AI Creative Engineer (Social Media)",
+      "company": "Elvoro",
+      "location_as_stated": "Remote, Worldwide; \"Anywhere in the World\" (We Work Remotely)",
+      "posted": "2026-11-18",
+      "salary_as_shown": "Not shown (\"To be agreed\")",
+      "experience_asked": "Professional experience maintaining large production codebases; advanced Python; REST and OAuth 2.0 integrations; FFmpeg or MoviePy; Google Cloud Storage; daily use of AI coding agents.",
+      "found_via": "We Work Remotely RSS (live search)",
+      "verified": "We Work Remotely page opened, \"Posted 2 days ago\", apply before 2026-12-18, 2026-11-20",
+      "fit": "Python plus many API integrations and daily use of Claude Code and Cursor, with a founder-led team.",
+      "gaps": "Asks for advanced Python and large production codebases, more than about a year of experience, and for creative and video-processing skills he has not shown. Project-based contract with only a plan to go full time.",
+      "id": "j-2d13b4ce6296"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobgether.com/offer/6aff78dd8acd9c1f9b2f0119-junior-ai-engineer",
+      "title": "Junior AI Engineer",
+      "company": "Commerciaux d'elite",
+      "location_as_stated": "Remote from Egypt, Africa, Middle East, EMEA; \"Cairo Preferred\" (Jobgether)",
+      "reason": "Word-for-word copies are listed under Forest Stewardship Council U.S. and Vivid Money, so it looks like an aggregator repost; asks 2+ years of AI/ML, computer vision and Revit.",
+      "reason_code": "requirement",
+      "found_via": "Jobgether (signed-in browser pass)",
+      "posted": "2026-11-20",
+      "verified": "Opened, 2026-11-20",
+      "id": "j-76437dfec6b9"
+    },
+    {
+      "url": "https://jobgether.com/offer/6aa858aeb563ea142ea8e87f-junior-php-software-engineer",
+      "title": "Junior PHP Software Engineer",
+      "company": "RichBrains",
+      "location_as_stated": "Remote from Anywhere (Jobgether)",
+      "reason": "Posted 30+ days ago, so outside the 7-day window; PHP and MySQL only, and PHP is coursework-level for him.",
+      "reason_code": "stale",
+      "found_via": "Jobgether (signed-in browser pass)",
+      "posted": "30+ days ago",
+      "verified": "Opened, 2026-11-20",
+      "id": "j-85e525d4c828"
+    },
+    {
+      "url": "https://wellfound.com/jobs/4689852-pern-stack-developer-intern",
+      "title": "PERN Stack Developer Intern",
+      "company": "Lupira",
+      "location_as_stated": "Remote (Everywhere) (Wellfound)",
+      "reason": "Unpaid 4-month internship (\"Stipend: Unpaid\"); applications by email to the founder.",
+      "reason_code": "other",
+      "found_via": "Signed-in Wellfound browser pass",
+      "posted": "2026-11-19",
+      "verified": "Opened, 2026-11-20",
+      "id": "j-74bfe87bb0d9"
+    },
+    {
+      "url": "https://wellfound.com/jobs/4302012-ai-engineer",
+      "title": "Ai engineer",
+      "company": "drytis",
+      "location_as_stated": "Remote (Everywhere), US time zones preferred (Wellfound)",
+      "reason": "Asks 3+ years and prefers US time zones; $4.28-$17.15/hour contract.",
+      "reason_code": "experience",
+      "found_via": "Signed-in Wellfound browser pass",
+      "posted": "2026-11-19",
+      "verified": "Seen in the signed-in browser pass, 2026-11-20",
+      "id": "j-5f4cf895f701"
+    },
+    {
+      "url": "https://wellfound.com/jobs/4868453-backend-developer-claude-powered-remote",
+      "title": "Backend Developer (Claude-powered, Remote)",
+      "company": "ISFY",
+      "location_as_stated": "Remote (Everywhere) (Wellfound)",
+      "reason": "Posted about a month ago; asks 3+ years; $18k-$30k.",
+      "reason_code": "stale",
+      "found_via": "Signed-in Wellfound browser pass",
+      "posted": "about 2026-10-20",
+      "verified": "Seen in the signed-in browser pass, 2026-11-20",
+      "id": "j-0efc5ef60f0f"
+    },
+    {
+      "url": "https://wellfound.com/jobs/5086022-agentic-ai-engineer",
+      "title": "Agentic AI Engineer",
+      "company": "VASHISTHA CONSULTING GROUP",
+      "location_as_stated": "Remote (Everywhere), Indian firm (Wellfound)",
+      "reason": "Asks 3-10 years; INR 30L-45L plus equity.",
+      "reason_code": "experience",
+      "found_via": "Signed-in Wellfound browser pass",
+      "posted": "2026-11-19",
+      "verified": "Seen in the signed-in browser pass, 2026-11-20",
+      "id": "j-0e54263fb7ae"
+    },
+    {
+      "url": "https://himalayas.app/companies/asg-company/jobs/associate-developer",
+      "title": "Associate Developer",
+      "company": "ASG Company",
+      "location_as_stated": "Himalayas tag: Worldwide",
+      "reason": "The description says \"exclusive only to Filipino locals\" and \"anywhere in the Philippines\"; asks 2 years of Java, JavaScript and C#.",
+      "reason_code": "location",
+      "found_via": "Himalayas API (live search)",
+      "posted": "2026-11-11",
+      "verified": "Himalayas page read, 2026-11-20",
+      "id": "j-1a3c2509e083"
+    },
+    {
+      "url": "https://himalayas.app/companies/spotify/jobs/fullstack-engineer-subscriptions",
+      "title": "Fullstack Engineer - Subscriptions",
+      "company": "Spotify",
+      "location_as_stated": "Himalayas country list includes Kenya; description: EMEA, Central European and GMT time zones",
+      "reason": "Posted 2026-07-28; Java 17, GraphQL, gRPC and on-call; mid-level.",
+      "reason_code": "stale",
+      "found_via": "Himalayas API (live search)",
+      "posted": "2026-07-28",
+      "verified": "Himalayas page read, 2026-11-20",
+      "id": "j-60b4ac2327b6"
+    },
+    {
+      "url": "https://himalayas.app/companies/notably/jobs/full-stack-engineer",
+      "title": "Full Stack Engineer",
+      "company": "Notably",
+      "location_as_stated": "Himalayas lists Kenya, but the description wants Europe or US Eastern time",
+      "reason": "Asks 3 years; candidates outside Europe or US Eastern time \"will not be considered\".",
+      "reason_code": "location",
+      "found_via": "Himalayas API (live search)",
+      "posted": "2026-09-23",
+      "verified": "Himalayas page read, 2026-11-20",
+      "id": "j-71818ff13c3a"
+    },
+    {
+      "url": "https://himalayas.app/companies/flying-bisons/jobs/freelance-backend-developer",
+      "title": "Freelance Backend Developer",
+      "company": "Flying Bisons",
+      "location_as_stated": "Himalayas country list includes Kenya",
+      "reason": "Posted 2026-08-30; asks 2+ years of PHP and Symfony and Polish at B2+ level.",
+      "reason_code": "requirement",
+      "found_via": "Himalayas API (live search)",
+      "posted": "2026-08-30",
+      "verified": "Himalayas page read, 2026-11-20",
+      "id": "j-e44f993de90c"
+    },
+    {
+      "url": "https://himalayas.app/companies/clera/jobs/automation-engineer-dealership-integrations-software-engineer",
+      "title": "Automation Engineer, Dealership Integrations",
+      "company": "Clera",
+      "location_as_stated": "Himalayas: open to all countries, but the description says on-site",
+      "reason": "Description is on-site with no location, duties or requirements given.",
+      "reason_code": "other",
+      "found_via": "Himalayas API (live search)",
+      "posted": "2026-11-20",
+      "verified": "Himalayas page read, 2026-11-20",
+      "id": "j-5ab666ae42d7"
+    },
+    {
+      "url": "https://himalayas.app/companies/banco-plata-s-a-institucion-de-banca-multiple/jobs/risk-data-analyst-integrated-risk-management",
+      "title": "Risk Data Analyst",
+      "company": "Banco Plata",
+      "location_as_stated": "Himalayas: open to all countries",
+      "reason": "Posted 2026-10-19; asks 3 years of risk and credit analysis.",
+      "reason_code": "experience",
+      "found_via": "Himalayas API (live search)",
+      "posted": "2026-10-19",
+      "verified": "Himalayas page read, 2026-11-20",
+      "id": "j-46ff3583836f"
+    },
+    {
+      "url": "https://himalayas.app/companies/lingaro/jobs/rgm-data-analyst",
+      "title": "RGM Data Analyst",
+      "company": "Lingaro",
+      "location_as_stated": "Himalayas country list includes Kenya",
+      "reason": "Posted 2026-10-01; FMCG pricing and price-elasticity analytics, not his focus.",
+      "reason_code": "stack",
+      "found_via": "Himalayas API (live search)",
+      "posted": "2026-10-01",
+      "verified": "Himalayas page read, 2026-11-20",
+      "id": "j-4db0018e9ec5"
+    },
+    {
+      "url": "https://remoteOK.com/remote-jobs/remote-seo-full-stack-engineer-treatwell-1137805",
+      "title": "SEO Full Stack Engineer",
+      "company": "Treatwell",
+      "location_as_stated": "Worldwide (RemoteOK)",
+      "reason": "Mid or senior level; Java and Spring Boot backend with Kubernetes.",
+      "reason_code": "experience",
+      "found_via": "RemoteOK API (live search)",
+      "posted": "2026-11-18",
+      "verified": "Opened, 2026-11-20",
+      "id": "j-a9992cf90d21"
+    },
+    {
+      "url": "https://weworkremotely.com/remote-jobs/fin-forward-deployed-engineer",
+      "title": "Forward Deployed Engineer",
+      "company": "Fin",
+      "location_as_stated": "Anywhere in the World (We Work Remotely)",
+      "reason": "Proof of eligibility to work in the United States is required; on-site customer travel.",
+      "reason_code": "location",
+      "found_via": "We Work Remotely RSS (live search)",
+      "posted": "2026-11-19",
+      "verified": "Opened, 2026-11-20",
+      "id": "j-31b50becf124"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Anthropic debuts on Nasdaq after record $81.3 billion IPO",
+            "summary": "Anthropic (ANT) opened at $111.50 and closed at $97.17 on Nov 19, up 17% from the $83 IPO price, for a fully diluted market cap of roughly $1.8 trillion; it sold 980 million shares to raise $81.3 billion, the biggest IPO on record.",
+            "why": "The largest AI listing ever shows how much capital sits behind agentic AI and the Claude tools you code with.",
+            "source": "CNBC",
+            "date": "2026-11-19",
+            "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
+            "id": "s-e40438c57629"
+          },
+          {
+            "title": "Google releases Gemini 4 Neon at $3 per million input tokens",
+            "summary": "Gemini 4 Neon is priced at $3 per million input tokens and $15 per million output tokens, with a 1 million-token context window; Google says it ranks #1 on the Artificial Analysis Coding Agent Index (58.6) and rolls out in the Gemini API and Google Antigravity.",
+            "why": "A new frontier coding and agent model with published API prices you can test in your own LLM and automation work.",
+            "source": "Google",
+            "date": "2026-11-18",
+            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+            "id": "s-b2c084a41275"
+          },
+          {
+            "title": "Grok Bot v1.2.3 adds per-tool permissions on connectors",
+            "summary": "xAI's changelog for v1.2.3 (Nov 18) lets connector pages set each tool to Always allow, Auto-review, Needs approval or Blocked, and says a routine that loses a connector sign-in skips its scheduled runs until you sign back in.",
+            "why": "A clear pattern for approval levels and safe stops in agent workflows, like the ones you build with n8n and webhooks.",
+            "source": "xAI",
+            "date": "2026-11-18",
+            "url": "https://x.ai/changelog/bot",
+            "id": "s-98c1262feb4d"
+          },
+          {
+            "title": "Musk says Grok 4.8 is in soft rollout, with general release one to two weeks away",
+            "summary": "Elon Musk wrote on X on Nov 18 that xAI did a soft rollout to some Bot users and still needs another week or two of polish before general release; Elonosphere notes no xAI release note names Grok 4.8 yet.",
+            "why": "The next Grok model is close but unconfirmed, so check x.ai before relying on it in a project.",
+            "source": "Elonosphere",
+            "date": "2026-11-19",
+            "url": "https://elonosphere.com/Articles/3274/musk-puts-grok-4-8-general-release-one-to-two-weeks-out-as-grok-bot-adds-per-tool-permissions",
+            "id": "s-d8b39781764f"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Everful raises $48.5 million Series A for AI-assisted factory sourcing",
+            "summary": "The San Francisco and Singapore startup, led by Vertex Ventures Southeast Asia & India and January Capital, says it ships over 5 million items a month to customers in more than 60 countries and will invest in AI to automate sourcing workflows.",
+            "why": "A well-funded company building AI workflow automation and Shopify integrations, the kind of team that hires engineers.",
+            "source": "TechCrunch",
+            "date": "2026-11-19",
+            "url": "https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/",
+            "id": "s-88ae40f03632"
+          },
+          {
+            "title": "Payhawk raises $280 million Series C at a $2 billion valuation",
+            "summary": "The U.K. spend-management fintech's round was led by Goldman Sachs' growth equity arm and brings its total funding to more than $500 million.",
+            "why": "A large fintech round showing money still flows to payments and finance software, your home sector.",
+            "source": "TechCrunch",
+            "date": "2026-11-18",
+            "url": "https://techcrunch.com/2026/11/18/spend-management-platform-payhawk-announces-280m-raise-2b-valuation/",
+            "id": "s-17ed17636020"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Nadella explains Microsoft's buyout offer to 60,000 employees",
+            "summary": "Satya Nadella told the DealBook Summit the buyouts were so people felt they had agency, said software engineering will thrive but the work has a new operating point, and that the team behind Cowork has just 11 developers.",
+            "why": "Shows how a big employer expects engineers to manage AI agents, which matches the skills you already lead with.",
+            "source": "TechCrunch",
+            "date": "2026-11-18",
+            "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/",
+            "id": "s-c8a4b2ac137e"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "WapiPay partners with Alipay so Kenyan importers can pay Chinese suppliers in yuan",
+            "summary": "Kenyan merchants send shillings and suppliers receive yuan through Alipay, skipping the dollar; WapiPay says it has processed more than KES 40 billion ($307.5 million) in cross-border payments across its network.",
+            "why": "A Kenyan payments integration story with real API and settlement work, close to your fintech background.",
+            "source": "TechCabal",
+            "date": "2026-11-19",
+            "url": "https://techcabal.com/2026/11/19/wapipay-to-pay-merchants-in-china-in-yuan/",
+            "id": "s-b1a29054ec2d"
+          },
+          {
+            "title": "Safaricom, MTN and Vodacom join TM Forum's fintech integration project",
+            "summary": "The Open Digital Architecture for Fintech initiative, announced at Africa Tech Festival in Cape Town, will build a common architecture and reference code; Safaricom's M-Pesa revenue exceeded KSh100 billion in the six months through September 2026.",
+            "why": "Shared integration standards could make connecting fintech products to M-Pesa cheaper and faster, which helps API and integration engineers.",
+            "source": "TechMoran",
+            "date": "2026-11-19",
+            "url": "https://techmoran.com/2026/11/19/safaricom-vodacom-mtn-join-fintech-push-to-expand-mobile-money/",
+            "id": "s-3d877c2abbe3"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "feed_jobs": [
+    {
+      "title": "ICT Officer II",
+      "company": "The Public Procurement Regulatory Authority (PPRA)",
+      "location": "Nairobi",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/ict-officer-ii-the-public-procurement-regulatory-authority-ppra",
+      "posted": "2026-11-18",
+      "salary_as_shown": "Not shown",
+      "fit_note": "Builds small application modules; experience not shown.",
+      "already_applied": false,
+      "seen_before": "2026-11-19"
+    },
+    {
+      "title": "Data Analyst",
+      "company": "African Management Institute",
+      "location": "Nairobi",
+      "source": "Fuzu",
+      "url": "https://www.fuzu.com/kenya/job/computers-software-development?page=4&filters[job_id]=1061199",
+      "posted": "2026-11-16",
+      "salary_as_shown": "Not shown",
+      "fit_note": "2-4 years. The same role is listed again, posted 17 Nov, on-site, apply by 24 Nov (no ID captured).",
+      "already_applied": false,
+      "deadline": "2026-11-23",
+      "seen_before": null
+    },
+    {
+      "title": "Intern - Data analytics",
+      "company": "UN-Habitat",
+      "location": "Nairobi",
+      "source": "Fuzu",
+      "url": "https://www.fuzu.com/kenya/job/computers-software-development?page=4&filters[job_id]=1058690",
+      "posted": "2026-11-13",
+      "salary_as_shown": "Not shown",
+      "fit_note": "On-site 6-month internship; no experience needed.",
+      "already_applied": false,
+      "deadline": "2026-11-25",
+      "seen_before": null
+    },
+    {
+      "title": "QA Specialist",
+      "company": "Kinnovarone",
+      "location": "Remote (open to applicants in Kenya)",
+      "source": "Fuzu",
+      "url": "https://www.fuzu.com/kenya/job/computers-software-development?page=3&filters[job_id]=1062504",
+      "posted": "2026-11-17",
+      "salary_as_shown": "Not shown",
+      "fit_note": "Fixed term; 2-3 years of QA.",
+      "already_applied": false,
+      "deadline": "2026-12-30",
+      "seen_before": null
+    },
+    {
+      "title": "Business Applications Developer",
+      "company": "Valley Hospital",
+      "location": "Nakuru (on-site)",
+      "source": "Fuzu",
+      "url": "https://www.fuzu.com/kenya/job/computers-software-development?page=2&filters[job_id]=1063065",
+      "posted": "2026-11-17",
+      "salary_as_shown": "Not shown",
+      "fit_note": "Stretch: 3+ years of Python, JavaScript, SQL and Odoo.",
+      "already_applied": false,
+      "deadline": "2026-11-24",
+      "seen_before": null
+    },
+    {
+      "title": "APIOps Analyst",
+      "company": "NCBA",
+      "location": "Nairobi (on-site)",
+      "source": "Fuzu",
+      "url": "https://www.fuzu.com/kenya/job/computers-software-development?page=3&filters[job_id]=1061363",
+      "posted": "2026-11-17",
+      "salary_as_shown": "Not shown",
+      "fit_note": "Stretch: 3-5 years.",
+      "already_applied": false,
+      "deadline": "2026-11-22",
+      "seen_before": null
+    }
+  ],
+  "feed_health": {
+    "MyJobMag personalised": {
+      "pulled": 25,
+      "pulled_is_approximate": true,
+      "kept": 4,
+      "signed_in": true,
+      "error": null
+    },
+    "Fuzu": {
+      "pulled": 45,
+      "pulled_is_approximate": false,
+      "kept": 6,
+      "signed_in": true,
+      "error": null
+    }
+  },
+  "surfaced_exemptions": [
+    "https://jobs.micro1.ai/post/d4080820-66c9-48b1-a29a-b8b1752b8e79"
+  ],
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-11-20",
+    "generated_at": "2026-11-20T07:15:00+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Junior AI Product Development Specialist",
+        "company": "KiliMax Software",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/junior-ai-product-development-specialist-kilimax-software",
+        "posted": "2026-11-19",
+        "fit_note": "Junior AI product role (0–3 yrs); matches his LLM integration and Python work."
+      },
+      {
+        "title": "Graduate Trainee Programme – Engineering",
+        "company": "Angaza",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/graduate-trainee-programme-engineering-angaza",
+        "posted": "2026-11-19",
+        "fit_note": "Graduate engineering track on a SaaS platform; fits a fresh CS grad."
+      },
+      {
+        "title": "Graduate Trainee Programme – Customer Support",
+        "company": "Angaza",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/graduate-trainee-programme-customer-support-angaza",
+        "posted": "2026-11-19",
+        "fit_note": "Technical platform support for graduates; fits his support and data-ops background."
+      },
+      {
+        "title": "Graduate Trainee Programme – Customer Success",
+        "company": "Angaza",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/graduate-trainee-programme-customer-success-angaza",
+        "posted": "2026-11-19",
+        "fit_note": "Graduate customer success; borderline tech, modest fit."
+      },
+      {
+        "title": "AI Specialist",
+        "company": "Excelon Limited",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/ai-specialist-excelon-limited",
+        "posted": "2026-11-19",
+        "fit_note": "Onsite AI role, 2–5 yrs; stretch but matches his LLM/automation work."
+      },
+      {
+        "title": "Business Analyst",
+        "company": "Sportserve",
+        "location": "Nairobi, Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/business-analyst-at-sportserve-4491387626",
+        "posted": "2026-11-19",
+        "fit_note": "Analyst role; fits his SQL/data background (modest)."
+      },
+      {
+        "title": "Sales Executives- Nairobi",
+        "company": "Pesapal",
+        "location": "Nairobi County, Kenya",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/sales-executives-nairobi-at-pesapal-4491608827",
+        "posted": "2026-11-19",
+        "fit_note": "Fintech sales; fits tech sales interest (modest)."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-tab:9226",
+      "error": null
+    }
+  },
+  "feed_excluded": [
+    {
+      "title": "Graduate Trainee Programme-Engineering",
+      "company": "Angaza",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/graduate-trainee-programme-engineering-angaza",
+      "reason": "already in Kenya jobs"
+    },
+    {
+      "title": "Junior AI Product Development Specialist",
+      "company": "KiliMax Software",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/junior-ai-product-development-specialist-kilimax-software",
+      "reason": "already in Kenya jobs"
+    },
+    {
+      "title": "Associate Programmer - Graduate Training Programme",
+      "company": "Tamu Group (Tera Carbon Kenya)",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/associate-programmer-graduate-training-programme-tamu-group",
+      "reason": "already applied"
+    },
+    {
+      "title": "Back End Engineer",
+      "company": "d.light SOLAR",
+      "source": "Fuzu",
+      "url": "https://www.fuzu.com/kenya/job/computers-software-development?page=3&filters[job_id]=1060150",
+      "reason": "already applied"
+    }
+  ]
+}
