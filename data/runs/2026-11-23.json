@@ -1,0 +1,651 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-11-23",
+  "checked_at": "2026-11-23T08:30:00+03:00",
+  "sources": {
+    "jobs": [
+      "Remotive",
+      "RemoteOK",
+      "Himalayas",
+      "Jobicy",
+      "WeWorkRemotely",
+      "WorkingNomads",
+      "RemotiveAfrica",
+      "Arc",
+      "Greenhouse",
+      "Ashby",
+      "Lever",
+      "LinkedIn",
+      "ReliefWeb",
+      "Jobgether",
+      "micro1",
+      "Wellfound",
+      "Fuzu (signed-in browser pass)",
+      "MyJobMag personalised feed (signed-in browser pass)",
+      "Wellfound (signed-in browser pass)",
+      "Greenhouse API (Canonical recheck)",
+      "MyJobMag and LinkedIn (via Local Search Bot)"
+    ],
+    "news": [
+      "Business Daily",
+      "Hackhouse",
+      "InfoQ",
+      "MarkTechPost",
+      "People Daily",
+      "SEC (Enphase Form 8-K)",
+      "Sarvam AI",
+      "TechCrunch",
+      "Techpoint Africa",
+      "Techweez"
+    ]
+  },
+  "search_health": {
+    "window_days": 7,
+    "pulled": 2280,
+    "kept_after_filters": 65,
+    "fresh_shortlisted": 4,
+    "generated_by": "job-search-plus/live/remote_live.py",
+    "sources": [
+      {
+        "name": "Remotive",
+        "ok": true,
+        "pulled": 128,
+        "fresh": 8,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemoteOK",
+        "ok": true,
+        "pulled": 100,
+        "fresh": 100,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Himalayas",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "IncompleteRead: IncompleteRead(63836 bytes read)"
+      },
+      {
+        "name": "Jobicy",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 22,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "WeWorkRemotely",
+        "ok": true,
+        "pulled": 224,
+        "fresh": 137,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "WorkingNomads",
+        "ok": true,
+        "pulled": 35,
+        "fresh": 6,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "RemotiveAfrica",
+        "ok": true,
+        "pulled": 28,
+        "fresh": 0,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Arc",
+        "ok": true,
+        "pulled": 160,
+        "fresh": 5,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Greenhouse",
+        "ok": true,
+        "pulled": 843,
+        "fresh": 77,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "Ashby",
+        "ok": true,
+        "pulled": 123,
+        "fresh": 18,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Lever",
+        "ok": true,
+        "pulled": 14,
+        "fresh": 1,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "LinkedIn",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      },
+      {
+        "name": "ReliefWeb",
+        "ok": false,
+        "pulled": 0,
+        "fresh": 0,
+        "kept": 0,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      {
+        "name": "Jobgether",
+        "ok": true,
+        "pulled": 510,
+        "fresh": 210,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "micro1",
+        "ok": true,
+        "pulled": 65,
+        "fresh": 9,
+        "kept": 0,
+        "error": null
+      },
+      {
+        "name": "Wellfound",
+        "ok": true,
+        "pulled": 983,
+        "fresh": 100,
+        "kept": 1,
+        "error": null
+      },
+      {
+        "name": "Fuzu (signed-in browser pass)",
+        "ok": true,
+        "pulled": 701,
+        "fresh": 701,
+        "kept": 2,
+        "error": null
+      },
+      {
+        "name": "MyJobMag personalised feed (signed-in browser pass)",
+        "ok": true,
+        "pulled": 50,
+        "fresh": 50,
+        "kept": 3,
+        "error": null
+      }
+    ]
+  },
+  "counts": {
+    "pulled": 2280,
+    "pulled_is_approximate": false,
+    "filtered_out": {
+      "older_than_30_days": 1687,
+      "senior_title": 190,
+      "not_target_role": 183,
+      "location_or_timezone": 142
+    },
+    "filtered_out_is_approximate": false,
+    "shortlisted": 2,
+    "dropped": 11,
+    "reviewed_closely": 13,
+    "dropped_by_reason": {
+      "location": 3,
+      "experience": 2,
+      "stack": 4,
+      "requirement": 1,
+      "other": 1
+    },
+    "stories": 11
+  },
+  "method": {
+    "filtering_summary": "The live search pulled 2,280 postings; 1,659 were older than 7 days, 28 were reposts of listings over 30 days old, 190 were senior or excluded titles, 183 were not target roles, 142 failed Kenya eligibility, 2 were already applied to and 11 were duplicates. Himalayas (incomplete read), LinkedIn (429 rate limit) and ReliefWeb (timeout) failed in the automated search, and the automated Wellfound fetch is disabled by design. Browser passes (signed in, 23 Nov): Wellfound (983 results, about 100 cards read, 1 shortlisted), Fuzu (701 jobs; keyword searches: software developer 93, python 16, react 3, AI engineer 7, full stack 2; 2 kept) and the MyJobMag personalised feed (about 50 roles, 3 kept). Jobgether returned 510 roles and 210 fresh; none were shortlisted because the Africa-tagged Junior ACE and Junior AI Engineer listings are copies of one Revit/.NET or computer-vision post under many company names, and the rest were Europe-only. micro1 returned 65 roles; the new ones are GPU, CUDA and machine-learning research roles that don't fit his stack, so none were shortlisted."
+  },
+  "jobs": [
+    {
+      "rank": 1,
+      "tier": "stretch",
+      "url": "https://job-boards.eu.greenhouse.io/sportygroup/jobs/5030656101",
+      "title": "Applied AI Engineer (LLM)",
+      "company": "Sporty Group",
+      "location_as_stated": "EMEA (Greenhouse); remote-first, core hours 10am-3pm local time",
+      "posted": "2026-11-20",
+      "salary_as_shown": "Not shown",
+      "experience_asked": "3+ years in software engineering, ML engineering or applied AI.",
+      "found_via": "Greenhouse API (live search)",
+      "verified": "Greenhouse EU board page opened, 2026-11-23",
+      "fit": "EMEA remote role building LLM systems, in the same area as his LLM integrations at Kwara and his fine-tuned Hermes 2 Pro capstone.",
+      "gaps": "Asks 3+ years, which is more than he has on paper; the role is applied ML with production focus.",
+      "id": "j-e5bfd366d1ad"
+    },
+    {
+      "rank": 2,
+      "tier": "stretch",
+      "url": "https://wellfound.com/jobs/5133317-qa-engineer-clone",
+      "title": "Junior Software Engineer",
+      "company": "Syd Life AI",
+      "location_as_stated": "Remote only; \"Hires remotely: Everywhere\" (Wellfound); no Kenya-specific rule shown",
+      "posted": "2026-11-22",
+      "salary_as_shown": "$25k-$40k",
+      "experience_asked": "2+ years. React and React Native, with Node.js later.",
+      "found_via": "Signed-in Wellfound browser pass",
+      "verified": "Wellfound page opened in the signed-in browser, \"Posted yesterday\", 2026-11-23. The URL slug says QA Engineer but the page shows Junior Software Engineer.",
+      "fit": "React and React Native are on his CV, and the pay band is stated.",
+      "gaps": "Contract with no visa sponsorship; asks 2+ years; the URL slug does not match the title, so confirm the right posting when you open it.",
+      "id": "j-d01c66716f6d"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://jobs.micro1.ai/post/32f53086-51ef-4e17-8865-0b8f0bf8a6fa",
+      "title": "GPU Programming Software Engineer",
+      "company": "micro1",
+      "location_as_stated": "Remote (global)",
+      "reason": "CUDA, WebGPU, GLSL and C++ specialist role; not his stack.",
+      "reason_code": "stack",
+      "found_via": "micro1 job portal API",
+      "posted": "2026-11-20",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-4d29567c1a18"
+    },
+    {
+      "url": "https://jobs.micro1.ai/post/76b0e621-b4f4-4fa4-bd7b-c4fe96f96610",
+      "title": "CUDA Engineering Expert",
+      "company": "micro1",
+      "location_as_stated": "Remote (global)",
+      "reason": "CUDA and C++ expert role; not his stack.",
+      "reason_code": "stack",
+      "found_via": "micro1 job portal API",
+      "posted": "2026-11-20",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-6f84422e5969"
+    },
+    {
+      "url": "https://jobgether.com/offer/6b01ffca1870ab7f4cb18d39-junior-ace-software-engineer",
+      "title": "Junior ACE Software Engineer",
+      "company": "Best and Less Travel",
+      "location_as_stated": "Remote from Egypt, Africa, Middle East, EMEA (Jobgether)",
+      "reason": "Autodesk Revit add-ins in C# and .NET; the same listing is copied under several company names.",
+      "reason_code": "stack",
+      "found_via": "Jobgether (live search)",
+      "posted": "2026-11-21",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-b6300b2bd326"
+    },
+    {
+      "url": "https://jobgether.com/offer/6b00a05b8acd9c1f9b351f0e-junior-ai-engineer",
+      "title": "Junior AI Engineer",
+      "company": "Cypher Coders",
+      "location_as_stated": "Remote from Egypt, Africa, Middle East, EMEA (Jobgether)",
+      "reason": "Asks a minimum 2 years of AI/ML with computer vision and Revit skills; copied under several company names.",
+      "reason_code": "requirement",
+      "found_via": "Jobgether (live search)",
+      "posted": "2026-11-20",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-870901f33411"
+    },
+    {
+      "url": "https://jobgether.com/offer/6aff78ce8acd9c1f9b2efe03-junior-python-developer",
+      "title": "Junior Python Developer",
+      "company": "European Dynamics",
+      "location_as_stated": "Europe, EU, Greece (Jobgether)",
+      "reason": "Limited to Greece and the EU.",
+      "reason_code": "location",
+      "found_via": "Jobgether (live search)",
+      "posted": "2026-11-19",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-3c86f160a07a"
+    },
+    {
+      "url": "https://jobgether.com/offer/6b01c7601870ab7f4cb0c6d8-junior-software-engineer-angular-node.js---op02304",
+      "title": "Junior Software Engineer (Angular, Node.js)",
+      "company": "Dev.Pro",
+      "location_as_stated": "Europe, EU, EMEA, Poland (Jobgether)",
+      "reason": "Listed for Poland and the EU only.",
+      "reason_code": "location",
+      "found_via": "Jobgether (live search)",
+      "posted": "2026-11-21",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-144fb14b2aab"
+    },
+    {
+      "url": "https://wellfound.com/jobs/5133313-operations-manager-clone",
+      "title": "AI Research Engineer",
+      "company": "Syd Life AI",
+      "location_as_stated": "Remote, Everywhere (Wellfound)",
+      "reason": "Research engineering role asking 2+ years; the URL slug shows Operations Manager but the page shows AI Research Engineer.",
+      "reason_code": "experience",
+      "found_via": "Signed-in Wellfound browser pass",
+      "posted": "2026-11-22",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-b927928e6b7d"
+    },
+    {
+      "url": "https://wellfound.com/jobs/5127245-generative-ai-engineer",
+      "title": "Generative AI Engineer",
+      "company": "autonent",
+      "location_as_stated": "Remote, Everywhere; preferred time zones China and Japan (Wellfound)",
+      "reason": "2+ years of Python; INR 50,000-70,000 and preferred East Asian time zones.",
+      "reason_code": "location",
+      "found_via": "Signed-in Wellfound browser pass",
+      "posted": "2026-11-21",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-a9f2dc4fefbf"
+    },
+    {
+      "url": "https://wellfound.com/jobs/5105659-full-stack-ai-engineer",
+      "title": "Full Stack AI Engineer",
+      "company": "Digit88",
+      "location_as_stated": "Remote header, but description says Bangalore hybrid (Wellfound)",
+      "reason": "Description says Bangalore hybrid; asks 4+ or 5+ years.",
+      "reason_code": "experience",
+      "found_via": "Signed-in Wellfound browser pass",
+      "posted": "2026-11-20",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-885594125bb3"
+    },
+    {
+      "url": "https://wellfound.com/jobs/5130495-quant-engineer-part-time-clone",
+      "title": "Software Engineer (Part-time)",
+      "company": "Noether Meridian",
+      "location_as_stated": "Remote, Everywhere (Wellfound)",
+      "reason": "Quant research part-time contract with C++ and no pay shown.",
+      "reason_code": "stack",
+      "found_via": "Signed-in Wellfound browser pass",
+      "posted": "2026-11-22",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-9dce5970fc2d"
+    },
+    {
+      "url": "https://wellfound.com/jobs/4424702-software-developer-intern-clone",
+      "title": "Agentic Software Developer - Intern",
+      "company": "Utilyze",
+      "location_as_stated": "Remote, Everywhere (Wellfound)",
+      "reason": "Unpaid internship aimed at academic credit.",
+      "reason_code": "other",
+      "found_via": "Signed-in Wellfound browser pass",
+      "posted": "2026-11-23",
+      "verified": "Opened, 2026-11-23",
+      "id": "j-a0858f981805"
+    }
+  ],
+  "news": {
+    "groups": [
+      {
+        "id": "ai",
+        "stories": [
+          {
+            "title": "Sarvam releases open-weight Sarvam-105B-1711 for agents and Indian-language voice",
+            "summary": "The new open-weight 105B checkpoint averages 73.9 across eight conversational agent benchmarks (up from 42.6) at a blended $0.15 per million tokens, down from $0.44; the 65 GB NVFP4 version runs on a single workstation GPU, and BF16 weights are on Hugging Face for fine-tuning.",
+            "why": "A cheap open model with strong tool use that you can fine-tune yourself is a practical base for low-cost agent and voice projects.",
+            "source": "Sarvam AI",
+            "date": "2026-11-22",
+            "url": "https://www.sarvam.ai/blogs/sarvam-105b-1711",
+            "id": "s-f8a144a91233"
+          },
+          {
+            "title": "Google previews Tool Retrieval in the Gemini API for large tool libraries",
+            "summary": "With defer_loading set to true, the model sees only each tool's name and short description and loads a full schema when needed; server-side search, schema load and function call resolve in 1 API request, there is no separate fee, and Google advises static loading under 20 stable tools.",
+            "why": "If you wire agents to dozens of functions or MCP servers, this cuts the token cost of tool definitions, which is a common pain point.",
+            "source": "MarkTechPost",
+            "date": "2026-11-22",
+            "url": "https://www.marktechpost.com/2026/11/22/google-gemini-api-tool-retrieval/",
+            "id": "s-9bcbced690e9"
+          },
+          {
+            "title": "Google announces Agent Compute Engine, microVM sandboxes that keep credentials outside the agent",
+            "summary": "The managed service runs agents in isolated microVMs with checkpoint and resume, and an external Agent Gateway injects secrets so credentials never sit inside the sandbox; it is not yet available, pricing is unannounced, and Google targets a preview in the coming months.",
+            "why": "Sandboxing agents and keeping secrets out of them is becoming standard practice, and worth knowing for any agent work you pitch.",
+            "source": "InfoQ",
+            "date": "2026-11-22",
+            "url": "https://www.infoq.com/news/2026/11/google-agent-compute-engine/",
+            "id": "s-ce5b97d879cc"
+          },
+          {
+            "title": "Signal limits screenshots on mobile to block OS-level AI agents from reading chats",
+            "summary": "Signal's president Meredith Whittaker called operating systems that integrate agentic AI an 'existential threat' to its privacy guarantees; screenshot restrictions are added on Android and iOS, users can turn the setting off, and she admitted the fix is 'incomplete'.",
+            "why": "As you build agents that read screens and apps, expect apps and users to push back on that access, so design permissions in from the start.",
+            "source": "TechCrunch",
+            "date": "2026-11-21",
+            "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+            "id": "s-f3487ac9886e"
+          }
+        ],
+        "name": "AI and LLMs"
+      },
+      {
+        "id": "startups",
+        "stories": [
+          {
+            "title": "Kenyan startup funding falls to a six-year low, per this week's African tech roundup",
+            "summary": "Kenyan ventures raised US$201 million in the nine months to September 2026 versus US$744 million a year earlier (down 73%), and only 45 Kenyan startups raised US$100,000 or more (down 32%), according to Africa: The Big Deal figures reported by Business Daily.",
+            "why": "Tighter local funding means fewer and pickier startup hiring rounds, so lead with shipped, revenue-relevant work when you apply.",
+            "source": "Hackhouse",
+            "date": "2026-11-22",
+            "url": "https://newsroom.hackhouse.africa/this-week-in-african-tech-15-nov-to-21-nov-2026",
+            "id": "s-2ab4655cd36e"
+          },
+          {
+            "title": "Storspay expands B2B cross-border payroll to Kenya and five other African markets",
+            "summary": "The Canada-based platform now covers Nigeria, Kenya, Uganda, Senegal, Côte d'Ivoire and Benin, paying staff and suppliers in local currency to bank accounts and mobile money wallets; it advertises rates from 1% and commonly 2% on African corridors and has registered with FINTRAC.",
+            "why": "Cross-border payroll and payout APIs into Kenyan rails are a growing product area you could build for, and a possible employer type.",
+            "source": "Techweez",
+            "date": "2026-11-22",
+            "url": "https://techweez.com/2026/11/22/storspay-cross-border-payroll-africa-kenya/",
+            "id": "s-b43829d6e3f1"
+          },
+          {
+            "title": "Bending Spoons buys Mailchimp from Intuit for $3.68 billion",
+            "summary": "Intuit paid roughly $12 billion for Mailchimp in 2021 and is taking a loss; the deal is about 90% cash and 10% stock ($368 million in new Bending Spoons shares), and Intuit says it will sharpen its focus on AI tools for small businesses.",
+            "why": "It shows how AI pressure on SaaS is reshaping product companies, and Bending Spoons-style acquirers consolidate engineering, which affects hiring.",
+            "source": "TechCrunch",
+            "date": "2026-11-20",
+            "url": "https://techcrunch.com/2026/11/20/bending-spoons-buys-mailchimp-for-3-68-billion/",
+            "id": "s-ffd07770f7d3"
+          }
+        ],
+        "name": "Startups and funding"
+      },
+      {
+        "id": "hiring",
+        "stories": [
+          {
+            "title": "Enphase cuts about 320 jobs, 12% of staff, as it scales AI and automation",
+            "summary": "In an SEC filing dated November 20, Enphase said it will reduce headcount by approximately 12% (about 320 employees), move certain functions to cost-efficient regions, and scale productivity through artificial intelligence and automation, with about $25 million to $28 million in restructuring charges.",
+            "why": "Another employer pairing cuts with offshoring and AI productivity, which can favour cost-efficient remote talent like you if you show AI-assisted delivery.",
+            "source": "SEC (Enphase Form 8-K)",
+            "date": "2026-11-20",
+            "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000112/enph-20261120.htm",
+            "id": "s-37f2c02035a1"
+          }
+        ],
+        "name": "Hiring market"
+      },
+      {
+        "id": "kenya",
+        "stories": [
+          {
+            "title": "Safaricom confirms a technical fault disrupting Ziidi logins and withdrawals",
+            "summary": "Safaricom said on Saturday 21 November that a technical hitch was affecting Ziidi, its M-PESA money market fund, with no restoration time or cause given; Ziidi's assets under management rose 82.9% to KSh23.36 billion at half-year, and new Chief Financial Services Officer Boniface Mungania took permanent charge on 1 November.",
+            "why": "A live example of reliability risk in M-PESA-linked products, relevant to the M-PESA and wallet systems you build and test.",
+            "source": "Techpoint Africa",
+            "date": "2026-11-21",
+            "url": "https://techpoint.africa/news/safaricom-ziidi-withdrawal-outage/",
+            "id": "s-6e588588e396"
+          },
+          {
+            "title": "Safaricom rebuts viral Ksh10 M-PESA reversal scam claim, points to Hakikisha",
+            "summary": "Responding to a claim that fraudsters send small amounts like Ksh10 then reverse to drain a balance, Safaricom said reversal applies only to the amount sent or received; it says final status is communicated within two hours and urges use of Hakikisha, which shows the recipient's name before a payment.",
+            "why": "Fraud-proofing flows such as recipient confirmation and scoped reversals are core design points for any M-PESA integration.",
+            "source": "People Daily",
+            "date": "2026-11-21",
+            "url": "https://www.peopledaily.digital/business/safaricom-addresses-viral-warning-about-ksh10-m-pesa-reversal-fraud",
+            "id": "s-493da39a2290"
+          },
+          {
+            "title": "Top Kenyan banks ask CBK for a 12-month pause on new capital rules",
+            "summary": "Bank chief executives want CBK's prudential guidelines for systemically important banks, due 1 January 2027 with extra buffers of 0.5 to 2.5 percent of the loan book, delayed a year; private-sector credit growth hit 10.6 percent in September 2026 versus a 2.9 percent contraction in January.",
+            "why": "Bank capital rules and the 2027 election year shape lending and fintech partnerships, so they affect where Kenyan fintech hiring goes.",
+            "source": "Business Daily",
+            "date": "2026-11-22",
+            "url": "https://www.businessdailyafrica.com/bd/markets/market-news/top-banks-seek-12-months-pause-to-new-cbk-capital-rules-5680568",
+            "id": "s-8f58eb43b87d"
+          }
+        ],
+        "name": "Kenya fintech"
+      }
+    ]
+  },
+  "feed_jobs": [
+    {
+      "title": "Graduate Trainee Programme-Engineering",
+      "company": "Angaza",
+      "location": "Nairobi",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/graduate-trainee-programme-engineering-angaza",
+      "posted": "2026-11-19",
+      "salary_as_shown": "Not shown",
+      "fit_note": "Builds, tests and ships SaaS features; open to computer science, software engineering and IT degrees.",
+      "already_applied": false,
+      "also_on": [
+        {
+          "source": "Fuzu",
+          "url": "https://www.fuzu.com/kenya/job?filters[country_id]=1&filters[job_id]=1067555&filters[term]=Graduate%20Trainee%20Programme-Engineering",
+          "company": "Angaza",
+          "posted": "2026-11-22",
+          "deadline": "2026-11-29"
+        }
+      ],
+      "seen_before": "2026-11-20"
+    },
+    {
+      "title": "ICT Officer II",
+      "company": "The Public Procurement Regulatory Authority (PPRA)",
+      "location": "Nairobi",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/ict-officer-ii-the-public-procurement-regulatory-authority-ppra",
+      "posted": "2026-11-18",
+      "salary_as_shown": "Not shown",
+      "fit_note": "Codes, debugs and tests small application modules under senior developers; government role.",
+      "already_applied": false,
+      "seen_before": "2026-11-19"
+    },
+    {
+      "title": "Frontend Software Developer",
+      "company": "Riset Software & Systems Ltd",
+      "location": "Nairobi",
+      "source": "Fuzu",
+      "url": "https://www.fuzu.com/kenya/job?filters[country_id]=1&filters[job_id]=1067521&filters[term]=Frontend%20Software%20Developer",
+      "posted": "2026-11-21",
+      "salary_as_shown": "Not shown",
+      "fit_note": "Full-time permanent; experience listed as 0 months.",
+      "already_applied": false,
+      "deadline": "2026-11-28",
+      "seen_before": null
+    }
+  ],
+  "feed_health": {
+    "MyJobMag personalised": {
+      "pulled": 50,
+      "pulled_is_approximate": true,
+      "kept": 3,
+      "signed_in": true,
+      "error": null
+    },
+    "Fuzu": {
+      "pulled": 701,
+      "pulled_is_approximate": false,
+      "kept": 2,
+      "signed_in": true,
+      "error": null
+    }
+  },
+  "local_jobs": {
+    "status": "ok",
+    "date": "2026-11-23",
+    "generated_at": "2026-11-23T07:04:54+03:00",
+    "sources_checked": [
+      "MyJobMag",
+      "LinkedIn"
+    ],
+    "errors": [],
+    "jobs": [
+      {
+        "title": "Design Solutions Analyst M/F",
+        "company": "AGL - Africa Global Logistics",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/design-solutions-analyst-m-f-agl-africa-global-logistics",
+        "posted": "20 November",
+        "fit_note": "Solutions/analyst role in Nairobi; fits his systems and solutions background."
+      },
+      {
+        "title": "Data Science and Analytics-Intern",
+        "company": "Diageo",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/data-science-and-analytics-intern-diageo-1",
+        "posted": "21 November",
+        "fit_note": "Internship using his SQL, Python and data work."
+      },
+      {
+        "title": "Computer Science-Intern",
+        "company": "Diageo",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/computer-science-intern-diageo-1",
+        "posted": "21 November",
+        "fit_note": "CS graduate fit; entry-level internship."
+      },
+      {
+        "title": "Information Technology-Intern",
+        "company": "Diageo",
+        "location": "Nairobi",
+        "source": "MyJobMag",
+        "url": "https://www.myjobmag.co.ke/job/information-technology-intern-diageo",
+        "posted": "21 November",
+        "fit_note": "IT internship matching his CS degree and technical support experience."
+      },
+      {
+        "title": "Azure Cloud Sales Executive",
+        "company": "Cloud Productivity Solutions Limited",
+        "location": "Nairobi",
+        "source": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/view/azure-cloud-sales-executive-at-cloud-productivity-solutions-limited-4492324013",
+        "posted": "2026-11-21",
+        "fit_note": "Tech sales role; he can pair cloud and AWS exposure with customer-facing work."
+      }
+    ],
+    "mjm_personalised": {
+      "ok": true,
+      "count": 75,
+      "method": "cdp-cookies:9228",
+      "error": null
+    }
+  },
+  "feed_excluded": [
+    {
+      "title": "Junior AI Product Development Specialist",
+      "company": "KiliMax Software",
+      "source": "MyJobMag personalised",
+      "url": "https://www.myjobmag.co.ke/job/junior-ai-product-development-specialist-kilimax-software",
+      "reason": "already applied"
+    }
+  ]
+}
