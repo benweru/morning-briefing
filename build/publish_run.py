@@ -21,6 +21,9 @@ What it does, in order (stops at the first failure, nothing is pushed unless all
      the jobs only when the file's "date" is today, otherwise a not-run record (page shows one line).
      Optional run["feed_jobs"] (signed-in MyJobMag personalised + Fuzu pass) are cleaned for today's
      run: already applied or already in local_jobs -> run["feed_excluded"]; same URL -> merged.
+     After dropping already-surfaced roles, attach_unchecked_new() adds any new worldwide/Kenya
+     roles from today's live-search kept list that were not hand-checked, marked unchecked.
+     A run may set surfaced_exemptions to keep specific already-surfaced URLs on this run only.
   2. Renders index.html (latest run), archive/YYYY-MM-DD/index.html and archive/index.html.
      Older archive pages are left untouched, so they stay permanent.
   3. Verifies with headless Chrome (verify_run.py): HTTP 200 under /morning-briefing/, counts,
@@ -102,8 +105,12 @@ def build(repo, date, rebuild_all, local_jobs=bl.LOCAL_JOBS_PATH, allow_example=
         if d == date:
             say(bl.attach_local_jobs(r, local_jobs, bl.today_eat(), allow_example))
             if d == bl.today_eat():
-                ex = bl.exclude_surfaced(r, bl.already_surfaced(repo, d))
+                seen = bl.already_surfaced(repo, d)
+                ex = bl.exclude_surfaced(r, seen)
                 say(f'excluded already-surfaced/reviewed roles: {ex}')
+                # Keep hand-checked jobs in the run file; also list new filter-passing
+                # roles the generator did not hand-check, marked unchecked.
+                say(bl.attach_unchecked_new(r, seen=seen))
             if 'feed_jobs' in r:
                 # From your feeds: drop roles already applied to or already in today's Kenya jobs,
                 # merge duplicates; earlier briefings only add a seen_before date, they never hide a role.

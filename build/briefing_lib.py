@@ -533,6 +533,184 @@ def exclude_surfaced(run, seen):
     return out
 
 
+REMOTE_LIVE_DIR = '/workspace/job-search-plus/out'
+
+
+def _worldwide_or_kenya(location):
+    """True when the live-search location is a worldwide tag or names Kenya."""
+    l = (location or '').lower().strip()
+    if 'kenya' in l:
+        return True
+    return l in (
+        'worldwide',
+        'anywhere in the world',
+        'remote (global)',
+        'remote — worldwide',
+        'remote - worldwide',
+        'remote, worldwide',
+    )
+
+
+def _desc_locks_out_kenya(desc):
+    """Conservative: listing text states a US-only location and never names Kenya."""
+    t = ' '.join((desc or '').split()).lower()
+    if not t or 'kenya' in t:
+        return False
+    needles = (
+        'location: remote – united states',
+        'location: remote - united states',
+        'location: remote — united states',
+        'location: remote, united states',
+        'location: united states',
+        'location: chicago, illinois, united states',
+        'remote – united states',
+        'remote - united states',
+        'remote — united states',
+    )
+    return any(n in t for n in needles)
+
+
+def _previous_live_kept_urls(date):
+    """URLs kept in the most recent remote-live run strictly before `date`."""
+    folder = os.path.join(REMOTE_LIVE_DIR)
+    if not os.path.isdir(folder):
+        return None
+    earlier = []
+    for name in os.listdir(folder):
+        if name.startswith('remote-live-') and name.endswith('.json') and len(name) >= 27:
+            d = name[12:22]
+            if d < date:
+                earlier.append((d, os.path.join(folder, name)))
+    if not earlier:
+        return None
+    earlier.sort()
+    try:
+        data = json.load(open(earlier[-1][1], encoding='utf-8'))
+    except (OSError, ValueError):
+        return None
+    return {_url_key(j['url']) for j in data.get('kept') or [] if isinstance(j, dict) and j.get('url')}
+
+
+def _job_keys(run):
+    """URL keys and company+title keys already in this run's jobs, dropped or Kenya jobs."""
+    urls, cts = set(), set()
+    lj = run.get('local_jobs') or {}
+    rows = list(run.get('jobs') or []) + list(run.get('dropped') or [])
+    if lj.get('status') == 'ok':
+        rows += list(lj.get('jobs') or [])
+    for j in rows:
+        if not isinstance(j, dict):
+            continue
+        if j.get('url'):
+            urls.add(_url_key(j['url']))
+        k = _ct_key(j.get('company'), j.get('title'))
+        if k:
+            cts.add(k)
+    return urls, cts
+
+
+def unchecked_job_from_kept(j):
+    """Build a shortlist row for a filter-passing role that was not hand-checked."""
+    loc = j.get('location') or 'Not stated'
+    source = j.get('source') or 'Live search'
+    posted = j.get('posted') or j.get('posted_real') or 'Not stated'
+    wwr = 'we work remotely' in source.lower() or 'weworkremotely' in (j.get('url') or '')
+    gaps = 'Unchecked. The employer page was not opened, so location and seniority are unconfirmed.'
+    if wwr:
+        gaps += " We Work Remotely's \"Anywhere in the World\" label is often wrong, so open the posting before trusting it."
+    else:
+        gaps += ' The source location tag has not been confirmed on the employer page.'
+    return dict(
+        tier='stretch',
+        url=j['url'],
+        title=j['title'],
+        company=j['company'],
+        location_as_stated=loc,
+        posted=posted,
+        salary_as_shown='Not shown',
+        experience_asked='Not read (unchecked)',
+        found_via=f'{source} (live search)',
+        verified="Not hand-checked; taken from today's live-search filters only.",
+        fit=('Passed automated filters (posted in the last 7 days, target-role title, '
+             'listed as worldwide or naming Kenya). Not opened on the employer page.'),
+        gaps=gaps,
+        unchecked=True,
+    )
+
+
+def attach_unchecked_new(run, live_path=None, seen=None):
+    """Append new filter-passing roles that were not hand-checked, marked unchecked.
+
+    Reads today's remote-live kept list. A role is added only if it is new today
+    (not in the previous live-search kept list, and first_seen on this run date
+    or the previous day), listed as worldwide or naming Kenya, not already in
+    this run's jobs/dropped/Kenya jobs, and not already surfaced or applied.
+    Listing text that clearly locks the role to the United States is left out
+    (and, if not already dropped, added to dropped). Returns a short note.
+    """
+    date = run.get('run_date')
+    path = live_path or os.path.join(REMOTE_LIVE_DIR, f'remote-live-{date}.json')
+    if not date or not os.path.exists(path):
+        return f'unchecked new roles: no live-search file at {path}'
+    try:
+        live = json.load(open(path, encoding='utf-8'))
+    except (OSError, ValueError) as err:
+        return f'unchecked new roles: could not read {path} ({err})'
+    prev_urls = _previous_live_kept_urls(date)
+    have_urls, have_ct = _job_keys(run)
+    added, auto_dropped = [], []
+    try:
+        day_before = (dt.date.fromisoformat(date) - dt.timedelta(days=1)).isoformat()
+    except ValueError:
+        day_before = date
+    for j in live.get('kept') or []:
+        if not isinstance(j, dict) or not j.get('url') or not j.get('title'):
+            continue
+        key = _url_key(j['url'])
+        ct = _ct_key(j.get('company'), j.get('title'))
+        if key in have_urls or _ct_match(ct, have_ct):
+            continue
+        if seen is not None and (key in seen or _ct_match(ct, getattr(seen, 'ct', ()))):
+            continue
+        if prev_urls is not None and key in prev_urls:
+            continue
+        fs = j.get('first_seen') or j.get('posted_real') or j.get('posted')
+        if fs and fs not in (date, day_before):
+            continue
+        if not _worldwide_or_kenya(j.get('location')):
+            continue
+        if _desc_locks_out_kenya(j.get('desc')):
+            auto_dropped.append(dict(
+                url=j['url'], title=j['title'], company=j['company'],
+                location_as_stated=j.get('location') or 'Not stated',
+                reason=('The source tag is worldwide, but the listing text restricts '
+                        'the role to the United States, so Kenya is not eligible.'),
+                reason_code='location',
+                posted=j.get('posted') or j.get('posted_real'),
+                found_via=f"{j.get('source') or 'Live search'} (live search)",
+                verified="Listing text in today's live-search result; not opened on the employer page.",
+                unchecked=True,
+            ))
+            continue
+        added.append(unchecked_job_from_kept(j))
+        have_urls.add(key)
+        if ct:
+            have_ct.add(ct)
+    if auto_dropped:
+        run.setdefault('dropped', []).extend(auto_dropped)
+    if added:
+        start = len(run.get('jobs') or [])
+        for i, job in enumerate(added, start + 1):
+            job['rank'] = i
+        run.setdefault('jobs', []).extend(added)
+        health = run.setdefault('search_health', {})
+        health['fresh_shortlisted'] = health.get('fresh_shortlisted', 0) + len(added)
+    bits = [f'added {len(added)} unchecked new role(s)']
+    if auto_dropped:
+        bits.append(f'moved {len(auto_dropped)} US-locked listing(s) to dropped')
+    return 'unchecked new roles: ' + '; '.join(bits)
+
+
 def surfaced_urls(run):
     lj = run.get('local_jobs') or {}
     urls = [j['url'] for j in (run.get('jobs') or []) + (run.get('dropped') or []) + (lj.get('jobs') or [])
@@ -1213,10 +1391,11 @@ def _job_row(j, new_ids, prev_date):
     new = ''
     if j['id'] in new_ids:
         new = f'<span class="new-tag">New<span class="visually-hidden"> since the {day_month(to_date(prev_date))} briefing</span></span>'
+    unchecked = ' <span class="quiet">Unchecked</span>' if j.get('unchecked') else ''
     return f'''
         <li class="job" data-tier="{j['tier']}" data-id="{j['id']}" data-search="{e(search)}">
           <div class="job-main">
-            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>{TIER_NAME[j['tier']]}{new}</p>
+            <p class="tier-tag"><span class="swatch" aria-hidden="true"></span>{TIER_NAME[j['tier']]}{new}{unchecked}</p>
             <h4 class="job-title">{e(j['title'])}</h4>
             <p class="job-company">{e(j['company'])}</p>
             <p class="job-note note-fit"><strong>Fit.</strong> {e(j['fit'])}</p>

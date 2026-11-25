@@ -238,6 +238,14 @@ job whose URL (normalised) is in `/workspace/job-search-plus/state/reviewed_jobs
 to `reviewed_jobs.txt` (feed roles included) under `# surfaced in briefing YYYY-MM-DD` (lines tagged with today's date
 are ignored on a same-day rebuild). `feed_jobs` are the exception: they are never hidden for having been shown before (section 3b). When shortlisting, skip these URLs up front so the page isn't
 left short; don't add them back by hand.
+A run may set `surfaced_exemptions` to a list of posting URLs that should still be shown
+on this run only (for example a role re-checked today after appearing as dropped yesterday).
+That is a one-run override; it does not weaken the check for other days.
+After `exclude_surfaced`, `attach_unchecked_new` adds any role from today's live-search
+kept list that is new today, listed as worldwide or naming Kenya, and was not hand-checked.
+Those rows are marked unchecked. Listing text that clearly locks a role to the United States
+is moved to `dropped` instead. This stops a hand-checked-only shortlist from silently
+omitting new filter-passing roles, which would otherwise leave zero jobs and block the publish.
 
 ## 3b. From your feeds (signed-in browser pass, added 2026-11-16)
 
