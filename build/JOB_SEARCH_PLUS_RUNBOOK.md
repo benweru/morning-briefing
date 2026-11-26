@@ -1,6 +1,10 @@
 # Job Search Plus: runbook
 
-Recreated 2026-11-13 after the box restore of 2026-11-12 (~14:04 EAT) lost the original.
+Recreated 2026-11-13 after the box restore of 2026-11-12 (~14:04 EAT) lost the original. Updated 2026-11-26.
+
+Profile: Ben Maina, Full Stack & AI Engineer at Kwara (fintech), March–September 2026 (never an
+internship). Targets software/backend/full-stack/AI/automation, forward-deployed, and sales/solution
+consulting roles.
 
 ## Setup (after any box reset)
 
@@ -18,7 +22,10 @@ python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
 ```
 
 Writes `out/remote-live-YYYY-MM-DD.json` (per-source ok/pulled/fresh/kept counts, `kept` roles,
-filter counts). Wellfound is never fetched automatically; it needs the signed-in browser pass.
+filter counts, `loc_status` per role: kenya/worldwide/africa/unconfirmed). Wellfound is never fetched
+automatically; it needs the signed-in browser pass. ReliefWeb is retired (bot check; API needs an
+approved appname). Requests retry with backoff; failed sources are re-run once.
+Test without touching state: `REMOTE_LIVE_DRY=1 REMOTE_LIVE_OUT=/tmp/x.json ./.venv/bin/python live/remote_live.py YYYY-MM-DD`.
 The briefing itself is built and published from `/workspace/build/` (see `/workspace/build/RUNBOOK.md`,
 also in github.com/benweru/morning-briefing under `build/`).
 
@@ -34,5 +41,7 @@ Back up `state/` first if you are only testing.
 
 ## State
 
-- `state/applied_log.csv`: every application (date,title,company,url,status). Check by company and URL/job id before applying or shortlisting.
+- `state/applied_log.csv`: every application, one layout only: `date,title,company,url,status`
+  (normalised 2026-11-26; write rows with a CSV writer so commas are quoted; `url` may be a
+  `mailto:` or empty, never guessed). Check by company and URL/job id before applying or shortlisting.
 - `state/reviewed_jobs.txt`: URLs already shown in a briefing; `publish_run.py` appends to it after each push.

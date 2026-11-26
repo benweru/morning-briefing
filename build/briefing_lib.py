@@ -177,6 +177,9 @@ def normalise_run(run):
     return run
 
 
+DEFERRED_DROP = re.compile(r"re-?check|not (?:yet )?read|cannot be shortlisted until|before shortlist|to be checked|not checked yet", re.I)
+
+
 JOB_REQUIRED = ['url', 'title', 'company', 'location_as_stated', 'posted', 'salary_as_shown', 'experience_asked', 'found_via', 'verified']
 
 
@@ -206,7 +209,7 @@ def validate_run(run, filename_date=None):
         E.append('method.filtering_summary is required')
     ids = set()
     if not run['jobs']:
-        E.append('jobs: at least one shortlisted job is required')
+        W.append('jobs: no shortlisted roles today; the page shows an empty-state line (2026-11-26: no padding with repeats)')
     for i, j in enumerate(run['jobs']):
         w = f'jobs[{i}] {j.get("title", "?")}'
         need(j, JOB_REQUIRED + ['rank', 'tier', 'fit', 'gaps'], w)
@@ -225,6 +228,10 @@ def validate_run(run, filename_date=None):
         need(j, ['url', 'title', 'company', 'location_as_stated', 'reason', 'reason_code'], w)
         if j.get('reason_code') not in DROP_REASONS:
             E.append(f'{w}: reason_code must be one of {tuple(DROP_REASONS)}')
+        if str(run.get('run_date')) >= '2026-11-27' and DEFERRED_DROP.search(j.get('reason') or ''):
+            # 2026-11-26: a role not yet checked is not a drop. Dropped roles count as surfaced and are never
+            # shown again, so a "re-check later" drop would hide it for good. List it as an unchecked job.
+            E.append(f'{w}: reason says it still needs checking; list it in jobs with unchecked=True instead of dropping it')
         if j.get('id') in ids:
             E.append(f'{w}: also appears in jobs or earlier in dropped')
         ids.add(j.get('id'))
@@ -469,6 +476,7 @@ def already_surfaced(repo, today):
             # two row layouts exist: date,title,company,url,status  and  company,title,status,time,note
             if re.match(r'\d{4}-\d{2}-\d{2}$', row[0]) and len(row) > 2:
                 seen.add_ct(_ct_key(row[2], row[1]))
+                seen.history.append((row[0], 'applied', row[2], row[1], row[3] if len(row) > 3 else ''))
             elif len(row) > 1:
                 seen.add_ct(_ct_key(row[0], row[1]))
     for f in glob.glob(os.path.join(repo, 'data', 'runs', '*.json')):
@@ -479,11 +487,13 @@ def already_surfaced(repo, today):
         except (OSError, ValueError):
             continue
         lj = r.get('local_jobs') or {}
-        for j in (r.get('jobs') or []) + (r.get('dropped') or []) + (lj.get('jobs') or []):
+        # feed_jobs count too (2026-11-26): Ben's rule is that a role is shown once, whatever section showed it
+        for j in (r.get('jobs') or []) + (r.get('dropped') or []) + (lj.get('jobs') or []) + (r.get('feed_jobs') or []):
             if isinstance(j, dict):
-                if j.get('url'):
-                    seen.add(_url_key(j['url']))
+                for u in _feed_urls(j):
+                    seen.add(_url_key(u))
                 seen.add_ct(_ct_key(j.get('company'), j.get('title')))
+                seen.history.append((os.path.basename(f)[:10], 'surfaced', j.get('company') or '', j.get('title') or '', j.get('url') or ''))
     return seen
 
 
@@ -492,6 +502,7 @@ class SeenSet(set):
     def __init__(self, *a):
         super().__init__(*a)
         self.ct = set()
+        self.history = []   # (date, 'applied'|'surfaced', company, title, url) for repost and micro1 checks
 
     def add_ct(self, key):
         if key:
@@ -507,7 +518,11 @@ def exclude_surfaced(run, seen):
     Days that omit the field are unchanged.
     """
     out = {}
-    exempt = {_url_key(u) for u in (run.get('surfaced_exemptions') or []) if u}
+    # surfaced_exemptions are no longer honoured (Ben, 26 Nov 2026: never resurface a role). The field is
+    # still accepted by the schema so older runs validate; it is reported and then ignored.
+    if run.get('surfaced_exemptions'):
+        out['exemptions_ignored'] = len(run['surfaced_exemptions'])
+    exempt = set()
     def keep(lst):
         def hit(j):
             if not isinstance(j, dict):
@@ -515,6 +530,8 @@ def exclude_surfaced(run, seen):
             if j.get('url') and _url_key(j['url']) in exempt:
                 return False
             if j.get('url') and _url_key(j['url']) in seen:
+                return True
+            if micro1_repeat(j, seen, run.get('run_date')):
                 return True
             return _ct_match(_ct_key(j.get('company'), j.get('title')), getattr(seen, 'ct', ()))
         return [j for j in lst if not hit(j)]
@@ -624,7 +641,7 @@ def unchecked_job_from_kept(j):
         tier='stretch',
         url=j['url'],
         title=j['title'],
-        company=j['company'],
+        company=j.get('company') or 'Not shown on the listing',
         location_as_stated=loc,
         posted=posted,
         salary_as_shown='Not shown',
@@ -639,12 +656,13 @@ def unchecked_job_from_kept(j):
 
 
 def attach_unchecked_new(run, live_path=None, seen=None):
-    """Append new filter-passing roles that were not hand-checked, marked unchecked.
+    """Append filter-passing roles that were not hand-checked, marked unchecked.
 
-    Reads today's remote-live kept list. A role is added only if it is new today
-    (not in the previous live-search kept list, and first_seen on this run date
-    or the previous day), listed as worldwide or naming Kenya, not already in
-    this run's jobs/dropped/Kenya jobs, and not already surfaced or applied.
+    Reads today's remote-live kept list. Since 2026-11-26 a role is added if it has never been
+    surfaced or applied to (any earlier briefing section, reviewed_jobs.txt, applied_log.csv,
+    micro1 title within 30 days), its loc_status is kenya/worldwide/africa, fit_score > 0, it has a
+    core target title (UNCHECKED_TITLE_OK, not UNCHECKED_TITLE_BAD) and no eligibility blocker in the
+    listing text. Rows are sorted best fit first. Hand-written unchecked rows are held to the same bar.
     Listing text that clearly locks the role to the United States is left out
     (and, if not already dropped, added to dropped). Returns a short note.
     """
@@ -656,9 +674,27 @@ def attach_unchecked_new(run, live_path=None, seen=None):
         live = json.load(open(path, encoding='utf-8'))
     except (OSError, ValueError) as err:
         return f'unchecked new roles: could not read {path} ({err})'
+    fit_of = {_url_key(j['url']): j for j in live.get('kept') or [] if isinstance(j, dict) and j.get('url')}
+    # unchecked rows written by hand must meet the same bar as generated ones
+    pre = run.get('jobs') or []
+    kept_rows = []
+    for row in pre:
+        if row.get('unchecked'):
+            k = fit_of.get(_url_key(row.get('url')))
+            if (not k or (k.get('fit_score') or 0) <= 0 or not UNCHECKED_TITLE_OK.search(row.get('title') or '')
+                    or UNCHECKED_TITLE_BAD.search(row.get('title') or '')
+                    or (k.get('loc_status') is not None and k.get('loc_status') not in ('kenya', 'worldwide', 'africa'))):
+                continue
+        kept_rows.append(row)
+    removed_hand = len(pre) - len(kept_rows)
+    if removed_hand:
+        run['jobs'] = kept_rows
+        for i, row in enumerate(run['jobs'], 1):
+            row['rank'] = i
     prev_urls = _previous_live_kept_urls(date)
     have_urls, have_ct = _job_keys(run)
     added, auto_dropped = [], []
+    skipped_fit = 0
     try:
         day_before = (dt.date.fromisoformat(date) - dt.timedelta(days=1)).isoformat()
     except ValueError:
@@ -672,12 +708,21 @@ def attach_unchecked_new(run, live_path=None, seen=None):
             continue
         if seen is not None and (key in seen or _ct_match(ct, getattr(seen, 'ct', ()))):
             continue
-        if prev_urls is not None and key in prev_urls:
+        # 2026-11-26: any never-surfaced role that passes the filters is listed, not only ones first seen
+        # today/yesterday (that rule let filter-passing roles disappear without ever being shown).
+        st = j.get('loc_status')
+        if st is not None and st not in ('kenya', 'worldwide', 'africa'):
             continue
-        fs = j.get('first_seen') or j.get('posted_real') or j.get('posted')
-        if fs and fs not in (date, day_before):
+        if st is None and not _worldwide_or_kenya(j.get('location')):
             continue
-        if not _worldwide_or_kenya(j.get('location')):
+        # 2026-11-26: only roles with a positive title fit and a core target title, never blockchain titles
+        if (j.get('fit_score') or 0) <= 0 or not UNCHECKED_TITLE_OK.search(j.get('title') or '') \
+                or UNCHECKED_TITLE_BAD.search(j.get('title') or ''):
+            skipped_fit += 1
+            continue
+        if seen is not None and micro1_repeat(j, seen, date):
+            continue
+        if ineligible_reason(j.get('title'), j.get('desc')):
             continue
         if _desc_locks_out_kenya(j.get('desc')):
             auto_dropped.append(dict(
@@ -692,12 +737,19 @@ def attach_unchecked_new(run, live_path=None, seen=None):
                 unchecked=True,
             ))
             continue
-        added.append(unchecked_job_from_kept(j))
+        row = unchecked_job_from_kept(j)
+        row['_fit'] = j.get('fit_score') or 0
+        row['_posted'] = j.get('posted') or ''
+        added.append(row)
         have_urls.add(key)
         if ct:
             have_ct.add(ct)
     if auto_dropped:
         run.setdefault('dropped', []).extend(auto_dropped)
+    added.sort(key=lambda r: r['_posted'], reverse=True)
+    added.sort(key=lambda r: -r['_fit'])          # stable: best fit first, then newest first within a fit
+    for r in added:
+        r.pop('_fit', None); r.pop('_posted', None)
     if added:
         start = len(run.get('jobs') or [])
         for i, job in enumerate(added, start + 1):
@@ -705,10 +757,273 @@ def attach_unchecked_new(run, live_path=None, seen=None):
         run.setdefault('jobs', []).extend(added)
         health = run.setdefault('search_health', {})
         health['fresh_shortlisted'] = health.get('fresh_shortlisted', 0) + len(added)
-    bits = [f'added {len(added)} unchecked new role(s)']
+    bits = [f'added {len(added)} unchecked new role(s)', f'left out {skipped_fit} with no title fit']
+    if removed_hand:
+        bits.append(f'removed {removed_hand} hand-written unchecked row(s) below the bar')
     if auto_dropped:
         bits.append(f'moved {len(auto_dropped)} US-locked listing(s) to dropped')
     return 'unchecked new roles: ' + '; '.join(bits)
+
+
+
+# ---------------------------------------------------------------- screening helpers (added 2026-11-26)
+# Unchecked rows need a core target title (fit_score > 0 is checked separately).
+UNCHECKED_TITLE_OK = re.compile(
+    r'software|developer|full[\s-]?stack|back[\s-]?end|python|javascript|typescript|react|node|django|fastapi|'
+    r'\bai\b|llm|machine learning|\bml engineer|automation|forward[\s-]?deployed|solutions? (engineer|consultant)|'
+    r'sales engineer|pre-?sales|integration|data analyst|bi analyst|analytics engineer|programmer|web engineer', re.I)
+UNCHECKED_TITLE_BAD = re.compile(r'validator|smart contract|blockchain|solidity|web3|crypto|defi\b|compensation|payroll', re.I)
+
+# Kenya eligibility: Ben graduated (BSc, Aug 2026) and has about a year of work experience, so student-only
+# programmes and "no work experience since graduating" internships are out.
+INELIGIBLE_TITLE = re.compile(r'\battachment\b|industrial attachment|\bstudentship\b|\bstudent (intern|internship|programme|program)\b|'
+                              r'\bundergraduate (intern|internship|programme|program)\b', re.I)
+INELIGIBLE_TEXT = [
+    (re.compile(r'should not have (?:undertaken|done|attended|participated in|benefited from) any (?:other )?internship', re.I),
+     'requires no previous internship or work experience since graduating'),
+    (re.compile(r'(?:not|never) (?:have )?(?:been )?exposed to work ?place experience', re.I),
+     'requires no workplace experience since graduating'),
+    (re.compile(r'no (?:prior|previous) (?:work|working|internship) experience (?:since|after) graduat', re.I),
+     'requires no work experience since graduating'),
+    (re.compile(r'letter from (?:your|the) (?:institution|university|college|school)[^.]{0,80}\b(?:student|enrolled)', re.I),
+     'student-only programme (needs a letter confirming current enrolment)'),
+    (re.compile(r'(?:must|should) be (?:a )?(?:currently )?(?:enrolled|registered|continuing) (?:student|in)', re.I),
+     'student-only programme (must be currently enrolled)'),
+    (re.compile(r'\bcurrently (?:enrolled|pursuing) (?:in |a )?(?:an? )?(?:undergraduate|degree|bachelor|diploma)', re.I),
+     'student-only programme (must be currently enrolled)'),
+    (re.compile(r'\b(?:3rd|third|4th|fourth|final)[- ]year (?:university |undergraduate )?students?\b', re.I),
+     'student-only programme (final-year students)'),
+    (re.compile(r'\bawaiting graduation\b', re.I), 'open only to students or those awaiting graduation'),
+    (re.compile(r'\b(?:continuing|current) (?:university |college )?students? only\b', re.I), 'student-only programme'),
+]
+
+
+def ineligible_reason(title, text=None):
+    """Why Ben is not eligible, from the title and (if available) the posting text; None if nothing found."""
+    if INELIGIBLE_TITLE.search(title or ''):
+        return 'attachment or student-only programme (from the title)'
+    t = ' '.join((text or '').split())
+    for rx, why in INELIGIBLE_TEXT:
+        if rx.search(t):
+            return why
+    return None
+
+
+# Job boards that post other employers' roles under their own name. For these, the real employer is read
+# from the posting text, and the role is matched against earlier roles by real employer + title.
+AGGREGATOR = re.compile(r'campusbiz|entry-level jobs in kenya|jobs in kenya|jobgether|myjobmag|brightermonday|fuzu|'
+                        r'jobwebkenya|careerpoint|kenyajob|corporate staffing|confidential|\bundisclosed\b', re.I)
+
+
+def is_aggregator(company, url=''):
+    return bool(AGGREGATOR.search(company or '')) or 'campusbiz.co.ke' in (url or '')
+
+
+POSTING_CACHE = '/workspace/job-search-plus/state/posting_text_cache.json'
+_UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36'
+
+
+def _fetch_text(url, timeout=20):
+    import urllib.request
+    u = url
+    m = re.search(r'linkedin\.com/jobs/view/(?:[^/?#]*-)?(\d{6,})', url or '')
+    if m:   # LinkedIn's public guest endpoint returns the job description without signing in
+        u = f'https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{m.group(1)}'
+    last = None
+    for attempt in range(2):
+        try:
+            req = urllib.request.Request(u, headers={'User-Agent': _UA, 'Accept': 'text/html,*/*'})
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                h = r.read(1_500_000).decode('utf-8', 'replace')
+            h = re.sub(r'(?is)<script.*?</script>|<style.*?</style>', ' ', h)
+            return ' '.join(html.unescape(re.sub(r'<[^>]+>', ' ', h)).split())
+        except Exception as ex:  # noqa: BLE001
+            last = ex
+            import time as _t
+            _t.sleep(3)
+    raise last
+
+
+def posting_text(url, today=None):
+    """Plain text of a public posting page (cached per URL for 14 days in POSTING_CACHE); None if unreachable."""
+    if not url or not url.lower().startswith('http'):
+        return None
+    key = _url_key(url)
+    try:
+        cache = json.load(open(POSTING_CACHE, encoding='utf-8'))
+    except (OSError, ValueError):
+        cache = {}
+    today = today or today_eat()
+    hit = cache.get(key)
+    if hit and hit.get('text') and (dt.date.fromisoformat(today) - dt.date.fromisoformat(hit['fetched'])).days <= 14:
+        return hit['text']
+    try:
+        text = _fetch_text(url)
+    except Exception:  # noqa: BLE001
+        return None
+    cache[key] = {'fetched': today, 'text': text[:40000]}
+    if len(cache) > 600:   # keep the newest 600
+        cache = dict(sorted(cache.items(), key=lambda kv: kv[1].get('fetched', ''))[-600:])
+    try:
+        tmp = POSTING_CACHE + '.tmp'
+        json.dump(cache, open(tmp, 'w', encoding='utf-8'))
+        os.replace(tmp, POSTING_CACHE)
+    except OSError:
+        pass
+    return text
+
+
+def _norm_text(t):
+    return re.sub(r'[^a-z0-9]', '', (t or '').lower())
+
+
+def find_repost(job, text, seen):
+    """For an aggregator listing: an earlier applied/surfaced role whose employer is named in the posting text
+    and whose core title matches. Returns (date, kind, company, title) or None."""
+    if not text or seen is None:
+        return None
+    t_key = _norm_title(job.get('title'))
+    if len(t_key) < 4:
+        return None
+    body = _norm_text(text)
+    best = None
+    for date, kind, company, title, _url in getattr(seen, 'history', []):
+        if is_aggregator(company):
+            continue
+        c = _norm_company(company)
+        st = _norm_title(title)
+        if len(c) < 5 or not st:
+            continue
+        if not (st == t_key or st.startswith(t_key) or t_key.startswith(st)):
+            continue
+        if c in body and (best is None or kind == 'applied'):
+            best = (date, kind, company, title)
+    return best
+
+
+MICRO1_QUAL = re.compile(r'\([^)]*\)|\[[^\]]*\]|\s[-\u2013\u2014|:]\s.*$|\b(remote|global|worldwide|europe|eu|us|usa|uk|'
+                         r'latam|emea|apac|india|contract|part[- ]time|full[- ]time)\b', re.I)
+
+
+def _micro1_title(t):
+    return re.sub(r'[^a-z0-9]', '', MICRO1_QUAL.sub(' ', (t or '').lower()))
+
+
+def micro1_repeat(job, seen, today, days=30):
+    """micro1 relists the same role under new IDs (and region suffixes). Match micro1 roles by core title
+    against roles applied to or surfaced in the last `days` days."""
+    if seen is None or not today:
+        return False
+    if 'micro1' not in ((job.get('company') or '') + ' ' + (job.get('url') or '')).lower():
+        return False
+    t = _micro1_title(job.get('title'))
+    if len(t) < 4:
+        return False
+    try:
+        cutoff = (dt.date.fromisoformat(today) - dt.timedelta(days=days)).isoformat()
+    except ValueError:
+        return False
+    for date, _kind, company, title, url in getattr(seen, 'history', []):
+        if date < cutoff or date >= today:
+            continue
+        if 'micro1' not in (company + ' ' + url).lower():
+            continue
+        st = _micro1_title(title)
+        if st and (st == t or st.startswith(t) or t.startswith(st)):
+            return True
+    return False
+
+
+def _screen_one(j, seen, today):
+    """(kind, reason) for a Kenya/feed role that should be left out, or None."""
+    why = ineligible_reason(j.get('title'))
+    if why:
+        return 'ineligible', why
+    text = posting_text(j.get('url'), today)
+    why = ineligible_reason(j.get('title'), text)
+    if why:
+        return 'ineligible', why
+    if is_aggregator(j.get('company'), j.get('url')):
+        rp = find_repost(j, text, seen)
+        if rp:
+            date, kind, company, title = rp
+            verb = 'applied to' if kind == 'applied' else 'shown'
+            return 'repost', f'repost of {company} "{title}" ({verb} {date}); this listing is the same role posted by a job board'
+    return None
+
+
+def screen_kenya_jobs(run, seen=None, today=None):
+    """Kenya eligibility and aggregator-repost screen for today's local_jobs and feed_jobs (2026-11-26).
+    Kenya jobs that fail move to `dropped` (reason_code requirement / other) so the page says why;
+    feed roles move to feed_excluded ('not eligible' / 'repost of an earlier role'). Returns counts."""
+    from concurrent.futures import ThreadPoolExecutor
+    today = today or run.get('run_date') or today_eat()
+    out = {'kenya_ineligible': 0, 'kenya_repost': 0, 'feed_ineligible': 0, 'feed_repost': 0, 'unreadable': 0}
+    lj = run.get('local_jobs') or {}
+    l_jobs = (lj.get('jobs') or []) if lj.get('status') == 'ok' else []
+    f_jobs = run.get('feed_jobs') if isinstance(run.get('feed_jobs'), list) else []
+    todo = [j for j in l_jobs + f_jobs if isinstance(j, dict)]
+    with ThreadPoolExecutor(4) as ex:
+        verdicts = list(ex.map(lambda j: _screen_one(j, seen, today), todo))
+    v = {id(j): r for j, r in zip(todo, verdicts)}
+    keep_l = []
+    have_drop = {_url_key(d.get('url')) for d in run.get('dropped') or [] if d.get('url')}
+    for j in l_jobs:
+        r = v.get(id(j))
+        if not r or not j.get('url'):
+            keep_l.append(j)
+            continue
+        kind, reason = r
+        out['kenya_' + kind] += 1
+        if _url_key(j['url']) in have_drop:      # same-day rebuild: already recorded
+            continue
+        have_drop.add(_url_key(j['url']))
+        run.setdefault('dropped', []).append(dict(
+            url=j['url'], title=j.get('title') or '', company=j.get('company') or '',
+            location_as_stated=j.get('location') or 'Kenya', posted=j.get('posted') or None,
+            reason=('Not eligible: ' + reason + '.') if kind == 'ineligible' else (reason[0].upper() + reason[1:] + '.'),
+            reason_code='requirement' if kind == 'ineligible' else 'other',
+            found_via=f"Kenya jobs ({j.get('source') or 'local search'})",
+            verified=f'Posting text read automatically, {today}'))
+    if l_jobs:
+        lj['jobs'] = keep_l
+    if f_jobs:
+        keep_f = []
+        excluded = run.setdefault('feed_excluded', [])
+        for j in f_jobs:
+            r = v.get(id(j))
+            if not r:
+                keep_f.append(j)
+                continue
+            kind, reason = r
+            out['feed_' + kind] += 1
+            excluded.append({k: j[k] for k in ('title', 'company', 'source', 'url') if j.get(k)}
+                            | {'reason': 'not eligible' if kind == 'ineligible' else 'repost of an earlier role'})
+        run['feed_jobs'] = keep_f
+        if not excluded:
+            run.pop('feed_excluded')
+    for d in run.get('dropped') or []:
+        if d.get('posted') is None:
+            d.pop('posted', None)
+    return out
+
+
+def fix_filtered_out(run, live_path=None):
+    """counts.filtered_out from today's remote-live file with honest labels (2026-11-26): older_than_window is
+    the 7-day window drop, older_than_30_days only the >30-day reposts. Earlier runs summed the two under
+    older_than_30_days. Returns a note."""
+    date = run.get('run_date')
+    path = live_path or os.path.join(REMOTE_LIVE_DIR, f'remote-live-{date}.json')
+    try:
+        dr = json.load(open(path, encoding='utf-8'))['dropped']
+    except (OSError, ValueError, KeyError):
+        return 'filtered_out: no live-search file, left as written'
+    c = run.setdefault('counts', {})
+    c['filtered_out'] = {'older_than_window': dr.get('older_than_window'), 'older_than_30_days': dr.get('repost_over_30d'),
+                         'senior_title': dr.get('senior_or_excluded'), 'not_target_role': dr.get('not_target_role'),
+                         'location_or_timezone': dr.get('location')}
+    c['filtered_out_is_approximate'] = False
+    return f'filtered_out set from {os.path.basename(path)}'
 
 
 def surfaced_urls(run):
@@ -742,10 +1057,11 @@ def local_count(run):
 #                  already_applied, also_on: [{source, url, company, title, posted, deadline}]}]
 #   feed_health: {"MyJobMag personalised": {pulled, pulled_is_approximate, kept, signed_in, error}, "Fuzu": {...}}
 # filter_feed_jobs() (run only for today's run) moves roles already applied to, or already in that
-# day's local_jobs, into feed_excluded. It never hides a role just because an earlier briefing showed
-# it; such roles get seen_before = that run's date instead. Runs without feed_jobs render nothing.
+# day's local_jobs, into feed_excluded. Since 2026-11-26 it also leaves out roles shown in any earlier
+# briefing (reason 'shown in an earlier briefing'); seen_before is kept only on older runs. Runs without
+# feed_jobs render nothing.
 FEED_SOURCES = ('MyJobMag personalised', 'Fuzu')
-FEED_REASONS = ('already applied', 'already in Kenya jobs', 'duplicate')
+FEED_REASONS = ('already applied', 'already in Kenya jobs', 'duplicate', 'shown in an earlier briefing', 'not eligible', 'repost of an earlier role')
 
 
 def _feed_urls(j):
@@ -856,11 +1172,20 @@ def filter_feed_jobs(run, repo=None, applied=None):
     if not excluded:
         run.pop('feed_excluded')
     if repo:
+        # 2026-11-26: a feed role already shown in an earlier briefing (any section) is left out, not re-shown
         earlier = _earlier_urls(repo, run.get('run_date', '9999'))
+        seen_ct = already_surfaced(repo, run.get('run_date', '9999')).ct
+        still = []
         for j in keep:
             dates = [earlier[k] for k in (_url_key(u) for u in _feed_urls(j)) if k in earlier]
-            j['seen_before'] = min(dates) if dates else None
-            out['seen_before'] += bool(dates)
+            if dates or _ct_match(_ct_key(j.get('company'), j.get('title')), seen_ct):
+                exclude(j, 'shown in an earlier briefing'); out['seen_before'] += 1
+                continue
+            j['seen_before'] = None
+            still.append(j)
+        run['feed_jobs'] = keep = still
+        if excluded and 'feed_excluded' not in run:
+            run['feed_excluded'] = excluded
     return out
 
 
@@ -1594,7 +1919,9 @@ def _feed_html(run):
     ex = run.get('feed_excluded') or []
     if ex:
         groups = []
-        for reason, label in (('already applied', 'already applied'), ('already in Kenya jobs', 'already in the Kenya jobs above'), ('duplicate', 'duplicates')):
+        for reason, label in (('already applied', 'already applied'), ('already in Kenya jobs', 'already in the Kenya jobs above'), ('duplicate', 'duplicates'),
+                              ('shown in an earlier briefing', 'shown in an earlier briefing'), ('not eligible', 'not eligible'),
+                              ('repost of an earlier role', 'reposts of earlier roles')):
             names = [e(f'{x.get("company", "")} {x.get("title", "")}'.strip()) for x in ex if x.get('reason') == reason]
             if names:
                 groups.append(f'{join_and(names)} ({label})')
@@ -1683,6 +2010,10 @@ def render_run_page(run, prev, root, archived):
         <ol class="jobs" role="list">{''.join(_job_row(j, d['new_ids'], d['prev_date']) for j in items)}
         </ol>
       </section>''')
+
+    if not tiers_html:
+        tiers_html.append('''
+      <p class="facts jobs-empty">No new remote roles passed the checks today. Roles already shown in an earlier briefing are never repeated.</p>''')
 
     drop_rows = ''.join(f'''
             <tr>

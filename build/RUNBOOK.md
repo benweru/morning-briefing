@@ -53,16 +53,23 @@ Before starting, run `git -C /workspace/briefing-site pull --ff-only` so the clo
 
 **Ben Maina**, Nairobi, Kenya (UTC+3).
 
-- **Education and role:** CS graduate (Strathmore). AI Prototyping & Automation Engineer at Kwara
-  (fintech) since March 2026, so about 1 year of professional experience. Earlier data-ops work at Chumz.
+- **Education and role:** CS graduate (Strathmore). **Full Stack & AI Engineer at Kwara** (fintech,
+  SACCO software), **March–September 2026**. That was a full role: never describe it as an internship,
+  in `fit`/`gaps` or anywhere else. Earlier data-ops work at Chumz. About 1 year of professional
+  experience in total (updated 2026-11-26).
 - **CV focus:**
   - Python APIs and backend
   - LLM integrations, AI agents and automation (MCP, agent frameworks, n8n-style workflows, webhooks)
   - React/TypeScript
   - PostgreSQL
   - fintech integrations
-- **Targets:** junior to mid-level software, backend, full-stack, AI or automation engineering, and
-  forward-deployed or solutions engineering roles.
+- **Targets:** junior to mid-level software, backend, full-stack, AI or automation engineering,
+  forward-deployed or solutions engineering, and **sales / solution consulting** roles for technical
+  products (solutions consultant, sales engineer, pre-sales). Plain sales, account-executive and
+  customer-service roles stay out.
+- **Kenya eligibility:** Ben has graduated and has worked since. Roles limited to students,
+  attachment/industrial-attachment, current enrolment, final-year students, or "no internship since
+  graduating" are not open to him; `publish_run.py` drops them (section 3c).
 
 Use the same tone as the existing pages in the `fit` and `gaps` notes: plain, specific, one or two
 sentences each.
@@ -83,6 +90,18 @@ Copy those counts into the run as `search_health` (shown at the top of the page;
 yesterday's roles forward just because they are still live; anything older than 7 days or already
 applied goes to `dropped`.
 
+Source handling (2026-11-26): every request retries up to 4 times with backoff (honours Retry-After on
+429/503); bodies are read in chunks, so a cut-off Himalayas response is retried instead of failing the
+source; a source that fails or returns nothing is re-run once (`retried: true` in its stats); a page
+that fails inside an otherwise working source is reported as `partial_error`. Retired:
+**ReliefWeb** (RSS answers with an empty bot-check page; the v2 API needs an approved appname, which
+would mean Ben contacting ReliefWeb) and **Wellfound** (browser pass only). See `retired_sources` in
+the output. Employer boards now include Africa-hiring companies: Greenhouse (One Acre Fund,
+Moniepoint, SportyGroup, Turing, Canonical, GitLab…), Ashby (Andela, LemFi, n8n, Zapier, ElevenLabs,
+Supabase, Cohere…), Lever (Tala, Apollo Agriculture, Copia) and Workable (Cellulant, Kopo Kopo,
+Credrails, Pavago, Moringa School). For a test run that must not touch state, set
+`REMOTE_LIVE_DRY=1` (doesn't update `state/first_seen.json`) and `REMOTE_LIVE_OUT=/path/to/scratch.json`.
+
 ### 2.1 Sources (check all; record each one you used in `sources.jobs`)
 
 | Source | How |
@@ -93,7 +112,7 @@ applied goes to `dropped`.
 | Jobicy | `https://jobicy.com/api/v2/remote-jobs?count=50&tag=python` (also `tag=react`, `industry=dev`) |
 | We Work Remotely | RSS: `https://weworkremotely.com/categories/remote-back-end-programming-jobs.rss`, `.../remote-full-stack-programming-jobs.rss`, `.../remote-programming-jobs.rss` |
 | Working Nomads | `https://www.workingnomads.com/api/exposed_jobs/` |
-| Employer ATS boards | Greenhouse `https://boards-api.greenhouse.io/v1/boards/<company>/jobs?content=true` (EU boards: `job-boards.eu.greenhouse.io`), Lever `https://api.lever.co/v0/postings/<company>?mode=json`, Recruitee `https://<company>.recruitee.com/api/offers/`, Ashby `https://api.ashbyhq.com/posting-api/job-board/<company>`. Recheck employers that hire remotely worldwide (e.g. Canonical) and anything carried over from yesterday. |
+| Employer ATS boards (automatic in remote_live.py) | Greenhouse `https://boards-api.greenhouse.io/v1/boards/<company>/jobs?content=true` (EU boards: `job-boards.eu.greenhouse.io`), Lever `https://api.lever.co/v0/postings/<company>?mode=json`, Recruitee `https://<company>.recruitee.com/api/offers/`, Ashby `https://api.ashbyhq.com/posting-api/job-board/<company>`. Recheck employers that hire remotely worldwide (e.g. Canonical) and anything carried over from yesterday. |
 | Web search | Junior/graduate remote roles that are worldwide, EMEA or Africa-friendly, for example "junior AI automation engineer remote worldwide", "graduate software engineer remote EMEA", and roles on DOU.ua, OpenTrain or Jobgether. Use the current year in queries. |
 
 **Count** roughly how many postings you pulled in total (`counts.pulled`) and how many each bulk
@@ -110,14 +129,18 @@ filter removed (`counts.filtered_out`). Mark the counts approximate if they are.
    - Drop roles that ask for 5+ years.
    - Roles asking for 3–4 years go to **stretch** at most, with the gap stated.
 3. **Target role:** software, backend, full-stack, AI or LLM, automation, integrations, or
-   forward-deployed engineering. Drop sales, design, pure data science, QA-only, PHP/WordPress-only,
+   forward-deployed engineering, solutions consulting / sales engineering / pre-sales. Drop plain sales, design, pure data science, QA-only, PHP/WordPress-only,
    blockchain-only and similar.
 4. **Kenya eligibility (strict)**, judged from the posting text. Quote it in `location_as_stated`.
    - **Eligible:**
      - "Worldwide", "Anywhere", "Remote (global)" with no country restriction;
      - an explicit country list that includes Kenya;
-     - "EMEA" or "Africa";
+     - "Africa" (whole continent, or a list that includes Kenya / East Africa);
      - a time-zone range that includes UTC+3 with no country restriction.
+   - **Country wins:** a named country or "within X" / "X only" / "must be based in X" beats any
+     EMEA/Africa/worldwide tag. "Remote – Germany (EMEA)" is Germany-only.
+   - **Bare "EMEA"** is *not confirmed*: open the posting; shortlist only if the text names Kenya,
+     Africa or worldwide hiring (2026-11-26).
    - **Not eligible:**
      - US/Canada/UK/EU/LATAM/APAC-only;
      - "must be authorised to work in…" a country Ben isn't in;
@@ -128,6 +151,11 @@ filter removed (`counts.filtered_out`). Mark the counts approximate if they are.
      everything else fits, and `gaps` must say "Kenya isn't named; confirm before applying".
      Otherwise drop it with reason code `location`.
    - Lead sites' location tags (Himalayas, Remotive) are hints only. The employer's page decides.
+   - `remote_live.py` now does a first pass and sets `loc_status` on each kept role: `kenya`,
+     `worldwide`, `africa` (confirmed) or `unconfirmed` (e.g. bare EMEA, "Remote" with no place).
+     Country-locked roles are dropped as `location_or_timezone`. Only confirmed roles reach the
+     auto `shortlist_candidates` (sorted best fit first) or the unchecked rows. You may still hand-check
+     an `unconfirmed` role and shortlist it if the employer's page confirms Kenya/Africa/worldwide.
 
 ### 2.3 Close review and live check (for each remaining candidate)
 
@@ -230,22 +258,50 @@ that Chrome, retries once, and writes `state/myjobmag_personalized_YYYY-MM-DD.js
 `attach_local_jobs` re-runs it if today's file is missing/failed and the page shows a bold warning
 at the top if the feed still can't be read. If you see that warning, tell Ben first.
 
-### Never resurface a role (added 2026-10-14)
+### Never resurface a role (added 2026-10-14, tightened 2026-11-26)
 When the run is dated today, `publish_run.py` drops every remote job, dropped-list entry and Kenya
-job whose URL (normalised) is in `/workspace/job-search-plus/state/reviewed_jobs.txt`,
-`applied_log.csv`, or any earlier run in `data/runs/` (`briefing_lib.already_surfaced` /
-`exclude_surfaced`), then renumbers ranks. After a successful push it appends every URL it showed
-to `reviewed_jobs.txt` (feed roles included) under `# surfaced in briefing YYYY-MM-DD` (lines tagged with today's date
-are ignored on a same-day rebuild). `feed_jobs` are the exception: they are never hidden for having been shown before (section 3b). When shortlisting, skip these URLs up front so the page isn't
-left short; don't add them back by hand.
-A run may set `surfaced_exemptions` to a list of posting URLs that should still be shown
-on this run only (for example a role re-checked today after appearing as dropped yesterday).
-That is a one-run override; it does not weaken the check for other days.
-After `exclude_surfaced`, `attach_unchecked_new` adds any role from today's live-search
-kept list that is new today, listed as worldwide or naming Kenya, and was not hand-checked.
-Those rows are marked unchecked. Listing text that clearly locks a role to the United States
-is moved to `dropped` instead. This stops a hand-checked-only shortlist from silently
-omitting new filter-passing roles, which would otherwise leave zero jobs and block the publish.
+job whose URL (normalised) or company + title is in `/workspace/job-search-plus/state/reviewed_jobs.txt`,
+`applied_log.csv`, or any earlier run in `data/runs/` **including earlier `feed_jobs`**
+(`briefing_lib.already_surfaced` / `exclude_surfaced`), then renumbers ranks. After a successful push
+it appends every URL it showed to `reviewed_jobs.txt` (feed roles included) under
+`# surfaced in briefing YYYY-MM-DD` (lines tagged with today's date are ignored on a same-day rebuild).
+There are **no exceptions**: feed roles shown before are left out with "shown in an earlier briefing",
+and `surfaced_exemptions` is ignored (don't write it; it is reported as `exemptions_ignored`).
+micro1 roles with the same qualifier title (e.g. "Software Engineer (GitHub Contributor)") within 30
+days count as the same role. When shortlisting, skip these URLs up front so the page isn't left short;
+don't add them back by hand. A short or empty shortlist is fine: the page shows "No new remote roles
+passed the checks today" instead of padding with repeats.
+
+**Unchecked, not dropped:** `dropped` now means "seen; never show again". A role you haven't checked
+yet must never go to `dropped` with a reason like "re-check tomorrow" / "not yet read" (validation
+fails for runs from 2026-11-27). List it in `jobs` with `unchecked=True` instead, or leave it out so
+`attach_unchecked_new` lists it.
+
+After `exclude_surfaced`, `attach_unchecked_new` lists every never-surfaced role from today's
+live-search kept list that you didn't hand-check, if it has `loc_status` kenya/worldwide/africa,
+`fit_score > 0`, a target title (software/backend/full-stack/AI/automation/integration/solutions/
+forward-deployed/sales engineer…; no QA-only, data-entry, crypto, payroll, customer service…), is not
+a micro1 repeat and not student/attachment-only. Rows are sorted best fit first, then newest.
+Hand-written unchecked rows are re-screened against the same bar. Listing text that clearly locks a
+role to the United States is moved to `dropped` instead.
+
+## 3c. Kenya and feed screen (added 2026-11-26)
+After `filter_feed_jobs`, `bl.screen_kenya_jobs` reads each Kenya job's and feed role's posting text
+(cached 14 days in `job-search-plus/state/posting_text_cache.json`) and:
+- **drops ineligible roles** (`reason_code: requirement`): attachment/industrial attachment, student or
+  intern-only programmes that need current enrolment, final/3rd/4th-year students, awaiting
+  graduation, "no other internship since graduating", "not exposed to workplace experience";
+- **drops aggregator reposts** (`reason_code: other`): a listing from an aggregator (CampusBiz,
+  Bomahut, Kenyan job blogs, …) whose text names the real employer of a role already applied to or
+  shown, with the same core title.
+Kenya jobs dropped this way are listed under the dropped roles (found via "Kenya jobs (...)"); feed
+roles go to `feed_excluded` with "not eligible" / "repost of an earlier role". `Latest.json` is never
+edited.
+
+`counts.filtered_out` is set by `bl.fix_filtered_out` from today's `remote-live` file:
+`older_than_window` (older than the 7-day window), `older_than_30_days` (reposts over 30 days),
+`senior_title`, `not_target_role`, `location_or_timezone`. You don't need to fill it; don't copy the
+old `{"older_than_30_days": <everything stale>}` line from earlier input scripts.
 
 ## 3b. From your feeds (signed-in browser pass, added 2026-11-16)
 
@@ -268,8 +324,9 @@ feed_health = {'MyJobMag personalised': {'pulled': 125, 'pulled_is_approximate':
   moves them to `feed_excluded` with the reason (`already applied` by flag, applied_log URL, or
   company + title; `already in Kenya jobs` by URL or company + title; same URL twice is merged), and the
   page prints one "Left out: ..." line. Nothing is ever dropped silently.
-- Feed roles are **not** hidden because an earlier briefing showed them: Ben's feed decides. If the URL
-  was on an earlier run, the role gets `seen_before` and the line "Also listed in the D Month briefing".
+- Feed roles shown in any earlier briefing (by URL or company + title) are left out with
+  "shown in an earlier briefing" (2026-11-26; Ben asked for no repeats). Student/attachment-only
+  roles and aggregator reposts are left out by section 3c.
 - If a site wasn't signed in or failed, set `signed_in: False` / `error: '...'`; the block shows a note.
   If you skipped the pass entirely, leave `feed_jobs` out (no block), don't write an empty list.
 - Only what the pass showed: exact URLs, dates and salaries as listed. Never apply or contact anyone.
@@ -294,7 +351,7 @@ replace every value. Summary of the fields:
   },
   "counts": {
     "pulled": 1000, "pulled_is_approximate": true,
-    "filtered_out": {"older_than_30_days": 150, "senior_title": 250, "not_target_role": 400, "location_or_timezone": null},
+    "filtered_out": {"older_than_window": 1700, "older_than_30_days": 90, "senior_title": 250, "not_target_role": 400, "location_or_timezone": 300},  // set by publish_run.py
     "filtered_out_is_approximate": true
     // shortlisted, dropped, reviewed_closely, dropped_by_reason, stories: filled in by publish_run.py
   },

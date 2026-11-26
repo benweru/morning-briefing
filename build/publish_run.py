@@ -21,9 +21,10 @@ What it does, in order (stops at the first failure, nothing is pushed unless all
      the jobs only when the file's "date" is today, otherwise a not-run record (page shows one line).
      Optional run["feed_jobs"] (signed-in MyJobMag personalised + Fuzu pass) are cleaned for today's
      run: already applied or already in local_jobs -> run["feed_excluded"]; same URL -> merged.
-     After dropping already-surfaced roles, attach_unchecked_new() adds any new worldwide/Kenya
-     roles from today's live-search kept list that were not hand-checked, marked unchecked.
-     A run may set surfaced_exemptions to keep specific already-surfaced URLs on this run only.
+     After dropping already-surfaced roles (feed roles included), attach_unchecked_new() adds new
+     worldwide/Kenya/Africa roles from today's live-search kept list with a positive title fit, marked
+     unchecked. screen_kenya_jobs() then drops Kenya and feed roles Ben isn't eligible for, and job-board
+     reposts of roles already applied to or shown (2026-11-26). surfaced_exemptions are ignored.
   2. Renders index.html (latest run), archive/YYYY-MM-DD/index.html and archive/index.html.
      Older archive pages are left untouched, so they stay permanent.
   3. Verifies with headless Chrome (verify_run.py): HTTP 200 under /morning-briefing/, counts,
@@ -112,9 +113,13 @@ def build(repo, date, rebuild_all, local_jobs=bl.LOCAL_JOBS_PATH, allow_example=
                 # roles the generator did not hand-check, marked unchecked.
                 say(bl.attach_unchecked_new(r, seen=seen))
             if 'feed_jobs' in r:
-                # From your feeds: drop roles already applied to or already in today's Kenya jobs,
-                # merge duplicates; earlier briefings only add a seen_before date, they never hide a role.
+                # From your feeds: drop roles already applied to, already in today's Kenya jobs, or shown in
+                # an earlier briefing (2026-11-26); merge duplicates.
                 say(f'feed jobs: {bl.filter_feed_jobs(r, repo)}; {len(r["feed_jobs"])} shown')
+            if d == bl.today_eat():
+                # Kenya eligibility + aggregator reposts for Kenya jobs and feed roles (reads the public posting pages)
+                say(f'Kenya/feed screen: {bl.screen_kenya_jobs(r, seen, d)}')
+                say(bl.fix_filtered_out(r))
         r = bl.normalise_run(r)
         errs, warns = bl.validate_run(r, d)
         errs += schema_errors(repo, r)

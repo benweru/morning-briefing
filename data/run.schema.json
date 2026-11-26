@@ -74,11 +74,19 @@
           "type": "object",
           "description": "Bulk filter counts (null when not counted).",
           "properties": {
+            "older_than_window": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "Outside the live search window (7 days)."
+            },
             "older_than_30_days": {
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "description": "Reposts of listings first seen more than 30 days ago (runs before 2026-11-27 summed this with older_than_window)."
             },
             "senior_title": {
               "type": [
@@ -142,8 +150,8 @@
     },
     "jobs": {
       "type": "array",
-      "minItems": 1,
-      "description": "Shortlist, 6-10 roles.",
+      "minItems": 0,
+      "description": "Shortlist, 6-10 roles when there are that many; may be empty (2026-11-26: never padded with roles already shown).",
       "items": {
         "type": "object",
         "required": [
@@ -625,7 +633,10 @@
             "enum": [
               "already applied",
               "already in Kenya jobs",
-              "duplicate"
+              "duplicate",
+              "shown in an earlier briefing",
+              "not eligible",
+              "repost of an earlier role"
             ]
           }
         }
