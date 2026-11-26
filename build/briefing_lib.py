@@ -426,12 +426,30 @@ def _norm_company(c):
     return re.sub(r'[^a-z0-9]', '', c)
 
 
+_TITLE_PLACE = re.compile(r'\b(remote|hybrid|onsite|on-site|full[- ]?time|part[- ]?time|contract|kenya|nairobi|'
+                          r'mombasa|east africa|africa|emea|worldwide|global|anywhere|international|usa?|uk|europe|'
+                          r'ksa|uae|latam|apac|americas|canada|india|nigeria|south africa|ghana|egypt)\b')
+
+
 def _norm_title(t):
+    """Core title for company+title matching. Brackets and " - location" tails are removed, but a team after a
+    comma or colon is kept (2026-11-26: "Backend Engineer, Plan" and "Backend Engineer, AI Catalog" at GitLab are
+    different roles); place/work-mode words are removed wherever they appear."""
     t = (t or '').lower().replace('jr.', 'junior ').replace('sr.', 'senior ')
     t = re.sub(r'\([^)]*\)|\[[^\]]*\]', ' ', t)
-    t = re.split(r'\s[-\u2013\u2014|:]\s|,', t)[0]
-    t = re.sub(r'\b(remote|hybrid|onsite|on-site|full[- ]?time|contract)\b', ' ', t)
+    t = re.split(r'\s[-\u2013\u2014|]\s', t)[0]
+    t = _TITLE_PLACE.sub(' ', t)
     return re.sub(r'[^a-z0-9]', '', t)
+
+
+def _title_match(t, st):
+    """Same core title, or one is the other plus a short tail (e.g. "ii", "intern")."""
+    if not t or not st:
+        return False
+    if t == st:
+        return True
+    a, b = (t, st) if len(t) >= len(st) else (st, t)
+    return a.startswith(b) and len(a) - len(b) <= 6
 
 
 def _ct_key(company, title):
@@ -444,7 +462,7 @@ def _ct_match(key, seen_ct):
     if not key:
         return False
     c, t = key
-    return any(c == sc and (t == st or t.startswith(st) or st.startswith(t)) for sc, st in seen_ct)
+    return any(c == sc and _title_match(t, st) for sc, st in seen_ct)
 
 
 def already_surfaced(repo, today):
@@ -894,7 +912,7 @@ def find_repost(job, text, seen):
         st = _norm_title(title)
         if len(c) < 5 or not st:
             continue
-        if not (st == t_key or st.startswith(t_key) or t_key.startswith(st)):
+        if not _title_match(t_key, st):
             continue
         if c in body and (best is None or kind == 'applied'):
             best = (date, kind, company, title)
@@ -929,7 +947,7 @@ def micro1_repeat(job, seen, today, days=30):
         if 'micro1' not in (company + ' ' + url).lower():
             continue
         st = _micro1_title(title)
-        if st and (st == t or st.startswith(t) or t.startswith(st)):
+        if st and _title_match(t, st):
             return True
     return False
 
@@ -1079,7 +1097,7 @@ def _ct_loose(key, keys):
     if not key:
         return False
     c, t = key
-    return any(_co_match(c, sc) and (t == st or t.startswith(st) or st.startswith(t)) for sc, st in keys)
+    return any(_co_match(c, sc) and _title_match(t, st) for sc, st in keys)
 
 
 def applied_keys(path=None):
